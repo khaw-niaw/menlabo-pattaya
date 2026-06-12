@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://menlabo-pattaya.com/sitemap.xml
