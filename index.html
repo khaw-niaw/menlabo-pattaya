@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>大阪居酒屋 MENLABO酒場 — パタヤ</title>
+<meta name="description" content="昼は定食とラーメン、十五時から酒場。大阪・阿波座のラーメン屋が、パタヤで居酒屋になった。Soi Buakhao・Tree Town、11:00〜24:00、火曜定休。">
+<meta property="og:title" content="大阪居酒屋 MENLABO酒場 — パタヤ">
+<meta property="og:description" content="昼はめし屋。十五時から、酒場。日本の味、ちゃんとある。">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- 墨：濡れた紙のWebGLキャンバス（全画面・最前面・操作は透過） -->
+<canvas id="ink-canvas" aria-hidden="true"></canvas>
+
+<!-- ============ グローバルナビ（表紙の上は透明、スクロールで紙色に） ============ -->
+<nav class="site-head" id="site-head">
+  <a class="site-head__brand" href="index.html" aria-label="MENLABO酒場 トップへ">
+    <img class="site-head__seal" src="assets/images/logo-seal.svg" alt="" width="32" height="32">
+    <span class="site-head__name">MENLABO酒場</span>
+  </a>
+  <div class="site-head__nav">
+    <a href="menu.html">品書き</a>
+    <a href="index.html#access">在処</a>
+    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">地図</a>
+  </div>
+</nav>
+
+<!-- ============ 扉 ============ -->
+<header class="cover" id="cover">
+  <p class="cover__kicker reveal">大阪居酒屋 — タイ・パタヤ</p>
+
+  <h1 class="cover__title reveal" data-delay="200">
+    <span class="cover__title-en">MENLABO</span>
+    <span class="cover__title-ja">酒　場</span>
+  </h1>
+
+  <p class="cover__line reveal" data-delay="450">
+    今夜は、<span class="rotator" data-words="呑む,食う,語らう,締める" data-interval="2400" data-duration="520">呑む</span>。
+  </p>
+
+  <p class="cover__hint reveal" data-delay="700">ページの上を、なぞってみ。墨が滲むで</p>
+
+  <!-- 営業中ステータス：モバイルのみ表示・JSがタイ時間で判定 -->
+  <p class="now-status reveal" id="now-status" data-delay="850" aria-live="polite"></p>
+
+  <a class="cover__scroll" href="#story">
+    <span class="cover__scroll-text">暖簾をくぐる</span>
+    <span class="cover__scroll-bar" aria-hidden="true"></span>
+  </a>
+</header>
+
+<main>
+
+  <!-- ============ のれん：来歴 ============ -->
+  <section class="chapter" id="story">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">のれん</p>
+        <h2 class="chapter__title">来　歴</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <div class="chapter__body prose">
+        <p>大阪・阿波座に、小さなラーメン屋があった。</p>
+        <p>化学調味料を使わん鶏出汁。毎日仕込む、手ェ抜かん一杯。<br>
+        その執念が、海を越えてパタヤに渡ってきた。</p>
+        <p>長く住んでる人。旅の途中の人。タイに惚れて居着いた人。<br>
+        一日の終わりに「今夜は良い夜やった」と思える場所——<br>
+        それをつくるために、ここにおる。</p>
+        <p class="prose__em">MENLABOの「LABO」は、実験室。<br>昨日と同じ今日はない。</p>
+      </div>
+
+      <p class="chapter__note">昼はめし屋。十五時から、酒場</p>
+    </div>
+  </section>
+
+  <!-- ============ おひる：昼 ============ -->
+  <section class="chapter" id="lunch">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">おひる</p>
+        <h2 class="chapter__title">昼</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <p class="chapter__lead">定食屋みたいに、しっかり食える。ごはん大盛、無料や</p>
+
+      <figure class="plate">
+        <span class="plate__media"><img class="plate__img" data-plate-src="lunch" alt="昼の一杯（サンプル画像）"></span>
+        <figcaption class="plate__caption">昼の一杯、十一時から</figcaption>
+      </figure>
+
+      <!-- 価格は確定後に ฿— を差し替えてください -->
+      <ul class="menu">
+        <li class="menu__row"><span class="menu__name">唐揚げ定食</span><span class="menu__dots"></span><span class="menu__price">฿—</span></li>
+        <li class="menu__row"><span class="menu__name">餃子定食</span><span class="menu__dots"></span><span class="menu__price">฿—</span></li>
+        <li class="menu__row"><span class="menu__name">炒飯セット</span><span class="menu__dots"></span><span class="menu__price">฿—</span></li>
+        <li class="menu__row"><span class="menu__name">天津飯セット</span><span class="menu__dots"></span><span class="menu__price">฿—</span></li>
+        <li class="menu__row"><span class="menu__name">ラーメン各種</span><span class="menu__dots"></span><span class="menu__price">฿159〜</span></li>
+      </ul>
+
+      <a class="more-link" href="menu.html#lunch">品書きを見る</a>
+
+      <p class="chapter__note">十一時から、十五時まで</p>
+    </div>
+  </section>
+
+  <!-- ============ 転換：十五時 ============ -->
+  <section class="chapter chapter--turn" id="turn">
+    <img class="turn__bg" data-plate-src="turn" alt="" aria-hidden="true">
+    <div class="chapter__inner">
+      <p class="turn__time">十五時。</p>
+      <p class="turn__line">暖簾が変わる。ここから、酒場</p>
+    </div>
+  </section>
+
+  <!-- ============ 一杯目：肴 ============ -->
+  <section class="chapter" id="sakana">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">一杯目</p>
+        <h2 class="chapter__title">肴</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <p class="chapter__lead">まずはここから。全部、酒に合わせて作ってる</p>
+
+      <figure class="plate">
+        <span class="plate__media"><img class="plate__img" data-plate-src="sakana" alt="揚げたての唐揚げ（サンプル画像）"></span>
+        <figcaption class="plate__caption">鶏の唐揚げ、揚げたて</figcaption>
+      </figure>
+
+      <ul class="menu">
+        <li class="menu__row"><span class="menu__name">枝豆</span><span class="menu__dots"></span><span class="menu__price">฿59</span></li>
+        <li class="menu__row"><span class="menu__name">やみつききゅうり</span><span class="menu__dots"></span><span class="menu__price">฿79</span></li>
+        <li class="menu__row"><span class="menu__name">たこわさ</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
+        <li class="menu__row"><span class="menu__name">焼き餃子　五ヶ</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
+        <li class="menu__row"><span class="menu__name">とんぺい焼き</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
+        <li class="menu__row"><span class="menu__name">鶏の唐揚げ</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
+        <li class="menu__row"><span class="menu__name">だし巻き玉子</span><span class="menu__dots"></span><span class="menu__price">฿139</span></li>
+        <li class="menu__row"><span class="menu__name">レアバラチャーシュー盛り合わせ</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+      </ul>
+
+      <a class="more-link" href="menu.html">品書きを見る</a>
+
+      <p class="chapter__note">餃子を足すだけで、全然ちゃうねん</p>
+    </div>
+  </section>
+
+  <!-- ============ 二杯目：酒 ============ -->
+  <section class="chapter" id="sake">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">二杯目</p>
+        <h2 class="chapter__title">酒</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <p class="chapter__lead chapter__lead--rotate">
+        <span class="rotator" data-words="ビール,ハイボール,焼酎,サワー" data-interval="2200" data-duration="520">ビール</span>、冷えてるで
+      </p>
+
+      <figure class="plate">
+        <span class="plate__media"><img class="plate__img" data-plate-src="sake" alt="注ぎたてのビール（サンプル画像）"></span>
+        <figcaption class="plate__caption">注ぎたての一杯</figcaption>
+      </figure>
+
+      <div class="chapter__body prose">
+        <p>飲めるで。ラーメンも出る。</p>
+        <p>大阪・ニューツルマツの中谷社長と、サキアジの谷口さん。<br>
+        本物の居酒屋人が、後ろにおる。<br>
+        せやから、手ェ抜かれへん。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 締め：麺 ============ -->
+  <section class="chapter" id="men">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">〆に</p>
+        <h2 class="chapter__title">麺</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <p class="chapter__lead">化学調味料、使てへん。鶏と水と、手間だけや</p>
+
+      <figure class="plate">
+        <span class="plate__media"><img class="plate__img" data-plate-src="men" alt="締めのラーメン（サンプル画像）"></span>
+        <figcaption class="plate__caption">締めの一杯</figcaption>
+      </figure>
+
+      <ul class="menu">
+        <li class="menu__row"><span class="menu__name">淡麗鶏醤油そば</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">淡麗鶏塩そば</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">鶏白湯醤油そば</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">鶏白湯塩そば</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">ジャン麺</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
+      </ul>
+
+      <a class="more-link" href="menu.html#shime">品書きを見る</a>
+
+      <p class="chapter__note">飲んだあとの一杯が、いちばん旨い</p>
+    </div>
+  </section>
+
+  <!-- ============ 帰り道：在処 ============ -->
+  <section class="chapter chapter--last" id="access">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">帰り道</p>
+        <h2 class="chapter__title">在　処</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <dl class="info">
+        <div class="info__row"><dt>場所</dt><dd>Soi Buakhao, Tree Town — Pattaya<br><small>提灯が目印の、黒い建物</small></dd></div>
+        <div class="info__row"><dt>昼</dt><dd>11:00 — 15:00<small>（定食とラーメン）</small></dd></div>
+        <div class="info__row"><dt>夜</dt><dd>15:00 — 24:00<small>（全メニュー）</small></dd></div>
+        <div class="info__row"><dt>定休</dt><dd>火曜日</dd></div>
+        <div class="info__row"><dt>駐車</dt><dd>あり</dd></div>
+      </dl>
+
+      <a class="info__map" href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">地図を開く</a>
+
+      <p class="chapter__note">今夜飲む場所、決まってるか</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ モバイル下部CTA（スクロールで出現・PCでは非表示） ============ -->
+<!-- ※ LINE導入後は「品書き」をLINEボタンに差し替え予定 -->
+<div class="m-cta" id="m-cta" aria-hidden="true">
+  <a class="m-cta__btn m-cta__btn--primary" href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">地図・道順</a>
+  <a class="m-cta__btn" href="menu.html">品書き</a>
+</div>
+
+<!-- ============ 奥付 ============ -->
+<footer class="colophon">
+  <img class="colophon__seal" src="assets/images/logo-seal.svg" alt="MENLABO酒場の印" width="64" height="64">
+  <nav class="colophon__nav">
+    <a href="menu.html">品書き</a>
+    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">地図</a>
+  </nav>
+  <p class="colophon__text">大阪居酒屋 MENLABO酒場 — タイ・パタヤ</p>
+  <p class="colophon__copy">© 2026 MENLABO（OMOTENASHI CO., LTD.）</p>
+  <p class="colophon__legal"><a href="privacy.html">プライバシーポリシー</a></p>
+</footer>
+
+<script src="assets/js/ink.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

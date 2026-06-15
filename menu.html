@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>品書き — 大阪居酒屋 MENLABO酒場</title>
+<meta name="description" content="大阪居酒屋 MENLABO酒場の品書き。昼は定食とラーメン、十五時から全メニュー。すぐ出る肴、新鮮野菜、こだわりの逸品、〆の麺と飯。">
+<meta property="og:title" content="品書き — 大阪居酒屋 MENLABO酒場">
+<meta property="og:description" content="まずすぐ出る肴で一杯。最後は麺で締める。">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- 墨：濡れた紙のWebGLキャンバス（全画面・最前面・操作は透過） -->
+<canvas id="ink-canvas" aria-hidden="true"></canvas>
+
+<!-- ============ グローバルナビ（下層ページは常時表示） ============ -->
+<nav class="site-head is-solid" id="site-head">
+  <a class="site-head__brand" href="index.html" aria-label="MENLABO酒場 トップへ">
+    <img class="site-head__seal" src="assets/images/logo-seal.svg" alt="" width="32" height="32">
+    <span class="site-head__name">MENLABO酒場</span>
+  </a>
+  <div class="site-head__nav">
+    <a href="menu.html" aria-current="page">品書き</a>
+    <a href="index.html#access">在処</a>
+    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">地図</a>
+  </div>
+</nav>
+
+<!-- ============ 扉（小） ============ -->
+<header class="page-head">
+  <p class="page-head__kicker reveal">大阪居酒屋 MENLABO酒場</p>
+  <h1 class="page-head__title reveal" data-delay="200">品　書　き</h1>
+  <p class="page-head__note reveal" data-delay="400">昼は十一時から。十五時から、全部頼める</p>
+</header>
+
+<main>
+
+  <!-- ============ 名物：おすすめ六品 ============ -->
+  <section class="chapter signature" id="osusume">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">名物</p>
+        <h2 class="chapter__title">おすすめ</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <p class="chapter__lead">迷たら、これ。人気と、店主の推し</p>
+
+      <!-- 写真URLは assets/js/main.js の PLATE_IMAGES、品名・価格はこのHTMLを差し替えてください -->
+      <div class="sig-grid">
+        <figure class="sig">
+          <span class="sig__media"><img class="sig__img" data-plate-src="sig-karaage" alt="鶏の唐揚げ（サンプル画像）"></span>
+          <p class="sig__tag">人気</p>
+          <p class="sig__name">鶏の唐揚げ</p>
+          <p class="sig__price">฿119</p>
+        </figure>
+        <figure class="sig">
+          <span class="sig__media"><img class="sig__img" data-plate-src="sig-gyoza" alt="焼き餃子（サンプル画像）"></span>
+          <p class="sig__tag">人気</p>
+          <p class="sig__name">焼き餃子　五ヶ</p>
+          <p class="sig__price">฿99</p>
+        </figure>
+        <figure class="sig">
+          <span class="sig__media"><img class="sig__img" data-plate-src="sig-ramen" alt="淡麗鶏醤油そば（サンプル画像）"></span>
+          <p class="sig__tag">人気</p>
+          <p class="sig__name">淡麗鶏醤油そば</p>
+          <p class="sig__price">฿159</p>
+        </figure>
+        <figure class="sig">
+          <span class="sig__media"><img class="sig__img" data-plate-src="sig-chashu" alt="レアバラチャーシュー盛り合わせ（サンプル画像）"></span>
+          <p class="sig__tag sig__tag--push">店主の推し</p>
+          <p class="sig__name">レアバラチャーシュー盛り合わせ</p>
+          <p class="sig__price">฿159</p>
+        </figure>
+        <figure class="sig">
+          <span class="sig__media"><img class="sig__img" data-plate-src="sig-buta" alt="大衆豚焼肉皿（サンプル画像）"></span>
+          <p class="sig__tag sig__tag--push">店主の推し</p>
+          <p class="sig__name">大衆豚焼肉皿</p>
+          <p class="sig__price">฿159</p>
+        </figure>
+        <figure class="sig">
+          <span class="sig__media"><img class="sig__img" data-plate-src="sig-kimchi" alt="豚キムチ（サンプル画像）"></span>
+          <p class="sig__tag sig__tag--push">店主の推し</p>
+          <p class="sig__name">豚キムチ</p>
+          <p class="sig__price">฿159</p>
+        </figure>
+      </div>
+
+      <p class="chapter__note">あとは、ゆっくり選んでや</p>
+    </div>
+  </section>
+
+  <!-- ============ 昼の部 ============ -->
+  <section class="chapter" id="lunch">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">おひる</p>
+        <h2 class="chapter__title">昼の部</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <p class="chapter__lead">十一時から十五時まで。ごはん大盛、無料や</p>
+
+      <!-- 価格は確定後に ฿— を差し替えてください -->
+      <ul class="menu">
+        <li class="menu__row"><span class="menu__name">唐揚げ定食</span><span class="menu__dots"></span><span class="menu__price">฿—</span></li>
+        <li class="menu__row"><span class="menu__name">餃子定食</span><span class="menu__dots"></span><span class="menu__price">฿—</span></li>
+        <li class="menu__row"><span class="menu__name">炒飯セット</span><span class="menu__dots"></span><span class="menu__price">฿—</span></li>
+        <li class="menu__row"><span class="menu__name">天津飯セット</span><span class="menu__dots"></span><span class="menu__price">฿—</span></li>
+      </ul>
+
+      <p class="chapter__note">ラーメンは昼も夜も、全種ある</p>
+    </div>
+  </section>
+
+  <!-- ============ すぐ出る肴 ============ -->
+  <section class="chapter" id="sugu">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">まずは</p>
+        <h2 class="chapter__title">すぐ出る肴</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <p class="chapter__lead">待たせへん。一杯目のお供</p>
+
+      <ul class="menu">
+        <li class="menu__row"><span class="menu__name">枝豆</span><span class="menu__dots"></span><span class="menu__price">฿59</span></li>
+        <li class="menu__row"><span class="menu__name">もやしナムル</span><span class="menu__dots"></span><span class="menu__price">฿59</span></li>
+        <li class="menu__row"><span class="menu__name">パリパリ麺</span><span class="menu__dots"></span><span class="menu__price">฿59</span></li>
+        <li class="menu__row"><span class="menu__name">オニオンスライス</span><span class="menu__dots"></span><span class="menu__price">฿59</span></li>
+        <li class="menu__row"><span class="menu__name">なめたけおろし</span><span class="menu__dots"></span><span class="menu__price">฿79</span></li>
+        <li class="menu__row"><span class="menu__name">冷奴</span><span class="menu__dots"></span><span class="menu__price">฿79</span></li>
+        <li class="menu__row"><span class="menu__name">キムチ</span><span class="menu__dots"></span><span class="menu__price">฿79</span></li>
+        <li class="menu__row"><span class="menu__name">やみつききゅうり</span><span class="menu__dots"></span><span class="menu__price">฿79</span></li>
+        <li class="menu__row"><span class="menu__name">旨塩キャベツ</span><span class="menu__dots"></span><span class="menu__price">฿79</span></li>
+        <li class="menu__row"><span class="menu__name">たこわさ</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
+        <li class="menu__row"><span class="menu__name">混ぜるポテサラ</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 新鮮野菜 ============ -->
+  <section class="chapter" id="yasai">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">さっぱり</p>
+        <h2 class="chapter__title">新鮮野菜</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <ul class="menu">
+        <li class="menu__row"><span class="menu__name">パリパリラーメンサラダ</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
+        <li class="menu__row"><span class="menu__name">シーザーサラダ</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
+        <li class="menu__row"><span class="menu__name">豆富サラダ</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
+        <li class="menu__row"><span class="menu__name">豚しゃぶサラダ</span><span class="menu__dots"></span><span class="menu__price">฿139</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ こだわりの逸品 ============ -->
+  <section class="chapter" id="ippin">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">じっくり</p>
+        <h2 class="chapter__title">こだわりの逸品</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <ul class="menu">
+        <li class="menu__sub">一品料理</li>
+        <li class="menu__row"><span class="menu__name">とんぺい焼き</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
+        <li class="menu__row"><span class="menu__name">チーズとんぺい焼き</span><span class="menu__dots"></span><span class="menu__price">฿139</span></li>
+        <li class="menu__row"><span class="menu__name">だし巻き玉子</span><span class="menu__dots"></span><span class="menu__price">฿139</span></li>
+        <li class="menu__row"><span class="menu__name">ニラ玉</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
+        <li class="menu__row"><span class="menu__name">ネギチャーシュー</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
+        <li class="menu__row"><span class="menu__name">バラチャーシュー</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
+        <li class="menu__row"><span class="menu__name">レアバラチャーシュー盛り合わせ</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">チャーシューエッグ</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">4種盛り合わせ</span><span class="menu__dots"></span><span class="menu__price">฿199</span></li>
+        <li class="menu__row"><span class="menu__name">鶏の唐揚げ</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
+        <li class="menu__row"><span class="menu__name">鶏の唐揚げ おろしポン酢</span><span class="menu__dots"></span><span class="menu__price">฿139</span></li>
+        <li class="menu__row"><span class="menu__name">チキン南蛮</span><span class="menu__dots"></span><span class="menu__price">฿139</span></li>
+        <li class="menu__row"><span class="menu__name">豚キムチ</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">豚にらもやし炒め</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
+        <li class="menu__row"><span class="menu__name">大衆豚焼肉皿</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+
+        <li class="menu__sub">餃子・点心</li>
+        <li class="menu__row"><span class="menu__name">焼き餃子　五ヶ</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
+        <li class="menu__row"><span class="menu__name">ネギポン餃子</span><span class="menu__dots"></span><span class="menu__price">฿109</span></li>
+        <li class="menu__row"><span class="menu__name">揚げ餃子</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
+        <li class="menu__row"><span class="menu__name">揚げしゅうまい</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
+        <li class="menu__row"><span class="menu__name">蒸ししゅうまい</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
+
+        <li class="menu__sub">揚げもの</li>
+        <li class="menu__row"><span class="menu__name">フライドポテト</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
+        <li class="menu__row"><span class="menu__name">エビクリームコロッケ</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
+        <li class="menu__row"><span class="menu__name">アジフライ</span><span class="menu__dots"></span><span class="menu__price">฿139</span></li>
+        <li class="menu__row"><span class="menu__name">揚げ出し豆腐</span><span class="menu__dots"></span><span class="menu__price">฿139</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 麺と飯 ============ -->
+  <section class="chapter chapter--last" id="shime">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">〆に</p>
+        <h2 class="chapter__title">麺と飯</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <p class="chapter__lead">化学調味料、使てへん。鶏と水と、手間だけや</p>
+
+      <ul class="menu">
+        <li class="menu__sub">麺</li>
+        <li class="menu__row"><span class="menu__name">淡麗鶏醤油そば</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">淡麗鶏塩そば</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">鶏白湯醤油そば</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">鶏白湯塩そば</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">ジャン麺</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
+        <li class="menu__row"><span class="menu__name">各種ハーフ</span><span class="menu__dots"></span><span class="menu__price">฿129</span></li>
+        <li class="menu__row"><span class="menu__name">各種 全部のせ</span><span class="menu__dots"></span><span class="menu__price">฿199</span></li>
+        <li class="menu__row"><span class="menu__name">各種 スペシャル</span><span class="menu__dots"></span><span class="menu__price">฿250</span></li>
+
+        <li class="menu__sub">飯</li>
+        <li class="menu__row"><span class="menu__name">炒飯</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
+        <li class="menu__row"><span class="menu__name">天津炒飯</span><span class="menu__dots"></span><span class="menu__price">฿149</span></li>
+        <li class="menu__row"><span class="menu__name">天津飯</span><span class="menu__dots"></span><span class="menu__price">฿129</span></li>
+        <li class="menu__row"><span class="menu__name">豚焼肉丼</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
+        <li class="menu__row"><span class="menu__name">バラチャーシュー丼</span><span class="menu__dots"></span><span class="menu__price">฿129</span></li>
+        <li class="menu__row"><span class="menu__name">レアチャーシュー丼</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
+        <li class="menu__row"><span class="menu__name">チャーシューエッグ丼</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
+        <li class="menu__row"><span class="menu__name">ライス</span><span class="menu__dots"></span><span class="menu__price">฿39〜</span></li>
+      </ul>
+
+      <a class="more-link" href="index.html#access">店の場所を見る</a>
+
+      <p class="chapter__note">飲んだあとの一杯が、いちばん旨い</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ 奥付 ============ -->
+<footer class="colophon">
+  <img class="colophon__seal" src="assets/images/logo-seal.svg" alt="MENLABO酒場の印" width="64" height="64">
+  <nav class="colophon__nav">
+    <a href="index.html">表紙へ</a>
+    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">地図</a>
+  </nav>
+  <p class="colophon__text">大阪居酒屋 MENLABO酒場 — タイ・パタヤ</p>
+  <p class="colophon__copy">© 2026 MENLABO（OMOTENASHI CO., LTD.）</p>
+  <p class="colophon__legal"><a href="privacy.html">プライバシーポリシー</a></p>
+</footer>
+
+<script src="assets/js/ink.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

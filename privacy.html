@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>プライバシーポリシー — 大阪居酒屋 MENLABO酒場</title>
+<meta name="description" content="大阪居酒屋 MENLABO酒場（運営：OMOTENASHI CO., LTD.）のウェブサイトにおける個人情報の取扱いについて。">
+<meta name="robots" content="all">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<!-- 墨：濡れた紙のWebGLキャンバス（全画面・最前面・操作は透過） -->
+<canvas id="ink-canvas" aria-hidden="true"></canvas>
+
+<!-- ============ グローバルナビ（下層ページは常時表示） ============ -->
+<nav class="site-head is-solid" id="site-head">
+  <a class="site-head__brand" href="index.html" aria-label="MENLABO酒場 トップへ">
+    <img class="site-head__seal" src="assets/images/logo-seal.svg" alt="" width="32" height="32">
+    <span class="site-head__name">MENLABO酒場</span>
+  </a>
+  <div class="site-head__nav">
+    <a href="menu.html">品書き</a>
+    <a href="index.html#access">在処</a>
+    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">地図</a>
+  </div>
+</nav>
+
+<!-- ============ 扉（小） ============ -->
+<header class="page-head">
+  <p class="page-head__kicker reveal">大阪居酒屋 MENLABO酒場</p>
+  <h1 class="page-head__title reveal" data-delay="200">プライバシーポリシー</h1>
+  <p class="page-head__note reveal" data-delay="400">個人情報の取扱いについて</p>
+</header>
+
+<main>
+  <section class="chapter chapter--last">
+    <div class="legal">
+
+      <p class="legal__intro">
+        OMOTENASHI CO., LTD.（以下「当社」といいます）は、当社が運営する「大阪居酒屋 MENLABO酒場」のウェブサイト（以下「本サイト」といいます）における個人情報の取扱いについて、以下のとおりプライバシーポリシーを定めます。
+      </p>
+
+      <section class="legal__sec">
+        <h2>1. 事業者情報</h2>
+        <dl class="legal__info">
+          <div><dt>運営事業者</dt><dd>OMOTENASHI CO., LTD.</dd></div>
+          <div><dt>所在地</dt><dd>152/27 Moo 5, Naklua Soi 16, Bang Lamung, Chon Buri 20150, Thailand</dd></div>
+          <div><dt>連絡先</dt><dd>Tel: 096-147-9518　/　Email: menlabo.pattaya@gmail.com</dd></div>
+        </dl>
+      </section>
+
+      <section class="legal__sec">
+        <h2>2. 取得する情報</h2>
+        <p>本サイトは、会員登録などお客様自身に情報をご入力いただく機能を設けていません。ただし、本サイトの閲覧にあたり、以下の情報を自動的に取得する場合があります。</p>
+        <ul>
+          <li>IPアドレス、ブラウザの種類・言語、端末・OSの情報</li>
+          <li>閲覧されたページ、滞在時間、参照元（リンク元）のURL</li>
+          <li>Cookie およびこれに類する技術による識別情報</li>
+        </ul>
+        <p>また、お客様がメールにてお問い合わせをいただいた場合、お名前・メールアドレス・お問い合わせ内容を取得します。</p>
+      </section>
+
+      <section class="legal__sec">
+        <h2>3. 利用目的</h2>
+        <p>取得した情報は、以下の目的の範囲内で利用します。</p>
+        <ul>
+          <li>本サイトの運営・維持・改善のため</li>
+          <li>本サイトの利用状況の分析のため</li>
+          <li>お問い合わせへの対応のため</li>
+          <li>不正アクセスその他の不正行為の防止のため</li>
+        </ul>
+      </section>
+
+      <section class="legal__sec">
+        <h2>4. アクセス解析ツールについて</h2>
+        <p>本サイトでは、サイトの利用状況を把握するため、Google LLC が提供する「Google Analytics」を利用しています。Google Analytics は Cookie を使用してお客様の閲覧データを収集しますが、これらは匿名で収集されており、個人を特定するものではありません。</p>
+        <p>お客様は、ブラウザの設定で Cookie を無効にするか、Google が提供するオプトアウトアドオンを利用することで、データの収集を停止できます。Google によるデータの取扱いについては、<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google プライバシーポリシー</a>をご確認ください。</p>
+      </section>
+
+      <section class="legal__sec">
+        <h2>5. Cookie について</h2>
+        <p>本サイトは、利便性の向上およびアクセス解析のため Cookie を使用することがあります。お客様はブラウザの設定により Cookie を無効にできますが、その場合、本サイトの一部機能が正しく動作しないことがあります。</p>
+      </section>
+
+      <section class="legal__sec">
+        <h2>6. 外部サービスの利用</h2>
+        <p>本サイトでは、地図の表示に「Google Maps」、フォントの表示に「Google Fonts」を利用しています。これらの機能の利用に伴い、お客様の情報が各サービスの提供事業者へ送信される場合があります。各サービスにおける情報の取扱いは、それぞれの提供事業者の定めによります。</p>
+      </section>
+
+      <section class="legal__sec">
+        <h2>7. 第三者への提供</h2>
+        <p>当社は、法令に基づく場合を除き、あらかじめお客様の同意を得ることなく、取得した個人情報を第三者に提供しません。ただし、前各項に記載した解析・地図等のサービス提供事業者に対し、各サービスの提供に必要な範囲で情報が送信される場合があります。</p>
+      </section>
+
+      <section class="legal__sec">
+        <h2>8. 個人情報の管理</h2>
+        <p>当社は、取得した個人情報を適切に管理し、漏えい・滅失・毀損の防止に努めます。</p>
+      </section>
+
+      <section class="legal__sec">
+        <h2>9. 開示・訂正・削除等のご請求</h2>
+        <p>お客様は、ご自身の個人情報について、開示・訂正・利用停止・削除等を求めることができます。ご希望の場合は、下記のお問い合わせ窓口までご連絡ください。本人確認のうえ、適用される法令に従い対応いたします。</p>
+      </section>
+
+      <section class="legal__sec">
+        <h2>10. 本ポリシーの変更</h2>
+        <p>当社は、必要に応じて本ポリシーを変更することがあります。重要な変更を行う場合は、本ページにてお知らせします。</p>
+      </section>
+
+      <section class="legal__sec">
+        <h2>11. お問い合わせ窓口</h2>
+        <dl class="legal__info">
+          <div><dt>事業者</dt><dd>OMOTENASHI CO., LTD.</dd></div>
+          <div><dt>Email</dt><dd>menlabo.pattaya@gmail.com</dd></div>
+          <div><dt>電話</dt><dd>096-147-9518</dd></div>
+        </dl>
+      </section>
+
+      <p class="legal__date">制定日：2026年6月15日</p>
+
+      <a class="more-link" href="index.html">表紙へもどる</a>
+
+    </div>
+  </section>
+</main>
+
+<!-- ============ 奥付 ============ -->
+<footer class="colophon">
+  <img class="colophon__seal" src="assets/images/logo-seal.svg" alt="MENLABO酒場の印" width="64" height="64">
+  <nav class="colophon__nav">
+    <a href="index.html">表紙へ</a>
+    <a href="menu.html">品書き</a>
+  </nav>
+  <p class="colophon__text">大阪居酒屋 MENLABO酒場 — タイ・パタヤ</p>
+  <p class="colophon__copy">© 2026 MENLABO（OMOTENASHI CO., LTD.）</p>
+  <p class="colophon__legal"><a href="privacy.html">プライバシーポリシー</a></p>
+</footer>
+
+<script src="assets/js/ink.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
