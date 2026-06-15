@@ -16,13 +16,13 @@ const PLATE_IMAGES = {
   sakana: 'https://images.unsplash.com/photo-1562967914-608f82629710?w=1200&q=75&auto=format&fit=crop',
   sake:   'https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=1200&q=75&auto=format&fit=crop',
   men:    'https://images.unsplash.com/photo-1535007813616-79dc02ba4021?w=1200&q=75&auto=format&fit=crop',
-  // 品書きページ「おすすめ六品」の写真
-  'sig-karaage': 'https://images.unsplash.com/photo-1562967914-608f82629710?w=700&q=75&auto=format&fit=crop',
-  'sig-gyoza':   'https://images.unsplash.com/photo-1496116218417-1a781b1c416c?w=700&q=75&auto=format&fit=crop',
-  'sig-ramen':   'https://images.unsplash.com/photo-1535007813616-79dc02ba4021?w=700&q=75&auto=format&fit=crop',
-  'sig-chashu':  'https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=700&q=75&auto=format&fit=crop',
-  'sig-buta':    'https://images.unsplash.com/photo-1604908177453-7462950a6a3b?w=700&q=75&auto=format&fit=crop',
-  'sig-kimchi':  'https://images.unsplash.com/photo-1626804475297-41608ea09aeb?w=700&q=75&auto=format&fit=crop',
+  // 品書きページ「おすすめ六品」の写真（assets/images/menu/ に同名で置けば差し替わる）
+  'sig-karaage': 'assets/images/menu/karaage.jpg',       // 鶏の唐揚げ
+  'sig-gyoza':   'assets/images/menu/yaki-gyoza.jpg',         // 焼き餃子
+  'sig-ramen':   'assets/images/menu/tanrei-tori-shoyu-soba-regular.jpg',   // 淡麗鶏醤油そば
+  'sig-chashu':  'assets/images/menu/rare-bara-chashu-moriawase.jpg',        // レアバラチャーシュー盛り合わせ
+  'sig-buta':    'assets/images/menu/buta-yakiniku.jpg',      // 大衆豚焼肉皿
+  'sig-kimchi':  'assets/images/menu/buta-kimchi.jpg',   // 豚キムチ
 };
 const PLATE_FALLBACK = 'assets/images/fallback.svg';
 
