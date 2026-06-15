@@ -11,11 +11,11 @@ const ROTATOR_DURATION  = 520;    // 回転1回の既定の長さ(ms)
 // --- 写真（サンプル画像）。本番写真に差し替える時はここのURLを変えるだけ ---
 // トーンの方針：昼は明るく、十五時以降は黒背景の艶（夜の居酒屋写真）
 const PLATE_IMAGES = {
-  lunch:  'https://images.unsplash.com/photo-1591814468924-caf88d1232e1?w=1200&q=75&auto=format&fit=crop',
-  turn:   'https://images.unsplash.com/photo-1554797589-7241bb691973?w=1600&q=75&auto=format&fit=crop',
-  sakana: 'https://images.unsplash.com/photo-1562967914-608f82629710?w=1200&q=75&auto=format&fit=crop',
-  sake:   'https://images.unsplash.com/photo-1535958636474-b021ee887b13?w=1200&q=75&auto=format&fit=crop',
-  men:    'https://images.unsplash.com/photo-1535007813616-79dc02ba4021?w=1200&q=75&auto=format&fit=crop',
+  lunch:  'assets/images/lunch.jpg',    // 昼：定食・ラーメン
+  turn:   'assets/images/noren.jpg',    // 十五時：全幅・夕景／暖簾
+  sakana: 'assets/images/sakana.jpg',   // 一杯目：肴
+  sake:   'assets/images/sake.jpg',     // 二杯目：酒
+  men:    'assets/images/ramen.jpg',    // 〆に：麺
   // 品書きページ「おすすめ六品」の写真（assets/images/ に同名で置けば差し替わる）
   'sig-karaage': 'assets/images/karaage.jpg',                    // 鶏の唐揚げ
   'sig-gyoza':   'assets/images/yaki-gyoza.jpg',                 // 焼き餃子
