@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://menlabo-pattaya.com/sitemap.xml
+Sitemap: https://www.menlabo-pattaya.com/sitemap.xml
