@@ -863,6 +863,17 @@ body.is-ready .reveal {
   50%      { box-shadow: 0 0 0 6px rgba(168, 57, 43, 0); }
 }
 
+/* レスポンシブ改行ヘルパー：br.br-sp はモバイルだけ改行、.pc-only はモバイルで隠す */
+.br-sp { display: none; }
+
+/* 中央寄せの日本語が「た。」など1文字で折り返さないよう、行長を均等化する */
+.prose p,
+.chapter__lead,
+.chapter__note,
+.colophon__text {
+  text-wrap: balance;
+}
+
 /* 小さい画面 */
 @media (max-width: 600px) {
   .chapter { padding: 16vh 1.3rem; }
@@ -870,9 +881,25 @@ body.is-ready .reveal {
   .info__row { gap: 1.4rem; }
   .cover__kicker { letter-spacing: .35em; text-indent: .35em; }
 
+  /* モバイルだけ改行する／PC専用要素を隠す */
+  .br-sp { display: inline; }
+  .pc-only { display: none; }
+
   /* モバイルでは墨（視認性低下）と、それを案内するヒント文を非表示にする */
   #ink-canvas { display: none; }
   .cover__hint { display: none; }
+
+  /* 表紙：「暖簾をくぐる」を隠し、下部CTAに動線を任せる。余白も詰める */
+  .cover__scroll { display: none; }
+  .cover { padding-bottom: 14vh; }
+
+  /* 十五時：大きな文字で text-indent が効いて右へ寄るので中央に戻す */
+  .chapter--turn .turn__time,
+  .chapter--turn .turn__line { text-indent: 0; }
+
+  /* 章末の朱ダッシュは狭い画面で1本だけ折り返して崩れるので省く */
+  .chapter__note::before,
+  .chapter__note::after { content: none; }
 
   /* ナビは印のみ残し、ワードマークは省いてリンクの幅を確保 */
   .site-head__name { display: none; }
