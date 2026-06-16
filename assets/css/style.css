@@ -869,6 +869,11 @@ body.is-ready .reveal {
   .chapter__head { margin-bottom: 3.5rem; }
   .info__row { gap: 1.4rem; }
   .cover__kicker { letter-spacing: .35em; text-indent: .35em; }
+
+  /* モバイルでは墨（視認性低下）と、それを案内するヒント文を非表示にする */
+  #ink-canvas { display: none; }
+  .cover__hint { display: none; }
+
   /* ナビは印のみ残し、ワードマークは省いてリンクの幅を確保 */
   .site-head__name { display: none; }
   .site-head__nav { gap: 1.1rem; }
