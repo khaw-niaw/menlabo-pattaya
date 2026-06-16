@@ -863,6 +863,134 @@ body.is-ready .reveal {
   50%      { box-shadow: 0 0 0 6px rgba(168, 57, 43, 0); }
 }
 
+/* --- 店舗情報ページ（/access） --- */
+
+/* 電話のタップ発信リンク */
+.info__tel {
+  color: var(--shu);
+  text-decoration: none;
+  border-bottom: 1px solid var(--shu);
+  padding-bottom: .1em;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .04em;
+}
+
+/* 外観・店内の写真ギャラリー（横長2列・モバイル1列） */
+.access-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.4rem 1.8rem;
+  max-width: 52rem;
+  margin: 1rem auto 0;
+}
+.access-fig { margin: 0; }
+.access-fig__media { display: block; overflow: hidden; }
+.access-fig__img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  filter: saturate(1.04) contrast(1.02);
+  transform: scale(1.05);
+  transition: transform 1.6s cubic-bezier(.22,.6,.2,1);
+}
+.chapter.is-open .access-fig__img { transform: scale(1); }
+.access-fig__cap {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: .78rem;
+  letter-spacing: .3em;
+  text-indent: .3em;
+  color: var(--sumi-soft);
+}
+
+/* Google Maps 埋め込み */
+.map-embed {
+  max-width: var(--measure);
+  margin: 0 auto 2.4rem;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border: 1px solid var(--rule);
+  background: var(--paper-deep);
+}
+.map-embed iframe { display: block; width: 100%; height: 100%; }
+
+/* 運転手に見せるカード */
+.driver-card {
+  max-width: 30rem;
+  margin: 4rem auto 3.5rem;
+  padding: 1.8rem 1.6rem;
+  text-align: center;
+  border: 1px solid var(--sumi);
+  background: rgba(255, 255, 255, .4);
+}
+.driver-card__label {
+  font-size: .74rem;
+  letter-spacing: .2em;
+  color: var(--shu);
+  margin-bottom: 1.1rem;
+}
+.driver-card__th {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: .8rem;
+}
+.driver-card__en {
+  font-size: .85rem;
+  line-height: 1.7;
+  color: var(--sumi-soft);
+}
+
+/* SNS・問い合わせのリンク群（2列・全ボタン均等サイズ） */
+.sns-links {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  max-width: 30rem;
+  margin: 0 auto;
+}
+.sns-links__item {
+  padding: .95rem 1rem;
+  text-align: center;
+  font-size: .9rem;
+  letter-spacing: .18em;
+  text-indent: .18em;
+  text-decoration: none;
+  color: var(--sumi);
+  border: 1px solid var(--sumi);
+  transition: background-color .4s ease, color .4s ease, border-color .4s ease;
+}
+.sns-links__item:hover {
+  background-color: var(--sumi);
+  color: var(--paper);
+}
+.sns-links__item--primary {
+  background-color: var(--shu);
+  border-color: var(--shu);
+  color: var(--paper);
+}
+.sns-links__item--primary:hover { background-color: var(--sumi); border-color: var(--sumi); }
+.sns-links__item--soon {
+  border-style: dashed;
+  border-color: var(--rule);
+  color: var(--sumi-soft);
+  cursor: default;
+}
+.sns-links__item--soon:hover { background: none; color: var(--sumi-soft); }
+
+/* 設備など長いラベルの一覧は、折り返さず幅にゆとりを持たせる */
+.info--roomy { max-width: 32rem; }
+.info--roomy .info__row { padding: 1.5rem 0; gap: 2rem; }
+.info--roomy .info__row dt { width: 8.5em; white-space: nowrap; }
+
+@media (max-width: 600px) {
+  .access-gallery { grid-template-columns: 1fr; gap: 2rem; max-width: 22rem; }
+  .map-embed { aspect-ratio: 4 / 3; }
+  /* 設備はモバイルではラベルを上、値を下に積んで読みやすく */
+  .info--roomy .info__row { flex-direction: column; gap: .35rem; }
+  .info--roomy .info__row dt { width: auto; }
+}
+
 /* レスポンシブ改行ヘルパー：br.br-sp はモバイルだけ改行、.pc-only はモバイルで隠す */
 .br-sp { display: none; }
 
