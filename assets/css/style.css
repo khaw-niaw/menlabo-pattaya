@@ -885,6 +885,9 @@ body.is-ready .reveal {
   .br-sp { display: inline; }
   .pc-only { display: none; }
 
+  /* 本文の固定改行を解除し text-wrap: balance に任せる（PC用 <br> は残る） */
+  .prose br:not(.br-sp) { display: none; }
+
   /* モバイルでは墨（視認性低下）と、それを案内するヒント文を非表示にする */
   #ink-canvas { display: none; }
   .cover__hint { display: none; }
