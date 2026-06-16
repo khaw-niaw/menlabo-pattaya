@@ -104,6 +104,13 @@ void main() {
   const canvas = document.getElementById('ink-canvas');
   if (!canvas) return;
 
+  // モバイルでは墨を出さない（視認性・電池消費の配慮）。CSSでも非表示にしているが、
+  // ここで WebGL 自体を起動させないことで描画ループも回さない。
+  if (window.matchMedia('(max-width: 600px)').matches) {
+    document.body.classList.add('no-ink');
+    return;
+  }
+
   const gl = canvas.getContext('webgl', {
     alpha: true,
     premultipliedAlpha: false,
