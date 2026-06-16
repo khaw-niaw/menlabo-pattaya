@@ -195,3 +195,27 @@ window.addEventListener('resize', () => {
   clearTimeout(rotatorResizeTimer);
   rotatorResizeTimer = setTimeout(() => rotatorRemeasurers.forEach((m) => m()), 180);
 });
+
+/* --- Google Analytics：主要ボタンのクリックを計測 ---
+   リンク先と設置場所を自動判定してイベント送信。HTMLは触らず一括で対応する。 */
+document.addEventListener('click', (e) => {
+  const a = e.target.closest('a');
+  if (!a || typeof window.gtag !== 'function') return;
+
+  const href = a.getAttribute('href') || '';
+  // 設置場所のラベル（イベントの内訳が見られる）
+  const area =
+    a.closest('.site-head') ? 'header' :
+    a.closest('.m-cta')     ? 'cta' :
+    a.closest('.colophon')  ? 'footer' :
+    a.closest('#access')    ? 'access' :
+    a.classList.contains('more-link') ? 'inline' : 'other';
+
+  if (href.includes('maps.app.goo.gl') || href.includes('google.com/maps')) {
+    // 地図・道順クリック（来店意図＝最重要）
+    window.gtag('event', 'map_click', { area, link_url: href });
+  } else if (href === '/menu' || href.startsWith('/menu')) {
+    // 品書きクリック（興味）
+    window.gtag('event', 'menu_click', { area });
+  }
+}, { passive: true });
