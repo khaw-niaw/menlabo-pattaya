@@ -65,16 +65,10 @@ if (statusEl) {
   statusEl.classList.toggle('is-open', s.open);
 }
 
-/* --- 下部CTAバー：表紙を抜けたらせり上がる（要素はモバイルのみ表示） --- */
+/* --- 下部CTAバー：モバイルで常時表示 --- */
 const mCta = document.getElementById('m-cta');
 if (mCta) {
-  const coverEl = document.querySelector('.cover');
-  const toggleCta = () => {
-    const past = coverEl ? window.scrollY > coverEl.offsetHeight - 140 : true;
-    mCta.classList.toggle('is-shown', past);
-  };
-  toggleCta();
-  window.addEventListener('scroll', toggleCta, { passive: true });
+  mCta.classList.add('is-shown');
 }
 
 /* --- グローバルナビ：表紙を抜けたら紙色の地を出す --- */
