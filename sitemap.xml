@@ -7,9 +7,21 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://www.menlabo-pattaya.com/en</loc>
+    <lastmod>2026-06-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.menlabo-pattaya.com/menu</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.menlabo-pattaya.com/access</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
