@@ -123,6 +123,63 @@ body.no-ink .cover__hint { visibility: hidden; }
   border-color: var(--shu);
 }
 
+/* --- 言語スイッチ（ヘッダー/フッター共通。JP / EN / TH、THは準備中で無効） ---
+   小さく静かに。ナビより一段下げ、奥付の品を邪魔しない */
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: .5em;
+  font-size: .7rem;
+  letter-spacing: .1em;
+}
+/* a はナビ（.site-head__nav a）の font-size を継いで大きくなるため明示上書きで小さく保つ */
+.lang-switch a,
+.lang-switch span {
+  font-size: .7rem;
+  letter-spacing: .1em;
+  text-indent: 0;
+}
+.lang-switch a {
+  text-decoration: none;
+  color: var(--sumi-soft);
+  padding-bottom: .15em;
+  border-bottom: 1px solid transparent;
+  transition: color .3s ease, border-color .3s ease;
+}
+.lang-switch a:hover {
+  color: var(--shu);
+}
+.lang-switch a[aria-current="page"] {
+  color: var(--shu);
+  border-color: var(--shu);
+}
+.lang-switch__sep { color: var(--rule); }
+.lang-switch__soon { color: var(--rule); cursor: default; }
+
+/* ヘッダー内：ナビとの間に細い仕切り */
+.site-head__nav .lang-switch {
+  margin-left: .2rem;
+  padding-left: clamp(.6rem, 2vw, 1.1rem);
+  border-left: 1px solid var(--rule);
+}
+
+/* フッター内：奥付の静かな右下に置く（既存の中央構成＝印・nav・店名・著作権・プライバシーは
+   元の流れのまま。新要素の言語スイッチだけを絶対配置で隅へ＝日本語版の見た目を崩さない） */
+.colophon { position: relative; }
+.colophon .lang-switch {
+  position: absolute;
+  right: clamp(1.2rem, 4vw, 2.6rem);
+  bottom: 1.6rem;
+  margin: 0;
+}
+@media (max-width: 600px) {
+  /* モバイルは下部CTAバーと干渉するので、流し込みで中央に戻す */
+  .colophon .lang-switch {
+    position: static;
+    margin: 0 auto 2.4rem;
+  }
+}
+
 /* --- 扉（表紙） --- */
 .cover {
   min-height: 100svh;
@@ -659,6 +716,15 @@ body.no-ink .cover__hint { visibility: hidden; }
 }
 .info__row dd { font-size: .98rem; letter-spacing: .1em; }
 
+/* 英語版だけ：ラベル(dt)が日本語2文字より長く、3.5em＋字間.4emでは dd と重なるため
+   列幅を広げ字間を詰める。selector を html[lang="en"] に限定＝日本語版(lang="ja")には不影響 */
+html[lang="en"] .info__row { gap: 1.6rem; }
+html[lang="en"] .info__row dt {
+  width: 7em;
+  letter-spacing: .04em;
+}
+html[lang="en"] .info__row dd { letter-spacing: .01em; }
+
 .info__map {
   display: block;
   width: fit-content;
@@ -1012,6 +1078,9 @@ body.is-ready .reveal {
   .chapter { padding: 16vh 1.3rem; }
   .chapter__head { margin-bottom: 3.5rem; }
   .info__row { gap: 1.4rem; }
+  /* 英語版のみ：狭い画面ではラベルと値を縦積みにして重なりを防ぐ（lang="ja"には不影響） */
+  html[lang="en"] .info__row { flex-direction: column; gap: .3rem; }
+  html[lang="en"] .info__row dt { width: auto; }
   .cover__kicker { letter-spacing: .35em; text-indent: .35em; }
 
   /* モバイルだけ改行する／PC専用要素を隠す */
