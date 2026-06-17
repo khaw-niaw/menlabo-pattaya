@@ -635,8 +635,7 @@ body.no-ink .cover__hint { visibility: hidden; }
   letter-spacing: .25em;
   color: var(--sumi-soft);
 }
-/* タイトルを行ごとにブロック化（全端末で同じ2行・中央揃え） */
-.page-head__title-line { display: block; }
+/* タイトルの各行：PCは横並び（・区切り）、モバイルだけ縦に積む（下の @media 参照） */
 
 /* --- 店舗情報 --- */
 .info {
@@ -993,6 +992,8 @@ body.is-ready .reveal {
   .info--roomy .info__row dt { width: auto; }
   /* SNSボタンはモバイルでは縦1列・全幅で均等に */
   .sns-links { grid-template-columns: 1fr; }
+  /* 扉のタイトルはモバイルだけ各行を縦に積む（PCは1行） */
+  .page-head__title-line { display: block; }
 }
 
 /* レスポンシブ改行ヘルパー：br.br-sp はモバイルだけ改行、.pc-only はモバイルで隠す */
