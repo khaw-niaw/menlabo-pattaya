@@ -635,6 +635,8 @@ body.no-ink .cover__hint { visibility: hidden; }
   letter-spacing: .25em;
   color: var(--sumi-soft);
 }
+/* タイトルを行ごとにブロック化（全端末で同じ2行・中央揃え） */
+.page-head__title-line { display: block; }
 
 /* --- 店舗情報 --- */
 .info {
