@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L9W79GXPE1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L9W79GXPE1');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu — Osaka Izakaya MENLABO Sakaba</title>
+<meta name="description" content="The MENLABO Sakaba menu. Set meals and ramen by day; the full menu from 3pm — quick small plates, fresh salads, signature dishes, and noodles &amp; rice to finish.">
+<meta property="og:title" content="Menu — Osaka Izakaya MENLABO Sakaba">
+<meta property="og:description" content="Start with a quick plate and a drink. Finish with a bowl of noodles.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.menlabo-pattaya.com/en/menu">
+<link rel="canonical" href="https://www.menlabo-pattaya.com/en/menu">
+
+<!-- 多言語：言語別URLの相互参照 -->
+<link rel="alternate" hreflang="ja" href="https://www.menlabo-pattaya.com/menu">
+<link rel="alternate" hreflang="en" href="https://www.menlabo-pattaya.com/en/menu">
+<link rel="alternate" hreflang="x-default" href="https://www.menlabo-pattaya.com/menu">
+
+<!-- ファビコン（ファイルはサイト直下。/en/ から見て親=サイト直下なので ../ で参照） -->
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#f3eee4">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<!-- 墨：濡れた紙のWebGLキャンバス（全画面・最前面・操作は透過） -->
+<canvas id="ink-canvas" aria-hidden="true"></canvas>
+
+<!-- ============ グローバルナビ（下層ページは常時表示） ============ -->
+<nav class="site-head is-solid" id="site-head">
+  <a class="site-head__brand" href="/en" aria-label="MENLABO Sakaba — home">
+    <img class="site-head__seal" src="../assets/images/logo-seal.svg" alt="" width="32" height="32">
+    <span class="site-head__name">MENLABO Sakaba</span>
+  </a>
+  <div class="site-head__nav">
+    <a href="/en/menu" aria-current="page">Menu</a>
+    <a href="/en/access">Find us</a>
+    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">Map</a>
+    <div class="lang-switch" aria-label="Language">
+      <a href="/menu">JP</a>
+      <span class="lang-switch__sep" aria-hidden="true">/</span>
+      <a href="/en/menu" aria-current="page">EN</a>
+      <span class="lang-switch__sep" aria-hidden="true">/</span>
+      <span class="lang-switch__soon" aria-disabled="true" title="準備中 / Coming soon">TH</span>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ 扉（小） ============ -->
+<header class="page-head">
+  <p class="page-head__kicker reveal">Osaka Izakaya MENLABO Sakaba</p>
+  <h1 class="page-head__title reveal" data-delay="200">Menu</h1>
+  <p class="page-head__note reveal" data-delay="400">Lunch from eleven. From three, everything's on the table.</p>
+</header>
+
+<main>
+
+  <!-- ============ 名物：おすすめ六品 ============ -->
+  <section class="chapter signature" id="osusume">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">Signature</p>
+        <h2 class="chapter__title">Our Picks</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <p class="chapter__lead">Not sure? Start here. Crowd favorites and the owner's picks.</p>
+
+      <div class="sig-grid">
+        <figure class="sig">
+          <span class="sig__media"><img class="sig__img" data-plate-src="sig-karaage" alt="Fried chicken karaage"></span>
+          <p class="sig__tag">Popular</p>
+          <p class="sig__name">Fried Chicken (Karaage)</p>
+          <p class="sig__price">฿119</p>
+        </figure>
+        <figure class="sig">
+          <span class="sig__media"><img class="sig__img" data-plate-src="sig-gyoza" alt="Pan-fried gyoza"></span>
+          <p class="sig__tag">Popular</p>
+          <p class="sig__name">Pan-fried Gyoza (5 pc)</p>
+          <p class="sig__price">฿99</p>
+        </figure>
+        <figure class="sig">
+          <span class="sig__media"><img class="sig__img" data-plate-src="sig-ramen" alt="Clear chicken shoyu soba"></span>
+          <p class="sig__tag">Popular</p>
+          <p class="sig__name">Clear Chicken Shoyu Soba</p>
+          <p class="sig__price">฿159</p>
+        </figure>
+        <figure class="sig">
+          <span class="sig__media"><img class="sig__img" data-plate-src="sig-chashu" alt="Rare pork belly chashu platter"></span>
+          <p class="sig__tag sig__tag--push">Owner's pick</p>
+          <p class="sig__name">Rare Pork Belly Chashu Platter</p>
+          <p class="sig__price">฿159</p>
+        </figure>
+        <figure class="sig">
+          <span class="sig__media"><img class="sig__img" data-plate-src="sig-buta" alt="Grilled pork plate"></span>
+          <p class="sig__tag sig__tag--push">Owner's pick</p>
+          <p class="sig__name">Grilled Pork Plate</p>
+          <p class="sig__price">฿159</p>
+        </figure>
+        <figure class="sig">
+          <span class="sig__media"><img class="sig__img" data-plate-src="sig-kimchi" alt="Pork kimchi"></span>
+          <p class="sig__tag sig__tag--push">Owner's pick</p>
+          <p class="sig__name">Pork Kimchi</p>
+          <p class="sig__price">฿159</p>
+        </figure>
+      </div>
+
+      <p class="chapter__note">Take your time with the rest.</p>
+    </div>
+  </section>
+
+  <!-- ============ 昼の部 ============ -->
+  <section class="chapter" id="lunch">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">Midday</p>
+        <h2 class="chapter__title">Lunch</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <p class="chapter__lead">From eleven to three. Extra rice, on the house.</p>
+
+      <ul class="menu">
+        <li class="menu__row"><span class="menu__name">Karaage Set</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">Gyoza Set</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
+        <li class="menu__row"><span class="menu__name">Fried Rice Set</span><span class="menu__dots"></span><span class="menu__price">฿229</span></li>
+        <li class="menu__row"><span class="menu__name">Tenshin-don Set</span><span class="menu__dots"></span><span class="menu__price">฿239</span></li>
+      </ul>
+
+      <p class="chapter__note">All ramen, all day — lunch and night.</p>
+    </div>
+  </section>
+
+  <!-- ============ すぐ出る肴 ============ -->
+  <section class="chapter" id="sugu">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">To start</p>
+        <h2 class="chapter__title">Quick Plates</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <p class="chapter__lead">No waiting. Made for your first drink.</p>
+
+      <ul class="menu">
+        <li class="menu__row"><span class="menu__name">Edamame</span><span class="menu__dots"></span><span class="menu__price">฿59</span></li>
+        <li class="menu__row"><span class="menu__name">Bean Sprout Namul</span><span class="menu__dots"></span><span class="menu__price">฿59</span></li>
+        <li class="menu__row"><span class="menu__name">Crispy Noodle Chips</span><span class="menu__dots"></span><span class="menu__price">฿59</span></li>
+        <li class="menu__row"><span class="menu__name">Sliced Onion</span><span class="menu__dots"></span><span class="menu__price">฿59</span></li>
+        <li class="menu__row"><span class="menu__name">Nametake &amp; Grated Radish</span><span class="menu__dots"></span><span class="menu__price">฿79</span></li>
+        <li class="menu__row"><span class="menu__name">Kimchi</span><span class="menu__dots"></span><span class="menu__price">฿79</span></li>
+        <li class="menu__row"><span class="menu__name">Moreish Cucumber</span><span class="menu__dots"></span><span class="menu__price">฿79</span></li>
+        <li class="menu__row"><span class="menu__name">Salted Cabbage</span><span class="menu__dots"></span><span class="menu__price">฿79</span></li>
+        <li class="menu__row"><span class="menu__name">Octopus Wasabi</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
+        <li class="menu__row"><span class="menu__name">Mix-it-yourself Potato Salad</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 新鮮野菜 ============ -->
+  <section class="chapter" id="yasai">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">Fresh</p>
+        <h2 class="chapter__title">Salads</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <ul class="menu">
+        <li class="menu__row"><span class="menu__name">Crispy Ramen Salad</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
+        <li class="menu__row"><span class="menu__name">Caesar Salad</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
+        <li class="menu__row"><span class="menu__name">Pork Shabu Salad</span><span class="menu__dots"></span><span class="menu__price">฿139</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ こだわりの逸品 ============ -->
+  <section class="chapter" id="ippin">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">Take your time</p>
+        <h2 class="chapter__title">Specialties</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <ul class="menu">
+        <li class="menu__sub">À la carte</li>
+        <li class="menu__row"><span class="menu__name">Tonpei-yaki</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
+        <li class="menu__row"><span class="menu__name">Cheese Tonpei-yaki</span><span class="menu__dots"></span><span class="menu__price">฿139</span></li>
+        <li class="menu__row"><span class="menu__name">Dashi Rolled Omelet</span><span class="menu__dots"></span><span class="menu__price">฿139</span></li>
+        <li class="menu__row"><span class="menu__name">Garlic Chive Omelet</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
+        <li class="menu__row"><span class="menu__name">Chashu with Scallions</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
+        <li class="menu__row"><span class="menu__name">Pork Belly Chashu</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
+        <li class="menu__row"><span class="menu__name">Rare Pork Belly Chashu Platter</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">Chashu &amp; Egg</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">Four-kind Platter</span><span class="menu__dots"></span><span class="menu__price">฿199</span></li>
+        <li class="menu__row"><span class="menu__name">Fried Chicken (Karaage)</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
+        <li class="menu__row"><span class="menu__name">Karaage with Ponzu &amp; Radish</span><span class="menu__dots"></span><span class="menu__price">฿139</span></li>
+        <li class="menu__row"><span class="menu__name">Chicken Nanban</span><span class="menu__dots"></span><span class="menu__price">฿139</span></li>
+        <li class="menu__row"><span class="menu__name">Pork Kimchi</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">Stir-fried Pork, Chives &amp; Sprouts</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
+        <li class="menu__row"><span class="menu__name">Grilled Pork Plate</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+
+        <li class="menu__sub">Gyoza &amp; Dim Sum</li>
+        <li class="menu__row"><span class="menu__name">Pan-fried Gyoza (5 pc)</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
+        <li class="menu__row"><span class="menu__name">Gyoza with Scallion Ponzu</span><span class="menu__dots"></span><span class="menu__price">฿109</span></li>
+        <li class="menu__row"><span class="menu__name">Fried Gyoza</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
+        <li class="menu__row"><span class="menu__name">Fried Shumai</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
+        <li class="menu__row"><span class="menu__name">Steamed Shumai</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
+
+        <li class="menu__sub">Fried</li>
+        <li class="menu__row"><span class="menu__name">French Fries</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
+        <li class="menu__row"><span class="menu__name">Potato Fries</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
+        <li class="menu__row"><span class="menu__name">Shrimp Cream Croquette</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
+        <li class="menu__row"><span class="menu__name">Fried Horse Mackerel</span><span class="menu__dots"></span><span class="menu__price">฿139</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 麺と飯 ============ -->
+  <section class="chapter chapter--last" id="shime">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">To finish</p>
+        <h2 class="chapter__title">Noodles &amp; Rice</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <p class="chapter__lead">No MSG. Just chicken, water, and patience.</p>
+
+      <ul class="menu">
+        <li class="menu__sub">Noodles</li>
+        <li class="menu__row"><span class="menu__name">Clear Chicken Shoyu Soba</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">Clear Chicken Shio Soba</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">Rich Chicken Paitan Shoyu</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">Rich Chicken Paitan Shio</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">Jan-men (spicy)</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
+        <li class="menu__row"><span class="menu__name">Any, Half Size</span><span class="menu__dots"></span><span class="menu__price">฿129</span></li>
+        <li class="menu__row"><span class="menu__name">Any, Loaded</span><span class="menu__dots"></span><span class="menu__price">฿199</span></li>
+        <li class="menu__row"><span class="menu__name">Any, Special</span><span class="menu__dots"></span><span class="menu__price">฿250</span></li>
+
+        <li class="menu__sub">Rice</li>
+        <li class="menu__row"><span class="menu__name">Fried Rice</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
+        <li class="menu__row"><span class="menu__name">Tenshin Fried Rice</span><span class="menu__dots"></span><span class="menu__price">฿149</span></li>
+        <li class="menu__row"><span class="menu__name">Tenshin-don</span><span class="menu__dots"></span><span class="menu__price">฿129</span></li>
+        <li class="menu__row"><span class="menu__name">Grilled Pork Bowl</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
+        <li class="menu__row"><span class="menu__name">Pork Belly Chashu Bowl</span><span class="menu__dots"></span><span class="menu__price">฿129</span></li>
+        <li class="menu__row"><span class="menu__name">Rare Chashu Bowl</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
+        <li class="menu__row"><span class="menu__name">Chashu &amp; Egg Bowl</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
+        <li class="menu__row"><span class="menu__name">Rice</span><span class="menu__dots"></span><span class="menu__price">฿39+</span></li>
+      </ul>
+
+      <a class="more-link" href="/en/access">See where we are</a>
+
+      <p class="chapter__note">Nothing beats the bowl after the drinks.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ 奥付 ============ -->
+<footer class="colophon">
+  <img class="colophon__seal" src="../assets/images/logo-seal.svg" alt="The seal of MENLABO Sakaba" width="64" height="64">
+  <nav class="colophon__nav">
+    <a href="/en">Home</a>
+    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">Map</a>
+  </nav>
+  <div class="lang-switch" aria-label="Language">
+    <a href="/menu">JP</a>
+    <span class="lang-switch__sep" aria-hidden="true">/</span>
+    <a href="/en/menu" aria-current="page">EN</a>
+    <span class="lang-switch__sep" aria-hidden="true">/</span>
+    <span class="lang-switch__soon" aria-disabled="true" title="準備中 / Coming soon">TH</span>
+  </div>
+  <p class="colophon__text">Osaka Izakaya MENLABO Sakaba<span class="pc-only"> — </span><br class="br-sp">Pattaya, Thailand</p>
+  <p class="colophon__copy">© 2026 MENLABO<br class="br-sp">(OMOTENASHI CO., LTD.)</p>
+  <p class="colophon__legal"><a href="/en/privacy">Privacy Policy</a></p>
+</footer>
+
+<script src="../assets/js/ink.js" defer></script>
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>
