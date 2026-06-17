@@ -235,6 +235,14 @@ body.no-ink .cover__hint { visibility: hidden; }
   background: var(--shu);
 }
 
+/* 英語版だけ：副題が漢字2文字でなくローマ字 "Sakaba" なので、
+   1.2em の字間（漢字前提）だと間延びする。Latin 語に合う字間へ調整（lang="ja"には不影響） */
+html[lang="en"] .cover__title-ja {
+  letter-spacing: .35em;
+  text-indent: .35em;
+  font-size: clamp(1.15rem, 3vw, 1.65rem);
+}
+
 .cover__line {
   font-size: clamp(1.15rem, 3.4vw, 1.5rem);
   letter-spacing: .2em;
