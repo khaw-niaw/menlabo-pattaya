@@ -943,12 +943,12 @@ body.is-ready .reveal {
   color: var(--sumi-soft);
 }
 
-/* SNS・問い合わせのリンク群（2列・全ボタン均等サイズ） */
+/* SNS・問い合わせのリンク群（現在3ボタン：PCは横1列・モバイルは縦1列で全均等） */
 .sns-links {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
-  max-width: 30rem;
+  max-width: 34rem;
   margin: 0 auto;
 }
 .sns-links__item {
@@ -991,6 +991,8 @@ body.is-ready .reveal {
   /* 設備はモバイルではラベルを上、値を下に積んで読みやすく */
   .info--roomy .info__row { flex-direction: column; gap: .35rem; }
   .info--roomy .info__row dt { width: auto; }
+  /* SNSボタンはモバイルでは縦1列・全幅で均等に */
+  .sns-links { grid-template-columns: 1fr; }
 }
 
 /* レスポンシブ改行ヘルパー：br.br-sp はモバイルだけ改行、.pc-only はモバイルで隠す */
