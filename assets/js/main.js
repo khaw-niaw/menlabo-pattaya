@@ -31,6 +31,17 @@ const PLATE_IMAGES = {
 };
 const PLATE_FALLBACK = 'assets/images/fallback.svg';
 
+/* --- 画像パスをページ階層に合わせて解決する ---
+   PLATE_IMAGES は "assets/..." 相対で定義しているが、/en/menu のような下層ページでは
+   そのままだと /en/assets/... を探して404になる。各HTMLで正しく指定済みの stylesheet link
+   （JP=assets/css/…, EN下層=../assets/css/…）から実際の assets ベースを導出して付け替える。
+   これで file:// でも Vercel でも、どの階層でも正しく解決する。http(s) 絶対URLは素通し。 */
+const STYLE_LINK = document.querySelector('link[rel="stylesheet"][href*="assets/css/style.css"]');
+const ASSET_BASE = STYLE_LINK
+  ? STYLE_LINK.getAttribute('href').replace(/assets\/css\/style\.css.*$/, '')
+  : '';
+const resolveAsset = (p) => (/^https?:\/\//.test(p) ? p : ASSET_BASE + p);
+
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /* --- 扉の段階表示：data-delay を CSS 変数に渡してから表示開始 --- */
@@ -115,9 +126,9 @@ document.querySelectorAll('[data-plate-src]').forEach((img) => {
   img.loading = 'lazy';
   img.onerror = () => {
     img.onerror = null;
-    img.src = PLATE_FALLBACK;
+    img.src = resolveAsset(PLATE_FALLBACK);
   };
-  img.src = PLATE_IMAGES[key] || PLATE_FALLBACK;
+  img.src = resolveAsset(PLATE_IMAGES[key] || PLATE_FALLBACK);
 });
 
 /* --- 章の開き：IntersectionObserver --- */
