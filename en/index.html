@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L9W79GXPE1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L9W79GXPE1');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Osaka Izakaya MENLABO Sakaba — Pattaya</title>
+<meta name="description" content="Set meals and ramen by day; an izakaya from 3pm. An Osaka ramen shop, reborn as a tavern in Pattaya. Soi Buakhao, Tree Town — open 11:00–24:00, closed Tuesdays.">
+<meta property="og:title" content="Osaka Izakaya MENLABO Sakaba — Pattaya">
+<meta property="og:description" content="A diner by day. A tavern from 3pm. Real Japanese flavor, done right.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.menlabo-pattaya.com/en">
+<link rel="canonical" href="https://www.menlabo-pattaya.com/en">
+
+<!-- 多言語：言語別URLの相互参照（相互参照が成立するページ間のみ） -->
+<link rel="alternate" hreflang="ja" href="https://www.menlabo-pattaya.com/">
+<link rel="alternate" hreflang="en" href="https://www.menlabo-pattaya.com/en">
+<link rel="alternate" hreflang="x-default" href="https://www.menlabo-pattaya.com/">
+
+<!-- ファビコン（ファイルはサイト直下。/en/ から見て親=サイト直下なので ../ で参照） -->
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#f3eee4">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<!-- 構造化データ：Restaurant（英語版・NAP/営業時間/定休日をGoogleに伝える） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Osaka Izakaya MENLABO Sakaba",
+  "alternateName": ["MENLABO", "MENLABO酒場", "麺LABO"],
+  "description": "Set meals and ramen by day; an izakaya from 3pm. An Osaka ramen shop, reborn as a tavern in Pattaya.",
+  "url": "https://www.menlabo-pattaya.com/en",
+  "inLanguage": "en",
+  "telephone": "+66-96-147-9518",
+  "servesCuisine": ["Japanese", "Ramen", "Izakaya", "Osaka cuisine"],
+  "priceRange": "฿฿",
+  "currenciesAccepted": "THB",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "502/22 Soi Buakhao",
+    "addressLocality": "Pattaya City",
+    "addressRegion": "Chon Buri",
+    "postalCode": "20150",
+    "addressCountry": "TH"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 12.9320149,
+    "longitude": 100.8834122
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "11:00",
+      "closes": "24:00"
+    }
+  ],
+  "hasMenu": "https://www.menlabo-pattaya.com/menu",
+  "hasMap": "https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8",
+  "image": "https://www.menlabo-pattaya.com/assets/images/logo-seal.png"
+}
+</script>
+</head>
+<body>
+
+<!-- 墨：濡れた紙のWebGLキャンバス（全画面・最前面・操作は透過） -->
+<canvas id="ink-canvas" aria-hidden="true"></canvas>
+
+<!-- ============ グローバルナビ（表紙の上は透明、スクロールで紙色に） ============ -->
+<nav class="site-head" id="site-head">
+  <a class="site-head__brand" href="/en" aria-label="MENLABO Sakaba — home">
+    <img class="site-head__seal" src="../assets/images/logo-seal.svg" alt="" width="32" height="32">
+    <span class="site-head__name">MENLABO Sakaba</span>
+  </a>
+  <div class="site-head__nav">
+    <!-- 暫定：英語版が未整備のため日本語ページへ。/en/menu /en/access 整備後に差し替え -->
+    <a href="/menu">Menu</a>
+    <a href="/access">Find us</a>
+    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">Map</a>
+    <div class="lang-switch" aria-label="Language">
+      <a href="/">JP</a>
+      <span class="lang-switch__sep" aria-hidden="true">/</span>
+      <a href="/en" aria-current="page">EN</a>
+      <span class="lang-switch__sep" aria-hidden="true">/</span>
+      <span class="lang-switch__soon" aria-disabled="true" title="準備中 / Coming soon">TH</span>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ 扉 ============ -->
+<header class="cover" id="cover">
+  <p class="cover__kicker reveal">Osaka Izakaya — Pattaya, Thailand</p>
+
+  <h1 class="cover__title reveal" data-delay="200">
+    <span class="cover__title-en">MENLABO</span>
+    <span class="cover__title-ja">酒　場</span>
+  </h1>
+
+  <p class="cover__line reveal" data-delay="450">
+    Tonight, we <span class="rotator" data-words="drink,eat,talk,wind down" data-interval="2400" data-duration="520">drink</span>.
+  </p>
+
+  <p class="cover__hint reveal" data-delay="700">Drag across the page — the ink will bleed.</p>
+
+  <!-- 営業中ステータス：モバイルのみ表示・JSがタイ時間で判定 -->
+  <p class="now-status reveal" id="now-status" data-delay="850" aria-live="polite"></p>
+
+  <a class="cover__scroll" href="#story">
+    <span class="cover__scroll-text">Step through the noren</span>
+    <span class="cover__scroll-bar" aria-hidden="true"></span>
+  </a>
+</header>
+
+<main>
+
+  <!-- ============ のれん：来歴 ============ -->
+  <section class="chapter" id="story">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">Noren</p>
+        <h2 class="chapter__title">Our Story</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <div class="chapter__body prose">
+        <p>In Awaza, Osaka,<br class="br-sp">there was a small ramen shop.</p>
+        <p>Chicken broth, no MSG.<br class="br-sp">A bowl built fresh every day,<br>with nothing cut short.<br>That obsession crossed the sea<br class="br-sp">and landed here in Pattaya.</p>
+        <p>Long-time residents.<br class="br-sp">Travelers passing through.<br class="br-sp">People who fell for Thailand and stayed.<br>We're here to make a place where,<br>at the end of the day, you can say:<br>"Now that was a good night."</p>
+        <p class="prose__em">The "LABO" in MENLABO means laboratory.<br>No two days taste the same.</p>
+      </div>
+
+      <p class="chapter__note">A diner by day. A tavern from three.</p>
+    </div>
+  </section>
+
+  <!-- ============ おひる：昼 ============ -->
+  <section class="chapter" id="lunch">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">Midday</p>
+        <h2 class="chapter__title">Lunch</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <p class="chapter__lead">Eat properly, like a real teishoku joint.<br class="br-sp">Extra rice, on the house.</p>
+
+      <figure class="plate">
+        <span class="plate__media"><img class="plate__img" data-plate-src="lunch" alt="The midday bowl (sample image)"></span>
+        <figcaption class="plate__caption">The midday bowl, from eleven</figcaption>
+      </figure>
+
+      <!-- 価格は確定後に差し替え -->
+      <ul class="menu">
+        <li class="menu__row"><span class="menu__name">Karaage Set</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">Gyoza Set</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
+        <li class="menu__row"><span class="menu__name">Fried Rice Set</span><span class="menu__dots"></span><span class="menu__price">฿229</span></li>
+        <li class="menu__row"><span class="menu__name">Tenshin-don Set</span><span class="menu__dots"></span><span class="menu__price">฿239</span></li>
+        <li class="menu__row"><span class="menu__name">Ramen (various)</span><span class="menu__dots"></span><span class="menu__price">฿159+</span></li>
+      </ul>
+
+      <a class="more-link" href="/menu#lunch">See the menu</a>
+
+      <p class="chapter__note">From eleven, until three.</p>
+    </div>
+  </section>
+
+  <!-- ============ 転換：十五時 ============ -->
+  <section class="chapter chapter--turn" id="turn">
+    <img class="turn__bg" data-plate-src="turn" alt="" aria-hidden="true">
+    <div class="chapter__inner">
+      <p class="turn__time">3 p.m.</p>
+      <p class="turn__line">The noren changes. From here, a tavern.</p>
+    </div>
+  </section>
+
+  <!-- ============ 一杯目：肴 ============ -->
+  <section class="chapter" id="sakana">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">First round</p>
+        <h2 class="chapter__title">Small Plates</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <p class="chapter__lead">Start here.<br class="br-sp">Everything's made to go with a drink.</p>
+
+      <figure class="plate">
+        <span class="plate__media"><img class="plate__img" data-plate-src="sakana" alt="Freshly fried karaage (sample image)"></span>
+        <figcaption class="plate__caption">A plate of four — dangerously drinkable</figcaption>
+      </figure>
+
+      <ul class="menu">
+        <li class="menu__row"><span class="menu__name">Edamame</span><span class="menu__dots"></span><span class="menu__price">฿59</span></li>
+        <li class="menu__row"><span class="menu__name">Moreish Cucumber</span><span class="menu__dots"></span><span class="menu__price">฿79</span></li>
+        <li class="menu__row"><span class="menu__name">Octopus Wasabi</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
+        <li class="menu__row"><span class="menu__name">Pan-fried Gyoza (5 pc)</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
+        <li class="menu__row"><span class="menu__name">Tonpei-yaki</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
+        <li class="menu__row"><span class="menu__name">Fried Chicken (Karaage)</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
+        <li class="menu__row"><span class="menu__name">Dashi Rolled Omelet</span><span class="menu__dots"></span><span class="menu__price">฿139</span></li>
+        <li class="menu__row"><span class="menu__name">Rare Pork Belly Chashu Platter</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+      </ul>
+
+      <a class="more-link" href="/menu">See the menu</a>
+
+      <p class="chapter__note">Add a plate of gyoza — changes everything.</p>
+    </div>
+  </section>
+
+  <!-- ============ 二杯目：酒 ============ -->
+  <section class="chapter" id="sake">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">Second round</p>
+        <h2 class="chapter__title">Drinks</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <p class="chapter__lead chapter__lead--rotate">
+        <span class="rotator" data-words="Beer,Highball,Shochu,Sour" data-interval="2200" data-duration="520">Beer</span>, ice-cold
+      </p>
+
+      <figure class="plate">
+        <span class="plate__media"><img class="plate__img" data-plate-src="sake" alt="A freshly poured beer (sample image)"></span>
+        <figcaption class="plate__caption">Fresh from the tap</figcaption>
+      </figure>
+
+      <div class="chapter__body prose">
+        <p>Yes, we pour. And yes, ramen too.</p>
+        <p>Behind the bar: someone who's<br class="br-sp">run his own places, and a 25-year<br>veteran who trains the pros.<br>
+        Real izakaya people.</p>
+        <p>So no — we can't cut corners.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 締め：麺 ============ -->
+  <section class="chapter" id="men">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">To finish</p>
+        <h2 class="chapter__title">Ramen</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <p class="chapter__lead">No MSG.<br class="br-sp">Just chicken, water, and patience.</p>
+
+      <figure class="plate">
+        <span class="plate__media"><img class="plate__img" data-plate-src="men" alt="The closing bowl of ramen (sample image)"></span>
+        <figcaption class="plate__caption">The closing bowl</figcaption>
+      </figure>
+
+      <ul class="menu">
+        <li class="menu__row"><span class="menu__name">Clear Chicken Shoyu Soba</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">Clear Chicken Shio Soba</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">Rich Chicken Paitan Shoyu</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">Rich Chicken Paitan Shio</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">Jan-men (spicy)</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
+      </ul>
+
+      <a class="more-link" href="/menu#shime">See the menu</a>
+
+      <p class="chapter__note">The bowl after the drinks is always the best.</p>
+    </div>
+  </section>
+
+  <!-- ============ 帰り道：在処 ============ -->
+  <section class="chapter chapter--last" id="access">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">Find us</p>
+        <h2 class="chapter__title">Where We Are</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <dl class="info">
+        <div class="info__row"><dt>Address</dt><dd>502/22 Soi Buakhao, Pattaya City, Bang Lamung, Chon Buri 20150<br><small>A black building in Tree Town — look for the lantern</small></dd></div>
+        <div class="info__row"><dt>Lunch</dt><dd>11:00 — 15:00<small>(set meals &amp; ramen)</small></dd></div>
+        <div class="info__row"><dt>Evening</dt><dd>15:00 — 24:00<small>(full menu)</small></dd></div>
+        <div class="info__row"><dt>Closed</dt><dd>Tuesdays</dd></div>
+        <div class="info__row"><dt>Parking</dt><dd>Yes<small>(฿30 / hour)</small></dd></div>
+      </dl>
+
+      <a class="info__map" href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">Open in Maps</a>
+
+      <a class="more-link" href="/access">Directions &amp; details</a>
+
+      <p class="chapter__note">Got somewhere to drink tonight?</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ モバイル下部CTA（スクロールで出現・PCでは非表示） ============ -->
+<div class="m-cta" id="m-cta">
+  <a class="m-cta__btn m-cta__btn--primary" href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">Map &amp; directions</a>
+  <a class="m-cta__btn" href="/menu">Menu</a>
+</div>
+
+<!-- ============ 奥付 ============ -->
+<footer class="colophon">
+  <img class="colophon__seal" src="../assets/images/logo-seal.svg" alt="The seal of MENLABO Sakaba" width="64" height="64">
+  <nav class="colophon__nav">
+    <a href="/menu">Menu</a>
+    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">Map</a>
+  </nav>
+  <div class="lang-switch" aria-label="Language">
+    <a href="/">JP</a>
+    <span class="lang-switch__sep" aria-hidden="true">/</span>
+    <a href="/en" aria-current="page">EN</a>
+    <span class="lang-switch__sep" aria-hidden="true">/</span>
+    <span class="lang-switch__soon" aria-disabled="true" title="準備中 / Coming soon">TH</span>
+  </div>
+  <p class="colophon__text">Osaka Izakaya MENLABO Sakaba<span class="pc-only"> — </span><br class="br-sp">Pattaya, Thailand</p>
+  <p class="colophon__copy">© 2026 MENLABO<br class="br-sp">(OMOTENASHI CO., LTD.)</p>
+  <p class="colophon__legal"><a href="/privacy">Privacy Policy</a></p>
+</footer>
+
+<script src="../assets/js/ink.js" defer></script>
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>
