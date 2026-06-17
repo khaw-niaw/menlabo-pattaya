@@ -42,7 +42,25 @@ requestAnimationFrame(() => {
   document.body.classList.add('is-ready');
 });
 
-/* --- 営業中ステータス：タイ時間で判定（11:00〜24:00・火曜定休） --- */
+/* --- 営業中ステータス：タイ時間で判定（11:00〜24:00・火曜定休） ---
+   文言は全言語共通JSの方針のため <html lang> で出し分ける（i18nマップ）。
+   判定ロジックそのものは言語に依らず不変。 */
+const STATUS_STRINGS = {
+  ja: {
+    closedTue: '本日休み — 明日十一時から',
+    open:      'ただいま営業中 — 二十四時まで',
+    pre:       '準備中 — 十一時から',
+    done:      '本日は終了 — 明日十一時から',
+  },
+  en: {
+    closedTue: 'Closed today — back tomorrow at 11',
+    open:      'Open now — until midnight',
+    pre:       'Opening at 11',
+    done:      'Closed for today — back tomorrow at 11',
+  },
+};
+const STATUS_L = STATUS_STRINGS[document.documentElement.lang] || STATUS_STRINGS.ja;
+
 function storeStatus() {
   let wd, hour;
   try {
@@ -57,10 +75,10 @@ function storeStatus() {
     wd = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][d.getDay()];
     hour = d.getHours();
   }
-  if (wd === 'Tue')        return { open: false, text: '本日休み — 明日十一時から' };
-  if (hour >= 11 && hour < 24) return { open: true,  text: 'ただいま営業中 — 二十四時まで' };
-  if (hour < 11)           return { open: false, text: '準備中 — 十一時から' };
-  return { open: false, text: '本日は終了 — 明日十一時から' };
+  if (wd === 'Tue')        return { open: false, text: STATUS_L.closedTue };
+  if (hour >= 11 && hour < 24) return { open: true,  text: STATUS_L.open };
+  if (hour < 11)           return { open: false, text: STATUS_L.pre };
+  return { open: false, text: STATUS_L.done };
 }
 
 const statusEl = document.getElementById('now-status');
