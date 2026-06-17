@@ -23,6 +23,11 @@ const PLATE_IMAGES = {
   'sig-chashu':  'assets/images/rare-bara-chashu-moriawase.jpg', // レアバラチャーシュー盛り合わせ
   'sig-buta':    'assets/images/buta-yakiniku.jpg',             // 大衆豚焼肉皿
   'sig-kimchi':  'assets/images/buta-kimchi.jpg',              // 豚キムチ
+  // 店舗情報ページの写真（現在は仮のサンプル。本番写真に差し替える時はここのURLを変える）
+  'access-exterior': 'https://images.unsplash.com/photo-1554797589-7241bb691973?w=1200&q=75&auto=format&fit=crop', // 夜の外観
+  'access-entrance': 'https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=1200&q=75&auto=format&fit=crop', // 入口
+  'access-interior': 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=75&auto=format&fit=crop', // 店内
+  'access-vibe':     'https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=1200&q=75&auto=format&fit=crop', // 雰囲気
 };
 const PLATE_FALLBACK = 'assets/images/fallback.svg';
 
@@ -205,9 +210,12 @@ document.addEventListener('click', (e) => {
     a.closest('#access')    ? 'access' :
     a.classList.contains('more-link') ? 'inline' : 'other';
 
-  if (href.includes('maps.app.goo.gl') || href.includes('google.com/maps')) {
+  if (href.includes('maps.app.goo.gl')) {
     // 地図・道順クリック（来店意図＝最重要）
     window.gtag('event', 'map_click', { area, link_url: href });
+  } else if (href.includes('google.com/maps')) {
+    // 口コミ（Googleマップのレビュー）クリック
+    window.gtag('event', 'review_click', { area });
   } else if (href === '/menu' || href.startsWith('/menu')) {
     // 品書きクリック（興味）
     window.gtag('event', 'menu_click', { area });
