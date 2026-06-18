@@ -1089,6 +1089,11 @@ body.is-ready .reveal {
   /* 英語版のみ：狭い画面ではラベルと値を縦積みにして重なりを防ぐ（lang="ja"には不影響） */
   html[lang="en"] .info__row { flex-direction: column; gap: .3rem; }
   html[lang="en"] .info__row dt { width: auto; }
+  /* 英語版のみ：ナビの "Find us" 等は語が長いので字間を詰めて必ず1行に（日本語版は不変） */
+  html[lang="en"] .site-head__nav { gap: .8rem; }
+  html[lang="en"] .site-head__nav a { letter-spacing: .03em; text-indent: .03em; white-space: nowrap; }
+  /* 英語版のみ：下部CTAのラベルが長いので1行固定（崩れ防止）。アキは保つ */
+  html[lang="en"] .m-cta__btn { white-space: nowrap; }
   .cover__kicker { letter-spacing: .35em; text-indent: .35em; }
 
   /* モバイルだけ改行する／PC専用要素を隠す */
