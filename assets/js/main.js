@@ -23,11 +23,11 @@ const PLATE_IMAGES = {
   'sig-chashu':  'assets/images/rare-bara-chashu-moriawase.jpg', // レアバラチャーシュー盛り合わせ
   'sig-buta':    'assets/images/buta-yakiniku.jpg',             // 大衆豚焼肉皿
   'sig-kimchi':  'assets/images/buta-kimchi.jpg',              // 豚キムチ
-  // 店舗情報ページの写真（現在は仮のサンプル。本番写真に差し替える時はここのURLを変える）
-  'access-exterior': 'https://images.unsplash.com/photo-1554797589-7241bb691973?w=1200&q=75&auto=format&fit=crop', // 夜の外観
-  'access-entrance': 'https://images.unsplash.com/photo-1559925393-8be0ec4767c8?w=1200&q=75&auto=format&fit=crop', // 入口
-  'access-interior': 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1200&q=75&auto=format&fit=crop', // 店内
-  'access-vibe':     'https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=1200&q=75&auto=format&fit=crop', // 雰囲気
+  // 店舗情報ページの写真（assets/images/ に同名で置けば差し替わる。3:2・1200×800px 目安）
+  'access-exterior': 'assets/images/access-exterior.jpg', // 夜の外観・提灯の灯り
+  'access-entrance': 'assets/images/access-entrance.jpg', // 入口
+  'access-interior': 'assets/images/access-interior.jpg', // 店内・カウンター
+  'access-vibe':     'assets/images/access-vibe.jpg',     // 夜の賑わい
 };
 const PLATE_FALLBACK = 'assets/images/fallback.svg';
 
