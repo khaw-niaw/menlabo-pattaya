@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="th">
+<!-- ※ タイ語はAIによる下訳（ドラフト）。後日スタッフが校正・修正する前提。 -->
+<head>
+<meta charset="UTF-8">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L9W79GXPE1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-L9W79GXPE1');
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>อิซากายะโอซาก้า MENLABO Sakaba — พัทยา</title>
+<meta name="description" content="กลางวันเป็นร้านข้าวชุดและราเมน บ่ายสามเป็นร้านเหล้า ร้านราเมนจากโอซาก้า มาเปิดเป็นอิซากายะที่พัทยา ซอยบัวขาว ใน Tree Town เปิด 11:00–24:00 หยุดวันอังคาร">
+<meta property="og:title" content="อิซากายะโอซาก้า MENLABO Sakaba — พัทยา">
+<meta property="og:description" content="กลางวันเป็นร้านอาหาร บ่ายสามเป็นร้านเหล้า รสชาติญี่ปุ่นแท้ ทำอย่างตั้งใจ">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.menlabo-pattaya.com/th">
+<link rel="canonical" href="https://www.menlabo-pattaya.com/th">
+
+<!-- 多言語：言語別URLの相互参照 -->
+<link rel="alternate" hreflang="ja" href="https://www.menlabo-pattaya.com/">
+<link rel="alternate" hreflang="en" href="https://www.menlabo-pattaya.com/en">
+<link rel="alternate" hreflang="th" href="https://www.menlabo-pattaya.com/th">
+<link rel="alternate" hreflang="x-default" href="https://www.menlabo-pattaya.com/">
+
+<!-- ファビコン（ファイルはサイト直下。/th/ から見て親=サイト直下なので ../ で参照） -->
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<link rel="manifest" href="../site.webmanifest">
+<meta name="theme-color" content="#f3eee4">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- タイ語ページ：ラテン字は Shippori、タイ文字は Trirong にフォールバック -->
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;700;800&family=Trirong:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+
+<!-- 構造化データ：Restaurant（タイ語版） -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "อิซากายะโอซาก้า MENLABO Sakaba",
+  "alternateName": ["MENLABO", "MENLABO酒場", "麺LABO"],
+  "description": "กลางวันเป็นร้านข้าวชุดและราเมน บ่ายสามเป็นร้านเหล้า ร้านราเมนจากโอซาก้า มาเปิดเป็นอิซากายะที่พัทยา",
+  "url": "https://www.menlabo-pattaya.com/th",
+  "inLanguage": "th",
+  "telephone": "+66-96-147-9518",
+  "servesCuisine": ["Japanese", "Ramen", "Izakaya", "Osaka cuisine"],
+  "priceRange": "฿฿",
+  "currenciesAccepted": "THB",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "502/22 Soi Buakhao",
+    "addressLocality": "Pattaya City",
+    "addressRegion": "Chon Buri",
+    "postalCode": "20150",
+    "addressCountry": "TH"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 12.9320149,
+    "longitude": 100.8834122
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "11:00",
+      "closes": "24:00"
+    }
+  ],
+  "hasMenu": "https://www.menlabo-pattaya.com/th/menu",
+  "hasMap": "https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8",
+  "image": "https://www.menlabo-pattaya.com/assets/images/logo-seal.png"
+}
+</script>
+</head>
+<body>
+
+<!-- 墨：濡れた紙のWebGLキャンバス（全画面・最前面・操作は透過） -->
+<canvas id="ink-canvas" aria-hidden="true"></canvas>
+
+<!-- ============ グローバルナビ（表紙の上は透明、スクロールで紙色に） ============ -->
+<nav class="site-head" id="site-head">
+  <a class="site-head__brand" href="/th" aria-label="MENLABO Sakaba — หน้าแรก">
+    <img class="site-head__seal" src="../assets/images/logo-seal.svg" alt="" width="32" height="32">
+    <span class="site-head__name">MENLABO Sakaba</span>
+  </a>
+  <div class="site-head__nav">
+    <a href="/th/menu">เมนู</a>
+    <a href="/th/access">ที่ตั้ง</a>
+    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">แผนที่</a>
+    <div class="lang-switch" aria-label="Language">
+      <a href="/">JP</a>
+      <span class="lang-switch__sep" aria-hidden="true">/</span>
+      <a href="/en">EN</a>
+      <span class="lang-switch__sep" aria-hidden="true">/</span>
+      <a href="/th" aria-current="page">TH</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ 扉 ============ -->
+<header class="cover" id="cover">
+  <p class="cover__kicker reveal">อิซากายะโอซาก้า — พัทยา ประเทศไทย</p>
+
+  <h1 class="cover__title reveal" data-delay="200">
+    <span class="cover__title-en">MENLABO</span>
+    <span class="cover__title-ja">Sakaba</span>
+  </h1>
+
+  <p class="cover__line reveal" data-delay="450">
+    คืนนี้ เรามา<span class="rotator" data-words="ดื่ม,กิน,พูดคุย,ปิดท้าย" data-interval="2400" data-duration="520">ดื่ม</span>กัน
+  </p>
+
+  <p class="cover__hint reveal" data-delay="700">ลากนิ้วบนหน้าจอ — หมึกจะซึมออกมา</p>
+
+  <!-- 営業中ステータス：モバイルのみ表示・JSがタイ時間で判定 -->
+  <p class="now-status reveal" id="now-status" data-delay="850" aria-live="polite"></p>
+
+  <a class="cover__scroll" href="#story">
+    <span class="cover__scroll-text">ก้าวผ่านม่านโนเรน</span>
+    <span class="cover__scroll-bar" aria-hidden="true"></span>
+  </a>
+</header>
+
+<main>
+
+  <!-- ============ のれん：来歴 ============ -->
+  <section class="chapter" id="story">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">โนเรน</p>
+        <h2 class="chapter__title">เรื่องราวของเรา</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <div class="chapter__body prose">
+        <p>ที่ย่านอาวาสะ เมืองโอซาก้า<br class="br-sp">เคยมีร้านราเมนเล็กๆ อยู่ร้านหนึ่ง</p>
+        <p>น้ำซุปไก่ ไม่ใส่ผงชูรส<br class="br-sp">ราเมนหนึ่งชามที่ตั้งใจทำสดใหม่ทุกวัน ไม่ลัดขั้นตอน<br>ความตั้งใจนั้นข้ามน้ำข้ามทะเล<br class="br-sp">มาถึงพัทยา</p>
+        <p>ทั้งคนที่อยู่ที่นี่มานาน<br class="br-sp">นักเดินทางที่แวะผ่าน<br class="br-sp">และคนที่หลงรักเมืองไทยจนปักหลัก<br>เราอยู่ที่นี่เพื่อสร้างที่ที่ปลายวัน<br>คุณจะพูดได้ว่า "คืนนี้เป็นคืนที่ดีจริงๆ"</p>
+        <p class="prose__em">"LABO" ใน MENLABO คือห้องทดลอง<br>ไม่มีวันไหนเหมือนกันสักวัน</p>
+      </div>
+
+      <p class="chapter__note">กลางวันเป็นร้านอาหาร บ่ายสามเป็นร้านเหล้า</p>
+    </div>
+  </section>
+
+  <!-- ============ おひる：昼 ============ -->
+  <section class="chapter" id="lunch">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">กลางวัน</p>
+        <h2 class="chapter__title">มื้อกลางวัน</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <p class="chapter__lead">อิ่มจริงจัง เหมือนร้านข้าวชุดแท้ๆ<br class="br-sp">เติมข้าวฟรี</p>
+
+      <figure class="plate">
+        <span class="plate__media"><img class="plate__img" data-plate-src="lunch" alt="ชามกลางวัน"></span>
+        <figcaption class="plate__caption">ชามกลางวัน เริ่มสิบเอ็ดโมง</figcaption>
+      </figure>
+
+      <ul class="menu">
+        <li class="menu__row"><span class="menu__name">ชุดไก่คาราอาเกะ</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">ชุดเกี๊ยวซ่า</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
+        <li class="menu__row"><span class="menu__name">ชุดข้าวผัด</span><span class="menu__dots"></span><span class="menu__price">฿229</span></li>
+        <li class="menu__row"><span class="menu__name">ชุดข้าวหน้าไข่เทนชิน</span><span class="menu__dots"></span><span class="menu__price">฿239</span></li>
+        <li class="menu__row"><span class="menu__name">ราเมน (หลายชนิด)</span><span class="menu__dots"></span><span class="menu__price">฿159~</span></li>
+      </ul>
+
+      <a class="more-link" href="/th/menu#lunch">ดูเมนู</a>
+
+      <p class="chapter__note">ตั้งแต่สิบเอ็ดโมง ถึงบ่ายสาม</p>
+    </div>
+  </section>
+
+  <!-- ============ 転換：十五時 ============ -->
+  <section class="chapter chapter--turn" id="turn">
+    <img class="turn__bg" data-plate-src="turn" alt="" aria-hidden="true">
+    <div class="chapter__inner">
+      <p class="turn__time">บ่ายสามโมง</p>
+      <p class="turn__line">ม่านโนเรนเปลี่ยน จากนี้ไปคือร้านเหล้า</p>
+    </div>
+  </section>
+
+  <!-- ============ 一杯目：肴 ============ -->
+  <section class="chapter" id="sakana">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">แก้วแรก</p>
+        <h2 class="chapter__title">กับแกล้ม</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <p class="chapter__lead">เริ่มจากตรงนี้<br class="br-sp">ทุกอย่างทำมาให้เข้ากับเครื่องดื่ม</p>
+
+      <figure class="plate">
+        <span class="plate__media"><img class="plate__img" data-plate-src="sakana" alt="ไก่คาราอาเกะทอดร้อนๆ"></span>
+        <figcaption class="plate__caption">จานรวมสี่อย่าง ดื่มเพลิน</figcaption>
+      </figure>
+
+      <ul class="menu">
+        <li class="menu__row"><span class="menu__name">ถั่วแระญี่ปุ่น</span><span class="menu__dots"></span><span class="menu__price">฿59</span></li>
+        <li class="menu__row"><span class="menu__name">แตงกวาติดใจ</span><span class="menu__dots"></span><span class="menu__price">฿79</span></li>
+        <li class="menu__row"><span class="menu__name">ทาโกะวาซาบิ</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
+        <li class="menu__row"><span class="menu__name">เกี๊ยวซ่าทอด 5 ชิ้น</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
+        <li class="menu__row"><span class="menu__name">ทงเปยากิ</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
+        <li class="menu__row"><span class="menu__name">ไก่คาราอาเกะ</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
+        <li class="menu__row"><span class="menu__name">ไข่ม้วนดาชิ</span><span class="menu__dots"></span><span class="menu__price">฿139</span></li>
+        <li class="menu__row"><span class="menu__name">จานชาชูหมูสามชั้นแบบแรร์</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+      </ul>
+
+      <a class="more-link" href="/th/menu">ดูเมนู</a>
+
+      <p class="chapter__note">เพิ่มเกี๊ยวซ่าสักจาน รสชาติเปลี่ยนไปเลย</p>
+    </div>
+  </section>
+
+  <!-- ============ 二杯目：酒 ============ -->
+  <section class="chapter" id="sake">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">แก้วที่สอง</p>
+        <h2 class="chapter__title">เครื่องดื่ม</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <p class="chapter__lead chapter__lead--rotate">
+        <span class="rotator" data-words="เบียร์,ไฮบอล,โชจู,ซาวร์" data-interval="2200" data-duration="520">เบียร์</span> เย็นๆ
+      </p>
+
+      <figure class="plate">
+        <span class="plate__media"><img class="plate__img" data-plate-src="sake" alt="เบียร์รินสดใหม่"></span>
+        <figcaption class="plate__caption">รินสดใหม่หนึ่งแก้ว</figcaption>
+      </figure>
+
+      <div class="chapter__body prose">
+        <p>มีเครื่องดื่มเสิร์ฟ และมีราเมนด้วย</p>
+        <p>หลังเคาน์เตอร์ มีทั้งคนที่เคยเปิดร้านของตัวเอง<br class="br-sp">และมือเก๋า 25 ปีที่สอนระดับมืออาชีพ<br>
+        คนอิซากายะตัวจริงอยู่เบื้องหลัง</p>
+        <p>เพราะแบบนี้ เราจึงลัดขั้นตอนไม่ได้</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 締め：麺 ============ -->
+  <section class="chapter" id="men">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">ปิดท้าย</p>
+        <h2 class="chapter__title">ราเมน</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <p class="chapter__lead">ไม่ใส่ผงชูรส<br class="br-sp">มีแค่ไก่ น้ำ และความใส่ใจ</p>
+
+      <figure class="plate">
+        <span class="plate__media"><img class="plate__img" data-plate-src="men" alt="ราเมนชามปิดท้าย"></span>
+        <figcaption class="plate__caption">ชามปิดท้าย</figcaption>
+      </figure>
+
+      <ul class="menu">
+        <li class="menu__row"><span class="menu__name">โซบะไก่ใสโชยุ</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">โซบะไก่ใสเกลือ</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">ไก่ไพตันเข้มข้นโชยุ</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">ไก่ไพตันเข้มข้นเกลือ</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
+        <li class="menu__row"><span class="menu__name">จันเมน (เผ็ด)</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
+      </ul>
+
+      <a class="more-link" href="/th/menu#shime">ดูเมนู</a>
+
+      <p class="chapter__note">ไม่มีชามไหนอร่อยเท่าชามหลังดื่ม</p>
+    </div>
+  </section>
+
+  <!-- ============ 帰り道：在処 ============ -->
+  <section class="chapter chapter--last" id="access">
+    <div class="chapter__inner">
+      <header class="chapter__head">
+        <p class="chapter__num">หาเราเจอ</p>
+        <h2 class="chapter__title">ที่ตั้งร้าน</h2>
+        <span class="chapter__rule" aria-hidden="true"></span>
+      </header>
+
+      <dl class="info">
+        <div class="info__row"><dt>ที่อยู่</dt><dd>502/22 Soi Buakhao, Pattaya City, Bang Lamung, Chon Buri 20150<br><small>ตึกสีดำใน Tree Town — มองหาโคมไฟ</small></dd></div>
+        <div class="info__row"><dt>กลางวัน</dt><dd>11:00 — 15:00<small>(ข้าวชุดและราเมน)</small></dd></div>
+        <div class="info__row"><dt>ค่ำ</dt><dd>15:00 — 24:00<small>(เมนูทั้งหมด)</small></dd></div>
+        <div class="info__row"><dt>วันหยุด</dt><dd>วันอังคาร</dd></div>
+        <div class="info__row"><dt>ที่จอดรถ</dt><dd>มี<small>(฿30 / ชั่วโมง)</small></dd></div>
+      </dl>
+
+      <a class="info__map" href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">เปิดในแผนที่</a>
+
+      <a class="more-link" href="/th/access">เส้นทางและรายละเอียด</a>
+
+      <p class="chapter__note">คืนนี้มีที่ดื่มหรือยัง?</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ モバイル下部CTA（スクロールで出現・PCでは非表示） ============ -->
+<div class="m-cta" id="m-cta">
+  <a class="m-cta__btn m-cta__btn--primary" href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">เส้นทาง</a>
+  <a class="m-cta__btn" href="/th/menu">เมนู</a>
+</div>
+
+<!-- ============ 奥付 ============ -->
+<footer class="colophon">
+  <img class="colophon__seal" src="../assets/images/logo-seal.svg" alt="ตราประทับของ MENLABO Sakaba" width="64" height="64">
+  <nav class="colophon__nav">
+    <a href="/th/menu">เมนู</a>
+    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">แผนที่</a>
+  </nav>
+  <div class="lang-switch" aria-label="Language">
+    <a href="/">JP</a>
+    <span class="lang-switch__sep" aria-hidden="true">/</span>
+    <a href="/en">EN</a>
+    <span class="lang-switch__sep" aria-hidden="true">/</span>
+    <a href="/th" aria-current="page">TH</a>
+  </div>
+  <p class="colophon__text">อิซากายะโอซาก้า MENLABO Sakaba<span class="pc-only"> — </span><br class="br-sp">พัทยา ประเทศไทย</p>
+  <p class="colophon__copy">© 2026 MENLABO<br class="br-sp">(OMOTENASHI CO., LTD.)</p>
+  <p class="colophon__legal"><a href="/th/privacy">นโยบายความเป็นส่วนตัว</a></p>
+</footer>
+
+<script src="../assets/js/ink.js" defer></script>
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>
