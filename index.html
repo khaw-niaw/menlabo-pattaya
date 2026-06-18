@@ -3,6 +3,26 @@
 <head>
 <meta charset="UTF-8">
 
+<!-- 言語の自動振り分け：トップ(/)に来た人をブラウザ言語で /th・/en へ誘導（描画前に実行）。
+     ・/ に来たときだけ。/th /en を直接開いた人は尊重してそのまま
+     ・手動で言語を選んだら記憶(localStorage langPref)し、その選択を最優先
+     ・1セッション1回だけ（再訪・手動操作で勝手に飛ばさない＝ループ防止）
+     日本語(ja)・x-default は / のままなのでSEO(canonical/hreflang)は不変 -->
+<script>
+(function(){
+  try {
+    if (location.pathname !== '/') return;
+    if (sessionStorage.getItem('langRedirected')) return;
+    sessionStorage.setItem('langRedirected', '1');
+    var pref = localStorage.getItem('langPref');
+    var lang = (pref || (navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
+    if (lang.indexOf('th') === 0) location.replace('/th');
+    else if (lang.indexOf('en') === 0) location.replace('/en');
+    // ja およびその他の言語は日本語トップ(/)のまま
+  } catch (e) {}
+})();
+</script>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9W79GXPE1"></script>
 <script>
