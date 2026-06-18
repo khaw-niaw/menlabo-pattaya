@@ -230,6 +230,16 @@ window.addEventListener('resize', () => {
   rotatorResizeTimer = setTimeout(() => rotatorRemeasurers.forEach((m) => m()), 180);
 });
 
+/* --- 言語スイッチの手動選択を記憶（トップ / の自動振り分けが尊重する） ---
+   ユーザーが JP/EN/TH を選んだら localStorage に保存。次回 / に来たときその言語へ誘導。 */
+document.querySelectorAll('.lang-switch a').forEach((a) => {
+  a.addEventListener('click', () => {
+    const href = a.getAttribute('href') || '';
+    const lang = href.indexOf('/th') === 0 ? 'th' : href.indexOf('/en') === 0 ? 'en' : 'ja';
+    try { localStorage.setItem('langPref', lang); } catch (e) {}
+  });
+});
+
 /* --- Google Analytics：主要ボタンのクリックを計測 ---
    リンク先と設置場所を自動判定してイベント送信。HTMLは触らず一括で対応する。 */
 document.addEventListener('click', (e) => {
