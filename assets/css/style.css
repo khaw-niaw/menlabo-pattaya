@@ -733,6 +733,24 @@ html[lang="en"] .info__row dt {
 }
 html[lang="en"] .info__row dd { letter-spacing: .01em; }
 
+/* === タイ語ページ専用（html[lang="th"] にのみ適用＝日本語/英語には不影響） === */
+/* ラテン字(MENLABO・数字・฿)は Shippori を先に当て、タイ文字だけ Trirong にフォールバックさせる */
+html[lang="th"] {
+  --font-serif: "Shippori Mincho B1", "Trirong", "Noto Serif Thai", serif;
+}
+/* タイ文字は字間(letter-spacing)を空けない＝空けると不自然・結合文字(声調記号等)がずれて見える。
+   THページに限り、デザインの字間/字下げ指定を解除する */
+html[lang="th"] *,
+html[lang="th"] *::before,
+html[lang="th"] *::after {
+  letter-spacing: normal !important;
+  text-indent: 0 !important;
+}
+/* タイ語：ラベル(dt)が日本語2文字より長いので列幅を広げる（重なり防止）。長い語は枠内で折り返す */
+html[lang="th"] .info__row { gap: 1.4rem; }
+html[lang="th"] .info__row dt { width: 7em; }
+html[lang="th"] .info--roomy .info__row dt { width: 9.5em; }
+
 .info__map {
   display: block;
   width: fit-content;
@@ -1087,13 +1105,18 @@ body.is-ready .reveal {
   .chapter__head { margin-bottom: 3.5rem; }
   .info__row { gap: 1.4rem; }
   /* 英語版のみ：狭い画面ではラベルと値を縦積みにして重なりを防ぐ（lang="ja"には不影響） */
-  html[lang="en"] .info__row { flex-direction: column; gap: .3rem; }
-  html[lang="en"] .info__row dt { width: auto; }
-  /* 英語版のみ：ナビの "Find us" 等は語が長いので字間を詰めて必ず1行に（日本語版は不変） */
-  html[lang="en"] .site-head__nav { gap: .8rem; }
-  html[lang="en"] .site-head__nav a { letter-spacing: .03em; text-indent: .03em; white-space: nowrap; }
-  /* 英語版のみ：下部CTAのラベルが長いので1行固定（崩れ防止）。アキは保つ */
-  html[lang="en"] .m-cta__btn { white-space: nowrap; }
+  html[lang="en"] .info__row,
+  html[lang="th"] .info__row { flex-direction: column; gap: .3rem; }
+  html[lang="en"] .info__row dt,
+  html[lang="th"] .info__row dt { width: auto; }
+  /* 英語/タイ語：ナビの語が長いので字間を詰めて必ず1行に（日本語版は不変） */
+  html[lang="en"] .site-head__nav,
+  html[lang="th"] .site-head__nav { gap: .8rem; }
+  html[lang="en"] .site-head__nav a,
+  html[lang="th"] .site-head__nav a { letter-spacing: .03em; text-indent: .03em; white-space: nowrap; }
+  /* 英語/タイ語：下部CTAのラベルを1行固定（崩れ防止） */
+  html[lang="en"] .m-cta__btn,
+  html[lang="th"] .m-cta__btn { white-space: nowrap; }
   .cover__kicker { letter-spacing: .35em; text-indent: .35em; }
 
   /* モバイルだけ改行する／PC専用要素を隠す */
