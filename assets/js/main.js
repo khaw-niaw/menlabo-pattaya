@@ -69,6 +69,12 @@ const STATUS_STRINGS = {
     pre:       'Opening at 11',
     done:      'Closed for today — back tomorrow at 11',
   },
+  th: {
+    closedTue: 'วันนี้ปิด — พบกันใหม่พรุ่งนี้ 11 โมง',
+    open:      'เปิดอยู่ — ถึงเที่ยงคืน',
+    pre:       'เปิด 11 โมง',
+    done:      'ปิดแล้ววันนี้ — พบกันใหม่พรุ่งนี้ 11 โมง',
+  },
 };
 const STATUS_L = STATUS_STRINGS[document.documentElement.lang] || STATUS_STRINGS.ja;
 
