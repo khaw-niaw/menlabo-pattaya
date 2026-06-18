@@ -123,8 +123,15 @@ body.no-ink .cover__hint { visibility: hidden; }
   border-color: var(--shu);
 }
 
-/* --- 言語スイッチ（ヘッダー/フッター共通。JP / EN / TH、THは準備中で無効） ---
+/* --- 言語スイッチ（ヘッダー/フッター共通。JP / TH / EN の順で表示） ---
    小さく静かに。ナビより一段下げ、奥付の品を邪魔しない */
+/* DOM順は JP・/・EN・/・TH のまま、表示順だけ flex order で JP / TH / EN に並べ替える
+   （全12ページのHTMLを書き換えず一括で順序変更するため） */
+.lang-switch a:nth-child(1)    { order: 1; } /* JP */
+.lang-switch span:nth-child(2) { order: 2; } /* / */
+.lang-switch a:nth-child(5)    { order: 3; } /* TH を2番目へ */
+.lang-switch span:nth-child(4) { order: 4; } /* / */
+.lang-switch a:nth-child(3)    { order: 5; } /* EN を最後へ */
 .lang-switch {
   display: inline-flex;
   align-items: center;
