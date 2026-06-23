@@ -252,7 +252,8 @@ document.addEventListener('click', (e) => {
     a.closest('.site-head') ? 'header' :
     a.closest('.m-cta')     ? 'cta' :
     a.closest('.colophon')  ? 'footer' :
-    a.closest('#access')    ? 'access' :
+    a.closest('#contact')   ? 'contact' :                  // access：お問い合わせ（電話CTA・SNS）
+    a.closest('#access') || a.closest('#info') ? 'access' : // home在処teaser / accessの基本情報
     a.classList.contains('more-link') ? 'inline' : 'other';
 
   if (href.includes('maps.app.goo.gl')) {
@@ -264,5 +265,8 @@ document.addEventListener('click', (e) => {
   } else if (href === '/menu' || href.startsWith('/menu')) {
     // 品書きクリック（興味）
     window.gtag('event', 'menu_click', { area });
+  } else if (href.startsWith('tel:')) {
+    // 電話クリック（予約意図＝エンジン2・日本人の居酒屋利用の最重要シグナル）
+    window.gtag('event', 'tel_click', { area });
   }
 }, { passive: true });
