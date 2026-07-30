@@ -665,6 +665,8 @@ html[lang="en"] .cover__title-ja {
   color: var(--shu);
 }
 .more-link:hover { opacity: .6; }
+/* 続けて置く2本目（在処の口コミ導線）は間合いを詰める */
+.more-link + .more-link { margin-top: 1.2rem; }
 
 /* --- 別冊の扉（品書きページ） --- */
 .page-head {
