@@ -914,6 +914,8 @@ html[lang="th"] .info--roomy .info__row dt { width: 9.5em; }
   font-size: .92rem;
   word-break: break-word;
 }
+/* 会社概要など長ラベル用（Registration No. / เลขทะเบียนนิติบุคคล が7emに収まらない） */
+.legal__info--wide dt { width: 9.5em; }
 
 .legal__date {
   margin-top: 4rem;
@@ -925,6 +927,7 @@ html[lang="th"] .info--roomy .info__row dt { width: 9.5em; }
 @media (max-width: 600px) {
   .legal__info > div { flex-direction: column; gap: .2rem; }
   .legal__info dt { width: auto; }
+  .legal__info--wide dt { width: auto; }
 }
 
 /* === UTILITIES === */
