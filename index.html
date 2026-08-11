@@ -16,9 +16,11 @@
     sessionStorage.setItem('langRedirected', '1');
     var pref = localStorage.getItem('langPref');
     var lang = (pref || (navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
-    if (lang.indexOf('th') === 0) location.replace('/th');
+    // クエリ(UTM)とハッシュはそのまま引き継ぐ（GA4の流入帰属が (not set) になるのを防ぐ）
+    var keep = location.search + location.hash;
+    if (lang.indexOf('th') === 0) location.replace('/th' + keep);
     else if (lang.indexOf('ja') === 0) { /* 日本語端末は日本語トップ(/)のまま */ }
-    else location.replace('/en'); // 英語・その他すべて（中国語/韓国語/ロシア語等）は英語へ
+    else location.replace('/en' + keep); // 英語・その他すべて（中国語/韓国語/ロシア語等）は英語へ
   } catch (e) {}
 })();
 </script>
