@@ -16,28 +16,6 @@
   --measure: 40rem;          /* 本文の版面幅 */
 }
 
-/* --- RECOMMENDED --- */
-.recommended-head { padding-bottom: 3rem; }
-.recommended-month,.recommended-no { color: var(--shu); font-weight: 700; letter-spacing: .08em; }
-.recommended-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 2rem; }
-.recommended-card { border-top: 1px solid var(--rule); padding-top: 1rem; display: grid; grid-template-columns: minmax(0,1fr); gap: 1rem; }
-.recommended-card--lead { grid-column: 1/-1; grid-template-columns: minmax(0,1.35fr) minmax(18rem,1fr); }
-.recommended-card img { display:block; width:100%; aspect-ratio:3/2; object-fit:cover; }
-.recommended-card h3 { font-size:clamp(1.25rem,2vw,1.65rem); margin:.3rem 0; }
-.recommended-price { font-size:1.15rem; font-weight:700; }
-.recommended-card dl { margin:1rem 0 0; border-top:1px solid var(--rule); }
-.recommended-card dl div { display:flex; justify-content:space-between; gap:1rem; padding:.45rem 0; border-bottom:1px solid var(--rule); }
-.recommended-card dt { color:var(--sumi-soft); }
-.recommended-card dd { margin:0; text-align:right; }
-.drink-list { list-style:none; padding:0; margin:0; display:grid; gap:.45rem; }
-.drink-list li { display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:1rem; padding:.8rem 0; border-bottom:1px solid var(--rule); }
-.recommended-note,.recommended-cta { max-width:var(--measure); margin:3rem auto; padding:1.5rem; border:1px solid var(--rule); }
-.recommended-cta { text-align:center; }
-.recommended-cta div { display:flex; flex-wrap:wrap; justify-content:center; gap:.8rem; }
-.recommended-cta a { border:1px solid var(--sumi); padding:.7rem 1rem; text-decoration:none; }
-@media (max-width:600px) { .recommended-grid { grid-template-columns:1fr; } .recommended-card--lead { grid-column:auto; grid-template-columns:1fr; } .drink-list li { grid-template-columns:1fr; gap:.2rem; } .recommended-note,.recommended-cta { margin:2rem 1rem; } }
-@media (prefers-reduced-motion:reduce) { .recommended-card,.recommended-card * { animation:none!important; transition:none!important; } }
-
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html {
@@ -696,6 +674,28 @@ html[lang="en"] .cover__title-ja {
 /* 続けて置く2本目（在処の口コミ導線）は間合いを詰める */
 .more-link + .more-link { margin-top: 1.2rem; }
 
+/* --- 別冊の扉（品書きページ） --- */
+.page-head {
+  min-height: 52svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 14vh 1.5rem 10vh;
+  position: relative;
+  border-bottom: 1px solid var(--rule);
+}
+.page-head__kicker {
+  font-size: .8rem;
+  letter-spacing: .45em;
+  text-indent: .45em;
+  color: var(--sumi-soft);
+  margin-bottom: 2.4rem;
+}
+.page-head__title {
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  letter-spacing: .3em;
 /* --- ラーメン入口から居酒屋利用・場所確認への橋渡し --- */
 .ramen-bridge {
   padding: 5.5rem 1.5rem;
@@ -741,29 +741,6 @@ html[lang="en"] .cover__title-ja {
   padding-top: .7rem;
   padding-bottom: .7rem;
 }
-
-/* --- 別冊の扉（品書きページ） --- */
-.page-head {
-  min-height: 52svh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 14vh 1.5rem 10vh;
-  position: relative;
-  border-bottom: 1px solid var(--rule);
-}
-.page-head__kicker {
-  font-size: .8rem;
-  letter-spacing: .45em;
-  text-indent: .45em;
-  color: var(--sumi-soft);
-  margin-bottom: 2.4rem;
-}
-.page-head__title {
-  font-size: clamp(2rem, 6vw, 3.2rem);
-  letter-spacing: .3em;
   text-indent: .3em;
   font-weight: 800;
   margin-bottom: 2.4rem;
