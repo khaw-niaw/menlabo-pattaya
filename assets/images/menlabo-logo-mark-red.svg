@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="logo-mark_master" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 250 250">
+  <g>
+    <g>
+      <polygon points="125 83.262 188.963 83.262 196.628 176.643 153.334 191.711 148.022 103.802 146.466 150.165 125 178.288 125 83.262" fill="#b3180e"/>
+      <polygon points="125 83.262 61.037 83.262 53.372 176.643 96.666 191.711 101.978 103.802 103.534 150.165 125 178.288 125 83.262" fill="#b3180e"/>
+    </g>
+    <g>
+      <rect x="149.699" y="67.986" width="28.707" height="8.426" fill="#b3180e"/>
+      <path d="M188.973,67.965h3.866c2.152,0,3.9,1.748,3.9,3.9v.669c0,2.152-1.748,3.9-3.9,3.9h-3.866v-8.469h0Z" fill="#b3180e"/>
+      <rect x="179.82" y="64.804" width="7.601" height="17.373" fill="#b3180e"/>
+      <rect x="140.687" y="64.804" width="7.601" height="17.373" fill="#b3180e"/>
+      <rect x="125" y="67.986" width="14.293" height="8.426" fill="#b3180e"/>
+      <rect x="71.593" y="67.986" width="28.707" height="8.426" transform="translate(171.894 144.399) rotate(-180)" fill="#b3180e"/>
+      <path d="M53.261,67.965h3.866c2.152,0,3.9,1.748,3.9,3.9v.669c0,2.152-1.748,3.9-3.9,3.9h-3.866v-8.469h0Z" transform="translate(114.288 144.399) rotate(-180)" fill="#b3180e"/>
+      <rect x="62.58" y="64.804" width="7.601" height="17.373" transform="translate(132.76 146.981) rotate(-180)" fill="#b3180e"/>
+      <rect x="101.713" y="64.804" width="7.601" height="17.373" transform="translate(211.026 146.981) rotate(-180)" fill="#b3180e"/>
+      <rect x="110.707" y="67.986" width="14.293" height="8.426" fill="#b3180e"/>
+    </g>
+  </g>
+  <g>
+    <circle cx="125" cy="125" r="96.017" fill="none" stroke="#b3180e" stroke-miterlimit="10" stroke-width="3"/>
+    <circle cx="125" cy="125" r="106.609" fill="none" stroke="#b3180e" stroke-miterlimit="10" stroke-width="5"/>
+  </g>
+</svg>
