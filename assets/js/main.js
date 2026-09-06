@@ -274,16 +274,3 @@ document.addEventListener('click', (e) => {
     window.gtag('event', 'tel_click', { area });
   }
 }, { passive: true });
-
-/* --- RECOMMENDED：表示・商品・飲み物イベント --- */
-const recommendedPage = document.querySelector('[data-recommended-language]');
-if (recommendedPage && typeof window.gtag === 'function') {
-  const language = recommendedPage.dataset.recommendedLanguage;
-  window.gtag('event', 'recommended_view', { language, ranking_month: '2026-07', display_type: 'food_picks_with_separate_drinks' });
-  document.querySelectorAll('.recommended-card').forEach((card) => card.addEventListener('click', () => {
-    window.gtag('event', 'recommended_item_click', { language, display_no: Number(card.dataset.displayNo), july_quantity_rank: Number(card.dataset.julyRank), item_family: card.dataset.family, reference_rank_direction: card.dataset.rankDirection, quantity_change_pct: Number(card.dataset.changePct) });
-  }));
-  document.querySelectorAll('.drink-list li').forEach((item) => item.addEventListener('click', () => {
-    window.gtag('event', 'recommended_drink_click', { language, july_quantity_rank: Number(item.dataset.julyRank), item_family: item.dataset.family, reference_rank_direction: item.dataset.rankDirection, quantity_change_pct: Number(item.dataset.changePct) });
-  }));
-}
