@@ -674,28 +674,6 @@ html[lang="en"] .cover__title-ja {
 /* 続けて置く2本目（在処の口コミ導線）は間合いを詰める */
 .more-link + .more-link { margin-top: 1.2rem; }
 
-/* --- 別冊の扉（品書きページ） --- */
-.page-head {
-  min-height: 52svh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 14vh 1.5rem 10vh;
-  position: relative;
-  border-bottom: 1px solid var(--rule);
-}
-.page-head__kicker {
-  font-size: .8rem;
-  letter-spacing: .45em;
-  text-indent: .45em;
-  color: var(--sumi-soft);
-  margin-bottom: 2.4rem;
-}
-.page-head__title {
-  font-size: clamp(2rem, 6vw, 3.2rem);
-  letter-spacing: .3em;
 /* --- ラーメン入口から居酒屋利用・場所確認への橋渡し --- */
 .ramen-bridge {
   padding: 5.5rem 1.5rem;
@@ -741,6 +719,29 @@ html[lang="en"] .cover__title-ja {
   padding-top: .7rem;
   padding-bottom: .7rem;
 }
+
+/* --- 別冊の扉（品書きページ） --- */
+.page-head {
+  min-height: 52svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 14vh 1.5rem 10vh;
+  position: relative;
+  border-bottom: 1px solid var(--rule);
+}
+.page-head__kicker {
+  font-size: .8rem;
+  letter-spacing: .45em;
+  text-indent: .45em;
+  color: var(--sumi-soft);
+  margin-bottom: 2.4rem;
+}
+.page-head__title {
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  letter-spacing: .3em;
   text-indent: .3em;
   font-weight: 800;
   margin-bottom: 2.4rem;
