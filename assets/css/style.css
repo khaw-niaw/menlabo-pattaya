@@ -16,6 +16,56 @@
   --measure: 40rem;          /* 本文の版面幅 */
 }
 
+/* --- RECOMMENDED（おすすめ：麺・肴・昼・酒の4章。章の作法に従う） --- */
+.recommended-head { padding-bottom: 3rem; }
+.recommended-month { margin-top: 1.6rem; color: var(--shu); font-size: .8rem; letter-spacing: .3em; text-indent: .3em; }
+.recommended-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.4rem 2rem; }
+.recommended-grid--three { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.4rem 1.4rem; } /* 肴：先頭1枚＋3枚。品書きの「六品」と同じ3列 */
+.recommended-grid--three .recommended-card h3 { font-size: 1.1rem; letter-spacing: .08em; }
+.recommended-card { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+.recommended-card--lead { grid-column: 1 / -1; grid-template-columns: minmax(0, 1.35fr) minmax(16rem, 1fr); align-items: center; }
+.recommended-card img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; } /* height:auto がないと img の height 属性(1067)が勝って縦長になる */
+.recommended-card h3 { margin: .2rem 0 .4rem; font-size: clamp(1.15rem, 2vw, 1.45rem); font-weight: 700; letter-spacing: .12em; line-height: 1.5; }
+.recommended-card p { margin: 0; }
+.recommended-card > div > p:not(.recommended-price):not(.recommended-count) { font-size: .95rem; line-height: 2; letter-spacing: .06em; }
+.recommended-price { margin: 0 0 .6rem !important; font-size: 1.05rem; font-weight: 700; letter-spacing: .06em; }
+.recommended-price small { font-size: .78rem; font-weight: 400; color: var(--sumi-soft); margin-left: .5em; letter-spacing: .04em; }
+.recommended-count { margin-top: .8rem !important; color: var(--shu); font-size: .78rem; letter-spacing: .2em; }
+.recommended-note, .recommended-cta { max-width: var(--measure); margin: 3rem auto; padding: 1.5rem; border: 1px solid var(--rule); }
+.recommended-note p { margin: 0; font-size: .85rem; line-height: 1.9; letter-spacing: .06em; color: var(--sumi-soft); text-align: center; }
+.recommended-cta { text-align: center; }
+.recommended-cta h2 { font-size: 1.05rem; letter-spacing: .2em; margin: 0 0 1.2rem; }
+.recommended-cta div { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; }
+.recommended-cta a { border: 1px solid var(--sumi); padding: .7rem 1rem; text-decoration: none; }
+.drink-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .45rem; }
+.drink-list li { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 1rem; padding: .8rem 0; border-bottom: 1px solid var(--rule); }
+@media (max-width: 600px) { .recommended-grid, .recommended-grid--three { grid-template-columns: 1fr; gap: 2.2rem; } .recommended-card--lead { grid-column: auto; grid-template-columns: 1fr; } .drink-list li { grid-template-columns: 1fr; gap: .2rem; } .recommended-note, .recommended-cta { margin: 2rem 1rem; } }
+@media (prefers-reduced-motion:reduce) { .recommended-card,.recommended-card * { animation:none!important; transition:none!important; } }
+/* --- おすすめのカルーセル（横スクロール・スナップ。矢印はPCのみ、はみ出さない時は非表示） --- */
+.reco-carousel { position: relative; --reco-w: min(100vw - 3rem, 68rem); width: var(--reco-w); margin: 3rem 0 0 calc(50% - var(--reco-w) / 2); }
+.reco-carousel__bar { display: flex; justify-content: flex-end; gap: .6rem; margin-bottom: 1.1rem; }
+.reco-carousel.is-static .reco-carousel__bar { display: none; }
+.reco-carousel__btn { width: 2.4rem; height: 2.4rem; border: 1px solid var(--sumi); border-radius: 50%; background: transparent; color: var(--sumi); font: inherit; font-size: .95rem; line-height: 1; cursor: pointer; transition: opacity .3s ease; }
+.reco-carousel__btn:disabled { opacity: .25; cursor: default; }
+.reco-carousel__track { list-style: none; margin: 0; padding: .2rem .2rem 1rem; display: flex; gap: 1.6rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+.reco-carousel__track::-webkit-scrollbar { display: none; }
+.reco-carousel.is-static .reco-carousel__track { justify-content: center; }
+.reco-card { flex: 0 0 clamp(15rem, 24vw, 18.5rem); scroll-snap-align: start; }
+.reco-card img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; margin-bottom: 1rem; }
+.reco-card h3 { margin: 0 0 .35rem; font-size: 1.05rem; font-weight: 700; letter-spacing: .08em; line-height: 1.5; }
+.reco-card__note { margin: 0 0 .5rem; font-size: .88rem; line-height: 1.9; letter-spacing: .05em; color: var(--sumi-soft); }
+.reco-card__price { margin: 0; font-size: 1rem; font-weight: 700; letter-spacing: .06em; }
+.reco-card__price small { font-size: .76rem; font-weight: 400; color: var(--sumi-soft); margin-left: .4em; }
+.reco-drinks { margin-top: 1.2rem; }
+.reco-drinks .menu__row { padding: .45rem 0; font-size: .92rem; }
+@media (max-width: 600px) {
+  .reco-carousel { --reco-w: 100vw; margin-left: calc(50% - 50vw); }
+  .reco-carousel__bar { display: none; }
+  .reco-carousel__track { padding: .2rem 1.5rem 1rem; gap: 1.1rem; scroll-padding-left: 1.5rem; }
+  .reco-card { flex-basis: 74vw; }
+  .reco-carousel.is-static .reco-carousel__track { justify-content: flex-start; }
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 html {
@@ -728,6 +778,20 @@ html[lang="en"] .cover__title-ja {
 /* 英語版のみ：ラテン字に和文の字間は広すぎるので詰める（lang="ja"には不影響） */
 html[lang="en"] .ramen-bridge__title { letter-spacing: .06em; text-indent: .06em; }
 html[lang="en"] .ramen-bridge__copy { letter-spacing: .03em; }
+/* --- トップ「まず、これ」：各章から1品（4枚。スマホは2×2） --- */
+.chapter--picks .chapter__inner { max-width: 62rem; }
+.picks { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.6rem; }
+.pick { display: block; text-decoration: none; color: var(--sumi); }
+.pick img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; margin-bottom: .9rem; transition: opacity .4s ease; }
+.pick:hover img { opacity: .88; }
+.pick__cat { display: block; font-size: .72rem; letter-spacing: .3em; color: var(--shu); margin-bottom: .35rem; }
+.pick__name { display: block; font-size: .98rem; font-weight: 700; letter-spacing: .06em; line-height: 1.5; }
+.pick__price { display: block; font-size: .88rem; margin-top: .25rem; letter-spacing: .04em; }
+@media (max-width: 600px) { .picks { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem 1rem; } .pick__cat { letter-spacing: .2em; } }
+html[lang="th"] .pick__cat, html[lang="th"] .pick__name { letter-spacing: 0; }
+/* 英語版のみ：おすすめの章見出しは英単語が長いので字間を詰めて1行に（lang="ja"には不影響） */
+html[lang="en"] .recommended-section .chapter__title { letter-spacing: .14em; text-indent: .14em; font-size: clamp(1.6rem, 4vw, 2.2rem); }
+html[lang="en"] .recommended-section .chapter__num { letter-spacing: .3em; text-indent: .3em; }
 @media (max-width: 600px) {
   .ramen-bridge { padding: 11vh 1.5rem; }
   .ramen-bridge__title { letter-spacing: .1em; text-indent: .1em; line-height: 1.7; }
