@@ -274,3 +274,31 @@ document.addEventListener('click', (e) => {
     window.gtag('event', 'tel_click', { area });
   }
 }, { passive: true });
+
+/* --- RECOMMENDED：表示・品クリックイベント（麺・肴・昼・酒の4章） --- */
+const recommendedPage = document.querySelector('[data-recommended-language]');
+if (recommendedPage && typeof window.gtag === 'function') {
+  const language = recommendedPage.dataset.recommendedLanguage;
+  window.gtag('event', 'recommended_view', { language, ranking_period: '2026-06_08', display_type: 'four_categories' });
+  document.querySelectorAll('.recommended-card, .reco-card').forEach((card) => card.addEventListener('click', () => {
+    window.gtag('event', 'recommended_item_click', { language, category: card.dataset.category, item: card.dataset.item });
+  }));
+}
+
+/* --- おすすめカルーセル：矢印スクロールと端の無効化。はみ出さない幅では矢印を隠す --- */
+document.querySelectorAll('[data-carousel]').forEach((wrap) => {
+  const track = wrap.querySelector('.reco-carousel__track');
+  const btns = wrap.querySelectorAll('.reco-carousel__btn');
+  if (!track) return;
+  const update = () => {
+    const max = track.scrollWidth - track.clientWidth;
+    const last = track.lastElementChild;
+    const atEnd = !last || last.getBoundingClientRect().right <= track.getBoundingClientRect().right + 6; // スナップで最後まで届かない場合があるので「最後の札が見えているか」で判定
+    wrap.classList.toggle('is-static', max <= 6);
+    btns.forEach((b) => { const dir = Number(b.dataset.dir); b.disabled = dir < 0 ? track.scrollLeft <= 6 : atEnd; });
+  };
+  btns.forEach((b) => b.addEventListener('click', () => track.scrollBy({ left: Number(b.dataset.dir) * track.clientWidth * 0.85, behavior: 'smooth' })));
+  track.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+});
