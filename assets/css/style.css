@@ -674,50 +674,64 @@ html[lang="en"] .cover__title-ja {
 /* 続けて置く2本目（在処の口コミ導線）は間合いを詰める */
 .more-link + .more-link { margin-top: 1.2rem; }
 
-/* --- ラーメン入口から居酒屋利用・場所確認への橋渡し --- */
+/* --- ラーメン入口から居酒屋利用・場所確認への橋渡し（章と同じ作法：中央揃え・小見出し・短い罫線） --- */
 .ramen-bridge {
-  padding: 5.5rem 1.5rem;
-  background: var(--paper-deep);
-  border-top: 1px solid var(--rule);
+  padding: 15vh 1.5rem;
   border-bottom: 1px solid var(--rule);
 }
 .ramen-bridge__inner {
-  width: min(100%, var(--measure));
+  max-width: var(--measure);
   margin: 0 auto;
-  padding-left: 2rem;
-  border-left: 2px solid var(--shu);
+  text-align: center;
 }
 .ramen-bridge__eyebrow {
-  margin: 0 0 1rem;
+  margin: 0 0 1.4rem;
   color: var(--shu);
-  font-size: .72rem;
-  letter-spacing: .24em;
+  font-size: .8rem;
+  letter-spacing: .6em;
+  text-indent: .6em;
 }
 .ramen-bridge__title {
   margin: 0;
-  font-size: clamp(1.45rem, 4vw, 2.15rem);
-  font-weight: 500;
-  line-height: 1.55;
-  letter-spacing: .04em;
+  font-size: clamp(1.25rem, 2.6vw, 1.7rem);
+  font-weight: 700;
+  line-height: 1.8;
+  letter-spacing: .18em;
+  text-indent: .18em;
   text-wrap: balance;
 }
+.ramen-bridge__title::after {
+  content: "";
+  display: block;
+  width: 5.5rem;
+  height: 1px;
+  margin: 2.2rem auto 0;
+  background: var(--sumi);
+}
 .ramen-bridge__copy {
-  max-width: 36rem;
-  margin: 1.4rem 0 0;
-  font-size: .95rem;
-  line-height: 2;
+  max-width: 34rem;
+  margin: 2.4rem auto 0;
+  font-size: .98rem;
+  line-height: 2.1;
+  letter-spacing: .12em;
+  text-wrap: balance;
 }
 .ramen-bridge__actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.2rem 2.2rem;
-  margin-top: 1.8rem;
+  margin-top: 2.6rem;
 }
 .ramen-bridge__actions .more-link {
   min-height: 44px;
   margin-top: 0;
   padding-top: .7rem;
   padding-bottom: .7rem;
+}
+/* 英語版のみ：ラテン字に和文の字間は広すぎるので詰める（lang="ja"には不影響） */
+html[lang="en"] .ramen-bridge__title { letter-spacing: .06em; text-indent: .06em; }
+html[lang="en"] .ramen-bridge__copy { letter-spacing: .03em; }
+@media (max-width: 600px) {
+  .ramen-bridge { padding: 11vh 1.5rem; }
+  .ramen-bridge__title { letter-spacing: .1em; text-indent: .1em; line-height: 1.7; }
+  .ramen-bridge__copy { letter-spacing: .06em; font-size: .95rem; }
 }
 
 /* --- 別冊の扉（品書きページ） --- */
