@@ -276,6 +276,11 @@ document.addEventListener('click', (e) => {
 }, { passive: true });
 
 /* --- RECOMMENDED：表示・品クリックイベント（麺・肴・昼・酒の4章） --- */
+const menuPage = document.querySelector('[data-menu-language]');
+if (menuPage && typeof window.gtag === 'function') {
+  window.gtag('event', 'menu_view', { language: menuPage.dataset.menuLanguage });
+}
+
 const recommendedPage = document.querySelector('[data-recommended-language]');
 if (recommendedPage && typeof window.gtag === 'function') {
   const language = recommendedPage.dataset.recommendedLanguage;
