@@ -616,6 +616,49 @@ html[lang="en"] .cover__title-ja {
 }
 
 /* --- 名物：おすすめ六品（品書きページ） --- */
+/* --- 品書き冒頭：検索意図と来店判断の要点 --- */
+.menu-summary {
+  padding: 2.7rem 1.5rem 0;
+}
+.menu-summary__inner {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 1.6rem 1.5rem;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  text-align: center;
+}
+.menu-summary__lead {
+  font-weight: 700;
+  line-height: 1.9;
+  letter-spacing: .05em;
+}
+.menu-summary__detail {
+  margin-top: .55rem;
+  color: var(--sumi-soft);
+  font-size: .9rem;
+  line-height: 1.9;
+}
+.menu-summary__map {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  margin-top: 1rem;
+  padding: .65rem 1.2rem;
+  border: 1px solid var(--shu);
+  color: var(--shu);
+  font-size: .82rem;
+  letter-spacing: .08em;
+  text-decoration: none;
+  transition: color .25s ease, background-color .25s ease;
+}
+.menu-summary__map:hover,
+.menu-summary__map:focus-visible {
+  color: var(--paper);
+  background: var(--shu);
+}
+
 /* 本文版面より一段広い「口絵」幅。全幅にはせず両サイドの余白は残す */
 .signature .chapter__inner { max-width: 52rem; }
 
@@ -1356,3 +1399,13 @@ body.is-ready .reveal {
   .now-status.is-open::before { animation: none; }
   .m-cta { transition: none; }
 }
+
+/* Ramen guide: existing menu chapter, 2026-09-23 */
+.ramen-guide { max-width: var(--measure); margin: 2.5rem auto 3rem; scroll-margin-top: 6rem; }
+.ramen-guide__title { font-size: clamp(1.15rem, 2.4vw, 1.55rem); line-height: 1.7; letter-spacing: .06em; text-align: center; margin: 0 0 1.5rem; }
+.ramen-guide__photo { margin: 0 0 1.5rem; }
+.ramen-guide__photo img { display: block; width: 100%; height: auto; }
+.ramen-guide__photo figcaption { margin-top: .6rem; font-size: .8rem; color: var(--sumi-soft); text-align: center; }
+.ramen-guide__copy { line-height: 1.9; overflow-wrap: anywhere; }
+.ramen-guide__copy p { margin: 0 0 1rem; }
+html[lang="en"] .ramen-guide__title, html[lang="th"] .ramen-guide__title { letter-spacing: .02em; }
