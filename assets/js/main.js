@@ -109,6 +109,7 @@ if (statusEl) {
 const mCta = document.getElementById('m-cta');
 if (mCta) {
   mCta.classList.add('is-shown');
+  mCta.removeAttribute('aria-hidden');
 }
 
 /* --- グローバルナビ：表紙を抜けたら紙色の地を出す --- */
