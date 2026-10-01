@@ -1409,3 +1409,14 @@ body.is-ready .reveal {
 .ramen-guide__copy { line-height: 1.9; overflow-wrap: anywhere; }
 .ramen-guide__copy p { margin: 0 0 1rem; }
 html[lang="en"] .ramen-guide__title, html[lang="th"] .ramen-guide__title { letter-spacing: .02em; }
+
+/* Menu shortcuts: native anchors remain usable without JavaScript. */
+.menu-categories { max-width: var(--measure); margin: 0 auto 2rem; padding: 1rem 1.5rem; }
+.menu-categories__label { margin: 0 0 .75rem; font-size: .9rem; }
+.menu-categories__links { display: flex; flex-wrap: wrap; gap: .5rem; }
+.menu-categories__links a { display: inline-flex; align-items: center; min-height: 44px; padding: .5rem .85rem; border: 1px solid var(--rule); color: var(--sumi); text-decoration: none; font-size: .9rem; }
+.menu-categories__links a:hover, .menu-categories__links a:focus-visible { color: var(--shu); border-color: var(--shu); }
+[data-menu-language] .chapter { scroll-margin-top: 5rem; }
+/* Long menu sections must not depend on a viewport intersection percentage. */
+[data-menu-language] .chapter__inner { opacity: 1; transform: none; }
+[data-menu-language] .chapter__rule { transform: scaleX(1); }
