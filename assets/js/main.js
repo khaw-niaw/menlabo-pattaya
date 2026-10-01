@@ -247,6 +247,10 @@ document.addEventListener('click', (e) => {
   if (!a || typeof window.gtag !== 'function') return;
 
   const href = a.getAttribute('href') || '';
+  const link = new URL(href, window.location.href);
+  const isInternal = link.origin === window.location.origin;
+  // Language switching is navigation, not a menu-intent conversion.
+  if (a.closest('.lang-switch')) return;
   const explicitEvent = a.dataset.gaEvent;
   // 設置場所のラベル（イベントの内訳が見られる）
   const area =
@@ -259,15 +263,16 @@ document.addEventListener('click', (e) => {
 
   if (explicitEvent) {
     // 改善施策のCTAはHTML側でイベント名を固定し、既存の自動判定との二重発火を防ぐ。
-    window.gtag('event', explicitEvent, { area, link_url: href });
+    const eventName = explicitEvent === 'map_click' && isInternal ? 'access_click' : explicitEvent;
+    window.gtag('event', eventName, { area, link_url: href });
   } else if (href.includes('maps.app.goo.gl')) {
     // 地図・道順クリック（来店意図＝最重要）
     window.gtag('event', 'map_click', { area, link_url: href });
   } else if (href.includes('google.com/maps')) {
     // 口コミ（Googleマップのレビュー）クリック
     window.gtag('event', 'review_click', { area });
-  } else if (href === '/menu' || href.startsWith('/menu')) {
-    // 品書きクリック（興味）
+  } else if (isInternal && /^\/(?:en\/|th\/)?menu(?:\.html)?\/?$/.test(link.pathname) && !href.startsWith('#')) {
+    // 品書きクリック：JP / EN / TH（カテゴリ内ジャンプは除外）
     window.gtag('event', 'menu_click', { area });
   } else if (href.startsWith('tel:')) {
     // 電話クリック（予約意図＝エンジン2・日本人の居酒屋利用の最重要シグナル）
