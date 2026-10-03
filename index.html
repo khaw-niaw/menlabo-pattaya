@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- 言語の自動振り分け：トップ(/)に来た人をブラウザ言語で /th・/en へ誘導（描画前に実行）。
-     ・/ に来たときだけ。/th /en を直接開いた人は尊重してそのまま
+<!-- 言語の自動振り分け：トップ(/)に来た人をブラウザ言語で /th・/en・/zh へ誘導（描画前に実行）。
+     ・/ に来たときだけ。/th /en /zh を直接開いた人は尊重してそのまま
      ・手動で言語を選んだら記憶(localStorage langPref)し、その選択を最優先
      ・1セッション1回だけ（再訪・手動操作で勝手に飛ばさない＝ループ防止）
      日本語(ja)・x-default は / のままなのでSEO(canonical/hreflang)は不変 -->
@@ -18,9 +18,15 @@
     var lang = (pref || (navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
     // クエリ(UTM)とハッシュはそのまま引き継ぐ（GA4の流入帰属が (not set) になるのを防ぐ）
     var keep = location.search + location.hash;
-    if (lang.indexOf('th') === 0) location.replace('/th' + keep);
-    else if (lang.indexOf('ja') === 0) { /* 日本語端末は日本語トップ(/)のまま */ }
-    else location.replace('/en' + keep); // 英語・その他すべて（中国語/韓国語/ロシア語等）は英語へ
+    // 公開済み言語だけを振り分け先にする（未公開言語へ飛ばすと404になる）
+    var PUBLISHED = ['th', 'en', 'zh'];
+    var target =
+      lang.indexOf('ja') === 0 ? '' :                      // 日本語端末は日本語トップ(/)のまま
+      lang.indexOf('th') === 0 ? 'th' :
+      // 簡体字（中国本土・シンガポール）だけ中国語へ。繁体字（zh-TW・zh-HK・zh-Hant）は英語のまま
+      (pref === 'zh' || lang === 'zh-cn' || lang === 'zh-sg' || lang.indexOf('zh-hans') === 0) ? 'zh' :
+      'en';                                                // 英語・その他すべて（繁体字中国語/韓国語/ロシア語等）は英語へ
+    if (target && PUBLISHED.indexOf(target) !== -1) location.replace('/' + target + keep);
   } catch (e) {}
 })();
 </script>
@@ -51,6 +57,7 @@
 <link rel="alternate" hreflang="ja" href="https://www.menlabo-pattaya.com/">
 <link rel="alternate" hreflang="en" href="https://www.menlabo-pattaya.com/en">
 <link rel="alternate" hreflang="th" href="https://www.menlabo-pattaya.com/th">
+<link rel="alternate" hreflang="zh-Hans" href="https://www.menlabo-pattaya.com/zh">
 <link rel="alternate" hreflang="x-default" href="https://www.menlabo-pattaya.com/">
 
 <!-- ファビコン（ファイルはサイト直下に置く） -->
@@ -127,6 +134,8 @@
       <a href="/en">EN</a>
       <span class="lang-switch__sep" aria-hidden="true">/</span>
       <a href="/th">TH</a>
+      <span class="lang-switch__sep" aria-hidden="true">/</span>
+      <a href="/zh" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
     </div>
   </div>
 </nav>
@@ -369,6 +378,8 @@
     <a href="/en">EN</a>
     <span class="lang-switch__sep" aria-hidden="true">/</span>
     <a href="/th">TH</a>
+    <span class="lang-switch__sep" aria-hidden="true">/</span>
+    <a href="/zh" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
   </div>
   <p class="colophon__text">大阪居酒屋 MENLABO酒場<span class="pc-only"> — </span><br class="br-sp">タイ・パタヤ</p>
   <p class="colophon__copy">© 2026 MENLABO<br class="br-sp">（OMOTENASHI CO., LTD.）</p>

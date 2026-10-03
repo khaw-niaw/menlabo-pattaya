@@ -188,6 +188,14 @@ body.no-ink .cover__hint { visibility: hidden; }
 .lang-switch a:nth-child(5)    { order: 3; } /* TH を2番目へ */
 .lang-switch span:nth-child(4) { order: 4; } /* / */
 .lang-switch a:nth-child(3)    { order: 5; } /* EN を最後へ */
+.lang-switch span:nth-child(6) { order: 6; } /* / */
+.lang-switch a:nth-child(7)    { order: 7; } /* 简体中文（2026-10-02追加）。order未指定だと0で先頭に出るため明示 */
+/* スマホのヘッダーは「简体中文」が入る幅がない（JP版で空き約16px・2026-10-02実測）。
+   ヘッダーでだけ隠し、フッターでは4言語とも出す */
+@media (max-width: 600px) {
+  .site-head__nav .lang-switch a:nth-child(7),
+  .site-head__nav .lang-switch span:nth-child(6) { display: none; }
+}
 .lang-switch {
   display: inline-flex;
   align-items: center;
@@ -932,6 +940,28 @@ html[lang="th"] *::after {
 html[lang="th"] .info__row { gap: 1.4rem; }
 html[lang="th"] .info__row dt { width: 7em; }
 html[lang="th"] .info--roomy .info__row dt { width: 9.5em; }
+
+/* === 簡体字中国語ページ専用（html[lang="zh-Hans"] にのみ適用＝JP/EN/THには不影響・2026-10-02） === */
+/* 簡体字は Noto Serif SC。和文フォントを先に当てると簡体字だけ別書体に落ちて字形が混ざるため、SCを先頭にする */
+html[lang="zh-Hans"] {
+  --font-serif: "Noto Serif SC", "Songti SC", "STSong", serif;
+}
+/* 料理名などの日本語（lang="ja"）は日本の字形で出す */
+html[lang="zh-Hans"] [lang="ja"] {
+  font-family: "Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", serif;
+}
+/* 料理名の下に添える中国語の説明 */
+html[lang="zh-Hans"] .menu__zh,
+html[lang="zh-Hans"] .reco-card__zh {
+  display: block;
+  margin-top: .2rem;
+  font-size: .88rem;
+  font-weight: 400;
+  letter-spacing: .04em;
+  color: var(--sumi-soft);
+}
+html[lang="zh-Hans"] .info__row dt { width: 4.5em; letter-spacing: .1em; }
+html[lang="zh-Hans"] .info--roomy .info__row dt { width: 5.5em; }
 
 .info__map {
   display: block;

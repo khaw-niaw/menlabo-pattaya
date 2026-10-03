@@ -75,6 +75,12 @@ const STATUS_STRINGS = {
     pre:       'เปิด 11 โมง',
     done:      'ปิดแล้ววันนี้ — พบกันใหม่พรุ่งนี้ 11 โมง',
   },
+  'zh-Hans': {
+    closedTue: '今日休息 — 明天11:00营业',
+    open:      '营业中 — 营业至24:00',
+    pre:       '11:00开始营业',
+    done:      '今日已打烊 — 明天11:00营业',
+  },
 };
 const STATUS_L = STATUS_STRINGS[document.documentElement.lang] || STATUS_STRINGS.ja;
 
@@ -232,11 +238,11 @@ window.addEventListener('resize', () => {
 });
 
 /* --- 言語スイッチの手動選択を記憶（トップ / の自動振り分けが尊重する） ---
-   ユーザーが JP/EN/TH を選んだら localStorage に保存。次回 / に来たときその言語へ誘導。 */
+   ユーザーが JP/EN/TH/简体中文 を選んだら localStorage に保存。次回 / に来たときその言語へ誘導。 */
 document.querySelectorAll('.lang-switch a').forEach((a) => {
   a.addEventListener('click', () => {
     const href = a.getAttribute('href') || '';
-    const lang = href.indexOf('/th') === 0 ? 'th' : href.indexOf('/en') === 0 ? 'en' : 'ja';
+    const lang = href.indexOf('/th') === 0 ? 'th' : href.indexOf('/en') === 0 ? 'en' : href.indexOf('/zh') === 0 ? 'zh' : 'ja';
     try { localStorage.setItem('langPref', lang); } catch (e) {}
   });
 });
@@ -272,8 +278,8 @@ document.addEventListener('click', (e) => {
   } else if (href.includes('google.com/maps')) {
     // 口コミ（Googleマップのレビュー）クリック
     window.gtag('event', 'review_click', { area });
-  } else if (isInternal && /^\/(?:en\/|th\/)?menu(?:\.html)?\/?$/.test(link.pathname) && !href.startsWith('#')) {
-    // 品書きクリック：JP / EN / TH（カテゴリ内ジャンプは除外）
+  } else if (isInternal && /^\/(?:en\/|th\/|zh\/)?menu(?:\.html)?\/?$/.test(link.pathname) && !href.startsWith('#')) {
+    // 品書きクリック：JP / EN / TH / ZH（カテゴリ内ジャンプは除外）
     window.gtag('event', 'menu_click', { area });
   } else if (href.startsWith('tel:')) {
     // 電話クリック（予約意図＝エンジン2・日本人の居酒屋利用の最重要シグナル）
