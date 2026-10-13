@@ -281,6 +281,9 @@ document.addEventListener('click', (e) => {
   } else if (isInternal && /^\/(?:en\/|th\/|zh\/)?menu(?:\.html)?\/?$/.test(link.pathname) && !href.startsWith('#')) {
     // 品書きクリック：JP / EN / TH / ZH（カテゴリ内ジャンプは除外）
     window.gtag('event', 'menu_click', { area });
+  } else if (isInternal && /^\/(?:en\/|th\/|zh\/)?access(?:\.html)?\/?$/.test(link.pathname) && !href.startsWith('#')) {
+    // 店舗情報・アクセスページへのクリック：JP / EN / TH / ZH（ナビ・品書き内のリンクを含む。2026-10-13 M-006）
+    window.gtag('event', 'access_click', { area });
   } else if (href.startsWith('tel:')) {
     // 電話クリック（予約意図＝エンジン2・日本人の居酒屋利用の最重要シグナル）
     window.gtag('event', 'tel_click', { area });
