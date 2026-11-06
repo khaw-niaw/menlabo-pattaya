@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /assets/images/pos/
 
 Sitemap: https://www.menlabo-pattaya.com/sitemap.xml
