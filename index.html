@@ -6,6 +6,8 @@
   <script>
     (function () {
       try {
+        // 2026-11-11 GSC調査：Googlebotが英語環境で / → /en に飛ばされ、/en が / の重複扱いになっていた。クローラーは振り分けない
+        if (/bot|crawl|spider|slurp|Google-InspectionTool|Lighthouse/i.test(navigator.userAgent)) return;
         if (location.pathname !== "/" || sessionStorage.getItem("langRedirected")) return;
         sessionStorage.setItem("langRedirected", "1");
         var pref = localStorage.getItem("langPref");
