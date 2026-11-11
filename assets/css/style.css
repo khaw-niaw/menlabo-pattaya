@@ -2030,6 +2030,46 @@ html[lang="ja"] .intro h2 {
   line-height: 1.9;
 }
 
+/* 2026-11-11 ちえと承認：お知らせは10件ずつページを分ける。押しやすいよう各リンクは高さ44px以上 */
+.news-pager {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin-top: 40px;
+  font-size: 16px;
+}
+
+.news-pager a,
+.news-pager span[aria-current] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.news-pager__step {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.news-pager__step[rel="next"] {
+  margin-left: auto;
+}
+
+.news-pager__numbers {
+  display: flex;
+  gap: 4px;
+  font-variant-numeric: tabular-nums;
+}
+
+.news-pager__numbers span[aria-current] {
+  color: var(--accent);
+  font-weight: 700;
+}
+
 .company-section,
 .policy-section {
   margin-top: 88px;
