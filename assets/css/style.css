@@ -1,6 +1,6 @@
 :root {
   --accent: #b3180e;
-  --paper: #f2f3f1;
+  --paper: #f7f8f6;
   --ink: #171817;
   --panel: #252625;
   --muted: #6b6d69;
@@ -2001,25 +2001,26 @@ html[lang="ja"] .intro h2 {
   line-height: 2;
 }
 
+/* 2026-11-11 ちえと指示：記事の間の区切り線は引かない（見出し下の黒線と競うため）。題名は本文＋2px */
 .news-index {
-  margin-top: 72px;
-  border-top: 1px solid var(--line);
+  margin-top: 56px;
 }
 
 .news-index__item {
   display: grid;
-  gap: 14px;
-  padding: 32px 0;
-  border-bottom: 1px solid var(--line);
+  gap: 6px;
+  padding: 28px 0;
 }
 
 .news-index__item time {
   font-size: 16px;
+  line-height: 1.6;
   font-variant-numeric: tabular-nums;
 }
 
 .news-index__item h2 {
-  font-size: clamp(23px, 6vw, 30px);
+  font-size: 18px;
+  line-height: 1.6;
 }
 
 .news-index__item p {
@@ -2099,7 +2100,7 @@ html[lang="ja"] .intro h2 {
   .news-index__item {
     grid-template-columns: 160px minmax(0, 1fr);
     gap: 36px;
-    align-items: baseline;
+    align-items: start;
     padding: 36px 0;
   }
 
