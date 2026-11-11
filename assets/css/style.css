@@ -2001,7 +2001,7 @@ html[lang="ja"] .intro h2 {
   line-height: 2;
 }
 
-/* 2026-11-11 ちえと指示：記事の間の区切り線は引かない（見出し下の黒線と競うため）。題名は本文＋2px */
+/* 2026-11-11 ちえと指示：一覧の最上部には線を引かず（見出し下の黒線と重ねない）、各記事の本文の下にだけ薄い線。題名は本文＋2px */
 .news-index {
   margin-top: 56px;
 }
@@ -2010,6 +2010,7 @@ html[lang="ja"] .intro h2 {
   display: grid;
   gap: 6px;
   padding: 28px 0;
+  border-bottom: 1px solid var(--line);
 }
 
 .news-index__item time {
