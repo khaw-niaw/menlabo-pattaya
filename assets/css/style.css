@@ -2061,8 +2061,19 @@ html[lang="ja"] .intro h2 {
 
 .news-pager__numbers {
   display: flex;
+  flex-basis: 100%;
+  justify-content: center;
+  order: -1;
   gap: 4px;
   font-variant-numeric: tabular-nums;
+}
+
+/* スマホは番号を1段目に、新しい・以前のリンクを2段目の左右に置く。PCは1段に並べる */
+@media (min-width: 768px) {
+  .news-pager__numbers {
+    flex-basis: auto;
+    order: 0;
+  }
 }
 
 .news-pager__numbers span[aria-current] {
