@@ -1321,8 +1321,11 @@ html[lang="ja"] .intro h2 {
   font-variant-numeric: tabular-nums;
 }
 
+/* 2026-11-11 ちえと指示：写真なしの一覧も写真カードと同じ幅の列に並べ、点線は使わない */
 .menu-list {
-  max-width: 880px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 12px;
   margin: 36px 0 0;
   padding: 0;
   list-style: none;
@@ -1334,22 +1337,15 @@ html[lang="ja"] .intro h2 {
 
 .menu-list__row {
   display: grid;
-  grid-template-columns: minmax(0, auto) minmax(16px, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 8px;
+  border-bottom: 1px solid var(--line);
   min-height: 52px;
   align-items: start;
   padding: 12px 0;
   line-height: 1.75;
 }
 
-.menu-list__row + .menu-list__row {
-  border-top: 1px solid var(--line);
-}
-
-.menu-list__dots {
-  height: 1.3em;
-  border-bottom: 1px dotted var(--muted);
-}
 
 .menu-content > .vat-note {
   margin-top: 72px;
@@ -1419,6 +1415,11 @@ html[lang="ja"] .intro h2 {
     gap: 48px 20px;
   }
 
+  .menu-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    column-gap: 20px;
+  }
+
   .recommended-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -1432,6 +1433,11 @@ html[lang="ja"] .intro h2 {
   .menu-photo-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 56px 24px;
+  }
+
+  .menu-list {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: 24px;
   }
 
   .menu-category,
