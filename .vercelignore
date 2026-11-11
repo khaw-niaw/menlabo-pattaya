@@ -1,0 +1,13 @@
+src/
+data/
+texts/
+tools/
+build.py
+_v1/
+_check/
+BRIEF_*
+REPORT_*
+DESIGN.md
+CLAUDE.md
+.DS_Store
+_live_ref/

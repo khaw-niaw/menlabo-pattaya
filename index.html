@@ -1,89 +1,88 @@
-<!DOCTYPE html>
+<!-- build.pyで生成。直接編集しない。部品は src/ を直す。 -->
+<!doctype html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-
-<!-- 言語の自動振り分け：トップ(/)に来た人をブラウザ言語で /th・/en・/zh へ誘導（描画前に実行）。
-     ・/ に来たときだけ。/th /en /zh を直接開いた人は尊重してそのまま
-     ・手動で言語を選んだら記憶(localStorage langPref)し、その選択を最優先
-     ・1セッション1回だけ（再訪・手動操作で勝手に飛ばさない＝ループ防止）
-     日本語(ja)・x-default は / のままなのでSEO(canonical/hreflang)は不変 -->
-<script>
-(function(){
-  try {
-    if (location.pathname !== '/') return;
-    if (sessionStorage.getItem('langRedirected')) return;
-    sessionStorage.setItem('langRedirected', '1');
-    var pref = localStorage.getItem('langPref');
-    var lang = (pref || (navigator.languages && navigator.languages[0]) || navigator.language || '').toLowerCase();
-    // クエリ(UTM)とハッシュはそのまま引き継ぐ（GA4の流入帰属が (not set) になるのを防ぐ）
-    var keep = location.search + location.hash;
-    // 公開済み言語だけを振り分け先にする（未公開言語へ飛ばすと404になる）
-    var PUBLISHED = ['th', 'en', 'zh'];
-    var target =
-      lang.indexOf('ja') === 0 ? '' :                      // 日本語端末は日本語トップ(/)のまま
-      lang.indexOf('th') === 0 ? 'th' :
-      // 簡体字（中国本土・シンガポール）だけ中国語へ。繁体字（zh-TW・zh-HK・zh-Hant）は英語のまま
-      (pref === 'zh' || lang === 'zh-cn' || lang === 'zh-sg' || lang.indexOf('zh-hans') === 0) ? 'zh' :
-      'en';                                                // 英語・その他すべて（繁体字中国語/韓国語/ロシア語等）は英語へ
-    if (target && PUBLISHED.indexOf(target) !== -1) location.replace('/' + target + keep);
-  } catch (e) {}
-})();
-</script>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L9W79GXPE1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-L9W79GXPE1');
-</script>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>大阪居酒屋 MENLABO酒場 — パタヤ</title>
-<meta name="description" content="パタヤの大阪居酒屋。唐揚げ、餃子、だし巻き、一品料理とお酒。昼は定食、十五時から酒場。ソイブアカオ・Tree Town、11:00〜24:00、火曜定休。">
-<meta property="og:title" content="大阪居酒屋 MENLABO酒場 — パタヤ">
-<meta property="og:description" content="昼はめし屋。十五時から、酒場。日本の味、ちゃんとある。">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.menlabo-pattaya.com/">
-<link rel="canonical" href="https://www.menlabo-pattaya.com/">
-<meta property="og:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-
-<!-- 多言語：言語別URLの相互参照（相互参照が成立するページ間のみ） -->
-<link rel="alternate" hreflang="ja" href="https://www.menlabo-pattaya.com/">
-<link rel="alternate" hreflang="en" href="https://www.menlabo-pattaya.com/en">
-<link rel="alternate" hreflang="th" href="https://www.menlabo-pattaya.com/th">
-<link rel="alternate" hreflang="zh-Hans" href="https://www.menlabo-pattaya.com/zh">
-<link rel="alternate" hreflang="x-default" href="https://www.menlabo-pattaya.com/">
-
-<!-- ファビコン（ファイルはサイト直下に置く） -->
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#f3eee4">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
-
-<!-- 構造化データ：Restaurant（NAP・営業時間・定休日をGoogleに伝える） -->
-<script type="application/ld+json">
+  <meta charset="utf-8">
+  <script>
+    (function () {
+      try {
+        if (location.pathname !== "/" || sessionStorage.getItem("langRedirected")) return;
+        sessionStorage.setItem("langRedirected", "1");
+        var pref = localStorage.getItem("langPref");
+        var lang = (pref || (navigator.languages && navigator.languages[0]) || navigator.language || "").toLowerCase();
+        var keep = location.search + location.hash;
+        var target = lang.indexOf("ja") === 0 ? "" :
+          lang.indexOf("th") === 0 ? "th" :
+          (pref === "zh" || lang === "zh-cn" || lang === "zh-sg" || lang.indexOf("zh-hans") === 0) ? "zh" : "en";
+        if (target) location.replace("/" + target + keep);
+      } catch (_error) {}
+    })();
+  </script>
+  <!-- Google tag (gtag.js)：本番ドメインでだけ読み込む（手元の確認やVercelのプレビューで本番の解析を汚さないため。2026-11-11 Claude） -->
+  <script id="google-tag" data-ga4-id="G-L9W79GXPE1" data-production-host="www.menlabo-pattaya.com">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    (function () {
+      var tag = document.getElementById("google-tag");
+      var id = tag.dataset.ga4Id;
+      if (!id || location.hostname !== tag.dataset.productionHost) return;
+      var loader = document.createElement("script");
+      loader.async = true;
+      loader.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+      document.head.appendChild(loader);
+      gtag("js", new Date());
+      gtag("config", id);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="パタヤ・ソイブアカオのツリータウンにある大阪居酒屋。餃子、唐揚げ、だし巻きなどの大阪の味と、締めのラーメン。昼は定食、夜は一品料理。写真と価格つきのメニューがあります。">
+  <meta name="theme-color" content="#171817">
+  <title>大阪居酒屋 MENLABO酒場｜パタヤ・ツリータウンの居酒屋とラーメン</title>
+  <link rel="canonical" href="https://www.menlabo-pattaya.com/">
+  <meta property="og:title" content="大阪居酒屋 MENLABO酒場｜パタヤ・ツリータウンの居酒屋とラーメン">
+  <meta property="og:description" content="パタヤ・ソイブアカオのツリータウンにある大阪居酒屋。餃子、唐揚げ、だし巻きなどの大阪の味と、締めのラーメン。昼は定食、夜は一品料理。写真と価格つきのメニューがあります。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.menlabo-pattaya.com/">
+  <meta property="og:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="大阪居酒屋 MENLABO酒場｜パタヤ・ツリータウンの居酒屋とラーメン">
+  <meta name="twitter:description" content="パタヤ・ソイブアカオのツリータウンにある大阪居酒屋。餃子、唐揚げ、だし巻きなどの大阪の味と、締めのラーメン。昼は定食、夜は一品料理。写真と価格つきのメニューがあります。">
+  <meta name="twitter:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
+  <link rel="alternate" hreflang="ja" href="https://www.menlabo-pattaya.com/">
+  <link rel="alternate" hreflang="th" href="https://www.menlabo-pattaya.com/th">
+  <link rel="alternate" hreflang="en" href="https://www.menlabo-pattaya.com/en">
+  <link rel="alternate" hreflang="zh-Hans" href="https://www.menlabo-pattaya.com/zh">
+  <link rel="alternate" hreflang="x-default" href="https://www.menlabo-pattaya.com/">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Restaurant",
   "name": "大阪居酒屋 MENLABO酒場",
-  "alternateName": ["MENLABO", "MENLABO酒場", "麺LABO"],
-  "description": "パタヤの大阪居酒屋。唐揚げ、餃子、だし巻き、一品料理とお酒。昼は定食、十五時から酒場。",
+  "alternateName": [
+    "MENLABO",
+    "MENLABO酒場",
+    "麺LABO"
+  ],
+  "description": "パタヤ・ソイブアカオのツリータウンにある大阪居酒屋。餃子、唐揚げ、だし巻きなどの大阪の味と、締めのラーメン。昼は定食、夜は一品料理。写真と価格つきのメニューがあります。",
   "url": "https://www.menlabo-pattaya.com/",
+  "inLanguage": "ja",
   "telephone": "+66-96-147-9518",
-  "servesCuisine": ["Japanese", "Izakaya", "Osaka cuisine", "Japanese bar food", "Ramen"],
+  "servesCuisine": [
+    "Japanese",
+    "Izakaya",
+    "Osaka cuisine",
+    "Ramen"
+  ],
   "priceRange": "฿฿",
   "currenciesAccepted": "THB",
   "address": {
@@ -102,7 +101,14 @@
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "dayOfWeek": [
+        "Monday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
       "opens": "11:00",
       "closes": "24:00"
     }
@@ -111,282 +117,230 @@
   "hasMap": "https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8",
   "image": "https://www.menlabo-pattaya.com/assets/images/menlabo-logo-mark-kana-red-1000.png"
 }
-</script>
+  </script>
 </head>
+
 <body>
+  <a class="skip-link" href="#main" data-key="skip-main">本文へ移動</a>
 
-<!-- 墨：濡れた紙のWebGLキャンバス（全画面・最前面・操作は透過） -->
-<canvas id="ink-canvas" aria-hidden="true"></canvas>
+  <header class="site-header" aria-label="サイト案内">
+    <a class="site-logo" href="/" aria-label="大阪居酒屋 MENLABO酒場 トップ">
+      <img src="assets/images/menlabo-logo-mark-kana-white.svg" alt="MENLABO酒場" width="82" height="82">
+    </a>
 
-<!-- ============ グローバルナビ（表紙の上は透明、スクロールで紙色に） ============ -->
-<nav class="site-head" id="site-head">
-  <a class="site-head__brand" href="/" aria-label="MENLABO酒場 トップへ">
-    <img class="site-head__seal" src="assets/images/menlabo-logo-mark-red.svg" alt="" width="32" height="32">
-    <img class="site-head__wordmark" src="assets/images/MENLABO_wordmark-sakaba_red.svg" alt="MENLABO酒場" width="116" height="17">
-  </a>
-  <div class="site-head__nav">
-    <a href="/menu">品書き</a>
-    <a href="/access">在処</a>
-    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">地図</a>
-    <div class="lang-switch" aria-label="Language">
-      <a href="/" aria-current="page">JP</a>
-      <span class="lang-switch__sep" aria-hidden="true">/</span>
-      <a href="/en">EN</a>
-      <span class="lang-switch__sep" aria-hidden="true">/</span>
-      <a href="/th">TH</a>
-      <span class="lang-switch__sep" aria-hidden="true">/</span>
-      <a href="/zh" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <nav class="desktop-nav" aria-label="主要メニュー">
+      <a href="/about" data-key="nav-about">MENLABOについて</a>
+      <a href="/menu" data-key="nav-menu">メニュー</a>
+      <a href="/access" data-key="nav-access">アクセス</a>
+      <a href="/news" data-key="nav-news">お知らせ</a>
+    </nav>
+
+    <div class="desktop-actions">
+      <a href="tel:+66961479518" data-action="phone" data-key="action-phone">電話</a>
+      <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">地図</a>
     </div>
+
+    <nav class="header-language-links" aria-label="言語切替">
+      <a href="/" lang="ja" data-lang="ja" aria-current="page" aria-label="日本語" data-key="lang-ja">JP</a>
+      <a href="/th" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">TH</a>
+      <a href="/en" lang="en" data-lang="en" aria-label="English" data-key="lang-en">EN</a>
+      <a href="/zh" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简</a>
+    </nav>
+
+    <button class="menu-button" type="button" aria-controls="mobile-menu" aria-expanded="false" data-open-label="メニュー" data-close-label="閉じる">
+      <span class="menu-button__label" data-key="menu-open">メニュー</span>
+      <span class="menu-button__icon" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav aria-label="スマートフォン用メニュー">
+      <a href="/about" data-key="nav-about">MENLABOについて</a>
+      <a href="/menu" data-key="nav-menu">メニュー</a>
+      <a href="/access" data-key="nav-access">アクセス</a>
+      <a href="/news" data-key="nav-news">お知らせ</a>
+    </nav>
+    <div class="mobile-menu__actions">
+      <a href="tel:+66961479518" data-action="phone" data-key="action-phone">電話</a>
+      <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">地図</a>
+    </div>
+    <nav class="header-language-links header-language-links--mobile" aria-label="言語切替">
+      <a href="/" lang="ja" data-lang="ja" aria-current="page" aria-label="日本語" data-key="lang-ja">JP</a>
+      <a href="/th" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">TH</a>
+      <a href="/en" lang="en" data-lang="en" aria-label="English" data-key="lang-en">EN</a>
+      <a href="/zh" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简</a>
+    </nav>
   </div>
-</nav>
-
-<!-- ============ 扉 ============ -->
-<header class="cover" id="cover">
-  <p class="cover__kicker reveal">大阪居酒屋 — タイ・パタヤ</p>
-
-  <h1 class="cover__title reveal" data-delay="200">
-    <span class="cover__title-en">MENLABO</span>
-    <span class="cover__title-ja">酒　場</span>
-  </h1>
-
-  <p class="cover__line reveal" data-delay="450">
-    今夜は、<span class="rotator" data-words="呑む,食う,語らう,締める" data-interval="2400" data-duration="520">呑む</span>。
-  </p>
-
-  <p class="cover__hint reveal" data-delay="700">ページの上を、なぞってみ。墨が滲むで</p>
-
-  <!-- 営業中ステータス：モバイルのみ表示・JSがタイ時間で判定 -->
-  <p class="now-status reveal" id="now-status" data-delay="850" aria-live="polite"></p>
-
-  <a class="cover__scroll" href="#story">
-    <span class="cover__scroll-text">暖簾をくぐる</span>
-    <span class="cover__scroll-bar" aria-hidden="true"></span>
-  </a>
-</header>
-
-<main>
-  <!-- ============ おすすめ：各章から1品（2026-09-07・案B） ============ -->
-  <section class="chapter chapter--picks" id="picks">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">おすすめ</p>
-        <h2 class="chapter__title">まず、これ</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
-      <p class="chapter__lead">麺・肴・昼・酒、それぞれの一番。</p>
-      <div class="picks"><a class="pick" href="/recommended#men" data-ga-event="top_pick_click" data-pick="men"><img src="assets/images/recommended-shoyu.jpg" alt="淡麗鶏醤油そば" loading="lazy" width="1600" height="1067"><span class="pick__cat">麺</span><span class="pick__name">淡麗鶏醤油そば</span><span class="pick__price">฿179</span></a><a class="pick" href="/recommended#sakana" data-ga-event="top_pick_click" data-pick="sakana"><img src="assets/images/recommended-gyoza.jpg" alt="焼き餃子 5ヶ" loading="lazy" width="1600" height="1067"><span class="pick__cat">肴</span><span class="pick__name">焼き餃子 5ヶ</span><span class="pick__price">฿99</span></a><a class="pick" href="/recommended#hiru" data-ga-event="top_pick_click" data-pick="hiru"><img src="assets/images/lunch.jpg" alt="アジフライ定食" loading="lazy" width="1600" height="1067"><span class="pick__cat">昼</span><span class="pick__name">アジフライ定食</span><span class="pick__price">฿179</span></a><a class="pick" href="/recommended#sake" data-ga-event="top_pick_click" data-pick="sake"><img src="assets/images/sake.jpg" alt="角ハイボール" loading="lazy" width="1600" height="1067"><span class="pick__cat">酒</span><span class="pick__name">角ハイボール</span><span class="pick__price">฿130</span></a></div>
-      <a class="more-link" href="/recommended" data-ga-event="top_pick_more_click">おすすめを全部見る</a>
-    </div>
-  </section>
 
 
-  <!-- ============ のれん：来歴 ============ -->
-  <section class="chapter" id="story">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">のれん</p>
-        <h2 class="chapter__title">来　歴</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__shade" aria-hidden="true"></div>
+      <div class="hero__message" data-key="hero-message"><span>パタヤで</span><span>大阪の味</span></div>
+      <div class="hero__identity">
+        <h1 id="hero-title" data-key="hero-store-name"><span>大阪居酒屋</span><span>MENLABO酒場</span></h1>
+      </div>
+      <a class="hero__map" href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="hero-map">ツリータウンの店へ行く</a>
+    </section>
 
-      <div class="chapter__body prose">
-        <p>大阪・阿波座に、<br class="br-sp">小さなラーメン屋があった。</p>
-        <p>化学調味料を使わん鶏出汁。<br class="br-sp">毎日仕込む、手ェ抜かん一杯。<br>その執念が、海を越えて<br class="br-sp">パタヤに渡ってきた。</p>
-        <p>長く住んでる人。<br class="br-sp">旅の途中の人。<br class="br-sp">タイに惚れて居着いた人。<br>一日の終わりに<br class="br-sp">「今夜は良い夜やった」と思える場所、<br>それをつくるために、ここにおる。</p>
-        <p class="prose__em">MENLABOの「LABO」は、実験室。<br>昨日と同じ今日はない。</p>
+    <section class="intro paper-section reveal" aria-labelledby="intro-title">
+      <div class="intro__heading">
+        <h2 id="intro-title" data-key="intro-heading"><span>大阪の味が</span><span>集う場所</span></h2>
+      </div>
+      <div class="intro__body">
+        <p data-key="intro-body">パタヤのソイブアカオ、ツリータウンの中。提灯が灯る黒い店で、大阪の居酒屋料理を昼から夜まで楽しめます。</p>
+      </div>
+    </section>
+
+    <section class="food paper-section" aria-labelledby="food-title">
+      <div class="section-title reveal">
+        <h2 id="food-title" data-key="food-heading"><span>まずは</span><span>居酒屋の味から</span></h2>
       </div>
 
-      <p class="chapter__note">昼はめし屋。十五時から、酒場</p>
-    </div>
-  </section>
-
-  <!-- ============ おひる：昼 ============ -->
-  <section class="chapter" id="lunch">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">おひる</p>
-        <h2 class="chapter__title">昼</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
-
-      <p class="chapter__lead">定食屋みたいに、しっかり食える。<br class="br-sp">ごはん大盛、無料や</p>
-
-      <figure class="plate">
-        <span class="plate__media"><img class="plate__img" data-plate-src="lunch" alt="昼の一杯（サンプル画像）"></span>
-        <figcaption class="plate__caption">昼の一杯、十一時から</figcaption>
-      </figure>
-
-      <!-- 価格は確定後に ฿— を差し替えてください -->
-      <ul class="menu">
-        <li class="menu__row"><span class="menu__name">唐揚げ定食</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
-        <li class="menu__row"><span class="menu__name">餃子定食</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
-        <li class="menu__row"><span class="menu__name">炒飯セット</span><span class="menu__dots"></span><span class="menu__price">฿229</span></li>
-        <li class="menu__row"><span class="menu__name">天津飯セット</span><span class="menu__dots"></span><span class="menu__price">฿239</span></li>
-        <li class="menu__row"><span class="menu__name">ラーメン各種</span><span class="menu__dots"></span><span class="menu__price">฿159〜</span></li>
-      </ul>
-
-      <a class="more-link" href="/menu#lunch">品書きを見る</a>
-
-      <p class="chapter__note">十一時から、十五時まで</p>
-    </div>
-  </section>
-
-  <!-- ============ 転換：十五時 ============ -->
-  <section class="chapter chapter--turn" id="turn">
-    <img class="turn__bg" data-plate-src="turn" alt="" aria-hidden="true">
-    <div class="chapter__inner">
-      <p class="turn__time">十五時。</p>
-      <p class="turn__line">暖簾が変わる。ここから、酒場</p>
-    </div>
-  </section>
-
-  <!-- ============ 一杯目：肴 ============ -->
-  <section class="chapter" id="sakana">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">一杯目</p>
-        <h2 class="chapter__title">肴</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
-
-      <p class="chapter__lead">まずはここから。<br class="br-sp">全部、酒に合わせて作ってる</p>
-
-      <figure class="plate">
-        <span class="plate__media"><img class="plate__img" data-plate-src="sakana" alt="揚げたての唐揚げ（サンプル画像）"></span>
-        <figcaption class="plate__caption">四種盛り、酒が進む</figcaption>
-      </figure>
-
-      <ul class="menu">
-        <li class="menu__row"><span class="menu__name">枝豆</span><span class="menu__dots"></span><span class="menu__price">฿59</span></li>
-        <li class="menu__row"><span class="menu__name">やみつききゅうり</span><span class="menu__dots"></span><span class="menu__price">฿59</span></li>
-        <li class="menu__row"><span class="menu__name">たこわさ</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
-        <li class="menu__row"><span class="menu__name">焼き餃子　五ヶ</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
-        <li class="menu__row"><span class="menu__name">とんぺい焼き</span><span class="menu__dots"></span><span class="menu__price">฿129</span></li>
-        <li class="menu__row"><span class="menu__name">鶏の唐揚げ</span><span class="menu__dots"></span><span class="menu__price">฿139</span></li>
-        <li class="menu__row"><span class="menu__name">だし巻き玉子</span><span class="menu__dots"></span><span class="menu__price">฿149</span></li>
-        <li class="menu__row"><span class="menu__name">レアバラチャーシュー盛り合わせ</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
-      </ul>
-
-      <a class="more-link" href="/menu">品書きを見る</a>
-
-      <p class="chapter__note">餃子を足すだけで、全然ちゃうねん</p>
-    </div>
-  </section>
-
-  <!-- ============ 二杯目：酒 ============ -->
-  <section class="chapter" id="sake">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">二杯目</p>
-        <h2 class="chapter__title">酒</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
-
-      <p class="chapter__lead chapter__lead--rotate">
-        <span class="rotator" data-words="ビール,ハイボール,焼酎,サワー" data-interval="2200" data-duration="520">ビール</span>、冷えてるで
-      </p>
-
-      <figure class="plate">
-        <span class="plate__media"><img class="plate__img" data-plate-src="sake" alt="注ぎたてのビール（サンプル画像）"></span>
-        <figcaption class="plate__caption">注ぎたての一杯</figcaption>
-      </figure>
-
-      <div class="chapter__body prose">
-        <p>飲めるで。ラーメンも出る。</p>
-        <p>現場で店を張ってきた人と、<br class="br-sp">この道25年、プロに教えるプロ。<br>
-        本物の居酒屋人が、後ろにおる。</p>
-        <p>せやから、手ェ抜かれへん。</p>
+      <div class="food-grid reveal">
+        <figure class="dish" data-menu-id="AG001">
+          <div class="dish__image"><img src="assets/images/karaage.jpg" alt="鶏の唐揚げ" width="1000" height="1000" loading="lazy"></div>
+          <figcaption><span data-key="dish-karaage">鶏の唐揚げ</span><span class="dish__price" data-key="price-karaage">฿139</span></figcaption>
+        </figure>
+        <figure class="dish" data-menu-id="YK003">
+          <div class="dish__image"><img src="assets/images/yaki-gyoza.jpg" alt="焼き餃子5ヶ" width="1000" height="1000" loading="lazy"></div>
+          <figcaption><span><span data-key="dish-gyoza">焼き餃子</span><span class="dish__portion" data-key="dish-gyoza-portion">5ヶ</span></span><span class="dish__price" data-key="price-gyoza">฿99</span></figcaption>
+        </figure>
+        <figure class="dish" data-menu-id="AG009">
+          <div class="dish__image"><img src="assets/images/recommended-aji-fry.jpg" alt="アジフライ" width="1620" height="1080" loading="lazy"></div>
+          <figcaption><span data-key="dish-aji-fry">アジフライ</span><span class="dish__price" data-key="price-aji-fry">฿159</span></figcaption>
+        </figure>
+        <figure class="dish" data-menu-id="YK002">
+          <div class="dish__image"><img src="assets/images/dashimaki-tamago.jpg" alt="だし巻き玉子" width="1620" height="1080" loading="lazy"></div>
+          <figcaption><span data-key="dish-dashimaki">だし巻き玉子</span><span class="dish__price" data-key="price-dashimaki">฿159</span></figcaption>
+        </figure>
       </div>
+
+      <p class="vat-note" data-key="vat-note">価格はVAT込み</p>
+      <a class="line-link" href="/menu" data-key="view-menu">メニューを見る</a>
+    </section>
+
+    <section class="story photo-section" aria-labelledby="story-title">
+      <div class="story__shade" aria-hidden="true"></div>
+      <div class="story__content reveal">
+        <h2 id="story-title" data-key="story-heading"><span>大阪のほんまもんを</span><span>パタヤの日常へ</span></h2>
+        <p data-key="story-body">大阪で親しまれてきた味を、ここパタヤでも気軽に。酒と料理を囲む、肩ひじ張らない時間を届けます。</p>
+        <p data-key="story-supervisors">料理監修は大阪・ニューツルマツのトシヤ ナカタニ氏と、サキアジの谷口泰崇氏です。</p>
+        <a class="line-link line-link--light" href="/about#story" data-key="view-about">MENLABOについて</a>
+      </div>
+    </section>
+
+    <section class="day-night paper-section" aria-labelledby="day-night-title">
+      <div class="section-title reveal">
+        <h2 id="day-night-title" data-key="day-night-heading"><span>昼の食堂</span><span>夜の酒場</span></h2>
+      </div>
+
+      <div class="day-night__visual reveal">
+        <figure class="time-panel time-panel--lunch">
+          <img src="assets/images/lunch.jpg" alt="昼に提供する定食" width="1500" height="1000" loading="lazy">
+          <figcaption>
+            <h3 data-key="lunch-heading">昼は定食とラーメン</h3>
+            <p data-key="lunch-time">11:00–15:00</p>
+          </figcaption>
+        </figure>
+        <figure class="time-panel time-panel--night">
+          <img src="assets/images/sake.jpg" alt="夜のカウンターに並ぶハイボール" width="1500" height="1000" loading="lazy">
+          <figcaption>
+            <h3 data-key="night-heading">夜は居酒屋の全メニュー</h3>
+            <p data-key="night-time">15:00–24:00</p>
+          </figcaption>
+        </figure>
+      </div>
+      <p class="day-night__note reveal" data-key="day-night-note">ラーメンだけでなく、酒と料理をゆっくり楽しめる大阪居酒屋です。</p>
+    </section>
+
+    <section class="seats photo-section" aria-labelledby="seats-title">
+      <div class="seats__shade" aria-hidden="true"></div>
+      <div class="seats__content reveal">
+        <h2 id="seats-title" data-key="seats-heading"><span>ひとりでも</span><span>仲間とでも</span></h2>
+        <div class="seats__details">
+          <p><span data-key="counter-heading">カウンター</span><strong data-key="counter-count">6席</strong><span data-key="counter-body">一人飲みに</span></p>
+          <p><span data-key="table-heading">テーブル</span><strong data-key="table-count">24席</strong><span data-key="table-body">仲間との夜に</span></p>
+        </div>
+        <a class="line-link line-link--light" href="/about#seats" data-key="view-seats">店内と席を見る</a>
+      </div>
+    </section>
+
+    <section class="news paper-section" aria-labelledby="news-title">
+      <div class="section-title reveal">
+        <h2 id="news-title" data-key="news-heading">お知らせ</h2>
+      </div>
+      <div class="news-list reveal">
+        <article data-news-date="2026-11-11"><time datetime="2026-11-11" data-key="news-date-1">2026.11.11</time><h3 data-key="news-item-1"><span>11月16日（月）は</span><span>社員研修のため</span><span>17時までの営業です</span></h3></article>
+        <article data-news-date="2026-11-11"><time datetime="2026-11-11" data-key="news-date-2">2026.11.11</time><h3 data-key="news-item-2"><span>11月下旬</span><span>メニューが</span><span>新しくなります</span></h3></article>
+        <article data-news-date="2026-10"><time datetime="2026-10" data-key="news-date-3">2026.10</time><h3 data-key="news-item-3"><span>店名を</span><span>「大阪居酒屋 </span><span>MENLABO酒場」に</span><span>改めました</span></h3></article>
+      </div>
+      <a class="line-link" href="/news" data-key="view-news">お知らせを見る</a>
+    </section>
+
+    <section class="gateways paper-section" aria-label="詳しいご案内">
+      <a class="gateway gateway--access reveal" href="/access">
+        <span data-key="gateway-access">アクセス</span>
+      </a>
+
+      <a class="gateway gateway--menu reveal" href="/menu">
+        <span data-key="gateway-menu">メニュー</span>
+      </a>
+
+    </section>
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="footer-heading">
+      <img src="assets/images/menlabo-logo-mark-kana-red.svg" alt="MENLABO酒場" width="108" height="108" loading="lazy">
+      <h2 data-key="store-info-heading">店舗情報</h2>
     </div>
-  </section>
 
-  <!-- ============ 締め：麺 ============ -->
-  <section class="chapter" id="men">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">〆に</p>
-        <h2 class="chapter__title">麺</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
+    <dl class="store-table">
+      <div><dt data-key="label-store">店名</dt><dd data-key="store-name">大阪居酒屋 MENLABO酒場</dd></div>
+      <div><dt data-key="label-address">住所</dt><dd data-key="store-address">502/22 Soi Buakhao, Pattaya City, Bang Lamung, Chon Buri 20150</dd></div>
+      <div><dt data-key="label-landmark">行き方</dt><dd data-key="store-landmark">ツリータウン内・提灯が目印の、黒い建物</dd></div>
+      <div><dt data-key="label-hours">営業時間</dt><dd><span data-key="hours-lunch">昼 11:00–15:00（定食・ラーメン）</span><span data-key="hours-night">夜 15:00–24:00（全メニュー）</span></dd></div>
+      <div><dt data-key="label-last-entry">最終入店・ラストオーダー</dt><dd data-key="last-entry-pending">23:40</dd></div>
+      <div><dt data-key="label-closed">定休日</dt><dd data-key="closed-day">火曜日</dd></div>
+      <div><dt data-key="label-payment">支払い方法</dt><dd data-key="payment-methods">現金・PromptPay（QR）・クレジットカード（VISA／Master／Alipay／銀聯（UnionPay）／JCB）</dd></div>
+      <div><dt data-key="label-parking">駐車場</dt><dd data-key="parking-value">あり（1時間 ฿30）</dd></div>
+    </dl>
 
-      <p class="chapter__lead">化学調味料、使てへん。<br class="br-sp">鶏と水と、手間だけや</p>
-
-      <figure class="plate">
-        <span class="plate__media"><img class="plate__img" data-plate-src="men" alt="締めのラーメン（サンプル画像）"></span>
-        <figcaption class="plate__caption">締めの一杯</figcaption>
-      </figure>
-
-      <ul class="menu">
-        <li class="menu__row"><span class="menu__name">淡麗鶏醤油そば</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
-        <li class="menu__row"><span class="menu__name">淡麗鶏塩そば</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
-        <li class="menu__row"><span class="menu__name">鶏白湯醤油そば</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
-        <li class="menu__row"><span class="menu__name">鶏白湯塩そば</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
-        <li class="menu__row"><span class="menu__name">ジャン麺</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
-      </ul>
-
-      <a class="more-link" href="/menu#ramen">パタヤのラーメン・スープと価格を見る</a>
-
-      <p class="chapter__note">飲んだあとの一杯が、いちばん旨い</p>
+    <div class="footer-contact">
+      <p data-key="phone-guidance">ホームページを見たとお伝えください</p>
+      <a href="tel:+66961479518" data-action="phone"><span data-key="phone-number" data-value="phone">+66 96-147-9518</span></a>
     </div>
-  </section>
 
-  <!-- ============ 帰り道：在処 ============ -->
-  <section class="chapter chapter--last" id="access">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">道しるべ</p>
-        <h2 class="chapter__title">在　処</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
+    <nav class="social-links" aria-label="SNS">
+      <a href="https://www.instagram.com/menlabo.pattaya/" data-action="instagram" target="_blank" rel="noopener noreferrer" data-key="social-instagram">Instagram</a>
+      <a href="https://www.facebook.com/menlabo.pattaya" data-action="facebook" target="_blank" rel="noopener noreferrer" data-key="social-facebook">Facebook</a>
+      <a href="https://x.com/menlabo_sakaba" data-action="x" target="_blank" rel="noopener noreferrer" data-key="social-x">X</a>
+    </nav>
 
-      <dl class="info">
-        <div class="info__row"><dt>場所</dt><dd>502/22 Soi Buakhao, Pattaya City, Bang Lamung, Chon Buri 20150<br><small>Tree Town内・提灯が目印の、黒い建物</small></dd></div>
-        <div class="info__row"><dt>昼</dt><dd>11:00 — 15:00<small>（定食とラーメン）</small></dd></div>
-        <div class="info__row"><dt>夜</dt><dd>15:00 — 24:00<small>（全メニュー）</small></dd></div>
-        <div class="info__row"><dt>定休</dt><dd>火曜日</dd></div>
-        <div class="info__row"><dt>駐車</dt><dd>あり<small>（1時間 ฿30）</small></dd></div>
-      </dl>
+    <nav class="language-links" aria-label="言語切替">
+      <a href="/" lang="ja" data-lang="ja" aria-current="page" aria-label="日本語" data-key="lang-ja">日本語</a>
+      <a href="/th" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">ไทย</a>
+      <a href="/en" lang="en" data-lang="en" aria-label="English" data-key="lang-en">English</a>
+      <a href="/zh" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简体中文</a>
+    </nav>
 
-      <a class="info__map" href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">地図を開く</a>
+    <nav class="legal-links" aria-label="運営情報">
+      <a href="/access" data-key="nav-access">アクセス</a>
+      <a href="/company" data-key="link-company">運営会社</a>
+      <a href="/privacy" data-key="link-privacy">プライバシーポリシー</a>
+    </nav>
 
-      <a class="more-link" href="/access">詳しい行き方・店内情報</a>
-      <a class="more-link" href="https://www.google.com/maps/place/%E9%BA%BALABO/@12.9320097,100.8859925,16z/data=!4m8!3m7!1s0x3102977c26d48337:0x4b7684bb1e20feb0!8m2!3d12.9320097!4d100.8859925!9m1!1b1!16s%2Fg%2F11y3d19fdc" target="_blank" rel="noopener">口コミを見る</a>
+    <p class="copyright" data-key="copyright">© MENLABO酒場</p>
+  </footer>
 
-      <p class="chapter__note">今夜飲む場所、決まってるか</p>
-    </div>
-  </section>
 
-</main>
-
-<!-- ============ モバイル下部CTA（スクロールで出現・PCでは非表示） ============ -->
-<!-- ※ LINE導入後は「品書き」をLINEボタンに差し替え予定 -->
-<div class="m-cta" id="m-cta">
-  <a class="m-cta__btn m-cta__btn--primary" href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">地図・道順</a>
-  <a class="m-cta__btn" href="/menu">品書き</a>
-</div>
-
-<!-- ============ 奥付 ============ -->
-<footer class="colophon">
-  <img class="colophon__seal" src="assets/images/menlabo-logo-mark-kana-red.svg" alt="MENLABO酒場のロゴ" width="64" height="64">
-  <nav class="colophon__nav">
-    <a href="/menu">品書き</a>
-    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">地図</a>
+  <nav class="mobile-actions" aria-label="連絡先">
+    <a href="tel:+66961479518" data-action="phone" data-key="action-phone">電話</a>
+    <a href="https://lin.ee/7GQmsKU" data-action="line" data-key="action-line">LINE</a>
+    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">地図</a>
   </nav>
-  <div class="lang-switch" aria-label="Language">
-    <a href="/" aria-current="page">JP</a>
-    <span class="lang-switch__sep" aria-hidden="true">/</span>
-    <a href="/en">EN</a>
-    <span class="lang-switch__sep" aria-hidden="true">/</span>
-    <a href="/th">TH</a>
-    <span class="lang-switch__sep" aria-hidden="true">/</span>
-    <a href="/zh" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-  </div>
-  <p class="colophon__text">大阪居酒屋 MENLABO酒場<span class="pc-only"> — </span><br class="br-sp">タイ・パタヤ</p>
-  <p class="colophon__copy">© 2026 MENLABO<br class="br-sp">（OMOTENASHI CO., LTD.）</p>
-  <p class="colophon__legal"><a href="/company">会社概要</a> ・ <a href="/privacy">プライバシーポリシー</a></p>
-</footer>
 
-<script src="assets/js/ink.js" defer></script>
-<script src="assets/js/main.js" defer></script>
 </body>
 </html>

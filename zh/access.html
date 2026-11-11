@@ -1,276 +1,266 @@
-<!DOCTYPE html>
+<!-- build.pyで生成。直接編集しない。部品は src/ を直す。 -->
+<!doctype html>
 <html lang="zh-Hans">
 <head>
-<meta charset="UTF-8">
-<!-- ※簡体字中国語はAI下訳（ドラフト・2026-10-02）。ネイティブ確認前。
-     店舗情報の値は web_v3/CLAUDE.md §7（NAP確定値）に従う。「中国語対応スタッフがいる」とは書かない。
-     運転手カードはタイ語住所のまま（運転手に見せるため翻訳しない）。
-     テキストの正本はテキスト管理シート（タブ zh_access）。 -->
+  <meta charset="utf-8">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L9W79GXPE1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-L9W79GXPE1');
-</script>
+  <!-- Google tag (gtag.js)：本番ドメインでだけ読み込む（手元の確認やVercelのプレビューで本番の解析を汚さないため。2026-11-11 Claude） -->
+  <script id="google-tag" data-ga4-id="G-L9W79GXPE1" data-production-host="www.menlabo-pattaya.com">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    (function () {
+      var tag = document.getElementById("google-tag");
+      var id = tag.dataset.ga4Id;
+      if (!id || location.hostname !== tag.dataset.productionHost) return;
+      var loader = document.createElement("script");
+      loader.async = true;
+      loader.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+      document.head.appendChild(loader);
+      gtag("js", new Date());
+      gtag("config", id);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="大阪居酒屋 MENLABO酒場位于芭提雅 Soi Buakhao的Tree Town内。本页提供外观照片、交通路线、地图与交通方式。">
+  <meta name="theme-color" content="#171817">
+  <title>交通与店铺信息 | 大阪居酒屋 MENLABO酒場</title>
+  <link rel="canonical" href="https://www.menlabo-pattaya.com/zh/access">
+  <meta property="og:title" content="交通与店铺信息 | 大阪居酒屋 MENLABO酒場">
+  <meta property="og:description" content="大阪居酒屋 MENLABO酒場位于芭提雅 Soi Buakhao的Tree Town内。本页提供外观照片、交通路线、地图与交通方式。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.menlabo-pattaya.com/zh/access">
+  <meta property="og:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="交通与店铺信息 | 大阪居酒屋 MENLABO酒場">
+  <meta name="twitter:description" content="大阪居酒屋 MENLABO酒場位于芭提雅 Soi Buakhao的Tree Town内。本页提供外观照片、交通路线、地图与交通方式。">
+  <meta name="twitter:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/main.js" defer></script>
+  <link rel="alternate" hreflang="ja" href="https://www.menlabo-pattaya.com/access">
+  <link rel="alternate" hreflang="th" href="https://www.menlabo-pattaya.com/th/access">
+  <link rel="alternate" hreflang="en" href="https://www.menlabo-pattaya.com/en/access">
+  <link rel="alternate" hreflang="zh-Hans" href="https://www.menlabo-pattaya.com/zh/access">
+  <link rel="alternate" hreflang="x-default" href="https://www.menlabo-pattaya.com/access">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>交通与店铺信息 — 大阪居酒屋 MENLABO酒場</title>
-<meta name="description" content="芭提雅MENLABO酒場的地址、营业时间、休息日、停车和付款方式。位于Soi Buakhao的Tree Town内，挂着灯笼的黑色建筑。可使用支付宝和银联。">
-<meta property="og:title" content="交通与店铺信息 — 大阪居酒屋 MENLABO酒場">
-<meta property="og:description" content="Tree Town内，挂着灯笼的黑色建筑。营业时间、停车与付款方式。">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.menlabo-pattaya.com/zh/access">
-<link rel="canonical" href="https://www.menlabo-pattaya.com/zh/access">
-<meta property="og:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-
-<!-- 多言語：言語別URLの相互参照 -->
-<link rel="alternate" hreflang="ja" href="https://www.menlabo-pattaya.com/access">
-<link rel="alternate" hreflang="en" href="https://www.menlabo-pattaya.com/en/access">
-<link rel="alternate" hreflang="th" href="https://www.menlabo-pattaya.com/th/access">
-<link rel="alternate" hreflang="zh-Hans" href="https://www.menlabo-pattaya.com/zh/access">
-<link rel="alternate" hreflang="x-default" href="https://www.menlabo-pattaya.com/access">
-
-<!-- ファビコン（ファイルはサイト直下。/zh/ から見て親=サイト直下なので ../ で参照） -->
-<link rel="icon" href="../favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-<link rel="apple-touch-icon" href="../apple-touch-icon.png">
-<link rel="manifest" href="../site.webmanifest">
-<meta name="theme-color" content="#f3eee4">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Shippori+Mincho+B1:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body>
+  <a class="skip-link" href="#main" data-key="skip-main">跳至主要内容</a>
 
-<!-- 墨：濡れた紙のWebGLキャンバス（全画面・最前面・操作は透過） -->
-<canvas id="ink-canvas" aria-hidden="true"></canvas>
+  <header class="site-header" aria-label="网站导航">
+    <a class="site-logo" href="/zh" aria-label="MENLABO酒場首页">
+      <img src="../assets/images/menlabo-logo-mark-kana-white.svg" alt="MENLABO酒場" width="82" height="82">
+    </a>
 
-<!-- ============ グローバルナビ（下層ページは常時表示） ============ -->
-<nav class="site-head is-solid" id="site-head">
-  <a class="site-head__brand" href="/zh" aria-label="MENLABO酒場 — 首页">
-    <img class="site-head__seal" src="../assets/images/menlabo-logo-mark-red.svg" alt="" width="32" height="32">
-    <img class="site-head__wordmark" src="../assets/images/MENLABO_wordmark-sakaba_red.svg" alt="MENLABO酒場" width="116" height="17">
-  </a>
-  <div class="site-head__nav">
-    <a href="/zh/menu">菜单</a>
-    <a href="/zh/access" aria-current="page">交通</a>
-    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">地图</a>
-    <div class="lang-switch" aria-label="Language">
-      <a href="/access" hreflang="ja">JP</a>
-      <span class="lang-switch__sep" aria-hidden="true">/</span>
-      <a href="/en/access" hreflang="en">EN</a>
-      <span class="lang-switch__sep" aria-hidden="true">/</span>
-      <a href="/th/access" hreflang="th">TH</a>
-      <span class="lang-switch__sep" aria-hidden="true">/</span>
-      <a href="/zh/access" hreflang="zh-Hans" aria-current="page">简体中文</a>
+    <nav class="desktop-nav" aria-label="主导航">
+      <a href="/zh" data-key="nav-about">了解MENLABO</a>
+      <a href="/zh/menu" data-key="nav-menu">菜单</a>
+      <a href="/zh/access" data-key="nav-access">交通信息</a>
+      <a href="/zh" data-key="nav-news">最新消息</a>
+    </nav>
+
+    <div class="desktop-actions">
+      <a href="tel:+66961479518" data-action="phone" data-key="action-phone">电话</a>
+      <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">地图</a>
     </div>
+
+    <nav class="header-language-links" aria-label="语言选择">
+      <a href="/access" lang="ja" data-lang="ja" aria-label="日本語" data-key="lang-ja">JP</a>
+      <a href="/th/access" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">TH</a>
+      <a href="/en/access" lang="en" data-lang="en" aria-label="English" data-key="lang-en">EN</a>
+      <a href="/zh/access" lang="zh-Hans" data-lang="zh" aria-current="page" aria-label="简体中文" data-key="lang-zh">简</a>
+    </nav>
+
+    <button class="menu-button" type="button" aria-controls="mobile-menu" aria-expanded="false" data-open-label="菜单" data-close-label="关闭">
+      <span class="menu-button__label" data-key="menu-open">菜单</span>
+      <span class="menu-button__icon" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav aria-label="移动端菜单">
+      <a href="/zh" data-key="nav-about">了解MENLABO</a>
+      <a href="/zh/menu" data-key="nav-menu">菜单</a>
+      <a href="/zh/access" data-key="nav-access">交通信息</a>
+      <a href="/zh" data-key="nav-news">最新消息</a>
+    </nav>
+    <div class="mobile-menu__actions">
+      <a href="tel:+66961479518" data-action="phone" data-key="action-phone">电话</a>
+      <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">地图</a>
+    </div>
+    <nav class="header-language-links header-language-links--mobile" aria-label="语言选择">
+      <a href="/access" lang="ja" data-lang="ja" aria-label="日本語" data-key="lang-ja">JP</a>
+      <a href="/th/access" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">TH</a>
+      <a href="/en/access" lang="en" data-lang="en" aria-label="English" data-key="lang-en">EN</a>
+      <a href="/zh/access" lang="zh-Hans" data-lang="zh" aria-current="page" aria-label="简体中文" data-key="lang-zh">简</a>
+    </nav>
   </div>
-</nav>
 
-<!-- ============ 扉（小） ============ -->
-<header class="page-head">
-  <p class="page-head__kicker reveal">大阪居酒屋 MENLABO酒場</p>
-  <h1 class="page-head__title reveal" data-delay="200">交通与<br class="br-sp">店铺信息</h1>
-  <p class="page-head__note reveal" data-delay="400">Tree Town内<span class="pc-only">，</span><br class="br-sp">挂着灯笼的黑色建筑</p>
-</header>
 
-<main>
+  <main id="main" class="access-page">
+    <section class="access-hero" aria-labelledby="page-title">
+      <div class="access-hero__shade" aria-hidden="true"></div>
+      <div class="access-hero__content">
+        <h1 id="page-title" data-key="page-heading">交通信息</h1>
+        <p data-key="hero-lead">位于Tree Town内，认准挂着灯笼的黑色建筑</p>
+        <div class="access-hero__actions">
+          <a class="line-link line-link--light" href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="open-map">在Google地图中打开</a>
+          <a class="line-link line-link--light" href="tel:+66961479518" data-action="phone" data-key="call-store">致电店铺</a>
+        </div>
+      </div>
+    </section>
 
-  <!-- ============ 1. 基本情報 ============ -->
-  <section class="chapter" id="info">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">基本信息</p>
-        <h2 class="chapter__title">店铺信息</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
+    <section class="access-location paper-section reveal" aria-labelledby="location-title">
+      <div class="access-reading">
+        <h2 id="location-title" data-key="location-heading">进入Tree Town</h2>
+        <p data-key="location-body">我们位于芭提雅 Soi Buakhao，位于Tree Town内，认准挂着灯笼的黑色建筑。夜间请寻找灯笼和黑色外墙。</p>
+      </div>
+    </section>
 
-      <dl class="info">
-        <div class="info__row"><dt>店名</dt><dd>大阪居酒屋 MENLABO酒場</dd></div>
-        <div class="info__row"><dt>地址</dt><dd>502/22 Soi Buakhao, Pattaya City, Bang Lamung, Chon Buri 20150<br><small>Tree Town内，挂着灯笼的黑色建筑</small></dd></div>
-        <div class="info__row"><dt>电话</dt><dd><a class="info__tel" href="tel:+66961479518">+66 96-147-9518</a></dd></div>
-        <div class="info__row"><dt>午餐</dt><dd>11:00–15:00<small>（定食、拉面）</small></dd></div>
-        <div class="info__row"><dt>晚上</dt><dd>15:00–24:00<small>（全部菜单）</small></dd></div>
-        <div class="info__row"><dt>休息日</dt><dd>每周二</dd></div>
-        <div class="info__row"><dt>停车</dt><dd>有停车位<small>（每小时 ฿30）</small></dd></div>
-      </dl>
-    </div>
-  </section>
-
-  <!-- ============ 2. 支払い（Alipay・銀聯を目立たせる） ============ -->
-  <section class="chapter" id="payment">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">付款</p>
-        <h2 class="chapter__title">支付宝、银联</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
-
-      <dl class="info info--roomy">
-        <div class="info__row"><dt>移动支付</dt><dd><strong>支付宝（Alipay）</strong></dd></div>
-        <div class="info__row"><dt>银行卡</dt><dd><strong>银联（UnionPay）</strong><small>另可使用VISA、Master、JCB</small></dd></div>
-        <div class="info__row"><dt>其他</dt><dd>现金、PromptPay（泰国二维码支付）</dd></div>
-      </dl>
-    </div>
-  </section>
-
-  <!-- ============ 3. 外観・内観 ============ -->
-  <section class="chapter" id="photos">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">外观</p>
-        <h2 class="chapter__title">认准这栋建筑</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
-
-      <p class="chapter__lead">找到红灯笼，就到了。</p>
-
-      <div class="access-gallery">
-        <figure class="access-fig">
-          <span class="access-fig__media"><img class="access-fig__img" data-plate-src="access-exterior" alt="夜晚的店铺外观"></span>
-          <figcaption class="access-fig__cap">夜晚，灯笼亮着</figcaption>
+    <section class="access-photos paper-section" aria-labelledby="photos-title">
+      <div class="section-title reveal">
+        <h2 id="photos-title" data-key="photos-heading">前往店铺的路标</h2>
+      </div>
+      <div class="access-gallery reveal">
+        <figure class="access-figure">
+          <img src="../assets/images/access-exterior.jpg" alt="MENLABO酒場夜间外观" width="1200" height="800" loading="lazy">
+          <figcaption data-key="caption-exterior">位于Tree Town内，认准挂着灯笼的黑色建筑</figcaption>
         </figure>
-        <figure class="access-fig">
-          <span class="access-fig__media"><img class="access-fig__img" data-plate-src="access-entrance" alt="店铺入口"></span>
-          <figcaption class="access-fig__cap">入口</figcaption>
+        <figure class="access-figure">
+          <img src="../assets/images/access-entrance.jpg" alt="MENLABO酒場挂着灯笼的入口" width="1200" height="800" loading="lazy">
+          <figcaption data-key="caption-entrance">灯笼下方就是入口</figcaption>
         </figure>
-        <figure class="access-fig">
-          <span class="access-fig__media"><img class="access-fig__img" data-plate-src="access-interior" alt="店内吧台"></span>
-          <figcaption class="access-fig__cap">店内吧台</figcaption>
+        <figure class="access-figure">
+          <img src="../assets/images/access-interior.jpg" alt="MENLABO酒場店内" width="1200" height="800" loading="lazy">
+          <figcaption data-key="caption-interior">进门即可看到店内座位</figcaption>
         </figure>
-        <figure class="access-fig">
-          <span class="access-fig__media"><img class="access-fig__img" data-plate-src="access-vibe" alt="店内氛围"></span>
-          <figcaption class="access-fig__cap">热闹的夜晚</figcaption>
+        <figure class="access-figure">
+          <img src="../assets/images/access-vibe.jpg" alt="MENLABO酒場夜间氛围" width="1200" height="800" loading="lazy">
+          <figcaption data-key="caption-vibe">夜间店铺氛围</figcaption>
         </figure>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ 4. アクセス・道順 ============ -->
-  <section class="chapter" id="route">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">交通</p>
-        <h2 class="chapter__title">怎么来</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
-
-      <!-- Google Maps埋め込み（遅延読み込み・簡体字表示1szh-CN） -->
-      <div class="map-embed">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.6217555302765!2d100.88341221216982!3d12.932014915689209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3102977c26d48337%3A0x4b7684bb1e20feb0!2z6bq6TEFCTw!5e0!3m2!1szh-CN!2sth!4v1780043499657!5m2!1szh-CN!2sth"
-          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="MENLABO酒場 地图"></iframe>
+    <section class="access-map paper-section" aria-labelledby="map-title">
+      <div class="section-title reveal">
+        <h2 id="map-title" data-key="map-heading">查看地图</h2>
       </div>
-
-      <a class="info__map" href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">在地图中打开</a>
-
-      <!-- 運転手に見せるカード（タイ語住所はそのまま） -->
-      <div class="driver-card">
-        <p class="driver-card__label">请把这张卡片给司机看</p>
-        <p class="driver-card__th">502/22 ซอยบัวขาว เมืองพัทยา อำเภอบางละมุง จังหวัดชลบุรี 20150</p>
-        <p class="driver-card__en">502/22&nbsp;Soi&nbsp;Buakhao, Pattaya&nbsp;City, Bang&nbsp;Lamung, Chon&nbsp;Buri&nbsp;20150<br>（Tree Town）</p>
+      <div class="map-embed reveal">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.6217555302765!2d100.88341221216982!3d12.932014915689209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3102977c26d48337%3A0x4b7684bb1e20feb0!2z6bq6TEFCTw!5e0!3m2!1sja!2sth!4v1780043499657!5m2!1sja!2sth" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="MENLABO酒場的Google地图"></iframe>
       </div>
+      <a class="line-link reveal" href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="open-map">在Google地图中打开</a>
+    </section>
 
-      <div class="legal">
-        <section class="legal__sec">
-          <h2>从主要地点出发</h2>
-          <ul>
-            <li>步行街Walking Street：约1.6公里，车程5–15分钟（夜间较堵）</li>
-            <li>Central Pattaya Road：从Soi Buakhao路口步行约10分钟</li>
-            <li>Terminal 21 Pattaya：约3.3公里，车程8–20分钟（视路况）</li>
-          </ul>
-          <p>芭提雅交通状况因时段和日期而异，实际时间请以上方地图导航为准。</p>
-        </section>
-        <section class="legal__sec">
-          <h2>交通方式</h2>
-          <ul>
-            <li>出租车：告诉司机“Soi Buakhao，Tree Town”即可</li>
-            <li>双条车（拼车）：约 ฿15；指定目的地可能按包车计价 ฿100–200</li>
-            <li>摩托车载客服务：适合短距离出行</li>
-            <li>步行：进入Tree Town后，寻找红灯笼</li>
-          </ul>
-        </section>
+    <section class="access-route paper-section" aria-labelledby="route-title">
+      <div class="section-title reveal">
+        <h2 id="route-title" data-key="route-heading">如何前往</h2>
       </div>
-    </div>
-  </section>
-
-  <!-- ============ 5. 店内・設備 ============ -->
-  <section class="chapter" id="facility">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">到店前</p>
-        <h2 class="chapter__title">店内与设施</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
-
-      <dl class="info info--roomy">
-        <div class="info__row"><dt>座位</dt><dd>吧台6席、桌席24席</dd></div>
-        <div class="info__row"><dt>Wi-Fi</dt><dd>有</dd></div>
-        <div class="info__row"><dt>吸烟</dt><dd>店内禁烟<small>（店外设有吸烟区）</small></dd></div>
-        <div class="info__row"><dt>儿童</dt><dd>欢迎带孩子用餐</dd></div>
-        <div class="info__row"><dt>预约</dt><dd>电话预约<small>（+66 96-147-9518）</small></dd></div>
-        <div class="info__row"><dt>语言</dt><dd>泰语<small>（视当班员工，可用英语或日语）</small></dd></div>
-        <div class="info__row"><dt>过敏</dt><dd>如有食物过敏，请在点餐时告知</dd></div>
-      </dl>
-    </div>
-  </section>
-
-  <!-- ============ 6. 問い合わせ ============ -->
-  <section class="chapter chapter--last" id="contact">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">联系</p>
-        <h2 class="chapter__title">联系我们</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
-
-      <div class="sns-links">
-        <a class="sns-links__item sns-links__item--primary" href="tel:+66961479518">拨打电话</a>
-        <a class="sns-links__item" href="https://www.instagram.com/menlabo.pattaya/" target="_blank" rel="noopener">Instagram</a>
-        <a class="sns-links__item" href="https://www.google.com/maps/place/%E9%BA%BALABO/@12.9320097,100.8859925,16z/data=!4m8!3m7!1s0x3102977c26d48337:0x4b7684bb1e20feb0!8m2!3d12.9320097!4d100.8859925!9m1!1b1!16s%2Fg%2F11y3d19fdc" target="_blank" rel="noopener">查看评价</a>
+      <div class="access-route__list reveal">
+        <article>
+          <h3 data-key="route-car-heading">汽车</h3>
+          <p data-key="route-car-body">停车：有停车位（每小时 ฿30）。</p>
+        </article>
+        <article>
+          <h3 data-key="route-bike-heading">摩托车</h3>
+          <p data-key="route-bike-body">可停在店铺旁，高峰时段可能较拥挤</p>
+        </article>
+        <article>
+          <h3 data-key="route-songthaew-heading">双条车</h3>
+          <p data-key="route-songthaew-body">车费约฿15，包车约฿100–200</p>
+        </article>
+        <article>
+          <h3 data-key="route-ride-heading">Bolt或Grab</h3>
+          <p data-key="route-ride-body">在应用中输入“Tree Town”作为目的地，到达后请寻找黑色建筑与灯笼。</p>
+        </article>
       </div>
+    </section>
+
+    <section class="driver-section photo-section" aria-labelledby="driver-title">
+      <div class="driver-section__shade" aria-hidden="true"></div>
+      <div class="driver-section__content reveal">
+        <h2 id="driver-title" data-key="driver-heading">给司机看</h2>
+        <p class="driver-section__lead" data-key="driver-instruction">请将此页面给司机看</p>
+        <div class="driver-card">
+          <p class="driver-card__name">MENLABO酒場</p>
+          <p class="driver-card__address" lang="th" data-key="driver-address">502/22 ซอยบัวขาว เมืองพัทยา อำเภอบางละมุง จังหวัดชลบุรี 20150</p>
+          <p class="driver-card__landmark" data-key="driver-landmark">位于Tree Town内，认准挂着灯笼的黑色建筑</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="access-hours paper-section" aria-labelledby="hours-title">
+      <div class="access-reading reveal">
+        <h2 id="hours-title" data-key="hours-heading">到店前请确认</h2>
+        <div class="access-hours__details">
+          <p data-key="hours-lunch-access">午餐 11:00–15:00（定食与拉面）</p>
+          <p data-key="hours-night-access">晚餐 15:00–24:00（全部菜单）</p>
+          <p data-key="hours-closed-access">休息日 周二</p>
+          <p data-key="hours-last-entry-access">最晚入店及点单时间 23:40</p>
+        </div>
+        <a class="line-link" href="tel:+66961479518" data-action="phone" data-key="call-store">致电店铺</a>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="footer-heading">
+      <img src="../assets/images/menlabo-logo-mark-kana-red.svg" alt="MENLABO酒場" width="108" height="108" loading="lazy">
+      <h2 data-key="store-info-heading">店铺信息</h2>
     </div>
-  </section>
 
-</main>
+    <dl class="store-table">
+      <div><dt data-key="label-store">店名</dt><dd data-key="store-name">大阪居酒屋 MENLABO酒場</dd></div>
+      <div><dt data-key="label-address">地址</dt><dd data-key="store-address">502/22 Soi Buakhao, Pattaya City, Bang Lamung, Chon Buri 20150</dd></div>
+      <div><dt data-key="label-landmark">位置</dt><dd data-key="store-landmark">位于Tree Town内，认准挂着灯笼的黑色建筑</dd></div>
+      <div><dt data-key="label-hours">营业时间</dt><dd><span data-key="hours-lunch">午餐 11:00–15:00（定食与拉面）</span><span data-key="hours-night">晚餐 15:00–24:00（全部菜单）</span></dd></div>
+      <div><dt data-key="label-last-entry">最晚入店及点单时间</dt><dd data-key="last-entry-pending">23:40</dd></div>
+      <div><dt data-key="label-closed">休息日</dt><dd data-key="closed-day">周二</dd></div>
+      <div><dt data-key="label-payment">支付方式</dt><dd data-key="payment-methods">现金、PromptPay（QR）与信用卡（VISA / Master / Alipay / UnionPay / JCB）</dd></div>
+      <div><dt data-key="label-parking">停车</dt><dd data-key="parking-value">有停车位（每小时 ฿30）</dd></div>
+    </dl>
 
-<!-- ============ モバイル下部CTA（PCでは非表示） ============ -->
-<div class="m-cta" id="m-cta" aria-hidden="true">
-  <a class="m-cta__btn m-cta__btn--primary" href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">导航</a>
-  <a class="m-cta__btn" href="/zh/menu">菜单</a>
-</div>
+    <div class="footer-contact">
+      <p data-key="phone-guidance">请告知店员您是通过官网找到我们的</p>
+      <a href="tel:+66961479518" data-action="phone"><span data-key="phone-number" data-value="phone">+66 96-147-9518</span></a>
+    </div>
 
-<!-- ============ 奥付 ============ -->
-<footer class="colophon">
-  <img class="colophon__seal" src="../assets/images/menlabo-logo-mark-kana-red.svg" alt="MENLABO酒場 标志" width="64" height="64">
-  <nav class="colophon__nav">
-    <a href="/zh">首页</a>
-    <a href="/zh/menu">菜单</a>
+    <nav class="social-links" aria-label="社交媒体">
+      <a href="https://www.instagram.com/menlabo.pattaya/" data-action="instagram" target="_blank" rel="noopener noreferrer" data-key="social-instagram">Instagram</a>
+      <a href="https://www.facebook.com/menlabo.pattaya" data-action="facebook" target="_blank" rel="noopener noreferrer" data-key="social-facebook">Facebook</a>
+      <a href="https://x.com/menlabo_sakaba" data-action="x" target="_blank" rel="noopener noreferrer" data-key="social-x">X</a>
+    </nav>
+
+    <nav class="language-links" aria-label="语言选择">
+      <a href="/access" lang="ja" data-lang="ja" aria-label="日本語" data-key="lang-ja">日本語</a>
+      <a href="/th/access" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">ไทย</a>
+      <a href="/en/access" lang="en" data-lang="en" aria-label="English" data-key="lang-en">English</a>
+      <a href="/zh/access" lang="zh-Hans" data-lang="zh" aria-current="page" aria-label="简体中文" data-key="lang-zh">简体中文</a>
+    </nav>
+
+    <nav class="legal-links" aria-label="运营信息">
+      <a href="/zh/access" data-key="nav-access">交通信息</a>
+      <a href="/zh" data-key="link-company">公司信息</a>
+      <a href="/zh" data-key="link-privacy">隐私政策</a>
+    </nav>
+
+    <p class="copyright" data-key="copyright">© MENLABO酒場</p>
+  </footer>
+
+
+  <nav class="mobile-actions" aria-label="联系方式">
+    <a href="tel:+66961479518" data-action="phone" data-key="action-phone">电话</a>
+    <a href="https://lin.ee/7GQmsKU" data-action="line" data-key="action-line">LINE</a>
+    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">地图</a>
   </nav>
-  <div class="lang-switch" aria-label="Language">
-    <a href="/access" hreflang="ja">JP</a>
-    <span class="lang-switch__sep" aria-hidden="true">/</span>
-    <a href="/en/access" hreflang="en">EN</a>
-    <span class="lang-switch__sep" aria-hidden="true">/</span>
-    <a href="/th/access" hreflang="th">TH</a>
-    <span class="lang-switch__sep" aria-hidden="true">/</span>
-    <a href="/zh/access" hreflang="zh-Hans" aria-current="page">简体中文</a>
-  </div>
-  <p class="colophon__text">大阪居酒屋 MENLABO酒場<span class="pc-only"> — </span><br class="br-sp">泰国芭提雅</p>
-  <p class="colophon__copy">© 2026 MENLABO<br class="br-sp">(OMOTENASHI CO., LTD.)</p>
-  <p class="colophon__legal"><a href="/en/company">公司信息（英文）</a> · <a href="/en/privacy">隐私政策（英文）</a></p>
-</footer>
 
-<script src="../assets/js/ink.js" defer></script>
-<script src="../assets/js/main.js" defer></script>
 </body>
 </html>

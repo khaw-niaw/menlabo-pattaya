@@ -1,1452 +1,2168 @@
-/* ==========================================================================
-   MENLABO酒場 — 装丁スタイル
-   base / components / utilities の3層構成
-   ========================================================================== */
-
-/* === BASE === */
-
 :root {
-  --paper: #f3eee4;
-  --paper-deep: #ece5d6;
-  --sumi: #211d1a;
-  --sumi-soft: #4a443e;
-  --shu: #b3180e;           /* 朱（2026-09-04 新ロゴの赤に統一） */
-  --rule: rgba(33, 29, 26, .22);
-  --font-serif: "Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", serif;
-  --measure: 40rem;          /* 本文の版面幅 */
+  --accent: #b3180e;
+  --paper: #f2f3f1;
+  --ink: #171817;
+  --panel: #252625;
+  --muted: #6b6d69;
+  --line: #afb1ad;
+  --scrim: rgb(23 24 23 / 66%);
+  --scrim-soft: rgb(23 24 23 / 34%);
+  --header-height: 84px;
+  --mobile-bar-height: 64px;
+  --gutter: clamp(20px, 5.4vw, 80px);
+  --content-width: 1180px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* --- RECOMMENDED（おすすめ：麺・肴・昼・酒の4章。章の作法に従う） --- */
-.recommended-head { padding-bottom: 3rem; }
-.recommended-month { margin-top: 1.6rem; color: var(--shu); font-size: .8rem; letter-spacing: .3em; text-indent: .3em; }
-.recommended-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.4rem 2rem; }
-.recommended-grid--three { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2.4rem 1.4rem; } /* 肴：先頭1枚＋3枚。品書きの「六品」と同じ3列 */
-.recommended-grid--three .recommended-card h3 { font-size: 1.1rem; letter-spacing: .08em; }
-.recommended-card { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
-.recommended-card--lead { grid-column: 1 / -1; grid-template-columns: minmax(0, 1.35fr) minmax(16rem, 1fr); align-items: center; }
-.recommended-card img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; } /* height:auto がないと img の height 属性(1067)が勝って縦長になる */
-.recommended-card h3 { margin: .2rem 0 .4rem; font-size: clamp(1.15rem, 2vw, 1.45rem); font-weight: 700; letter-spacing: .12em; line-height: 1.5; }
-.recommended-card p { margin: 0; }
-.recommended-card > div > p:not(.recommended-price):not(.recommended-count) { font-size: .95rem; line-height: 2; letter-spacing: .06em; }
-.recommended-price { margin: 0 0 .6rem !important; font-size: 1.05rem; font-weight: 700; letter-spacing: .06em; }
-.recommended-price small { font-size: .78rem; font-weight: 400; color: var(--sumi-soft); margin-left: .5em; letter-spacing: .04em; }
-.recommended-count { margin-top: .8rem !important; color: var(--shu); font-size: .78rem; letter-spacing: .2em; }
-.recommended-note, .recommended-cta { max-width: var(--measure); margin: 3rem auto; padding: 1.5rem; border: 1px solid var(--rule); }
-.recommended-note p { margin: 0; font-size: .85rem; line-height: 1.9; letter-spacing: .06em; color: var(--sumi-soft); text-align: center; }
-.recommended-cta { text-align: center; }
-.recommended-cta h2 { font-size: 1.05rem; letter-spacing: .2em; margin: 0 0 1.2rem; }
-.recommended-cta div { display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem; }
-.recommended-cta a { border: 1px solid var(--sumi); padding: .7rem 1rem; text-decoration: none; }
-.drink-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .45rem; }
-.drink-list li { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 1rem; padding: .8rem 0; border-bottom: 1px solid var(--rule); }
-@media (max-width: 600px) { .recommended-grid, .recommended-grid--three { grid-template-columns: 1fr; gap: 2.2rem; } .recommended-card--lead { grid-column: auto; grid-template-columns: 1fr; } .drink-list li { grid-template-columns: 1fr; gap: .2rem; } .recommended-note, .recommended-cta { margin: 2rem 1rem; } }
-@media (prefers-reduced-motion:reduce) { .recommended-card,.recommended-card * { animation:none!important; transition:none!important; } }
-/* --- おすすめのカルーセル（横スクロール・スナップ。矢印はPCのみ、はみ出さない時は非表示） --- */
-.reco-carousel { position: relative; --reco-w: min(100vw - 3rem, 68rem); width: var(--reco-w); margin: 3rem 0 0 calc(50% - var(--reco-w) / 2); }
-.reco-carousel__bar { display: flex; justify-content: flex-end; gap: .6rem; margin-bottom: 1.1rem; }
-.reco-carousel.is-static .reco-carousel__bar { display: none; }
-.reco-carousel__btn { width: 2.4rem; height: 2.4rem; border: 1px solid var(--sumi); border-radius: 50%; background: transparent; color: var(--sumi); font: inherit; font-size: .95rem; line-height: 1; cursor: pointer; transition: opacity .3s ease; }
-.reco-carousel__btn:disabled { opacity: .25; cursor: default; }
-.reco-carousel__track { list-style: none; margin: 0; padding: .2rem .2rem 1rem; display: flex; gap: 1.6rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
-.reco-carousel__track::-webkit-scrollbar { display: none; }
-.reco-carousel.is-static .reco-carousel__track { justify-content: center; }
-.reco-card { flex: 0 0 clamp(15rem, 24vw, 18.5rem); scroll-snap-align: start; }
-.reco-card img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; margin-bottom: 1rem; }
-.reco-card h3 { margin: 0 0 .35rem; font-size: 1.05rem; font-weight: 700; letter-spacing: .08em; line-height: 1.5; }
-.reco-card__note { margin: 0 0 .5rem; font-size: .88rem; line-height: 1.9; letter-spacing: .05em; color: var(--sumi-soft); }
-.reco-card__price { margin: 0; font-size: 1rem; font-weight: 700; letter-spacing: .06em; }
-.reco-card__price small { font-size: .76rem; font-weight: 400; color: var(--sumi-soft); margin-left: .4em; }
-.reco-drinks { margin-top: 1.2rem; }
-.reco-drinks .menu__row { padding: .45rem 0; font-size: .92rem; }
-@media (max-width: 600px) {
-  .reco-carousel { --reco-w: 100vw; margin-left: calc(50% - 50vw); }
-  .reco-carousel__bar { display: none; }
-  .reco-carousel__track { padding: .2rem 1.5rem 1rem; gap: 1.1rem; scroll-padding-left: 1.5rem; }
-  .reco-card { flex-basis: 74vw; }
-  .reco-carousel.is-static .reco-carousel__track { justify-content: flex-start; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
 
 html {
+  min-width: 320px;
+  overflow-x: clip;
+  color: var(--ink);
+  background: var(--paper);
   scroll-behavior: smooth;
 }
 
 body {
-  font-family: var(--font-serif);
-  background-color: var(--paper);
-  /* 紙の地合い（簀の目）：画像なしのフォールバック込み */
-  background-image:
-    repeating-linear-gradient(0deg, rgba(33,29,26,.014) 0 1px, transparent 1px 3px),
-    radial-gradient(ellipse at 50% 0%, rgba(255,255,255,.5), transparent 60%);
-  color: var(--sumi);
-  line-height: 2.1;
-  letter-spacing: .08em;
-  font-feature-settings: "palt";
-  -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
-}
-
-::selection { background: rgba(168, 57, 43, .18); }
-
-a { color: inherit; }
-
-h1, h2 { font-weight: 700; }
-
-small { font-size: .8em; color: var(--sumi-soft); }
-
-/* === COMPONENTS === */
-
-/* --- 墨キャンバス：本文の上に重なる滲み層 --- */
-#ink-canvas {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: 9;
-  pointer-events: none;
-  mix-blend-mode: multiply;
-}
-body.no-ink #ink-canvas { display: none; }
-body.no-ink .cover__hint { visibility: hidden; }
-
-/* --- グローバルナビ --- */
-.site-head {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 20;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem clamp(1.2rem, 4vw, 2.6rem);
-  transition: background-color .5s ease, box-shadow .5s ease, padding .5s ease;
-}
-/* 表紙を抜けると紙色の地と細い罫線がふわっと出る */
-.site-head.is-solid {
-  background: rgba(243, 238, 228, .9);
-  -webkit-backdrop-filter: saturate(1.2) blur(8px);
-  backdrop-filter: saturate(1.2) blur(8px);
-  box-shadow: 0 1px 0 var(--rule);
-  padding-top: .7rem;
-  padding-bottom: .7rem;
-}
-
-.site-head__brand {
-  display: flex;
-  align-items: center;
-  gap: .7rem;
-  text-decoration: none;
-  color: var(--sumi);
-}
-.site-head__seal {
-  display: block;
-  width: 2rem;
-  height: 2rem;
-  flex-shrink: 0;
-}
-.site-head__name {
-  font-size: .95rem;
-  font-weight: 700;
-  letter-spacing: .16em;
-  text-indent: .16em;
-  white-space: nowrap;
-}
-/* 新ロゴ（2026-09-04）：印＝ぱたや無しマーク、店名＝ワードマークSVG（文字アウトライン済） */
-.site-head__wordmark {
-  display: block;
-  height: 1.05rem;
-  width: auto;
-}
-
-.site-head__nav {
-  display: flex;
-  gap: clamp(1rem, 3vw, 2.2rem);
-}
-.site-head__nav a {
-  font-size: .82rem;
-  letter-spacing: .22em;
-  text-indent: .22em;
-  text-decoration: none;
-  color: var(--sumi);
-  padding-bottom: .2em;
-  border-bottom: 1px solid transparent;
-  transition: color .3s ease, border-color .3s ease;
-}
-.site-head__nav a:hover,
-.site-head__nav a[aria-current="page"] {
-  color: var(--shu);
-  border-color: var(--shu);
-}
-
-/* --- 言語スイッチ（ヘッダー/フッター共通。JP / TH / EN の順で表示） ---
-   小さく静かに。ナビより一段下げ、奥付の品を邪魔しない */
-/* DOM順は JP・/・EN・/・TH のまま、表示順だけ flex order で JP / TH / EN に並べ替える
-   （全12ページのHTMLを書き換えず一括で順序変更するため） */
-.lang-switch a:nth-child(1)    { order: 1; } /* JP */
-.lang-switch span:nth-child(2) { order: 2; } /* / */
-.lang-switch a:nth-child(5)    { order: 3; } /* TH を2番目へ */
-.lang-switch span:nth-child(4) { order: 4; } /* / */
-.lang-switch a:nth-child(3)    { order: 5; } /* EN を最後へ */
-.lang-switch span:nth-child(6) { order: 6; } /* / */
-.lang-switch a:nth-child(7)    { order: 7; } /* 简体中文（2026-10-02追加）。order未指定だと0で先頭に出るため明示 */
-/* スマホのヘッダーは「简体中文」が入る幅がない（JP版で空き約16px・2026-10-02実測）。
-   ヘッダーでだけ隠し、フッターでは4言語とも出す */
-@media (max-width: 600px) {
-  .site-head__nav .lang-switch a:nth-child(7),
-  .site-head__nav .lang-switch span:nth-child(6) { display: none; }
-}
-.lang-switch {
-  display: inline-flex;
-  align-items: center;
-  gap: .5em;
-  font-size: .7rem;
-  letter-spacing: .1em;
-}
-/* a はナビ（.site-head__nav a）の font-size を継いで大きくなるため明示上書きで小さく保つ */
-.lang-switch a,
-.lang-switch span {
-  font-size: .7rem;
-  letter-spacing: .1em;
-  text-indent: 0;
-}
-.lang-switch a {
-  text-decoration: none;
-  color: var(--sumi-soft);
-  padding-bottom: .15em;
-  border-bottom: 1px solid transparent;
-  transition: color .3s ease, border-color .3s ease;
-}
-.lang-switch a:hover {
-  color: var(--shu);
-}
-.lang-switch a[aria-current="page"] {
-  color: var(--shu);
-  border-color: var(--shu);
-}
-.lang-switch__sep { color: var(--rule); }
-.lang-switch__soon { color: var(--rule); cursor: default; }
-
-/* ヘッダー内：ナビとの間に細い仕切り */
-.site-head__nav .lang-switch {
-  margin-left: .2rem;
-  padding-left: clamp(.6rem, 2vw, 1.1rem);
-  border-left: 1px solid var(--rule);
-}
-
-/* フッター内：奥付の静かな右下に置く（既存の中央構成＝印・nav・店名・著作権・プライバシーは
-   元の流れのまま。新要素の言語スイッチだけを絶対配置で隅へ＝日本語版の見た目を崩さない） */
-.colophon { position: relative; }
-.colophon .lang-switch {
-  position: absolute;
-  right: clamp(1.2rem, 4vw, 2.6rem);
-  bottom: 1.6rem;
+  min-width: 320px;
   margin: 0;
-}
-@media (max-width: 600px) {
-  /* モバイルは下部CTAバーと干渉するので、流し込みで中央に戻す */
-  .colophon .lang-switch {
-    position: static;
-    margin: 0 auto 2.4rem;
-  }
-}
-
-/* --- 扉（表紙） --- */
-.cover {
-  min-height: 100svh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  /* 下は「暖簾をくぐる」（縦書き＋線で約13rem）と重ならない余白を確保 */
-  padding: 12vh 1.5rem clamp(15rem, 24vh, 19rem);
-  position: relative;
-  border-bottom: 1px solid var(--rule);
-}
-
-.cover__kicker {
-  font-size: .82rem;
-  letter-spacing: .55em;
-  text-indent: .55em;
-  color: var(--sumi-soft);
-  margin-bottom: 4.5rem;
-}
-
-.cover__title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.6rem;
-  margin-bottom: 4.5rem;
-}
-
-.cover__title-en {
-  font-size: clamp(2.6rem, 8vw, 5rem);
-  font-weight: 800;
-  letter-spacing: .28em;
-  text-indent: .28em;
-  line-height: 1.2;
-}
-
-.cover__title-ja {
-  font-size: clamp(1.1rem, 3vw, 1.6rem);
-  letter-spacing: 1.2em;
-  text-indent: 1.2em;
+  padding-bottom: calc(var(--mobile-bar-height) + env(safe-area-inset-bottom));
+  overflow-x: clip;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Shippori Mincho B1", "Yu Mincho", "Hiragino Mincho ProN", serif;
+  font-size: 16px;
   font-weight: 500;
-  position: relative;
-  padding-top: 1.4rem;
-}
-.cover__title-ja::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 50%;
-  transform: translateX(-50%);
-  width: 3.5rem; height: 1px;
-  background: var(--shu);
+  line-height: 1.9;
+  letter-spacing: 0.035em;
+  -webkit-font-smoothing: antialiased;
 }
 
-/* 英語版だけ：副題が漢字2文字でなくローマ字 "Sakaba" なので、
-   1.2em の字間（漢字前提）だと間延びする。Latin 語に合う字間へ調整（lang="ja"には不影響） */
-html[lang="en"] .cover__title-ja {
-  letter-spacing: .35em;
-  text-indent: .35em;
-  font-size: clamp(1.15rem, 3vw, 1.65rem);
-}
-
-.cover__line {
-  font-size: clamp(1.15rem, 3.4vw, 1.5rem);
-  letter-spacing: .2em;
-  margin-bottom: 2.2rem;
-}
-
-.cover__hint {
-  font-size: .78rem;
-  letter-spacing: .3em;
-  color: var(--sumi-soft);
-  opacity: .75;
-}
-
-.cover__scroll {
-  position: absolute;
-  bottom: 0; left: 50%;
-  transform: translateX(-50%);
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: .8rem;
-}
-.cover__scroll-text {
-  writing-mode: vertical-rl;
-  font-size: .75rem;
-  letter-spacing: .4em;
-  color: var(--sumi-soft);
-}
-.cover__scroll-bar {
-  width: 1px;
-  height: 4.2rem;
-  background: var(--rule);
-  position: relative;
+body.menu-open {
   overflow: hidden;
 }
-.cover__scroll-bar::after {
-  content: "";
-  position: absolute;
-  top: -100%; left: 0;
-  width: 100%; height: 100%;
-  background: var(--shu);
-  animation: scroll-drip 2.4s ease-in-out infinite;
-}
-@keyframes scroll-drip {
-  0%   { top: -100%; }
-  55%  { top: 0; }
-  100% { top: 100%; }
-}
 
-/* --- 章 --- */
-.chapter {
-  padding: 21vh 1.5rem;
-  border-bottom: 1px solid var(--rule);
-}
-.chapter--last { border-bottom: none; }
-
-.chapter__inner {
-  max-width: var(--measure);
-  margin: 0 auto;
-  opacity: 0;
-  transform: translateY(2.6rem);
-  transition: opacity 1.2s cubic-bezier(.22,.6,.2,1) var(--d, 0ms),
-              transform 1.2s cubic-bezier(.22,.6,.2,1) var(--d, 0ms);
-}
-.chapter.is-open .chapter__inner {
-  opacity: 1;
-  transform: none;
-}
-
-.chapter__head {
-  text-align: center;
-  margin-bottom: 5rem;
-}
-
-.chapter__num {
-  font-size: .8rem;
-  letter-spacing: .6em;
-  text-indent: .6em;
-  color: var(--shu);
-  margin-bottom: 1.4rem;
-}
-
-.chapter__title {
-  font-size: clamp(1.8rem, 5vw, 2.6rem);
-  letter-spacing: .5em;
-  text-indent: .5em;
-  font-weight: 700;
-  line-height: 1.4;
-}
-
-.chapter__rule {
+img {
   display: block;
-  width: 5.5rem;
-  height: 1px;
-  margin: 2.2rem auto 0;
-  background: var(--sumi);
-  transform: scaleX(0);
-  transition: transform 1.4s cubic-bezier(.22,.6,.2,1) .35s;
-}
-.chapter.is-open .chapter__rule { transform: scaleX(1); }
-
-.chapter__lead {
-  text-align: center;
-  font-size: 1.06rem;
-  letter-spacing: .16em;
-  margin-bottom: 4rem;
-}
-.chapter__lead--rotate {
-  font-size: clamp(1.15rem, 3vw, 1.4rem);
+  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
-.chapter__note {
-  margin-top: 4.5rem;
-  text-align: center;
-  font-size: .92rem;
-  letter-spacing: .22em;
-  color: var(--sumi-soft);
-}
-.chapter__note::before,
-.chapter__note::after {
-  content: "—";
-  color: var(--shu);
-  margin: 0 1em;
-  opacity: .7;
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
 }
 
-/* --- 転換：十五時（提灯に灯が入る全幅写真の帯） --- */
-.chapter--turn {
-  position: relative;
-  overflow: hidden;
-  background: var(--sumi);
+button,
+a {
+  touch-action: manipulation;
+}
+
+button {
+  color: inherit;
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+h1,
+h2,
+h3,
+p,
+figure,
+dl,
+dd {
+  margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: 0.08em;
+  text-wrap: balance;
+}
+
+h1 span,
+h2 span {
+  display: block;
+  white-space: nowrap;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 1000;
+  top: 8px;
+  left: 8px;
+  min-height: 44px;
+  padding: 8px 16px;
   color: var(--paper);
-  text-align: center;
-  padding: 28vh 1.5rem;
-  border-bottom: none;
+  background: var(--ink);
+  transform: translateY(-150%);
+  transition: transform 200ms var(--ease);
 }
-.turn__bg {
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.site-header {
   position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(.6) saturate(.95);
-}
-.chapter--turn::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    rgba(33, 29, 26, .62),
-    rgba(33, 29, 26, .28) 50%,
-    rgba(33, 29, 26, .62)
-  );
-}
-.chapter--turn .chapter__inner {
-  position: relative;
-  z-index: 1;
-}
-.chapter--turn .turn__time { text-shadow: 0 1px 14px rgba(0, 0, 0, .45); }
-.chapter--turn .turn__line { text-shadow: 0 1px 10px rgba(0, 0, 0, .55); }
-.turn__time {
-  font-size: clamp(2.4rem, 7vw, 4rem);
-  font-weight: 800;
-  letter-spacing: .3em;
-  text-indent: .3em;
-  line-height: 1.3;
-}
-.turn__line {
-  margin-top: 2.4rem;
-  font-size: .95rem;
-  letter-spacing: .35em;
-  text-indent: .35em;
-  color: rgba(243, 238, 228, .72);
-}
-.turn__line::before,
-.turn__line::after {
-  content: "—";
-  color: var(--shu);
-  margin: 0 1em;
-}
-
-/* --- 本文 --- */
-.prose p {
-  margin-bottom: 2.6rem;
-  text-align: center;
-  font-size: 1.02rem;
-}
-.prose p:last-child { margin-bottom: 0; }
-
-.prose__em {
-  color: var(--shu);
-  letter-spacing: .2em;
-}
-
-/* --- 品書き --- */
-.menu {
-  list-style: none;
-  max-width: 30rem;
-  margin: 0 auto;
-}
-
-.menu__row {
+  z-index: 100;
+  top: 0;
+  left: 0;
   display: flex;
-  align-items: baseline;
-  gap: 1em;
-  padding: 1.05rem 0;
-  font-size: 1rem;
-  opacity: 0;
-  transform: translateY(.9rem);
-  transition: opacity .9s ease, transform .9s ease;
-}
-.chapter.is-open .menu__row { opacity: 1; transform: none; }
-.chapter.is-open .menu__row:nth-child(1) { transition-delay: .45s; }
-.chapter.is-open .menu__row:nth-child(2) { transition-delay: .58s; }
-.chapter.is-open .menu__row:nth-child(3) { transition-delay: .71s; }
-.chapter.is-open .menu__row:nth-child(4) { transition-delay: .84s; }
-.chapter.is-open .menu__row:nth-child(5) { transition-delay: .97s; }
-.chapter.is-open .menu__row:nth-child(6) { transition-delay: 1.1s; }
-.chapter.is-open .menu__row:nth-child(7) { transition-delay: 1.23s; }
-.chapter.is-open .menu__row:nth-child(8) { transition-delay: 1.36s; }
-
-/* 9品目以降はまとめて表示（長い品書き用） */
-.chapter.is-open .menu__row:nth-child(n+9) { transition-delay: 1.45s; }
-
-.menu__sub {
-  text-align: center;
-  font-size: .82rem;
-  letter-spacing: .55em;
-  text-indent: .55em;
-  color: var(--shu);
-  padding: 3.2rem 0 .8rem;
-}
-.menu__sub:first-child { padding-top: 0; }
-
-.menu__name { letter-spacing: .12em; }
-
-.menu__dots {
-  flex: 1;
-  border-bottom: 1px dotted var(--rule);
-  transform: translateY(-.35em);
-  min-width: 2rem;
-}
-
-.menu__price {
-  font-variant-numeric: tabular-nums;
-  letter-spacing: .04em;
-  color: var(--sumi-soft);
-}
-
-/* --- 回転する単語 --- */
-.rotator {
-  display: inline-block;
-  perspective: 600px;
-  vertical-align: bottom;
-  white-space: nowrap;
-}
-.rotator__word {
-  display: inline-block;
-  text-align: center;
-  white-space: nowrap;
-  overflow: visible;
-  color: var(--shu);
-  font-weight: 700;
-  transform-origin: 50% 50%;
-  will-change: transform, opacity;
-  transition: transform var(--rot-dur, 520ms) cubic-bezier(.3,.7,.3,1),
-              opacity var(--rot-dur, 520ms) ease,
-              width var(--rot-dur, 520ms) cubic-bezier(.3,.7,.3,1);
-}
-.rotator__word.is-out {
-  transform: rotateX(88deg) translateY(-.25em);
-  opacity: 0;
-}
-.rotator__word.is-pre {
-  transition: none;
-  transform: rotateX(-88deg) translateY(.25em);
-  opacity: 0;
-}
-
-/* --- 写真（店の窓のように開く） --- */
-.plate {
-  max-width: var(--measure);
-  margin: 0 auto 4.5rem;
-}
-.plate__media {
-  display: block;
-  overflow: hidden;
-}
-.plate__img {
-  display: block;
+  align-items: flex-start;
+  justify-content: space-between;
   width: 100%;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
-  /* シズル優先：彩度はいじらず、わずかに締めるだけ */
-  filter: saturate(1.06) contrast(1.02);
-  transform: scale(1.06);
-  transition: transform 2.2s cubic-bezier(.22,.6,.2,1);
-}
-.chapter.is-open .plate__img { transform: scale(1); }
-.plate__caption {
-  margin-top: 1.2rem;
-  text-align: center;
-  font-size: .78rem;
-  letter-spacing: .35em;
-  text-indent: .35em;
-  color: var(--sumi-soft);
+  min-height: var(--header-height);
+  padding: 16px var(--gutter);
+  color: var(--paper);
 }
 
-/* --- 名物：おすすめ六品（品書きページ） --- */
-/* --- 品書き冒頭：検索意図と来店判断の要点 --- */
-.menu-summary {
-  padding: 2.7rem 1.5rem 0;
+.site-logo {
+  display: inline-flex;
+  width: 66px;
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
 }
-.menu-summary__inner {
-  max-width: 44rem;
-  margin: 0 auto;
-  padding: 1.6rem 1.5rem;
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-  text-align: center;
+
+.site-logo img {
+  height: auto;
 }
-.menu-summary__lead {
-  font-weight: 700;
-  line-height: 1.9;
-  letter-spacing: .05em;
+
+.desktop-nav,
+.desktop-actions,
+.header-language-links {
+  display: none;
 }
-.menu-summary__detail {
-  margin-top: .55rem;
-  color: var(--sumi-soft);
-  font-size: .9rem;
-  line-height: 1.9;
-}
-.menu-summary__map {
+
+.menu-button {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  min-height: 44px;
-  margin-top: 1rem;
-  padding: .65rem 1.2rem;
-  border: 1px solid var(--shu);
-  color: var(--shu);
-  font-size: .82rem;
-  letter-spacing: .08em;
-  text-decoration: none;
-  transition: color .25s ease, background-color .25s ease;
-}
-.menu-summary__map:hover,
-.menu-summary__map:focus-visible {
+  gap: 14px;
+  min-width: 132px;
+  min-height: 56px;
+  padding: 0 16px 0 18px;
+  border: 0;
   color: var(--paper);
-  background: var(--shu);
+  background: var(--ink);
+  cursor: pointer;
 }
 
-/* 本文版面より一段広い「口絵」幅。全幅にはせず両サイドの余白は残す */
-.signature .chapter__inner { max-width: 52rem; }
-
-.sig-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.6rem 1.8rem;
-  margin-top: 1rem;
+.menu-button__label {
+  font-size: 16px;
+  letter-spacing: 0.08em;
 }
 
-.sig {
-  margin: 0;
-  text-align: center;
-  opacity: 0;
-  transform: translateY(1.2rem);
-  transition: opacity .9s ease, transform .9s ease;
-}
-.chapter.is-open .sig { opacity: 1; transform: none; }
-.chapter.is-open .sig:nth-child(1) { transition-delay: .45s; }
-.chapter.is-open .sig:nth-child(2) { transition-delay: .56s; }
-.chapter.is-open .sig:nth-child(3) { transition-delay: .67s; }
-.chapter.is-open .sig:nth-child(4) { transition-delay: .78s; }
-.chapter.is-open .sig:nth-child(5) { transition-delay: .89s; }
-.chapter.is-open .sig:nth-child(6) { transition-delay: 1s; }
-
-.sig__media {
-  display: block;
-  overflow: hidden;
-}
-.sig__img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  filter: saturate(1.06) contrast(1.02);
-  transform: scale(1.06);
-  transition: transform 1.8s cubic-bezier(.22,.6,.2,1);
-}
-.chapter.is-open .sig__img { transform: scale(1); }
-
-.sig__tag {
-  margin-top: 1.1rem;
-  font-size: .68rem;
-  letter-spacing: .35em;
-  text-indent: .35em;
-  color: var(--shu);
-}
-.sig__tag--push { opacity: .9; }
-.sig__tag::before,
-.sig__tag::after {
-  content: "";
-  display: inline-block;
-  width: .8rem;
-  height: 1px;
-  vertical-align: middle;
-  margin: 0 .6em;
-  background: currentColor;
-  opacity: .5;
-}
-
-.sig__name {
-  margin-top: .55rem;
-  font-size: .98rem;
-  letter-spacing: .08em;
-  line-height: 1.5;
-}
-.sig__price {
-  margin-top: .35rem;
-  font-size: .85rem;
-  font-variant-numeric: tabular-nums;
-  color: var(--sumi-soft);
-}
-
-@media (max-width: 760px) {
-  .sig-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem 1.4rem; }
-}
-@media (max-width: 380px) {
-  .sig-grid { gap: 1.6rem 1.1rem; }
-  .sig__name { font-size: .9rem; }
-}
-
-/* 動きを減らす設定では、ずらし表示せず即座に出す */
-@media (prefers-reduced-motion: reduce) {
-  .sig, .sig__img { transition: none !important; opacity: 1 !important; transform: none !important; }
-}
-
-/* --- 品書きへの誘い --- */
-.more-link {
-  display: block;
-  width: fit-content;
-  margin: 3.4rem auto 0;
-  padding-bottom: .4em;
-  font-size: .88rem;
-  letter-spacing: .35em;
-  text-indent: .35em;
-  text-decoration: none;
-  border-bottom: 1px solid var(--shu);
-  transition: opacity .4s ease, letter-spacing .4s ease;
-}
-.more-link::after {
-  content: "→";
-  margin-left: .6em;
-  color: var(--shu);
-}
-.more-link:hover { opacity: .6; }
-/* 続けて置く2本目（在処の口コミ導線）は間合いを詰める */
-.more-link + .more-link { margin-top: 1.2rem; }
-
-/* --- ラーメン入口から居酒屋利用・場所確認への橋渡し（章と同じ作法：中央揃え・小見出し・短い罫線） --- */
-.ramen-bridge {
-  padding: 15vh 1.5rem;
-  border-bottom: 1px solid var(--rule);
-}
-.ramen-bridge__inner {
-  max-width: var(--measure);
-  margin: 0 auto;
-  text-align: center;
-}
-.ramen-bridge__eyebrow {
-  margin: 0 0 1.4rem;
-  color: var(--shu);
-  font-size: .8rem;
-  letter-spacing: .6em;
-  text-indent: .6em;
-}
-.ramen-bridge__title {
-  margin: 0;
-  font-size: clamp(1.25rem, 2.6vw, 1.7rem);
-  font-weight: 700;
-  line-height: 1.8;
-  letter-spacing: .18em;
-  text-indent: .18em;
-  text-wrap: balance;
-}
-.ramen-bridge__title::after {
-  content: "";
-  display: block;
-  width: 5.5rem;
-  height: 1px;
-  margin: 2.2rem auto 0;
-  background: var(--sumi);
-}
-.ramen-bridge__copy {
-  max-width: 34rem;
-  margin: 2.4rem auto 0;
-  font-size: .98rem;
-  line-height: 2.1;
-  letter-spacing: .12em;
-  text-wrap: balance;
-}
-.ramen-bridge__actions {
-  margin-top: 2.6rem;
-}
-.ramen-bridge__actions .more-link {
-  min-height: 44px;
-  margin-top: 0;
-  padding-top: .7rem;
-  padding-bottom: .7rem;
-}
-/* 英語版のみ：ラテン字に和文の字間は広すぎるので詰める（lang="ja"には不影響） */
-html[lang="en"] .ramen-bridge__title { letter-spacing: .06em; text-indent: .06em; }
-html[lang="en"] .ramen-bridge__copy { letter-spacing: .03em; }
-/* --- トップ「まず、これ」：各章から1品（4枚。スマホは2×2） --- */
-.chapter--picks .chapter__inner { max-width: 62rem; }
-.picks { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.6rem; }
-.pick { display: block; text-decoration: none; color: var(--sumi); }
-.pick img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 2; object-fit: cover; margin-bottom: .9rem; transition: opacity .4s ease; }
-.pick:hover img { opacity: .88; }
-.pick__cat { display: block; font-size: .72rem; letter-spacing: .3em; color: var(--shu); margin-bottom: .35rem; }
-.pick__name { display: block; font-size: .98rem; font-weight: 700; letter-spacing: .06em; line-height: 1.5; }
-.pick__price { display: block; font-size: .88rem; margin-top: .25rem; letter-spacing: .04em; }
-@media (max-width: 600px) { .picks { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.2rem 1rem; } .pick__cat { letter-spacing: .2em; } }
-html[lang="th"] .pick__cat, html[lang="th"] .pick__name { letter-spacing: 0; }
-/* 英語版のみ：おすすめの章見出しは英単語が長いので字間を詰めて1行に（lang="ja"には不影響） */
-html[lang="en"] .recommended-section .chapter__title { letter-spacing: .14em; text-indent: .14em; font-size: clamp(1.6rem, 4vw, 2.2rem); }
-html[lang="en"] .recommended-section .chapter__num { letter-spacing: .3em; text-indent: .3em; }
-@media (max-width: 600px) {
-  .ramen-bridge { padding: 11vh 1.5rem; }
-  .ramen-bridge__title { letter-spacing: .1em; text-indent: .1em; line-height: 1.7; }
-  .ramen-bridge__copy { letter-spacing: .06em; font-size: .95rem; }
-}
-
-/* --- 別冊の扉（品書きページ） --- */
-.page-head {
-  min-height: 52svh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 14vh 1.5rem 10vh;
+.menu-button__icon {
   position: relative;
-  border-bottom: 1px solid var(--rule);
+  display: block;
+  width: 30px;
+  height: 24px;
 }
-.page-head__kicker {
-  font-size: .8rem;
-  letter-spacing: .45em;
-  text-indent: .45em;
-  color: var(--sumi-soft);
-  margin-bottom: 2.4rem;
-}
-.page-head__title {
-  font-size: clamp(2rem, 6vw, 3.2rem);
-  letter-spacing: .3em;
-  text-indent: .3em;
-  font-weight: 800;
-  margin-bottom: 2.4rem;
-  position: relative;
-  padding-bottom: 1.6rem;
-}
-.page-head__title::after {
-  content: "";
+
+.menu-button__icon i {
   position: absolute;
-  bottom: 0; left: 50%;
-  transform: translateX(-50%);
-  width: 3.5rem; height: 1px;
-  background: var(--shu);
-}
-.page-head__note {
-  font-size: .88rem;
-  letter-spacing: .25em;
-  color: var(--sumi-soft);
-}
-/* タイトルの各行：PCは横並び（・区切り）、モバイルだけ縦に積む（下の @media 参照） */
-
-/* --- 店舗情報 --- */
-.info {
-  max-width: 26rem;
-  margin: 0 auto 3.5rem;
-}
-.info__row {
-  display: flex;
-  gap: 2.5rem;
-  padding: 1.3rem 0;
-  border-bottom: 1px dotted var(--rule);
-}
-.info__row:last-child { border-bottom: none; }
-.info__row dt {
-  flex-shrink: 0;
-  width: 3.5em;
-  color: var(--shu);
-  letter-spacing: .4em;
-  font-size: .9rem;
-  padding-top: .1em;
-}
-.info__row dd { font-size: .98rem; letter-spacing: .1em; }
-
-/* 英語版だけ：ラベル(dt)が日本語2文字より長く、3.5em＋字間.4emでは dd と重なるため
-   列幅を広げ字間を詰める。selector を html[lang="en"] に限定＝日本語版(lang="ja")には不影響 */
-html[lang="en"] .info__row { gap: 1.6rem; }
-html[lang="en"] .info__row dt {
-  width: 7em;
-  letter-spacing: .04em;
-}
-html[lang="en"] .info__row dd { letter-spacing: .01em; }
-
-/* === タイ語ページ専用（html[lang="th"] にのみ適用＝日本語/英語には不影響） === */
-/* ラテン字(MENLABO・数字・฿)は Shippori を先に当て、タイ文字だけ Trirong にフォールバックさせる */
-html[lang="th"] {
-  --font-serif: "Shippori Mincho B1", "Trirong", "Noto Serif Thai", serif;
-}
-/* タイ文字は字間(letter-spacing)を空けない＝空けると不自然・結合文字(声調記号等)がずれて見える。
-   THページに限り、デザインの字間/字下げ指定を解除する */
-html[lang="th"] *,
-html[lang="th"] *::before,
-html[lang="th"] *::after {
-  letter-spacing: normal !important;
-  text-indent: 0 !important;
-}
-/* タイ語：ラベル(dt)が日本語2文字より長いので列幅を広げる（重なり防止）。長い語は枠内で折り返す */
-html[lang="th"] .info__row { gap: 1.4rem; }
-html[lang="th"] .info__row dt { width: 7em; }
-html[lang="th"] .info--roomy .info__row dt { width: 9.5em; }
-
-/* === 簡体字中国語ページ専用（html[lang="zh-Hans"] にのみ適用＝JP/EN/THには不影響・2026-10-02） === */
-/* 簡体字は Noto Serif SC。和文フォントを先に当てると簡体字だけ別書体に落ちて字形が混ざるため、SCを先頭にする */
-html[lang="zh-Hans"] {
-  --font-serif: "Noto Serif SC", "Songti SC", "STSong", serif;
-}
-/* 料理名などの日本語（lang="ja"）は日本の字形で出す */
-html[lang="zh-Hans"] [lang="ja"] {
-  font-family: "Shippori Mincho B1", "Hiragino Mincho ProN", "Yu Mincho", serif;
-}
-/* 料理名の下に添える中国語の説明 */
-html[lang="zh-Hans"] .menu__zh,
-html[lang="zh-Hans"] .reco-card__zh {
-  display: block;
-  margin-top: .2rem;
-  font-size: .88rem;
-  font-weight: 400;
-  letter-spacing: .04em;
-  color: var(--sumi-soft);
-}
-html[lang="zh-Hans"] .info__row dt { width: 4.5em; letter-spacing: .1em; }
-html[lang="zh-Hans"] .info--roomy .info__row dt { width: 5.5em; }
-
-.info__map {
-  display: block;
-  width: fit-content;
-  margin: 0 auto;
-  padding: .9rem 3.2rem;
-  border: 1px solid var(--sumi);
-  text-decoration: none;
-  font-size: .9rem;
-  letter-spacing: .4em;
-  text-indent: .4em;
-  transition: background-color .4s ease, color .4s ease, border-color .4s ease;
-}
-.info__map:hover {
-  background-color: var(--sumi);
-  color: var(--paper);
+  right: 0;
+  width: 30px;
+  height: 1px;
+  background: var(--paper);
+  transform-origin: center;
+  transition: top 220ms var(--ease), transform 220ms var(--ease), opacity 160ms ease;
 }
 
-/* --- 奥付 --- */
-.colophon {
-  text-align: center;
-  padding: 8rem 1.5rem 5rem;
-  background: var(--paper-deep);
-  border-top: 1px solid var(--rule);
-}
-.colophon__seal {
-  display: block;
-  width: 4.2rem;
-  height: 4.2rem;
-  margin: 0 auto 2.4rem;
-}
-.colophon__nav {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  margin-bottom: 2.4rem;
-}
-.colophon__nav a {
-  font-size: .85rem;
-  letter-spacing: .3em;
-  text-indent: .3em;
-  text-decoration: none;
-  padding-bottom: .3em;
-  border-bottom: 1px solid var(--rule);
-  transition: border-color .4s ease, color .4s ease;
-}
-.colophon__nav a:hover {
-  color: var(--shu);
-  border-color: var(--shu);
-}
+.menu-button__icon i:nth-child(1) { top: 3px; }
+.menu-button__icon i:nth-child(2) { top: 11px; }
+.menu-button__icon i:nth-child(3) { top: 19px; }
 
-.colophon__text {
-  font-size: .85rem;
-  letter-spacing: .3em;
-  margin-bottom: .8rem;
-}
-.colophon__copy {
-  font-size: .72rem;
-  letter-spacing: .2em;
-  color: var(--sumi-soft);
-}
-.colophon__legal {
-  margin-top: 1.1rem;
-  font-size: .72rem;
-  letter-spacing: .2em;
-}
-.colophon__legal a {
-  color: var(--sumi-soft);
-  text-decoration: none;
-  padding-bottom: .25em;
-  border-bottom: 1px solid var(--rule);
-  transition: color .3s ease, border-color .3s ease;
-}
-.colophon__legal a:hover {
-  color: var(--shu);
-  border-color: var(--shu);
-}
-
-/* --- 規約・ポリシー（プライバシーポリシー等の読み物ページ） --- */
-.legal {
-  max-width: 40rem;
-  margin: 0 auto;
-}
-.legal__intro {
-  font-size: 1rem;
-  margin-bottom: 4rem;
-}
-.legal__sec {
-  margin-bottom: 3.2rem;
-}
-.legal__sec h2 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  letter-spacing: .1em;
-  margin-bottom: 1.2rem;
-  padding-bottom: .7rem;
-  border-bottom: 1px solid var(--rule);
-}
-.legal__sec h2::before {
-  content: "";
-  display: inline-block;
-  width: .5rem;
-  height: .5rem;
-  margin-right: .7em;
-  vertical-align: middle;
-  background: var(--shu);
+.menu-open .menu-button__icon i:nth-child(1) {
+  top: 11px;
   transform: rotate(45deg);
 }
-.legal__sec p {
-  font-size: .95rem;
-  margin-bottom: 1.2rem;
-}
-.legal__sec p:last-child { margin-bottom: 0; }
-.legal__sec ul {
-  list-style: none;
-  margin: 0 0 1.2rem;
-  padding: 0;
-}
-.legal__sec li {
-  position: relative;
-  padding-left: 1.4em;
-  font-size: .95rem;
-  margin-bottom: .7rem;
-}
-.legal__sec li::before {
-  content: "—";
-  position: absolute;
-  left: 0;
-  color: var(--shu);
-}
-.legal__sec a {
-  color: var(--shu);
-  text-underline-offset: .2em;
-}
 
-.legal__info {
-  margin: 0;
-}
-.legal__info > div {
-  display: flex;
-  gap: 1.5rem;
-  padding: .7rem 0;
-  border-bottom: 1px dotted var(--rule);
-}
-.legal__info > div:last-child { border-bottom: none; }
-.legal__info dt {
-  flex-shrink: 0;
-  width: 7em;
-  color: var(--sumi-soft);
-  font-size: .9rem;
-}
-.legal__info dd {
-  font-size: .92rem;
-  word-break: break-word;
-}
-/* 会社概要など長ラベル用（Registration No. / เลขทะเบียนนิติบุคคล が7emに収まらない） */
-.legal__info--wide dt { width: 9.5em; }
-
-.legal__date {
-  margin-top: 4rem;
-  text-align: right;
-  font-size: .85rem;
-  color: var(--sumi-soft);
-}
-
-@media (max-width: 600px) {
-  .legal__info > div { flex-direction: column; gap: .2rem; }
-  .legal__info dt { width: auto; }
-  .legal__info--wide dt { width: auto; }
-}
-
-/* === UTILITIES === */
-
-/* 扉の段階表示（data-delay で遅延指定） */
-.reveal {
+.menu-open .menu-button__icon i:nth-child(2) {
   opacity: 0;
-  transform: translateY(1.2rem);
-  transition: opacity 1.3s ease var(--d, 0ms), transform 1.3s ease var(--d, 0ms);
 }
-body.is-ready .reveal {
+
+.menu-open .menu-button__icon i:nth-child(3) {
+  top: 11px;
+  transform: rotate(-45deg);
+}
+
+.mobile-menu {
+  position: fixed;
+  z-index: 90;
+  inset: 0;
+  padding: calc(var(--header-height) + 64px) var(--gutter) calc(var(--mobile-bar-height) + 40px);
+  color: var(--paper);
+  background: var(--ink);
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-12px);
+  transition: visibility 0s linear 220ms, opacity 220ms var(--ease), transform 220ms var(--ease);
+}
+
+.mobile-menu.is-open {
+  visibility: visible;
   opacity: 1;
-  transform: none;
+  transform: translateY(0);
+  transition-delay: 0s;
 }
 
-/* 動きを減らす設定の尊重 */
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .reveal,
-  .chapter__inner,
-  .chapter__rule,
-  .menu__row,
-  .plate__img,
-  .rotator__word {
-    transition: none !important;
-    opacity: 1 !important;
-    transform: none !important;
-  }
-  .cover__scroll-bar::after { animation: none; }
+.mobile-menu nav {
+  display: grid;
 }
 
-/* --- モバイル専用パーツ：PC幅では display:none のままレイアウトに一切影響しない --- */
-.now-status { display: none; }
-.m-cta { display: none; }
-
-@keyframes status-pulse {
-  0%, 100% { box-shadow: 0 0 0 3px rgba(168, 57, 43, .16); }
-  50%      { box-shadow: 0 0 0 6px rgba(168, 57, 43, 0); }
-}
-
-/* --- 店舗情報ページ（/access） --- */
-
-/* 電話のタップ発信リンク */
-.info__tel {
-  color: var(--shu);
+.mobile-menu nav a {
+  display: flex;
+  min-height: 66px;
+  align-items: center;
+  border-bottom: 1px solid var(--muted);
+  font-size: clamp(22px, 6vw, 30px);
   text-decoration: none;
-  border-bottom: 1px solid var(--shu);
-  padding-bottom: .1em;
-  font-variant-numeric: tabular-nums;
-  letter-spacing: .04em;
 }
 
-/* 外観・店内の写真ギャラリー（横長2列・モバイル1列） */
-.access-gallery {
+.mobile-menu__actions {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.4rem 1.8rem;
-  max-width: 52rem;
-  margin: 1rem auto 0;
-}
-.access-fig { margin: 0; }
-.access-fig__media { display: block; overflow: hidden; }
-.access-fig__img {
-  display: block;
-  width: 100%;
-  aspect-ratio: 3 / 2;
-  object-fit: cover;
-  filter: saturate(1.04) contrast(1.02);
-  transform: scale(1.05);
-  transition: transform 1.6s cubic-bezier(.22,.6,.2,1);
-}
-.chapter.is-open .access-fig__img { transform: scale(1); }
-.access-fig__cap {
-  margin-top: 1rem;
-  text-align: center;
-  font-size: .78rem;
-  letter-spacing: .3em;
-  text-indent: .3em;
-  color: var(--sumi-soft);
+  grid-template-columns: 1fr 1fr;
+  margin-top: 48px;
+  border: 1px solid var(--muted);
 }
 
-/* Google Maps 埋め込み */
-.map-embed {
-  max-width: var(--measure);
-  margin: 0 auto 2.4rem;
-  aspect-ratio: 16 / 10;
+.mobile-menu__actions a {
+  display: flex;
+  min-height: 52px;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.mobile-menu__actions a + a {
+  border-left: 1px solid var(--muted);
+}
+
+.mobile-menu .header-language-links--mobile {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(44px, 1fr));
+  margin-top: 24px;
+  border-top: 1px solid var(--muted);
+  border-bottom: 1px solid var(--muted);
+}
+
+.mobile-menu .header-language-links--mobile a {
+  min-height: 52px;
+  justify-content: center;
+  border: 0;
+  font-size: 16px;
+}
+
+.mobile-menu .header-language-links--mobile a[aria-current="page"] {
+  text-decoration-thickness: 2px;
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  min-height: calc(100svh - var(--mobile-bar-height));
   overflow: hidden;
-  border: 1px solid var(--rule);
-  background: var(--paper-deep);
-}
-.map-embed iframe { display: block; width: 100%; height: 100%; }
-
-/* 運転手に見せるカード */
-.driver-card {
-  max-width: 30rem;
-  margin: 4rem auto 3.5rem;
-  padding: 1.8rem 1.6rem;
-  text-align: center;
-  border: 1px solid var(--sumi);
-  background: rgba(255, 255, 255, .4);
-}
-.driver-card__label {
-  font-size: .74rem;
-  letter-spacing: .2em;
-  color: var(--shu);
-  margin-bottom: 1.1rem;
-}
-.driver-card__th {
-  font-size: 1.15rem;
-  line-height: 1.7;
-  margin-bottom: .8rem;
-}
-.driver-card__en {
-  font-size: .85rem;
-  line-height: 1.7;
-  color: var(--sumi-soft);
+  color: var(--paper);
+  background-color: var(--panel);
+  background-image: url("../images/access-vibe.jpg");
+  background-position: 55% center;
+  background-size: cover;
+  isolation: isolate;
 }
 
-/* SNS・問い合わせのリンク群（現在3ボタン：PCは横1列・モバイルは縦1列で全均等） */
-.sns-links {
+.hero__shade {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(180deg, var(--scrim-soft) 0%, transparent 32%, var(--scrim) 100%);
+}
+
+.hero__message {
+  position: absolute;
+  top: clamp(150px, 23svh, 210px);
+  right: clamp(26px, 10vw, 54px);
+  font-size: clamp(21px, 6vw, 30px);
+  font-weight: 500;
+  line-height: 2;
+  letter-spacing: 0.14em;
+}
+
+html[lang="ja"] .hero__message {
+  writing-mode: vertical-rl;
+}
+
+.hero__identity {
+  align-self: end;
+  padding: 32px var(--gutter) 90px;
+}
+
+.hero h1 {
+  max-width: 11em;
+  font-size: clamp(30px, 9vw, 54px);
+  text-shadow: 0 2px 22px var(--ink);
+}
+
+.hero h1 span:first-child {
+  margin-bottom: 4px;
+  font-size: 0.62em;
+  letter-spacing: 0.14em;
+}
+
+.hero__map {
+  position: absolute;
+  right: var(--gutter);
+  bottom: 28px;
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  border-bottom: 1px solid var(--paper);
+  text-decoration: none;
+}
+
+.paper-section {
+  position: relative;
+  padding: 96px var(--gutter);
+  background: var(--paper);
+}
+
+.intro {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  max-width: 34rem;
+  grid-template-columns: minmax(88px, 0.35fr) minmax(0, 1fr);
+  gap: 36px;
+  min-height: 540px;
+  align-items: center;
+}
+
+.intro__heading {
+  display: flex;
+  justify-content: center;
+}
+
+.intro h2 {
+  font-size: clamp(28px, 8vw, 48px);
+  line-height: 1.7;
+}
+
+html[lang="ja"] .intro h2 {
+  writing-mode: vertical-rl;
+}
+
+.intro__body {
+  max-width: 34em;
+}
+
+.intro__body p {
+  font-size: clamp(17px, 4.5vw, 20px);
+  line-height: 2.05;
+}
+
+.section-title {
+  max-width: var(--content-width);
+  margin: 0 auto 56px;
+}
+
+.section-title h2 {
+  font-size: clamp(34px, 10vw, 64px);
+  line-height: 1.45;
+}
+
+.food {
+  padding-top: 64px;
+}
+
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 2px;
+  max-width: var(--content-width);
   margin: 0 auto;
 }
-.sns-links__item {
-  padding: .95rem 1rem;
-  text-align: center;
-  font-size: .9rem;
-  letter-spacing: .18em;
-  text-indent: .18em;
+
+.dish {
+  min-width: 0;
+}
+
+.dish__image {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: var(--line);
+}
+
+.dish__image img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.dish figcaption {
+  display: grid;
+  gap: 4px;
+  padding: 14px 10px 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.dish__price {
+  font-variant-numeric: tabular-nums;
+}
+
+.dish__portion {
+  margin-left: 0.2em;
+}
+
+.vat-note {
+  max-width: var(--content-width);
+  margin: 24px auto 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.line-link {
+  position: relative;
+  display: flex;
+  width: min(calc(100% - 24px), 360px);
+  min-height: 58px;
+  margin: 44px auto 0;
+  padding: 8px 72px 8px 24px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--line);
   text-decoration: none;
-  color: var(--sumi);
-  border: 1px solid var(--sumi);
-  transition: background-color .4s ease, color .4s ease, border-color .4s ease;
+  transition: color 200ms ease, border-color 200ms ease, background-color 200ms ease;
 }
-.sns-links__item:hover {
-  background-color: var(--sumi);
+
+.line-link::after {
+  position: absolute;
+  right: -24px;
+  width: 72px;
+  height: 1px;
+  background: currentColor;
+  content: "";
+  transition: transform 220ms var(--ease);
+  transform-origin: right center;
+}
+
+.line-link:hover::after,
+.line-link:focus-visible::after {
+  transform: scaleX(1.18);
+}
+
+.photo-section {
+  position: relative;
+  display: grid;
+  min-height: 82svh;
+  overflow: hidden;
   color: var(--paper);
+  background-color: var(--panel);
+  background-position: center;
+  background-size: cover;
+  isolation: isolate;
 }
-.sns-links__item--primary {
-  background-color: var(--shu);
-  border-color: var(--shu);
+
+.story {
+  background-image: url("../images/access-exterior.jpg");
+}
+
+.story__shade,
+.seats__shade {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: var(--scrim);
+}
+
+.story__content {
+  align-self: end;
+  width: 100%;
+  max-width: 760px;
+  padding: 100px var(--gutter) 88px;
+}
+
+.story h2,
+.seats h2 {
+  margin-bottom: 32px;
+  font-size: clamp(34px, 9vw, 64px);
+}
+
+.story p {
+  max-width: 40em;
+  font-size: clamp(16px, 4vw, 19px);
+  line-height: 2;
+}
+
+.story p + p {
+  margin-top: 18px;
+}
+
+.line-link--light {
+  margin-right: 24px;
+  margin-left: 0;
+  border-color: var(--paper);
+}
+
+.day-night {
+  padding-bottom: 112px;
+}
+
+.day-night__visual {
+  display: grid;
+  gap: 56px;
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.time-panel img {
+  height: clamp(300px, 70vw, 460px);
+  object-fit: cover;
+}
+
+.time-panel figcaption {
+  padding-top: 20px;
+}
+
+.time-panel h3 {
+  font-size: clamp(23px, 6vw, 34px);
+}
+
+.time-panel p {
+  margin-top: 8px;
+  font-size: 17px;
+  font-variant-numeric: tabular-nums;
+}
+
+.day-night__note {
+  max-width: 40em;
+  margin: 64px auto 0;
+  font-size: clamp(17px, 4vw, 20px);
+  line-height: 2;
+}
+
+.seats {
+  min-height: 76svh;
+  background-image: url("../images/access-interior.jpg");
+  background-position: 58% center;
+}
+
+.seats__shade {
+  background: var(--scrim-soft);
+}
+
+.seats__content {
+  align-self: end;
+  width: 100%;
+  padding: 96px var(--gutter) 72px;
+  background: linear-gradient(180deg, transparent, var(--scrim));
+}
+
+.seats__details {
+  display: grid;
+  gap: 18px;
+  max-width: 560px;
+}
+
+.seats__details p {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2px 24px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--paper);
+}
+
+.seats__details strong {
+  font-size: 20px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.seats__details p span:last-child {
+  grid-column: 1 / -1;
+}
+
+.news-list {
+  max-width: 920px;
+  margin: 0 auto;
+  border-top: 1px solid var(--line);
+}
+
+.news-list article {
+  display: grid;
+  gap: 8px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.news-list time {
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+}
+
+.news-list h3 {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.news-list h3 span {
+  display: inline-block;
+}
+
+.news-list h3 span + span {
+  margin-left: 0.35em;
+}
+
+.gateways {
+  display: grid;
+  gap: 24px;
+  padding-top: 24px;
+}
+
+.gateway {
+  position: relative;
+  display: grid;
+  min-height: 58vw;
+  overflow: hidden;
+  place-items: center;
   color: var(--paper);
+  background-color: var(--panel);
+  background-position: center;
+  background-size: cover;
+  font-size: clamp(30px, 9vw, 58px);
+  text-decoration: none;
+  isolation: isolate;
 }
-.sns-links__item--primary:hover { background-color: var(--sumi); border-color: var(--sumi); }
-.sns-links__item--soon {
-  border-style: dashed;
-  border-color: var(--rule);
-  color: var(--sumi-soft);
+
+.gateway::before {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: var(--scrim-soft);
+  content: "";
+  transition: background-color 220ms ease;
+}
+
+.gateway::after {
+  position: absolute;
+  inset: 14px;
+  border: 1px solid var(--paper);
+  content: "";
+  pointer-events: none;
+}
+
+.gateway:hover::before,
+.gateway:focus-visible::before {
+  background: var(--scrim);
+}
+
+.gateway--access {
+  background-image: url("../images/access-entrance.jpg");
+}
+
+.gateway--menu {
+  background-image: url("../images/rare-bara-chashu-moriawase.jpg");
+}
+
+.gateway span {
+  white-space: nowrap;
+}
+
+.site-footer {
+  padding: 88px var(--gutter) 64px;
+  color: var(--paper);
+  background: var(--panel);
+}
+
+.footer-heading {
+  display: flex;
+  max-width: var(--content-width);
+  margin: 0 auto 56px;
+  align-items: center;
+  gap: 28px;
+}
+
+.footer-heading img {
+  width: 82px;
+}
+
+.footer-heading h2 {
+  font-size: clamp(34px, 9vw, 56px);
+}
+
+.store-table {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  border-top: 1px solid var(--muted);
+}
+
+.store-table > div {
+  display: grid;
+  grid-template-columns: 6.5em minmax(0, 1fr);
+  gap: 18px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--muted);
+}
+
+.store-table dt,
+.store-table dd {
+  min-width: 0;
+  font-size: 16px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+.store-table dt {
+  font-weight: 600;
+}
+
+.store-table dd span {
+  display: block;
+}
+
+.footer-contact {
+  max-width: var(--content-width);
+  margin: 56px auto 0;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--muted);
+}
+
+.footer-contact p {
+  font-size: 16px;
+}
+
+.footer-contact a {
+  display: inline-flex;
+  min-height: 52px;
+  margin-top: 10px;
+  align-items: center;
+  color: var(--paper);
+  font-size: clamp(24px, 7vw, 38px);
+  font-variant-numeric: tabular-nums;
+  text-decoration: none;
+}
+
+.social-links,
+.language-links,
+.legal-links {
+  display: flex;
+  max-width: var(--content-width);
+  margin: 28px auto 0;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+}
+
+.social-links a,
+.language-links a,
+.legal-links a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+}
+
+.language-links a[aria-current="page"] {
+  color: var(--paper);
+  text-decoration-thickness: 2px;
+}
+
+.copyright {
+  max-width: var(--content-width);
+  margin: 40px auto 0;
+  color: var(--line);
+  font-size: 12px;
+}
+
+.mobile-actions {
+  position: fixed;
+  z-index: 80;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  height: calc(var(--mobile-bar-height) + env(safe-area-inset-bottom));
+  padding-bottom: env(safe-area-inset-bottom);
+  color: var(--paper);
+  background: var(--ink);
+}
+
+.mobile-actions a,
+.mobile-actions span {
+  display: flex;
+  min-height: var(--mobile-bar-height);
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.mobile-actions > * + * {
+  border-left: 1px solid var(--muted);
+}
+
+.mobile-actions [aria-disabled="true"] {
+  color: var(--line);
   cursor: default;
 }
-.sns-links__item--soon:hover { background: none; color: var(--sumi-soft); }
 
-/* 設備など長いラベルの一覧は、折り返さず幅にゆとりを持たせる */
-.info--roomy { max-width: 32rem; }
-.info--roomy .info__row { padding: 1.5rem 0; gap: 2rem; }
-.info--roomy .info__row dt { width: 8.5em; white-space: nowrap; }
-
-@media (max-width: 600px) {
-  .access-gallery { grid-template-columns: 1fr; gap: 2rem; max-width: 22rem; }
-  .map-embed { aspect-ratio: 4 / 3; }
-  /* 設備はモバイルではラベルを上、値を下に積んで読みやすく */
-  .info--roomy .info__row { flex-direction: column; gap: .35rem; }
-  .info--roomy .info__row dt { width: auto; }
-  /* SNSボタンはモバイルでは縦1列・全幅で均等に */
-  .sns-links { grid-template-columns: 1fr; }
-  /* 扉のタイトルはモバイルだけ各行を縦に積む（PCは1行） */
-  .page-head__title-line { display: block; }
+.js .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 720ms var(--ease), transform 720ms var(--ease);
 }
 
-/* レスポンシブ改行ヘルパー：br.br-sp はモバイルだけ改行、.pc-only はモバイルで隠す */
-.br-sp { display: none; }
-
-/* 中央寄せの日本語が「た。」など1文字で折り返さないよう、行長を均等化する */
-.prose p,
-.chapter__lead,
-.chapter__note,
-.colophon__text {
-  text-wrap: balance;
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* 小さい画面 */
-@media (max-width: 600px) {
-  .chapter { padding: 16vh 1.3rem; }
-  .chapter__head { margin-bottom: 3.5rem; }
-  .info__row { gap: 1.4rem; }
-  /* 英語版のみ：狭い画面ではラベルと値を縦積みにして重なりを防ぐ（lang="ja"には不影響） */
-  html[lang="en"] .info__row,
-  html[lang="th"] .info__row { flex-direction: column; gap: .3rem; }
-  html[lang="en"] .info__row dt,
-  html[lang="th"] .info__row dt { width: auto; }
-  /* 英語/タイ語：ナビの語が長いので字間を詰めて必ず1行に（日本語版は不変） */
-  html[lang="en"] .site-head__nav,
-  html[lang="th"] .site-head__nav { gap: .8rem; }
-  html[lang="en"] .site-head__nav a,
-  html[lang="th"] .site-head__nav a { letter-spacing: .03em; text-indent: .03em; white-space: nowrap; }
-  /* 英語/タイ語：下部CTAのラベルを1行固定（崩れ防止） */
-  html[lang="en"] .m-cta__btn,
-  html[lang="th"] .m-cta__btn { white-space: nowrap; }
-  .cover__kicker { letter-spacing: .35em; text-indent: .35em; }
+@media (min-width: 576px) {
+  .hero__identity {
+    padding-bottom: 104px;
+  }
 
-  /* モバイルだけ改行する／PC専用要素を隠す */
-  .br-sp { display: inline; }
-  .pc-only { display: none; }
+  .intro {
+    grid-template-columns: minmax(160px, 0.45fr) minmax(0, 1fr);
+    gap: 64px;
+  }
 
-  /* モバイルでは墨（視認性低下）と、それを案内するヒント文を非表示にする */
-  #ink-canvas { display: none; }
-  .cover__hint { display: none; }
+  .dish figcaption {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 12px;
+  }
 
-  /* 表紙：「暖簾をくぐる」を隠し、下部CTAに動線を任せる。余白も詰める */
-  .cover__scroll { display: none; }
-  .cover { padding-bottom: 14vh; }
+  .gateways {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
-  /* 十五時：大きな文字で text-indent が効いて右へ寄るので中央に戻す */
-  .chapter--turn .turn__time,
-  .chapter--turn .turn__line { text-indent: 0; }
+  .gateway {
+    min-height: 42vw;
+  }
+}
 
-  /* 章末の朱ダッシュは狭い画面で1本だけ折り返して崩れるので省く */
-  .chapter__note::before,
-  .chapter__note::after { content: none; }
+@media (min-width: 768px) {
+  .paper-section {
+    padding-top: 128px;
+    padding-bottom: 128px;
+  }
 
-  /* ナビは印のみ残し、ワードマークは省いてリンクの幅を確保（ワードマークを出すと品書き/在処/地図が縦に折れる） */
-  .site-head__name { display: none; }
-  .site-head__wordmark { display: none; }
-  .site-head__nav { gap: 1.1rem; }
-  .site-head__nav a { letter-spacing: .14em; text-indent: .14em; }
+  .hero {
+    min-height: 100svh;
+    background-position: center;
+  }
 
-  /* 営業中ステータス（ファーストビュー内・モバイルのみ） */
-  .now-status {
-    display: inline-flex;
+  .hero__message {
+    top: 28svh;
+    right: 12vw;
+    font-size: clamp(25px, 4vw, 36px);
+  }
+
+  .hero__identity {
+    padding-bottom: 72px;
+  }
+
+  .hero__map {
+    bottom: 34px;
+  }
+
+  .intro {
+    min-height: 720px;
+  }
+
+  .intro__body p {
+    font-size: 20px;
+  }
+
+  .food-grid {
+    gap: 44px 4px;
+  }
+
+  .dish figcaption {
+    padding-top: 18px;
+    font-size: 18px;
+  }
+
+  .story__content {
+    padding-bottom: 110px;
+  }
+
+  .day-night__visual {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  .time-panel--lunch {
+    grid-column: 1 / 8;
+  }
+
+  .time-panel--night {
+    grid-column: 7 / 13;
+    margin-top: 180px;
+  }
+
+  .time-panel img {
+    height: clamp(360px, 42vw, 560px);
+  }
+
+  .seats__details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .news-list article {
+    grid-template-columns: 160px minmax(0, 1fr);
+    gap: 36px;
+    align-items: baseline;
+  }
+
+  .news-list h3 {
+    font-size: 20px;
+  }
+
+  .gateway {
+    min-height: 480px;
+  }
+
+  .store-table > div {
+    grid-template-columns: 11em minmax(0, 1fr);
+  }
+
+  .mobile-actions {
+    display: none;
+  }
+
+  body {
+    padding-bottom: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .site-header {
+    position: absolute;
     align-items: center;
-    gap: .65em;
-    margin-top: 2.6rem;
-    font-size: .82rem;
-    letter-spacing: .14em;
-    text-indent: .14em;
-    color: var(--sumi-soft);
-  }
-  .now-status::before {
-    content: "";
-    width: .5rem;
-    height: .5rem;
-    border-radius: 50%;
-    background: var(--sumi-soft);
-    flex-shrink: 0;
-  }
-  .now-status.is-open { color: var(--sumi); }
-  .now-status.is-open::before {
-    background: var(--shu);
-    animation: status-pulse 2.4s ease-in-out infinite;
+    min-height: 106px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    background: linear-gradient(180deg, var(--scrim-soft), transparent);
   }
 
-  /* 下部CTAバー（スクロールで出現・モバイルのみ） */
-  .m-cta {
+  .site-logo {
+    width: 74px;
+  }
+
+  .menu-button,
+  .mobile-menu {
+    display: none !important;
+  }
+
+  .desktop-nav {
     display: flex;
-    gap: .7rem;
-    position: fixed;
-    left: 0; right: 0; bottom: 0;
-    z-index: 30;
-    padding: .8rem 1rem calc(.8rem + env(safe-area-inset-bottom, 0px));
-    background: rgba(243, 238, 228, .94);
-    -webkit-backdrop-filter: saturate(1.2) blur(8px);
-    backdrop-filter: saturate(1.2) blur(8px);
-    box-shadow: 0 -1px 0 var(--rule);
-    transform: translateY(115%);
-    transition: transform .55s cubic-bezier(.22,.6,.2,1);
+    align-items: center;
+    gap: clamp(22px, 2.5vw, 44px);
   }
-  .m-cta.is-shown { transform: none; }
-  .m-cta__btn {
-    flex: 1;
-    text-align: center;
-    padding: .95rem 1rem;
-    font-size: .92rem;
-    letter-spacing: .22em;
-    text-indent: .22em;
+
+  .desktop-nav a,
+  .desktop-actions a,
+  .header-language-links a {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
     text-decoration: none;
-    color: var(--sumi);
-    border: 1px solid var(--sumi);
-    transition: opacity .3s ease;
-  }
-  .m-cta__btn:active { opacity: .7; }
-  .m-cta__btn--primary {
-    background: var(--shu);
-    border-color: var(--shu);
-    color: var(--paper);
   }
 
-  /* CTAバーに隠れないよう奥付に余白を足す */
-  .colophon { padding-bottom: 8rem; }
+  .desktop-nav a {
+    border-bottom: 1px solid transparent;
+    transition: border-color 200ms ease;
+  }
+
+  .desktop-nav a:hover,
+  .desktop-nav a:focus-visible {
+    border-bottom-color: var(--paper);
+  }
+
+  .desktop-actions {
+    display: grid;
+    grid-template-columns: repeat(2, 76px);
+    border: 1px solid var(--paper);
+  }
+
+  .header-language-links {
+    display: flex;
+    gap: 4px;
+  }
+
+  .header-language-links a {
+    min-width: 44px;
+    justify-content: center;
+  }
+
+  .header-language-links a[aria-current="page"] {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+  }
+
+  .desktop-actions a {
+    justify-content: center;
+  }
+
+  .desktop-actions a + a {
+    border-left: 1px solid var(--paper);
+  }
+
+  .desktop-actions a:first-child {
+    background: var(--accent);
+  }
+
+  .hero__identity {
+    padding-bottom: 90px;
+  }
+
+  .hero h1 {
+    max-width: none;
+    font-size: clamp(44px, 5.2vw, 76px);
+  }
+
+  .hero h1 span:first-child {
+    font-size: 0.5em;
+  }
+
+  .intro {
+    grid-template-columns: minmax(220px, 0.45fr) minmax(0, 580px);
+    justify-content: center;
+    gap: 110px;
+  }
+
+  .intro h2 {
+    font-size: 48px;
+  }
+
+  .section-title h2 {
+    font-size: 64px;
+  }
+
+  .story {
+    min-height: 900px;
+    background-position: center 44%;
+  }
+
+  .story__shade {
+    background: linear-gradient(90deg, var(--scrim) 0%, var(--scrim-soft) 52%, transparent 100%);
+  }
+
+  .story__content {
+    align-self: center;
+    padding-top: 140px;
+    padding-bottom: 100px;
+  }
+
+  .seats {
+    min-height: 760px;
+  }
+
+  .seats__content {
+    padding-bottom: 96px;
+  }
+
+  .gateways {
+    gap: 36px;
+  }
+
+  .footer-heading img {
+    width: 108px;
+  }
 }
 
-/* 動きを減らす設定では灯の明滅を止める */
+@media (min-width: 1200px) {
+  .site-header {
+    padding-right: max(var(--gutter), calc((100vw - 1340px) / 2));
+    padding-left: max(var(--gutter), calc((100vw - 1340px) / 2));
+  }
+
+  .hero__identity,
+  .hero__map {
+    margin-right: max(0px, calc((100vw - 1340px) / 2));
+  }
+
+  .hero__identity {
+    padding-left: max(var(--gutter), calc((100vw - 1340px) / 2));
+  }
+
+  .gateways {
+    padding-right: max(var(--gutter), calc((100vw - 1340px) / 2));
+    padding-left: max(var(--gutter), calc((100vw - 1340px) / 2));
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .now-status.is-open::before { animation: none; }
-  .m-cta { transition: none; }
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .js .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-/* Ramen guide: existing menu chapter, 2026-09-23 */
-.ramen-guide { max-width: var(--measure); margin: 2.5rem auto 3rem; scroll-margin-top: 6rem; }
-.ramen-guide__title { font-size: clamp(1.15rem, 2.4vw, 1.55rem); line-height: 1.7; letter-spacing: .06em; text-align: center; margin: 0 0 1.5rem; }
-.ramen-guide__photo { margin: 0 0 1.5rem; }
-.ramen-guide__photo img { display: block; width: 100%; height: auto; }
-.ramen-guide__photo figcaption { margin-top: .6rem; font-size: .8rem; color: var(--sumi-soft); text-align: center; }
-.ramen-guide__copy { line-height: 1.9; overflow-wrap: anywhere; }
-.ramen-guide__copy p { margin: 0 0 1rem; }
-html[lang="en"] .ramen-guide__title, html[lang="th"] .ramen-guide__title { letter-spacing: .02em; }
+/* 2026-11-10 Claude検品：写真の明るい部分（窓・提灯・看板）に白い文字が重なって読めなかったため、文字の後ろに影を足す */
+.hero__message,
+.story h2,
+.story p {
+  text-shadow: 0 0 18px var(--ink), 0 1px 3px var(--ink);
+}
 
-/* Menu shortcuts: native anchors remain usable without JavaScript. */
-.menu-categories { max-width: var(--measure); margin: 0 auto 2rem; padding: 1rem 1.5rem; }
-.menu-categories__label { margin: 0 0 .75rem; font-size: .9rem; }
-.menu-categories__links { display: flex; flex-wrap: wrap; gap: .5rem; }
-.menu-categories__links a { display: inline-flex; align-items: center; min-height: 44px; padding: .5rem .85rem; border: 1px solid var(--rule); color: var(--sumi); text-decoration: none; font-size: .9rem; }
-.menu-categories__links a:hover, .menu-categories__links a:focus-visible { color: var(--shu); border-color: var(--shu); }
-[data-menu-language] .chapter { scroll-margin-top: 5rem; }
-/* Long menu sections must not depend on a viewport intersection percentage. */
-[data-menu-language] .chapter__inner { opacity: 1; transform: none; }
-[data-menu-language] .chapter__rule { transform: scaleX(1); }
+@media (min-width: 992px) {
+  .story__shade {
+    background: linear-gradient(90deg, var(--scrim) 0%, var(--scrim) 40%, var(--scrim-soft) 70%, transparent 100%);
+  }
+}
+
+/* メニュー系4ページ */
+.menu-hero {
+  position: relative;
+  display: grid;
+  min-height: clamp(600px, 82svh, 760px);
+  overflow: hidden;
+  color: var(--paper);
+  background-color: var(--panel);
+  background-position: center;
+  background-size: cover;
+  isolation: isolate;
+}
+
+.menu-hero--night {
+  background-image: url("../images/rare-bara-chashu-moriawase.jpg");
+}
+
+.menu-hero--lunch {
+  background-image: url("../images/lunch.jpg");
+}
+
+.menu-hero--recommended {
+  background-image: url("../images/recommended-gyoza.jpg");
+}
+
+.menu-hero--drinks {
+  background-image: url("../images/sake.jpg");
+}
+
+.menu-hero__shade {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(180deg, var(--scrim-soft) 0%, var(--scrim) 100%);
+}
+
+.menu-hero__content {
+  align-self: end;
+  width: min(100%, calc(var(--content-width) + var(--gutter) * 2));
+  margin: 0 auto;
+  padding: 180px var(--gutter) 178px;
+  text-shadow: 0 0 18px var(--ink), 0 1px 3px var(--ink);
+}
+
+.menu-hero h1 {
+  font-size: clamp(38px, 10vw, 64px);
+}
+
+.menu-hero__content p {
+  max-width: 38em;
+  margin-top: 18px;
+  font-size: clamp(17px, 4vw, 20px);
+}
+
+.menu-tabs {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: 100%;
+  background: var(--scrim);
+}
+
+.menu-tabs a {
+  display: flex;
+  min-height: 56px;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid var(--muted);
+  border-right: 1px solid var(--muted);
+  text-decoration: none;
+  transition: color 200ms ease, background-color 200ms ease;
+}
+
+.menu-tabs a:nth-child(even) {
+  border-right: 0;
+}
+
+.menu-tabs a[aria-current="page"] {
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.menu-content {
+  padding-top: 88px;
+}
+
+.menu-introduction {
+  max-width: 48em;
+  margin: 0 auto;
+}
+
+.menu-introduction > p {
+  font-size: clamp(17px, 4vw, 20px);
+  line-height: 2;
+}
+
+.menu-branch {
+  margin-top: 24px;
+}
+
+.menu-branch a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+}
+
+.category-toc {
+  display: flex;
+  max-width: var(--content-width);
+  margin: 56px auto 0;
+  flex-wrap: wrap;
+  gap: 8px 28px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.category-toc a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+}
+
+.menu-category,
+.recommended-category {
+  max-width: var(--content-width);
+  margin: 88px auto 0;
+  scroll-margin-top: 24px;
+}
+
+.menu-category h2,
+.recommended-category h2 {
+  margin-bottom: 40px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--ink);
+  font-size: clamp(28px, 7vw, 44px);
+}
+
+.menu-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 36px 12px;
+}
+
+.menu-photo {
+  min-width: 0;
+}
+
+.menu-photo__image {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--panel);
+}
+
+.menu-photo__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.menu-photo figcaption {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 8px;
+  padding-top: 14px;
+  line-height: 1.6;
+}
+
+.menu-item__name {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.menu-item__price {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.menu-list {
+  max-width: 880px;
+  margin: 36px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menu-photo-grid + .menu-list {
+  margin-top: 56px;
+}
+
+.menu-list__row {
+  display: grid;
+  grid-template-columns: minmax(0, auto) minmax(16px, 1fr) auto;
+  gap: 8px;
+  min-height: 52px;
+  align-items: start;
+  padding: 12px 0;
+  line-height: 1.75;
+}
+
+.menu-list__row + .menu-list__row {
+  border-top: 1px solid var(--line);
+}
+
+.menu-list__dots {
+  height: 1.3em;
+  border-bottom: 1px dotted var(--muted);
+}
+
+.menu-content > .vat-note {
+  margin-top: 72px;
+}
+
+.recommended-grid {
+  display: grid;
+  gap: 64px 24px;
+}
+
+.recommended-card {
+  min-width: 0;
+}
+
+.recommended-card > img {
+  aspect-ratio: 3 / 2;
+  background: var(--line);
+  object-fit: cover;
+}
+
+.recommended-card__body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: start;
+  padding-top: 18px;
+}
+
+.recommended-card h3 {
+  font-size: clamp(20px, 5vw, 28px);
+}
+
+.recommended-card__description {
+  margin-top: 12px;
+  line-height: 1.8;
+}
+
+.recommended-list {
+  margin-top: 56px;
+}
+
+@media (min-width: 576px) {
+  .menu-tabs {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .menu-tabs a:nth-child(even) {
+    border-right: 1px solid var(--muted);
+  }
+
+  .menu-tabs a:last-child {
+    border-right: 0;
+  }
+
+  .menu-hero__content {
+    padding-bottom: 118px;
+  }
+}
+
+@media (min-width: 768px) {
+  .menu-content {
+    padding-top: 112px;
+  }
+
+  .menu-photo-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 48px 20px;
+  }
+
+  .recommended-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 992px) {
+  .menu-hero {
+    min-height: 720px;
+  }
+
+  .menu-photo-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 56px 24px;
+  }
+
+  .menu-category,
+  .recommended-category {
+    margin-top: 120px;
+  }
+}
+
+/* 2026-11-10 Claude検品：スマホの2列カードで名前と価格を横に並べると、名前が「オニオンスライ／ス」のように1〜2文字だけ次の行へ落ちたため、768px未満は名前の下に価格を置く */
+@media (max-width: 767.98px) {
+  .menu-photo figcaption {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2px;
+  }
+
+  .menu-item__name {
+    word-break: auto-phrase;
+  }
+}
+
+/* アクセスページ */
+.access-hero {
+  position: relative;
+  display: grid;
+  min-height: calc(100svh - var(--mobile-bar-height));
+  overflow: hidden;
+  color: var(--paper);
+  background-color: var(--panel);
+  background-image: url("../images/access-exterior.jpg");
+  background-position: center;
+  background-size: cover;
+  isolation: isolate;
+}
+
+.access-hero__shade,
+.driver-section__shade {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(180deg, var(--scrim-soft), var(--scrim));
+}
+
+.access-hero__content {
+  align-self: end;
+  width: min(100%, calc(var(--content-width) + var(--gutter) * 2));
+  margin: 0 auto;
+  padding: 180px var(--gutter) 72px;
+  text-shadow: 0 0 18px var(--ink), 0 1px 3px var(--ink);
+}
+
+.access-hero h1 {
+  font-size: clamp(38px, 10vw, 64px);
+}
+
+.access-hero__content > p {
+  max-width: 38em;
+  margin-top: 18px;
+  font-size: clamp(17px, 4vw, 20px);
+}
+
+.access-hero__actions {
+  display: grid;
+  gap: 16px;
+  max-width: 760px;
+  margin-top: 40px;
+}
+
+.access-hero__actions .line-link {
+  width: min(calc(100% - 24px), 360px);
+  margin: 0 24px 0 0;
+}
+
+.access-reading {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.access-reading h2 {
+  margin-bottom: 32px;
+  font-size: clamp(34px, 9vw, 56px);
+}
+
+.access-reading > p,
+.access-hours__details p {
+  font-size: clamp(17px, 4vw, 20px);
+  line-height: 2;
+}
+
+.access-photos {
+  padding-top: 24px;
+}
+
+.access-gallery {
+  display: grid;
+  gap: 48px 16px;
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.access-figure img {
+  aspect-ratio: 3 / 2;
+  background: var(--line);
+  object-fit: cover;
+}
+
+.access-figure figcaption {
+  padding-top: 18px;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.access-map {
+  padding-top: 40px;
+}
+
+.map-embed {
+  width: 100%;
+  max-width: var(--content-width);
+  aspect-ratio: 4 / 3;
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--line);
+}
+
+.map-embed iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.access-route {
+  padding-top: 40px;
+}
+
+.access-route__list {
+  display: grid;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  border-top: 1px solid var(--line);
+}
+
+.access-route__list article {
+  display: grid;
+  gap: 12px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.access-route__list h3 {
+  font-size: clamp(23px, 6vw, 30px);
+}
+
+.access-route__list p {
+  max-width: 42em;
+  font-size: 16px;
+}
+
+.driver-section {
+  min-height: 760px;
+  background-image: url("../images/access-entrance.jpg");
+}
+
+.driver-section__content {
+  align-self: center;
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 120px var(--gutter);
+}
+
+.driver-section h2 {
+  font-size: clamp(34px, 9vw, 56px);
+  text-shadow: 0 0 18px var(--ink), 0 1px 3px var(--ink);
+}
+
+.driver-section__lead {
+  margin-top: 18px;
+  font-size: clamp(17px, 4vw, 20px);
+  text-shadow: 0 0 18px var(--ink), 0 1px 3px var(--ink);
+}
+
+.driver-card {
+  margin-top: 40px;
+  padding: 32px 24px;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+
+.driver-card__name {
+  font-size: clamp(24px, 7vw, 38px);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.driver-card__address {
+  margin-top: 28px;
+  font-size: clamp(22px, 6vw, 34px);
+  font-weight: 600;
+  line-height: 1.7;
+  letter-spacing: 0;
+  overflow-wrap: anywhere;
+}
+
+.driver-card__landmark {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 16px;
+}
+
+.access-hours__details {
+  display: grid;
+  gap: 8px;
+  padding: 28px 0;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.access-hours .line-link {
+  margin-right: 24px;
+  margin-left: 0;
+}
+
+@media (min-width: 576px) {
+  .access-hero__actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .access-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .driver-card {
+    padding: 48px;
+  }
+}
+
+@media (min-width: 768px) {
+  .access-hero {
+    min-height: 100svh;
+  }
+
+  .access-gallery {
+    gap: 64px 28px;
+  }
+
+  .map-embed {
+    aspect-ratio: 16 / 9;
+  }
+
+  .access-route__list article {
+    grid-template-columns: minmax(180px, 0.35fr) minmax(0, 1fr);
+    gap: 48px;
+    align-items: baseline;
+  }
+}
+
+@media (min-width: 992px) {
+  .access-hero__content {
+    padding-bottom: 96px;
+  }
+
+  .access-location {
+    min-height: 620px;
+    display: grid;
+    align-items: center;
+  }
+
+  .driver-section__shade {
+    background: linear-gradient(90deg, var(--scrim), var(--scrim-soft));
+  }
+}
+
+/* MENLABOについて */
+.about-hero {
+  background-image: url("../images/access-vibe.jpg");
+  background-position: 52% center;
+}
+
+.about-hero__content {
+  padding-bottom: 96px;
+}
+
+.about-craft {
+  padding-bottom: 120px;
+}
+
+.about-craft__heading {
+  max-width: var(--content-width);
+  margin: 0 auto 72px;
+  font-size: clamp(34px, 9vw, 64px);
+}
+
+.about-craft__list {
+  display: grid;
+  gap: 96px;
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.craft-feature {
+  display: grid;
+  gap: 28px;
+}
+
+.craft-feature__media {
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background: var(--line);
+}
+
+.craft-feature__media img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.craft-feature__body {
+  max-width: 38em;
+}
+
+.craft-feature__body h3 {
+  margin-bottom: 18px;
+  font-size: clamp(23px, 6vw, 34px);
+}
+
+.craft-feature__body p {
+  font-size: clamp(17px, 4vw, 20px);
+  line-height: 2;
+}
+
+.about-story {
+  min-height: 820px;
+  background-image: url("../images/access-exterior.jpg");
+  background-position: center;
+}
+
+.about-story__shade,
+.about-seats__shade {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: var(--scrim);
+}
+
+.about-story__content,
+.about-seats__content {
+  align-self: end;
+  width: 100%;
+  max-width: 880px;
+  padding: 112px var(--gutter) 96px;
+  text-shadow: 0 0 18px var(--ink), 0 1px 3px var(--ink);
+}
+
+.about-story h2,
+.about-seats h2,
+.about-amenities h2 {
+  margin-bottom: 32px;
+  font-size: clamp(34px, 9vw, 56px);
+}
+
+.about-story p,
+.about-seat__body,
+.about-amenities dd {
+  font-size: clamp(17px, 4vw, 20px);
+  line-height: 2;
+}
+
+.about-story p + p {
+  margin-top: 20px;
+}
+
+.about-story__supervisors {
+  padding-top: 24px;
+  border-top: 1px solid var(--paper);
+}
+
+.about-seats {
+  min-height: 780px;
+  background-image: url("../images/access-interior.jpg");
+  background-position: 54% center;
+}
+
+.about-seats__shade {
+  background: linear-gradient(180deg, var(--scrim-soft), var(--scrim));
+}
+
+.about-seats__details {
+  display: grid;
+  gap: 36px;
+}
+
+.about-seat {
+  padding-top: 24px;
+  border-top: 1px solid var(--paper);
+}
+
+.about-seat__heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: clamp(23px, 6vw, 34px);
+}
+
+.about-seat__heading strong {
+  font-size: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.about-seat__body {
+  margin-top: 12px;
+}
+
+.about-amenities__inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.about-amenities__list {
+  display: grid;
+  border-top: 1px solid var(--line);
+}
+
+.about-amenities__list > div {
+  display: grid;
+  gap: 10px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.about-amenities dt {
+  font-size: clamp(20px, 5vw, 28px);
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .about-craft {
+    padding-bottom: 160px;
+  }
+
+  .about-craft__heading {
+    margin-bottom: 112px;
+  }
+
+  .about-craft__list {
+    gap: 136px;
+  }
+
+  .craft-feature {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 40px;
+    align-items: center;
+  }
+
+  .craft-feature__media {
+    grid-column: 1 / 8;
+  }
+
+  .craft-feature__body {
+    grid-column: 8 / 13;
+  }
+
+  .craft-feature:nth-child(even) .craft-feature__media {
+    grid-column: 6 / 13;
+    grid-row: 1;
+  }
+
+  .craft-feature:nth-child(even) .craft-feature__body {
+    grid-column: 1 / 6;
+    grid-row: 1;
+  }
+
+  .about-seats__details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+  }
+
+  .about-amenities__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .about-amenities__list > div {
+    padding: 32px;
+  }
+
+  .about-amenities__list > div + div {
+    border-left: 1px solid var(--line);
+  }
+}
+
+@media (min-width: 992px) {
+  .about-hero {
+    background-position: center 44%;
+  }
+
+  .about-story__shade {
+    background: linear-gradient(90deg, var(--scrim), var(--scrim) 42%, var(--scrim-soft) 72%, transparent);
+  }
+
+  .about-story__content,
+  .about-seats__content {
+    padding-bottom: 112px;
+  }
+
+  .about-seats__shade {
+    background: linear-gradient(90deg, transparent, var(--scrim-soft) 28%, var(--scrim) 100%);
+  }
+
+  .about-seats__content {
+    justify-self: end;
+  }
+}
+
+/* お知らせ・会社情報・プライバシーポリシー */
+.site-header--paper {
+  color: var(--ink);
+  background: var(--paper);
+}
+
+.site-header--paper .desktop-actions {
+  border-color: var(--ink);
+}
+
+.site-header--paper .desktop-actions a + a {
+  border-left-color: var(--ink);
+}
+
+.site-header--paper .desktop-actions a:first-child {
+  color: var(--paper);
+}
+
+.content-page__section {
+  padding-top: calc(96px + var(--header-height));
+}
+
+.content-page__inner {
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.content-page__inner--narrow {
+  max-width: 760px;
+}
+
+.content-page__heading {
+  padding-bottom: 56px;
+  border-bottom: 1px solid var(--ink);
+}
+
+.content-page__heading h1 {
+  font-size: clamp(34px, 9vw, 64px);
+  overflow-wrap: anywhere;
+}
+
+.content-page__heading p {
+  margin-top: 18px;
+  font-size: clamp(17px, 4vw, 20px);
+  line-height: 2;
+}
+
+.content-page__lead {
+  margin-top: 64px;
+  font-size: clamp(17px, 4vw, 20px);
+  line-height: 2;
+}
+
+.news-index {
+  margin-top: 72px;
+  border-top: 1px solid var(--line);
+}
+
+.news-index__item {
+  display: grid;
+  gap: 14px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.news-index__item time {
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+}
+
+.news-index__item h2 {
+  font-size: clamp(23px, 6vw, 30px);
+}
+
+.news-index__item p {
+  margin-top: 12px;
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.company-section,
+.policy-section {
+  margin-top: 88px;
+}
+
+.company-section h2,
+.policy-section h2 {
+  margin-bottom: 28px;
+  font-size: clamp(23px, 6vw, 34px);
+}
+
+.content-table {
+  max-width: none;
+  border-top-color: var(--line);
+}
+
+.content-table > div {
+  border-bottom-color: var(--line);
+}
+
+.company-section__link {
+  margin-top: 28px;
+}
+
+.company-section__link a,
+.policy-section a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+}
+
+.policy-section p,
+.policy-section li {
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.policy-section p + p,
+.policy-section ul + p {
+  margin-top: 20px;
+}
+
+.policy-section ul {
+  margin: 20px 0 0;
+  padding-left: 1.5em;
+}
+
+.policy-section li + li {
+  margin-top: 8px;
+}
+
+.content-page__date {
+  margin-top: 88px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-size: 16px;
+}
+
+.content-page__home {
+  margin-right: 24px;
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  .content-page__section {
+    padding-top: calc(128px + var(--header-height));
+  }
+
+  .news-index__item {
+    grid-template-columns: 160px minmax(0, 1fr);
+    gap: 36px;
+    align-items: baseline;
+    padding: 36px 0;
+  }
+
+  .content-table > div {
+    grid-template-columns: 12em minmax(0, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .site-header--paper {
+    background: var(--paper);
+  }
+
+  .site-header--paper .desktop-nav a:hover,
+  .site-header--paper .desktop-nav a:focus-visible {
+    border-bottom-color: var(--ink);
+  }
+
+  .site-header--paper .desktop-actions {
+    border-color: var(--ink);
+  }
+
+  .site-header--paper .desktop-actions a + a {
+    border-left-color: var(--ink);
+  }
+
+  .content-page__section {
+    padding-top: 220px;
+  }
+}
+
+/* 2026-11-10 Claude検品：スマホで「プライバシ／ーポリシー」と語の途中で折れたため、見出しを区切り（span）単位でだけ改行させる */
+.content-page__heading h1 > span {
+  display: inline-block;
+}
+
+/* 2026-11-11 Claude検品：お知らせの見出しがスマホで「大阪居酒／屋」と語の途中で折れたため、data/news.json の空白の位置でだけ改行させる */
+.news-list h3 span,
+.news-index__item h2 .ph {
+  display: inline-block;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+/* 2026-11-11 ちえと指示：縦書きの「パタヤで／大阪の味」は2列を並べず、2列目（左の列）を下へずらす */
+html[lang="ja"] .hero__message > span {
+  display: block;
+}
+
+html[lang="ja"] .hero__message > span + span {
+  padding-inline-start: 2.4em;
+}
+
+/* 2026-11-11 Claude検品：「区切りの中では折らない」は日本語だけの約束。単語の間に空白のないタイ語・中国語の見出しがはみ出したため、日本語以外では通常の折り返しに戻す */
+html:not([lang="ja"]) h2 .ph,
+html:not([lang="ja"]) .content-page__heading h1 > span,
+html:not([lang="ja"]) .news-list h3 span,
+html:not([lang="ja"]) .news-index__item h2 .ph {
+  display: inline;
+  white-space: normal;
+}
+
+html:not([lang="ja"]) h1 span,
+html:not([lang="ja"]) h2 span {
+  white-space: normal;
+}

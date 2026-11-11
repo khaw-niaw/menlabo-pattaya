@@ -1,195 +1,252 @@
-<!DOCTYPE html>
+<!-- build.pyで生成。直接編集しない。部品は src/ を直す。 -->
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+  <meta charset="utf-8">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L9W79GXPE1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-L9W79GXPE1');
-</script>
+  <!-- Google tag (gtag.js)：本番ドメインでだけ読み込む（手元の確認やVercelのプレビューで本番の解析を汚さないため。2026-11-11 Claude） -->
+  <script id="google-tag" data-ga4-id="G-L9W79GXPE1" data-production-host="www.menlabo-pattaya.com">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    (function () {
+      var tag = document.getElementById("google-tag");
+      var id = tag.dataset.ga4Id;
+      if (!id || location.hostname !== tag.dataset.productionHost) return;
+      var loader = document.createElement("script");
+      loader.async = true;
+      loader.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+      document.head.appendChild(loader);
+      gtag("js", new Date());
+      gtag("config", id);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How personal data is handled on the website of Osaka Izakaya MENLABO Sakaba (operated by OMOTENASHI CO., LTD.).">
+  <meta name="theme-color" content="#171817">
+  <title>Privacy Policy — Osaka Izakaya MENLABO Sakaba</title>
+  <link rel="canonical" href="https://www.menlabo-pattaya.com/en/privacy">
+  <meta property="og:title" content="Privacy Policy — Osaka Izakaya MENLABO Sakaba">
+  <meta property="og:description" content="How personal data is handled on the website of Osaka Izakaya MENLABO Sakaba (operated by OMOTENASHI CO., LTD.).">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.menlabo-pattaya.com/en/privacy">
+  <meta property="og:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Privacy Policy — Osaka Izakaya MENLABO Sakaba">
+  <meta name="twitter:description" content="How personal data is handled on the website of Osaka Izakaya MENLABO Sakaba (operated by OMOTENASHI CO., LTD.).">
+  <meta name="twitter:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/main.js" defer></script>
+  <link rel="alternate" hreflang="ja" href="https://www.menlabo-pattaya.com/privacy">
+  <link rel="alternate" hreflang="th" href="https://www.menlabo-pattaya.com/th/privacy">
+  <link rel="alternate" hreflang="en" href="https://www.menlabo-pattaya.com/en/privacy">
+  <link rel="alternate" hreflang="x-default" href="https://www.menlabo-pattaya.com/privacy">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Privacy Policy — Osaka Izakaya MENLABO Sakaba</title>
-<meta name="description" content="How personal data is handled on the website of Osaka Izakaya MENLABO Sakaba (operated by OMOTENASHI CO., LTD.).">
-<meta name="robots" content="all">
-<meta property="og:url" content="https://www.menlabo-pattaya.com/en/privacy">
-<link rel="canonical" href="https://www.menlabo-pattaya.com/en/privacy">
-<meta property="og:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-
-<!-- 多言語：言語別URLの相互参照 -->
-<link rel="alternate" hreflang="ja" href="https://www.menlabo-pattaya.com/privacy">
-<link rel="alternate" hreflang="en" href="https://www.menlabo-pattaya.com/en/privacy">
-<link rel="alternate" hreflang="th" href="https://www.menlabo-pattaya.com/th/privacy">
-<link rel="alternate" hreflang="x-default" href="https://www.menlabo-pattaya.com/privacy">
-
-<!-- ファビコン（ファイルはサイト直下。/en/ から見て親=サイト直下なので ../ で参照） -->
-<link rel="icon" href="../favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-<link rel="apple-touch-icon" href="../apple-touch-icon.png">
-<link rel="manifest" href="../site.webmanifest">
-<meta name="theme-color" content="#f3eee4">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body>
+  <a class="skip-link" href="#main" data-key="skip-main">Skip to content</a>
 
-<!-- 墨：濡れた紙のWebGLキャンバス（全画面・最前面・操作は透過） -->
-<canvas id="ink-canvas" aria-hidden="true"></canvas>
+  <header class="site-header site-header--paper" aria-label="Site navigation">
+    <a class="site-logo" href="/en" aria-label="MENLABO Sakaba home">
+      <img src="../assets/images/menlabo-logo-mark-kana-red.svg" alt="MENLABO Sakaba" width="82" height="82">
+    </a>
 
-<!-- ============ グローバルナビ（下層ページは常時表示） ============ -->
-<nav class="site-head is-solid" id="site-head">
-  <a class="site-head__brand" href="/en" aria-label="MENLABO Sakaba — home">
-    <img class="site-head__seal" src="../assets/images/menlabo-logo-mark-red.svg" alt="" width="32" height="32">
-    <img class="site-head__wordmark" src="../assets/images/MENLABO_wordmark-sakaba_red.svg" alt="MENLABO Sakaba" width="116" height="17">
-  </a>
-  <div class="site-head__nav">
-    <a href="/en/menu">Menu</a>
-    <a href="/en/access">Find us</a>
-    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">Map</a>
-    <div class="lang-switch" aria-label="Language">
-      <a href="/privacy">JP</a>
-      <span class="lang-switch__sep" aria-hidden="true">/</span>
-      <a href="/en/privacy" aria-current="page">EN</a>
-      <span class="lang-switch__sep" aria-hidden="true">/</span>
-      <a href="/th/privacy">TH</a>
-      <span class="lang-switch__sep" aria-hidden="true">/</span>
-      <a href="/zh" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="/en/about" data-key="nav-about">About MENLABO</a>
+      <a href="/en/menu" data-key="nav-menu">Menu</a>
+      <a href="/en/access" data-key="nav-access">Find us</a>
+      <a href="/en/news" data-key="nav-news">News</a>
+    </nav>
+
+    <div class="desktop-actions">
+      <a href="tel:+66961479518" data-action="phone" data-key="action-phone">Call</a>
+      <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">Map</a>
     </div>
+
+    <nav class="header-language-links" aria-label="Language">
+      <a href="/privacy" lang="ja" data-lang="ja" aria-label="日本語" data-key="lang-ja">JP</a>
+      <a href="/th/privacy" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">TH</a>
+      <a href="/en/privacy" lang="en" data-lang="en" aria-current="page" aria-label="English" data-key="lang-en">EN</a>
+      <a href="/zh" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简</a>
+    </nav>
+
+    <button class="menu-button" type="button" aria-controls="mobile-menu" aria-expanded="false" data-open-label="Menu" data-close-label="Close">
+      <span class="menu-button__label" data-key="menu-open">Menu</span>
+      <span class="menu-button__icon" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav aria-label="Mobile menu">
+      <a href="/en/about" data-key="nav-about">About MENLABO</a>
+      <a href="/en/menu" data-key="nav-menu">Menu</a>
+      <a href="/en/access" data-key="nav-access">Find us</a>
+      <a href="/en/news" data-key="nav-news">News</a>
+    </nav>
+    <div class="mobile-menu__actions">
+      <a href="tel:+66961479518" data-action="phone" data-key="action-phone">Call</a>
+      <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">Map</a>
+    </div>
+    <nav class="header-language-links header-language-links--mobile" aria-label="Language">
+      <a href="/privacy" lang="ja" data-lang="ja" aria-label="日本語" data-key="lang-ja">JP</a>
+      <a href="/th/privacy" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">TH</a>
+      <a href="/en/privacy" lang="en" data-lang="en" aria-current="page" aria-label="English" data-key="lang-en">EN</a>
+      <a href="/zh" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简</a>
+    </nav>
   </div>
-</nav>
 
-<!-- ============ 扉（小） ============ -->
-<header class="page-head">
-  <p class="page-head__kicker reveal">Osaka Izakaya MENLABO Sakaba</p>
-  <h1 class="page-head__title reveal" data-delay="200">Privacy Policy</h1>
-  <p class="page-head__note reveal" data-delay="400">How we handle personal data</p>
-</header>
 
-<main>
-  <section class="chapter chapter--last">
-    <div class="legal">
+  <main id="main" class="content-page privacy-page">
+    <section class="content-page__section paper-section" aria-labelledby="page-title">
+      <div class="content-page__inner content-page__inner--narrow">
+        <header class="content-page__heading reveal">
+          <h1 id="page-title" data-key="page-heading"><span>Privacy</span><span>Policy</span></h1>
+          <p data-key="page-note">How we handle personal data</p>
+        </header>
 
-      <p class="legal__intro">
-        OMOTENASHI CO., LTD. (“we,” “us,” or “our”) sets out below its privacy policy regarding the handling of personal data on the website of “Osaka Izakaya MENLABO Sakaba” (the “Site”), which we operate.
-      </p>
+        <p class="content-page__lead reveal" data-key="privacy-intro">OMOTENASHI CO., LTD. (“we,” “us,” or “our”) sets out below its privacy policy regarding the handling of personal data on the website of “Osaka Izakaya MENLABO Sakaba” (the “Site”), which we operate.</p>
 
-      <section class="legal__sec">
-        <h2>1. Business Information</h2>
-        <dl class="legal__info">
-          <div><dt>Operator</dt><dd>OMOTENASHI CO., LTD.</dd></div>
-          <div><dt>Address</dt><dd>152/27 Moo 5, Naklua, Bang Lamung, Chon Buri 20150, Thailand</dd></div>
-          <div><dt>Contact</dt><dd>Tel: +66 96-147-9518　/　Email: menlabo.pattaya@gmail.com</dd></div>
-        </dl>
-      </section>
+        <section class="policy-section reveal" aria-labelledby="policy-1-title">
+          <h2 id="policy-1-title" data-key="policy-1-heading">1. Business Information</h2>
+          <dl class="store-table content-table">
+            <div><dt data-key="label-operator">Operator</dt><dd>OMOTENASHI CO., LTD.</dd></div>
+            <div><dt data-key="label-head-office">Address</dt><dd>152/27 Moo 5, Naklua, Bang Lamung, Chon Buri 20150, Thailand</dd></div>
+            <div><dt data-key="label-contact">Contact</dt><dd>Tel: +66 96-147-9518　/　Email: menlabo.pattaya@gmail.com</dd></div>
+          </dl>
+        </section>
 
-      <section class="legal__sec">
-        <h2>2. Information We Collect</h2>
-        <p>The Site does not offer features such as account registration that require you to enter your own information. However, when you browse the Site, we may automatically collect the following information:</p>
-        <ul>
-          <li>IP address, browser type and language, device and OS information</li>
-          <li>Pages viewed, time spent, and the URL of the referring (linking) source</li>
-          <li>Identifiers via cookies and similar technologies</li>
-        </ul>
-        <p>In addition, if you contact us by email, we collect your name, email address, and the content of your inquiry.</p>
-      </section>
+        <section class="policy-section reveal" aria-labelledby="policy-2-title">
+          <h2 id="policy-2-title" data-key="policy-2-heading">2. Information We Collect</h2>
+          <p data-key="policy-2-body-1">The Site does not offer features such as account registration that require you to enter your own information. However, when you browse the Site, we may automatically collect the following information:</p>
+          <ul>
+            <li data-key="policy-2-item-1">IP address, browser type and language, device and OS information</li>
+            <li data-key="policy-2-item-2">Pages viewed, time spent, and the URL of the referring (linking) source</li>
+            <li data-key="policy-2-item-3">Identifiers via cookies and similar technologies</li>
+          </ul>
+          <p data-key="policy-2-body-2">In addition, if you contact us by email, we collect your name, email address, and the content of your inquiry.</p>
+        </section>
 
-      <section class="legal__sec">
-        <h2>3. Purpose of Use</h2>
-        <p>We use the collected information only within the scope of the following purposes:</p>
-        <ul>
-          <li>To operate, maintain, and improve the Site</li>
-          <li>To analyze how the Site is used</li>
-          <li>To respond to inquiries</li>
-          <li>To prevent unauthorized access and other improper activity</li>
-        </ul>
-      </section>
+        <section class="policy-section reveal" aria-labelledby="policy-3-title">
+          <h2 id="policy-3-title" data-key="policy-3-heading">3. Purpose of Use</h2>
+          <p data-key="policy-3-body">We use the collected information only within the scope of the following purposes:</p>
+          <ul>
+            <li data-key="policy-3-item-1">To operate, maintain, and improve the Site</li>
+            <li data-key="policy-3-item-2">To analyze how the Site is used</li>
+            <li data-key="policy-3-item-3">To respond to inquiries</li>
+            <li data-key="policy-3-item-4">To prevent unauthorized access and other improper activity</li>
+          </ul>
+        </section>
 
-      <section class="legal__sec">
-        <h2>4. Analytics Tools</h2>
-        <p>To understand how the Site is used, we use “Google Analytics,” provided by Google LLC. Google Analytics uses cookies to collect your browsing data; this data is collected anonymously and does not identify individuals.</p>
-        <p>You can stop this data collection by disabling cookies in your browser settings or by using the opt-out add-on provided by Google. For how Google handles data, please see the <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>.</p>
-      </section>
+        <section class="policy-section reveal" aria-labelledby="policy-4-title">
+          <h2 id="policy-4-title" data-key="policy-4-heading">4. Analytics Tools</h2>
+          <p data-key="policy-4-body-1">To understand how the Site is used, we use “Google Analytics,” provided by Google LLC. Google Analytics uses cookies to collect your browsing data; this data is collected anonymously and does not identify individuals.</p>
+          <p><span data-key="policy-4-body-2-before">You can stop this data collection by disabling cookies in your browser settings or by using the opt-out add-on provided by Google. For how Google handles data, please see the </span><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" data-key="google-privacy">Google Privacy Policy</a><span data-key="policy-4-body-2-after">.</span></p>
+        </section>
 
-      <section class="legal__sec">
-        <h2>5. Cookies</h2>
-        <p>The Site may use cookies to improve usability and for analytics. You can disable cookies in your browser settings, but in that case some features of the Site may not work correctly.</p>
-      </section>
+        <section class="policy-section reveal" aria-labelledby="policy-5-title">
+          <h2 id="policy-5-title" data-key="policy-5-heading">5. Cookies</h2>
+          <p data-key="policy-5-body">The Site may use cookies to improve usability and for analytics. You can disable cookies in your browser settings, but in that case some features of the Site may not work correctly.</p>
+        </section>
 
-      <section class="legal__sec">
-        <h2>6. Use of External Services</h2>
-        <p>The Site uses “Google Maps” to display maps and “Google Fonts” to display fonts. In connection with these features, your information may be sent to the respective service providers. The handling of information by each service is governed by that provider’s own terms.</p>
-      </section>
+        <section class="policy-section reveal" aria-labelledby="policy-6-title">
+          <h2 id="policy-6-title" data-key="policy-6-heading">6. Use of External Services</h2>
+          <p data-key="policy-6-body">The Site uses “Google Maps” to display maps and “Google Fonts” to display fonts. In connection with these features, your information may be sent to the respective service providers. The handling of information by each service is governed by that provider’s own terms.</p>
+        </section>
 
-      <section class="legal__sec">
-        <h2>7. Provision to Third Parties</h2>
-        <p>Except as required by law, we do not provide collected personal data to third parties without first obtaining your consent. However, information may be sent to the analytics and map service providers described above, to the extent necessary to provide those services.</p>
-      </section>
+        <section class="policy-section reveal" aria-labelledby="policy-7-title">
+          <h2 id="policy-7-title" data-key="policy-7-heading">7. Provision to Third Parties</h2>
+          <p data-key="policy-7-body">Except as required by law, we do not provide collected personal data to third parties without first obtaining your consent. However, information may be sent to the analytics and map service providers described above, to the extent necessary to provide those services.</p>
+        </section>
 
-      <section class="legal__sec">
-        <h2>8. Management of Personal Data</h2>
-        <p>We manage the personal data we collect appropriately and strive to prevent its leakage, loss, or damage.</p>
-      </section>
+        <section class="policy-section reveal" aria-labelledby="policy-8-title">
+          <h2 id="policy-8-title" data-key="policy-8-heading">8. Management of Personal Data</h2>
+          <p data-key="policy-8-body">We manage the personal data we collect appropriately and strive to prevent its leakage, loss, or damage.</p>
+        </section>
 
-      <section class="legal__sec">
-        <h2>9. Requests for Disclosure, Correction, or Deletion</h2>
-        <p>You may request the disclosure, correction, suspension of use, or deletion of your own personal data. If you wish to do so, please contact the inquiry desk below. After verifying your identity, we will respond in accordance with applicable law.</p>
-      </section>
+        <section class="policy-section reveal" aria-labelledby="policy-9-title">
+          <h2 id="policy-9-title" data-key="policy-9-heading">9. Requests for Disclosure, Correction, or Deletion</h2>
+          <p data-key="policy-9-body">You may request the disclosure, correction, suspension of use, or deletion of your own personal data. If you wish to do so, please contact the inquiry desk below. After verifying your identity, we will respond in accordance with applicable law.</p>
+        </section>
 
-      <section class="legal__sec">
-        <h2>10. Changes to This Policy</h2>
-        <p>We may revise this policy as necessary. If we make significant changes, we will announce them on this page.</p>
-      </section>
+        <section class="policy-section reveal" aria-labelledby="policy-10-title">
+          <h2 id="policy-10-title" data-key="policy-10-heading">10. Changes to This Policy</h2>
+          <p data-key="policy-10-body">We may revise this policy as necessary. If we make significant changes, we will announce them on this page.</p>
+        </section>
 
-      <section class="legal__sec">
-        <h2>11. Inquiry Desk</h2>
-        <dl class="legal__info">
-          <div><dt>Operator</dt><dd>OMOTENASHI CO., LTD.</dd></div>
-          <div><dt>Email</dt><dd>menlabo.pattaya@gmail.com</dd></div>
-          <div><dt>Phone</dt><dd>+66 96-147-9518</dd></div>
-        </dl>
-      </section>
+        <section class="policy-section reveal" aria-labelledby="policy-11-title">
+          <h2 id="policy-11-title" data-key="policy-11-heading">11. Inquiry Desk</h2>
+          <dl class="store-table content-table">
+            <div><dt data-key="label-business-operator">Operator</dt><dd>OMOTENASHI CO., LTD.</dd></div>
+            <div><dt data-key="label-email">Email</dt><dd>menlabo.pattaya@gmail.com</dd></div>
+            <div><dt data-key="label-phone">Phone</dt><dd>+66 96-147-9518</dd></div>
+          </dl>
+        </section>
 
-      <p class="legal__date">Effective date: June 15, 2026</p>
+        <p class="content-page__date reveal">Effective date: June 15, 2026</p>
+        <a class="line-link content-page__home reveal" href="/en" data-key="back-home">Back to home</a>
+      </div>
+    </section>
+  </main>
 
-      <a class="more-link" href="/en">Back to home</a>
 
+  <footer class="site-footer">
+    <div class="footer-heading">
+      <img src="../assets/images/menlabo-logo-mark-kana-red.svg" alt="MENLABO Sakaba" width="108" height="108" loading="lazy">
+      <h2 data-key="store-info-heading">Restaurant information</h2>
     </div>
-  </section>
-</main>
 
-<!-- ============ 奥付 ============ -->
-<footer class="colophon">
-  <img class="colophon__seal" src="../assets/images/menlabo-logo-mark-kana-red.svg" alt="MENLABO Sakaba logo" width="64" height="64">
-  <nav class="colophon__nav">
-    <a href="/en">Home</a>
-    <a href="/en/menu">Menu</a>
+    <dl class="store-table">
+      <div><dt data-key="label-store">Restaurant</dt><dd data-key="store-name">Osaka Izakaya MENLABO Sakaba</dd></div>
+      <div><dt data-key="label-address">Address</dt><dd data-key="store-address">502/22 Soi Buakhao, Pattaya City, Bang Lamung, Chon Buri 20150</dd></div>
+      <div><dt data-key="label-landmark">Directions</dt><dd data-key="store-landmark">Inside Tree Town, in the black building marked by lanterns</dd></div>
+      <div><dt data-key="label-hours">Hours</dt><dd><span data-key="hours-lunch">Lunch 11:00–15:00 (set meals and ramen)</span><span data-key="hours-night">Dinner 15:00–24:00 (full menu)</span></dd></div>
+      <div><dt data-key="label-last-entry">Last entry and last order</dt><dd data-key="last-entry-pending">23:40</dd></div>
+      <div><dt data-key="label-closed">Closed</dt><dd data-key="closed-day">Tuesday</dd></div>
+      <div><dt data-key="label-payment">Payment</dt><dd data-key="payment-methods">Cash, PromptPay (QR), and credit cards (VISA / Master / Alipay / UnionPay / JCB)</dd></div>
+      <div><dt data-key="label-parking">Parking</dt><dd data-key="parking-value">Available (฿30 per hour)</dd></div>
+    </dl>
+
+    <div class="footer-contact">
+      <p data-key="phone-guidance">Please tell us you found us on our website</p>
+      <a href="tel:+66961479518" data-action="phone"><span data-key="phone-number" data-value="phone">+66 96-147-9518</span></a>
+    </div>
+
+    <nav class="social-links" aria-label="Social media">
+      <a href="https://www.instagram.com/menlabo.pattaya/" data-action="instagram" target="_blank" rel="noopener noreferrer" data-key="social-instagram">Instagram</a>
+      <a href="https://www.facebook.com/menlabo.pattaya" data-action="facebook" target="_blank" rel="noopener noreferrer" data-key="social-facebook">Facebook</a>
+      <a href="https://x.com/menlabo_sakaba" data-action="x" target="_blank" rel="noopener noreferrer" data-key="social-x">X</a>
+    </nav>
+
+    <nav class="language-links" aria-label="Language">
+      <a href="/privacy" lang="ja" data-lang="ja" aria-label="日本語" data-key="lang-ja">日本語</a>
+      <a href="/th/privacy" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">ไทย</a>
+      <a href="/en/privacy" lang="en" data-lang="en" aria-current="page" aria-label="English" data-key="lang-en">English</a>
+      <a href="/zh" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简体中文</a>
+    </nav>
+
+    <nav class="legal-links" aria-label="Legal information">
+      <a href="/en/access" data-key="nav-access">Find us</a>
+      <a href="/en/company" data-key="link-company">Company</a>
+      <a href="/en/privacy" data-key="link-privacy">Privacy Policy</a>
+    </nav>
+
+    <p class="copyright" data-key="copyright">© MENLABO Sakaba</p>
+  </footer>
+
+
+  <nav class="mobile-actions" aria-label="Contact">
+    <a href="tel:+66961479518" data-action="phone" data-key="action-phone">Call</a>
+    <a href="https://lin.ee/7GQmsKU" data-action="line" data-key="action-line">LINE</a>
+    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">Map</a>
   </nav>
-  <div class="lang-switch" aria-label="Language">
-    <a href="/privacy">JP</a>
-    <span class="lang-switch__sep" aria-hidden="true">/</span>
-    <a href="/en/privacy" aria-current="page">EN</a>
-    <span class="lang-switch__sep" aria-hidden="true">/</span>
-    <a href="/th/privacy">TH</a>
-    <span class="lang-switch__sep" aria-hidden="true">/</span>
-    <a href="/zh" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-  </div>
-  <p class="colophon__text">Osaka Izakaya MENLABO Sakaba<span class="pc-only"> — </span><br class="br-sp">Pattaya, Thailand</p>
-  <p class="colophon__copy">© 2026 MENLABO<br class="br-sp">(OMOTENASHI CO., LTD.)</p>
-  <p class="colophon__legal"><a href="/en/company">Company Profile</a> · <a href="/en/privacy" aria-current="page">Privacy Policy</a></p>
-</footer>
 
-<script src="../assets/js/ink.js" defer></script>
-<script src="../assets/js/main.js" defer></script>
 </body>
 </html>

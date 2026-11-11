@@ -1,283 +1,266 @@
-<!DOCTYPE html>
+<!-- build.pyで生成。直接編集しない。部品は src/ を直す。 -->
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+  <meta charset="utf-8">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L9W79GXPE1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-L9W79GXPE1');
-</script>
+  <!-- Google tag (gtag.js)：本番ドメインでだけ読み込む（手元の確認やVercelのプレビューで本番の解析を汚さないため。2026-11-11 Claude） -->
+  <script id="google-tag" data-ga4-id="G-L9W79GXPE1" data-production-host="www.menlabo-pattaya.com">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    (function () {
+      var tag = document.getElementById("google-tag");
+      var id = tag.dataset.ga4Id;
+      if (!id || location.hostname !== tag.dataset.productionHost) return;
+      var loader = document.createElement("script");
+      loader.async = true;
+      loader.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+      document.head.appendChild(loader);
+      gtag("js", new Date());
+      gtag("config", id);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="How to reach Osaka Izakaya MENLABO Sakaba inside Tree Town in Soi Buakhao, Pattaya, with exterior photos, directions, a map and transport information.">
+  <meta name="theme-color" content="#171817">
+  <title>Find Us | Osaka Izakaya MENLABO Sakaba</title>
+  <link rel="canonical" href="https://www.menlabo-pattaya.com/en/access">
+  <meta property="og:title" content="Find Us | Osaka Izakaya MENLABO Sakaba">
+  <meta property="og:description" content="How to reach Osaka Izakaya MENLABO Sakaba inside Tree Town in Soi Buakhao, Pattaya, with exterior photos, directions, a map and transport information.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.menlabo-pattaya.com/en/access">
+  <meta property="og:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Find Us | Osaka Izakaya MENLABO Sakaba">
+  <meta name="twitter:description" content="How to reach Osaka Izakaya MENLABO Sakaba inside Tree Town in Soi Buakhao, Pattaya, with exterior photos, directions, a map and transport information.">
+  <meta name="twitter:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/main.js" defer></script>
+  <link rel="alternate" hreflang="ja" href="https://www.menlabo-pattaya.com/access">
+  <link rel="alternate" hreflang="th" href="https://www.menlabo-pattaya.com/th/access">
+  <link rel="alternate" hreflang="en" href="https://www.menlabo-pattaya.com/en/access">
+  <link rel="alternate" hreflang="zh-Hans" href="https://www.menlabo-pattaya.com/zh/access">
+  <link rel="alternate" hreflang="x-default" href="https://www.menlabo-pattaya.com/access">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Find Us — Osaka Izakaya MENLABO Sakaba</title>
-<meta name="description" content="Store info and access for MENLABO Sakaba, Pattaya. In Tree Town off Soi Buakhao — a black building marked by a lantern. Hours, directions, amenities and contact.">
-<meta property="og:title" content="Find Us — Osaka Izakaya MENLABO Sakaba">
-<meta property="og:description" content="In Tree Town, marked by a lantern. How to get here, and what to expect inside.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.menlabo-pattaya.com/en/access">
-<link rel="canonical" href="https://www.menlabo-pattaya.com/en/access">
-<meta property="og:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-
-<!-- 多言語：言語別URLの相互参照 -->
-<link rel="alternate" hreflang="ja" href="https://www.menlabo-pattaya.com/access">
-<link rel="alternate" hreflang="en" href="https://www.menlabo-pattaya.com/en/access">
-<link rel="alternate" hreflang="th" href="https://www.menlabo-pattaya.com/th/access">
-<link rel="alternate" hreflang="zh-Hans" href="https://www.menlabo-pattaya.com/zh/access">
-<link rel="alternate" hreflang="x-default" href="https://www.menlabo-pattaya.com/access">
-
-<!-- ファビコン（ファイルはサイト直下。/en/ から見て親=サイト直下なので ../ で参照） -->
-<link rel="icon" href="../favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-<link rel="apple-touch-icon" href="../apple-touch-icon.png">
-<link rel="manifest" href="../site.webmanifest">
-<meta name="theme-color" content="#f3eee4">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body>
+  <a class="skip-link" href="#main" data-key="skip-main">Skip to content</a>
 
-<!-- 墨：濡れた紙のWebGLキャンバス（全画面・最前面・操作は透過） -->
-<canvas id="ink-canvas" aria-hidden="true"></canvas>
+  <header class="site-header" aria-label="Site navigation">
+    <a class="site-logo" href="/en" aria-label="MENLABO Sakaba home">
+      <img src="../assets/images/menlabo-logo-mark-kana-white.svg" alt="MENLABO Sakaba" width="82" height="82">
+    </a>
 
-<!-- ============ グローバルナビ（下層ページは常時表示） ============ -->
-<nav class="site-head is-solid" id="site-head">
-  <a class="site-head__brand" href="/en" aria-label="MENLABO Sakaba — home">
-    <img class="site-head__seal" src="../assets/images/menlabo-logo-mark-red.svg" alt="" width="32" height="32">
-    <img class="site-head__wordmark" src="../assets/images/MENLABO_wordmark-sakaba_red.svg" alt="MENLABO Sakaba" width="116" height="17">
-  </a>
-  <div class="site-head__nav">
-    <a href="/en/menu">Menu</a>
-    <a href="/en/access" aria-current="page">Find us</a>
-    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">Map</a>
-    <div class="lang-switch" aria-label="Language">
-      <a href="/access">JP</a>
-      <span class="lang-switch__sep" aria-hidden="true">/</span>
-      <a href="/en/access" aria-current="page">EN</a>
-      <span class="lang-switch__sep" aria-hidden="true">/</span>
-      <a href="/th/access">TH</a>
-      <span class="lang-switch__sep" aria-hidden="true">/</span>
-      <a href="/zh/access" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="/en/about" data-key="nav-about">About MENLABO</a>
+      <a href="/en/menu" data-key="nav-menu">Menu</a>
+      <a href="/en/access" data-key="nav-access">Find us</a>
+      <a href="/en/news" data-key="nav-news">News</a>
+    </nav>
+
+    <div class="desktop-actions">
+      <a href="tel:+66961479518" data-action="phone" data-key="action-phone">Call</a>
+      <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">Map</a>
     </div>
+
+    <nav class="header-language-links" aria-label="Language">
+      <a href="/access" lang="ja" data-lang="ja" aria-label="日本語" data-key="lang-ja">JP</a>
+      <a href="/th/access" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">TH</a>
+      <a href="/en/access" lang="en" data-lang="en" aria-current="page" aria-label="English" data-key="lang-en">EN</a>
+      <a href="/zh/access" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简</a>
+    </nav>
+
+    <button class="menu-button" type="button" aria-controls="mobile-menu" aria-expanded="false" data-open-label="Menu" data-close-label="Close">
+      <span class="menu-button__label" data-key="menu-open">Menu</span>
+      <span class="menu-button__icon" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav aria-label="Mobile menu">
+      <a href="/en/about" data-key="nav-about">About MENLABO</a>
+      <a href="/en/menu" data-key="nav-menu">Menu</a>
+      <a href="/en/access" data-key="nav-access">Find us</a>
+      <a href="/en/news" data-key="nav-news">News</a>
+    </nav>
+    <div class="mobile-menu__actions">
+      <a href="tel:+66961479518" data-action="phone" data-key="action-phone">Call</a>
+      <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">Map</a>
+    </div>
+    <nav class="header-language-links header-language-links--mobile" aria-label="Language">
+      <a href="/access" lang="ja" data-lang="ja" aria-label="日本語" data-key="lang-ja">JP</a>
+      <a href="/th/access" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">TH</a>
+      <a href="/en/access" lang="en" data-lang="en" aria-current="page" aria-label="English" data-key="lang-en">EN</a>
+      <a href="/zh/access" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简</a>
+    </nav>
   </div>
-</nav>
 
-<!-- ============ 扉（小） ============ -->
-<header class="page-head">
-  <p class="page-head__kicker reveal">Osaka Izakaya MENLABO Sakaba</p>
-  <h1 class="page-head__title reveal" data-delay="200">Find Us</h1>
-  <p class="page-head__note reveal" data-delay="400">In Tree Town<span class="pc-only"> — </span><br class="br-sp">a black building, marked by a lantern</p>
-</header>
 
-<main>
+  <main id="main" class="access-page">
+    <section class="access-hero" aria-labelledby="page-title">
+      <div class="access-hero__shade" aria-hidden="true"></div>
+      <div class="access-hero__content">
+        <h1 id="page-title" data-key="page-heading">Find Us</h1>
+        <p data-key="hero-lead">Inside Tree Town, in the black building marked by lanterns</p>
+        <div class="access-hero__actions">
+          <a class="line-link line-link--light" href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="open-map">Open in Google Maps</a>
+          <a class="line-link line-link--light" href="tel:+66961479518" data-action="phone" data-key="call-store">Call the restaurant</a>
+        </div>
+      </div>
+    </section>
 
-  <!-- ============ 1. 基本情報 ============ -->
-  <section class="chapter" id="info">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">Basics</p>
-        <h2 class="chapter__title">Store Information</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
+    <section class="access-location paper-section reveal" aria-labelledby="location-title">
+      <div class="access-reading">
+        <h2 id="location-title" data-key="location-heading">Inside Tree Town</h2>
+        <p data-key="location-body">We are in Soi Buakhao, Pattaya, Inside Tree Town, in the black building marked by lanterns. Look for the lanterns and black exterior at night.</p>
+      </div>
+    </section>
 
-      <dl class="info">
-        <div class="info__row"><dt>Name</dt><dd>Osaka Izakaya MENLABO Sakaba</dd></div>
-        <div class="info__row"><dt>Address</dt><dd>502/22 Soi Buakhao, Pattaya City, Bang Lamung, Chon Buri 20150<br><small>A black building in Tree Town — look for the lantern</small></dd></div>
-        <div class="info__row"><dt>Phone</dt><dd><a class="info__tel" href="tel:+66961479518">+66 96-147-9518</a><small>(tap to call)</small></dd></div>
-        <div class="info__row"><dt>Lunch</dt><dd>11:00 — 15:00<small>(set meals &amp; ramen)</small></dd></div>
-        <div class="info__row"><dt>Evening</dt><dd>15:00 — 24:00<small>(full menu)</small></dd></div>
-        <div class="info__row"><dt>Closed</dt><dd>Tuesdays</dd></div>
-        <div class="info__row"><dt>Parking</dt><dd>Yes<small>(฿30 / hour)</small></dd></div>
-      </dl>
-    </div>
-  </section>
-
-  <!-- ============ 2. 外観・内観 ============ -->
-  <section class="chapter" id="photos">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">Look for</p>
-        <h2 class="chapter__title">Outside &amp; In</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
-
-      <p class="chapter__lead">This is the building. Look for the lantern.</p>
-
-      <!-- 写真は assets/images/ に置いて main.js の PLATE_IMAGES で差し替え（現在は仮画像） -->
-      <div class="access-gallery">
-        <figure class="access-fig">
-          <span class="access-fig__media"><img class="access-fig__img" data-plate-src="access-exterior" alt="The building at night (sample image)"></span>
-          <figcaption class="access-fig__cap">The building at night, lantern glowing</figcaption>
+    <section class="access-photos paper-section" aria-labelledby="photos-title">
+      <div class="section-title reveal">
+        <h2 id="photos-title" data-key="photos-heading">Landmarks on the way</h2>
+      </div>
+      <div class="access-gallery reveal">
+        <figure class="access-figure">
+          <img src="../assets/images/access-exterior.jpg" alt="Exterior of MENLABO Sakaba at night" width="1200" height="800" loading="lazy">
+          <figcaption data-key="caption-exterior">Inside Tree Town, in the black building marked by lanterns</figcaption>
         </figure>
-        <figure class="access-fig">
-          <span class="access-fig__media"><img class="access-fig__img" data-plate-src="access-entrance" alt="Entrance (sample image)"></span>
-          <figcaption class="access-fig__cap">Entrance</figcaption>
+        <figure class="access-figure">
+          <img src="../assets/images/access-entrance.jpg" alt="Lantern-lined entrance to MENLABO Sakaba" width="1200" height="800" loading="lazy">
+          <figcaption data-key="caption-entrance">The entrance is beneath the lanterns</figcaption>
         </figure>
-        <figure class="access-fig">
-          <span class="access-fig__media"><img class="access-fig__img" data-plate-src="access-interior" alt="Inside the restaurant (sample image)"></span>
-          <figcaption class="access-fig__cap">Inside — the counter</figcaption>
+        <figure class="access-figure">
+          <img src="../assets/images/access-interior.jpg" alt="Interior of MENLABO Sakaba" width="1200" height="800" loading="lazy">
+          <figcaption data-key="caption-interior">The seating area is visible as you enter</figcaption>
         </figure>
-        <figure class="access-fig">
-          <span class="access-fig__media"><img class="access-fig__img" data-plate-src="access-vibe" alt="The atmosphere (sample image)"></span>
-          <figcaption class="access-fig__cap">A busy night</figcaption>
+        <figure class="access-figure">
+          <img src="../assets/images/access-vibe.jpg" alt="Evening atmosphere at MENLABO Sakaba" width="1200" height="800" loading="lazy">
+          <figcaption data-key="caption-vibe">The restaurant in the evening</figcaption>
         </figure>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ============ 3. アクセス・道順 ============ -->
-  <section class="chapter" id="route">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">Getting here</p>
-        <h2 class="chapter__title">Directions</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
-
-      <!-- Google Maps 埋め込み（遅延読み込み・英語表示 1sen） -->
-      <div class="map-embed">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.6217555302765!2d100.88341221216982!3d12.932014915689209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3102977c26d48337%3A0x4b7684bb1e20feb0!2z6bq6TEFCTw!5e0!3m2!1sen!2sth!4v1780043499657!5m2!1sen!2sth"
-          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map to MENLABO Sakaba"></iframe>
+    <section class="access-map paper-section" aria-labelledby="map-title">
+      <div class="section-title reveal">
+        <h2 id="map-title" data-key="map-heading">Check the map</h2>
       </div>
-
-      <a class="info__map" href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">Open in Maps</a>
-
-      <!-- 運転手に見せるカード -->
-      <div class="driver-card">
-        <p class="driver-card__label">Show this to your driver</p>
-        <p class="driver-card__th">502/22 ซอยบัวขาว เมืองพัทยา อำเภอบางละมุง จังหวัดชลบุรี 20150</p>
-        <p class="driver-card__en">502/22&nbsp;Soi&nbsp;Buakhao, Pattaya&nbsp;City, Bang&nbsp;Lamung, Chon&nbsp;Buri&nbsp;20150<br>（Tree Town）</p>
+      <div class="map-embed reveal">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.6217555302765!2d100.88341221216982!3d12.932014915689209!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3102977c26d48337%3A0x4b7684bb1e20feb0!2z6bq6TEFCTw!5e0!3m2!1sja!2sth!4v1780043499657!5m2!1sja!2sth" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" title="Google Map for MENLABO Sakaba"></iframe>
       </div>
+      <a class="line-link reveal" href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="open-map">Open in Google Maps</a>
+    </section>
 
-      <div class="legal">
-        <section class="legal__sec">
-          <h2>Inside Tree Town</h2>
-          <p>Tree Town is the open-air run of bars and food on Soi Buakhao — Pattaya's night lane, lit up once the sun goes down. MENLABO is one of the restaurants tucked inside it: a black building under a red lantern.</p>
-          <p>Once you're in Tree Town, just look for the lantern. Lost? Ask for us by name. You can also pin the spot from the map above.</p>
-        </section>
-        <section class="legal__sec">
-          <h2>Getting here from key spots</h2>
-          <ul>
-            <li>From Walking Street: ~1.6 km, 5–15 min by car (busy at night)</li>
-            <li>From Central Pattaya Road: ~10 min on foot from the Soi Buakhao entrance</li>
-            <li>From Terminal 21 Pattaya: ~3.3 km, 8–20 min by car (depending on traffic)</li>
-          </ul>
-          <p>* Pattaya traffic varies by time and day. For an accurate current travel time, check the map above.</p>
-        </section>
-        <section class="legal__sec">
-          <h2>Getting around</h2>
-          <ul>
-            <li>Taxi: just say “Soi Buakhao, Tree Town”</li>
-            <li>Songthaew (shared): around ฿15. Name a destination and it may become a private hire at ฿100–200</li>
-            <li>Motorbike taxi: easy for short hops</li>
-            <li>On foot: inside Tree Town, look for the lantern</li>
-          </ul>
-        </section>
+    <section class="access-route paper-section" aria-labelledby="route-title">
+      <div class="section-title reveal">
+        <h2 id="route-title" data-key="route-heading">How to get here</h2>
       </div>
-    </div>
-  </section>
-
-  <!-- ============ 4. 店内・設備 ============ -->
-  <section class="chapter" id="facility">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">Before you come</p>
-        <h2 class="chapter__title">Inside &amp; Amenities</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
-
-      <dl class="info info--roomy">
-        <div class="info__row"><dt>Seats</dt><dd>Counter 6 · Tables 24</dd></div>
-        <div class="info__row"><dt>Payment</dt><dd>Cash · PromptPay (QR)<span class="pc-only"> · </span><br class="br-sp">credit cards<small>(VISA / Master / Alipay / UnionPay / JCB)</small></dd></div>
-        <div class="info__row"><dt>Wi-Fi</dt><dd>Yes</dd></div>
-        <div class="info__row"><dt>Smoking</dt><dd>No smoking indoors<small>(smoking area outside)</small></dd></div>
-        <div class="info__row"><dt>Kids</dt><dd>Welcome</dd></div>
-        <div class="info__row"><dt>Booking</dt><dd>By phone<small>(+66 96-147-9518)</small></dd></div>
-        <div class="info__row"><dt>Language</dt><dd>Thai<small>(English &amp; Japanese depending on staff on duty)</small></dd></div>
-        <div class="info__row"><dt>Other</dt><dd>Allergies? Just ask.</dd></div>
-      </dl>
-    </div>
-  </section>
-
-  <!-- ============ 5. SNS・お問い合わせ ============ -->
-  <section class="chapter" id="contact">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">Get in touch</p>
-        <h2 class="chapter__title">Contact</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
-
-      <p class="chapter__lead">Bookings and questions — by phone or social.</p>
-
-      <div class="sns-links">
-        <a class="sns-links__item sns-links__item--primary" href="tel:+66961479518">Call us</a>
-        <a class="sns-links__item" href="https://www.instagram.com/menlabo.pattaya/" target="_blank" rel="noopener">Instagram</a>
-        <a class="sns-links__item" href="https://www.google.com/maps/place/%E9%BA%BALABO/@12.9320097,100.8859925,16z/data=!4m8!3m7!1s0x3102977c26d48337:0x4b7684bb1e20feb0!8m2!3d12.9320097!4d100.8859925!9m1!1b1!16s%2Fg%2F11y3d19fdc" target="_blank" rel="noopener">Read reviews</a>
-        <!-- LINE 導入後に hidden を外して有効化（その際はボタンが4つになるので、style.css の .sns-links を 2列に戻す） -->
-        <span class="sns-links__item sns-links__item--soon" hidden>LINE (coming soon)</span>
+      <div class="access-route__list reveal">
+        <article>
+          <h3 data-key="route-car-heading">Car</h3>
+          <p data-key="route-car-body">Parking is Available (฿30 per hour).</p>
+        </article>
+        <article>
+          <h3 data-key="route-bike-heading">Motorbike</h3>
+          <p data-key="route-bike-body">Available beside the restaurant; it may be busy at peak times</p>
+        </article>
+        <article>
+          <h3 data-key="route-songthaew-heading">Songthaew</h3>
+          <p data-key="route-songthaew-body">About ฿15; a private ride is usually ฿100–200</p>
+        </article>
+        <article>
+          <h3 data-key="route-ride-heading">Bolt or Grab</h3>
+          <p data-key="route-ride-body">Enter “Tree Town” as your destination, then look for the black building and lanterns when you arrive.</p>
+        </article>
       </div>
+    </section>
 
-      <p class="chapter__note">Got somewhere to drink tonight?</p>
+    <section class="driver-section photo-section" aria-labelledby="driver-title">
+      <div class="driver-section__shade" aria-hidden="true"></div>
+      <div class="driver-section__content reveal">
+        <h2 id="driver-title" data-key="driver-heading">Show this to your driver</h2>
+        <p class="driver-section__lead" data-key="driver-instruction">Please show this screen to your driver</p>
+        <div class="driver-card">
+          <p class="driver-card__name">MENLABO Sakaba</p>
+          <p class="driver-card__address" lang="th" data-key="driver-address">502/22 ซอยบัวขาว เมืองพัทยา อำเภอบางละมุง จังหวัดชลบุรี 20150</p>
+          <p class="driver-card__landmark" data-key="driver-landmark">Inside Tree Town, in the black building marked by lanterns</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="access-hours paper-section" aria-labelledby="hours-title">
+      <div class="access-reading reveal">
+        <h2 id="hours-title" data-key="hours-heading">Before you visit</h2>
+        <div class="access-hours__details">
+          <p data-key="hours-lunch-access">Lunch 11:00–15:00 (set meals and ramen)</p>
+          <p data-key="hours-night-access">Dinner 15:00–24:00 (full menu)</p>
+          <p data-key="hours-closed-access">Closed Tuesday</p>
+          <p data-key="hours-last-entry-access">Last entry and last order 23:40</p>
+        </div>
+        <a class="line-link" href="tel:+66961479518" data-action="phone" data-key="call-store">Call the restaurant</a>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="footer-heading">
+      <img src="../assets/images/menlabo-logo-mark-kana-red.svg" alt="MENLABO Sakaba" width="108" height="108" loading="lazy">
+      <h2 data-key="store-info-heading">Restaurant information</h2>
     </div>
-  </section>
 
-  <!-- ============ 6. 運営会社 ============ -->
-  <section class="chapter chapter--last" id="company">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">Operator</p>
-        <h2 class="chapter__title">Company</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
+    <dl class="store-table">
+      <div><dt data-key="label-store">Restaurant</dt><dd data-key="store-name">Osaka Izakaya MENLABO Sakaba</dd></div>
+      <div><dt data-key="label-address">Address</dt><dd data-key="store-address">502/22 Soi Buakhao, Pattaya City, Bang Lamung, Chon Buri 20150</dd></div>
+      <div><dt data-key="label-landmark">Directions</dt><dd data-key="store-landmark">Inside Tree Town, in the black building marked by lanterns</dd></div>
+      <div><dt data-key="label-hours">Hours</dt><dd><span data-key="hours-lunch">Lunch 11:00–15:00 (set meals and ramen)</span><span data-key="hours-night">Dinner 15:00–24:00 (full menu)</span></dd></div>
+      <div><dt data-key="label-last-entry">Last entry and last order</dt><dd data-key="last-entry-pending">23:40</dd></div>
+      <div><dt data-key="label-closed">Closed</dt><dd data-key="closed-day">Tuesday</dd></div>
+      <div><dt data-key="label-payment">Payment</dt><dd data-key="payment-methods">Cash, PromptPay (QR), and credit cards (VISA / Master / Alipay / UnionPay / JCB)</dd></div>
+      <div><dt data-key="label-parking">Parking</dt><dd data-key="parking-value">Available (฿30 per hour)</dd></div>
+    </dl>
 
-      <dl class="info">
-        <div class="info__row"><dt>Operator</dt><dd>OMOTENASHI CO., LTD.</dd></div>
-      </dl>
+    <div class="footer-contact">
+      <p data-key="phone-guidance">Please tell us you found us on our website</p>
+      <a href="tel:+66961479518" data-action="phone"><span data-key="phone-number" data-value="phone">+66 96-147-9518</span></a>
     </div>
-  </section>
 
-</main>
+    <nav class="social-links" aria-label="Social media">
+      <a href="https://www.instagram.com/menlabo.pattaya/" data-action="instagram" target="_blank" rel="noopener noreferrer" data-key="social-instagram">Instagram</a>
+      <a href="https://www.facebook.com/menlabo.pattaya" data-action="facebook" target="_blank" rel="noopener noreferrer" data-key="social-facebook">Facebook</a>
+      <a href="https://x.com/menlabo_sakaba" data-action="x" target="_blank" rel="noopener noreferrer" data-key="social-x">X</a>
+    </nav>
 
-<!-- ============ モバイル下部CTA（PCでは非表示） ============ -->
-<div class="m-cta" id="m-cta" aria-hidden="true">
-  <a class="m-cta__btn m-cta__btn--primary" href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">Directions</a>
-  <a class="m-cta__btn" href="/en/menu">Menu</a>
-</div>
+    <nav class="language-links" aria-label="Language">
+      <a href="/access" lang="ja" data-lang="ja" aria-label="日本語" data-key="lang-ja">日本語</a>
+      <a href="/th/access" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">ไทย</a>
+      <a href="/en/access" lang="en" data-lang="en" aria-current="page" aria-label="English" data-key="lang-en">English</a>
+      <a href="/zh/access" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简体中文</a>
+    </nav>
 
-<!-- ============ 奥付 ============ -->
-<footer class="colophon">
-  <img class="colophon__seal" src="../assets/images/menlabo-logo-mark-kana-red.svg" alt="MENLABO Sakaba logo" width="64" height="64">
-  <nav class="colophon__nav">
-    <a href="/en">Home</a>
-    <a href="/en/menu">Menu</a>
+    <nav class="legal-links" aria-label="Legal information">
+      <a href="/en/access" data-key="nav-access">Find us</a>
+      <a href="/en/company" data-key="link-company">Company</a>
+      <a href="/en/privacy" data-key="link-privacy">Privacy Policy</a>
+    </nav>
+
+    <p class="copyright" data-key="copyright">© MENLABO Sakaba</p>
+  </footer>
+
+
+  <nav class="mobile-actions" aria-label="Contact">
+    <a href="tel:+66961479518" data-action="phone" data-key="action-phone">Call</a>
+    <a href="https://lin.ee/7GQmsKU" data-action="line" data-key="action-line">LINE</a>
+    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">Map</a>
   </nav>
-  <div class="lang-switch" aria-label="Language">
-    <a href="/access">JP</a>
-    <span class="lang-switch__sep" aria-hidden="true">/</span>
-    <a href="/en/access" aria-current="page">EN</a>
-    <span class="lang-switch__sep" aria-hidden="true">/</span>
-    <a href="/th/access">TH</a>
-    <span class="lang-switch__sep" aria-hidden="true">/</span>
-    <a href="/zh/access" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-  </div>
-  <p class="colophon__text">Osaka Izakaya MENLABO Sakaba<span class="pc-only"> — </span><br class="br-sp">Pattaya, Thailand</p>
-  <p class="colophon__copy">© 2026 MENLABO<br class="br-sp">(OMOTENASHI CO., LTD.)</p>
-  <p class="colophon__legal"><a href="/en/company">Company Profile</a> · <a href="/en/privacy">Privacy Policy</a></p>
-</footer>
 
-<script src="../assets/js/ink.js" defer></script>
-<script src="../assets/js/main.js" defer></script>
 </body>
 </html>

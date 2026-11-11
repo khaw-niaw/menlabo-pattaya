@@ -1,62 +1,74 @@
-<!DOCTYPE html>
+<!-- build.pyで生成。直接編集しない。部品は src/ を直す。 -->
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+  <meta charset="utf-8">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L9W79GXPE1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-L9W79GXPE1');
-</script>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>Osaka Izakaya MENLABO Sakaba — Pattaya</title>
-<meta name="description" content="Osaka-style izakaya in Pattaya. Lunch sets by day, Japanese bar food and drinks from 3pm. Karaage, gyoza, dashimaki — real Japanese flavor. Soi Buakhao, Tree Town. 11:00–24:00, closed Tuesdays.">
-<meta property="og:title" content="Osaka Izakaya MENLABO Sakaba — Pattaya">
-<meta property="og:description" content="A diner by day. A tavern from 3pm. Real Japanese flavor, done right.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.menlabo-pattaya.com/en">
-<link rel="canonical" href="https://www.menlabo-pattaya.com/en">
-<meta property="og:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-
-<!-- 多言語：言語別URLの相互参照（相互参照が成立するページ間のみ） -->
-<link rel="alternate" hreflang="ja" href="https://www.menlabo-pattaya.com/">
-<link rel="alternate" hreflang="en" href="https://www.menlabo-pattaya.com/en">
-<link rel="alternate" hreflang="th" href="https://www.menlabo-pattaya.com/th">
-<link rel="alternate" hreflang="zh-Hans" href="https://www.menlabo-pattaya.com/zh">
-<link rel="alternate" hreflang="x-default" href="https://www.menlabo-pattaya.com/">
-
-<!-- ファビコン（ファイルはサイト直下。/en/ から見て親=サイト直下なので ../ で参照） -->
-<link rel="icon" href="../favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-<link rel="apple-touch-icon" href="../apple-touch-icon.png">
-<link rel="manifest" href="../site.webmanifest">
-<meta name="theme-color" content="#f3eee4">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/style.css">
-
-<!-- 構造化データ：Restaurant（英語版・NAP/営業時間/定休日をGoogleに伝える） -->
-<script type="application/ld+json">
+  <!-- Google tag (gtag.js)：本番ドメインでだけ読み込む（手元の確認やVercelのプレビューで本番の解析を汚さないため。2026-11-11 Claude） -->
+  <script id="google-tag" data-ga4-id="G-L9W79GXPE1" data-production-host="www.menlabo-pattaya.com">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    (function () {
+      var tag = document.getElementById("google-tag");
+      var id = tag.dataset.ga4Id;
+      if (!id || location.hostname !== tag.dataset.productionHost) return;
+      var loader = document.createElement("script");
+      loader.async = true;
+      loader.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+      document.head.appendChild(loader);
+      gtag("js", new Date());
+      gtag("config", id);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Gyoza, karaage and Osaka-style dishes, with ramen to finish. Lunch sets by day and a full menu from 3pm in Tree Town, Pattaya.">
+  <meta name="theme-color" content="#171817">
+  <title>A taste of Osaka in Pattaya | MENLABO Sakaba</title>
+  <link rel="canonical" href="https://www.menlabo-pattaya.com/en">
+  <meta property="og:title" content="A taste of Osaka in Pattaya | MENLABO Sakaba">
+  <meta property="og:description" content="Gyoza, karaage and Osaka-style dishes, with ramen to finish. Lunch sets by day and a full menu from 3pm in Tree Town, Pattaya.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.menlabo-pattaya.com/en">
+  <meta property="og:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="A taste of Osaka in Pattaya | MENLABO Sakaba">
+  <meta name="twitter:description" content="Gyoza, karaage and Osaka-style dishes, with ramen to finish. Lunch sets by day and a full menu from 3pm in Tree Town, Pattaya.">
+  <meta name="twitter:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/main.js" defer></script>
+  <link rel="alternate" hreflang="ja" href="https://www.menlabo-pattaya.com/">
+  <link rel="alternate" hreflang="th" href="https://www.menlabo-pattaya.com/th">
+  <link rel="alternate" hreflang="en" href="https://www.menlabo-pattaya.com/en">
+  <link rel="alternate" hreflang="zh-Hans" href="https://www.menlabo-pattaya.com/zh">
+  <link rel="alternate" hreflang="x-default" href="https://www.menlabo-pattaya.com/">
+  <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Restaurant",
   "name": "Osaka Izakaya MENLABO Sakaba",
-  "alternateName": ["MENLABO", "MENLABO酒場", "麺LABO"],
-  "description": "Osaka-style izakaya in Pattaya. Lunch sets by day, Japanese bar food and drinks from 3pm. Real Japanese flavor, done right.",
+  "alternateName": [
+    "MENLABO",
+    "MENLABO酒場",
+    "麺LABO"
+  ],
+  "description": "Gyoza, karaage and Osaka-style dishes, with ramen to finish. Lunch sets by day and a full menu from 3pm in Tree Town, Pattaya.",
   "url": "https://www.menlabo-pattaya.com/en",
   "inLanguage": "en",
   "telephone": "+66-96-147-9518",
-  "servesCuisine": ["Japanese", "Izakaya", "Osaka cuisine", "Japanese bar food", "Ramen"],
+  "servesCuisine": [
+    "Japanese",
+    "Izakaya",
+    "Osaka cuisine",
+    "Ramen"
+  ],
   "priceRange": "฿฿",
   "currenciesAccepted": "THB",
   "address": {
@@ -75,302 +87,246 @@
   "openingHoursSpecification": [
     {
       "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "dayOfWeek": [
+        "Monday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
       "opens": "11:00",
       "closes": "24:00"
     }
   ],
-  "hasMenu": "https://www.menlabo-pattaya.com/menu",
+  "hasMenu": "https://www.menlabo-pattaya.com/en/menu",
   "hasMap": "https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8",
   "image": "https://www.menlabo-pattaya.com/assets/images/menlabo-logo-mark-kana-red-1000.png"
 }
-</script>
+  </script>
 </head>
+
 <body>
+  <a class="skip-link" href="#main" data-key="skip-main">Skip to content</a>
 
-<!-- 墨：濡れた紙のWebGLキャンバス（全画面・最前面・操作は透過） -->
-<canvas id="ink-canvas" aria-hidden="true"></canvas>
+  <header class="site-header" aria-label="Site navigation">
+    <a class="site-logo" href="/en" aria-label="MENLABO Sakaba home">
+      <img src="../assets/images/menlabo-logo-mark-kana-white.svg" alt="MENLABO Sakaba" width="82" height="82">
+    </a>
 
-<!-- ============ グローバルナビ（表紙の上は透明、スクロールで紙色に） ============ -->
-<nav class="site-head" id="site-head">
-  <a class="site-head__brand" href="/en" aria-label="MENLABO Sakaba — home">
-    <img class="site-head__seal" src="../assets/images/menlabo-logo-mark-red.svg" alt="" width="32" height="32">
-    <img class="site-head__wordmark" src="../assets/images/MENLABO_wordmark-sakaba_red.svg" alt="MENLABO Sakaba" width="116" height="17">
-  </a>
-  <div class="site-head__nav">
-    <a href="/en/menu">Menu</a>
-    <a href="/en/access">Find us</a>
-    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">Map</a>
-    <div class="lang-switch" aria-label="Language">
-      <a href="/">JP</a>
-      <span class="lang-switch__sep" aria-hidden="true">/</span>
-      <a href="/en" aria-current="page">EN</a>
-      <span class="lang-switch__sep" aria-hidden="true">/</span>
-      <a href="/th">TH</a>
-      <span class="lang-switch__sep" aria-hidden="true">/</span>
-      <a href="/zh" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="/en/about" data-key="nav-about">About MENLABO</a>
+      <a href="/en/menu" data-key="nav-menu">Menu</a>
+      <a href="/en/access" data-key="nav-access">Find us</a>
+      <a href="/en/news" data-key="nav-news">News</a>
+    </nav>
+
+    <div class="desktop-actions">
+      <a href="tel:+66961479518" data-action="phone" data-key="action-phone">Call</a>
+      <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">Map</a>
     </div>
+
+    <nav class="header-language-links" aria-label="Language">
+      <a href="/" lang="ja" data-lang="ja" aria-label="日本語" data-key="lang-ja">JP</a>
+      <a href="/th" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">TH</a>
+      <a href="/en" lang="en" data-lang="en" aria-current="page" aria-label="English" data-key="lang-en">EN</a>
+      <a href="/zh" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简</a>
+    </nav>
+
+    <button class="menu-button" type="button" aria-controls="mobile-menu" aria-expanded="false" data-open-label="Menu" data-close-label="Close">
+      <span class="menu-button__label" data-key="menu-open">Menu</span>
+      <span class="menu-button__icon" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav aria-label="Mobile menu">
+      <a href="/en/about" data-key="nav-about">About MENLABO</a>
+      <a href="/en/menu" data-key="nav-menu">Menu</a>
+      <a href="/en/access" data-key="nav-access">Find us</a>
+      <a href="/en/news" data-key="nav-news">News</a>
+    </nav>
+    <div class="mobile-menu__actions">
+      <a href="tel:+66961479518" data-action="phone" data-key="action-phone">Call</a>
+      <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">Map</a>
+    </div>
+    <nav class="header-language-links header-language-links--mobile" aria-label="Language">
+      <a href="/" lang="ja" data-lang="ja" aria-label="日本語" data-key="lang-ja">JP</a>
+      <a href="/th" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">TH</a>
+      <a href="/en" lang="en" data-lang="en" aria-current="page" aria-label="English" data-key="lang-en">EN</a>
+      <a href="/zh" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简</a>
+    </nav>
   </div>
-</nav>
-
-<!-- ============ 扉 ============ -->
-<header class="cover" id="cover">
-  <p class="cover__kicker reveal">Osaka Izakaya — Pattaya, Thailand</p>
-
-  <h1 class="cover__title reveal" data-delay="200">
-    <span class="cover__title-en">MENLABO</span>
-    <span class="cover__title-ja">Sakaba</span>
-  </h1>
-
-  <p class="cover__line reveal" data-delay="450">
-    Tonight, we <span class="rotator" data-words="drink,eat,talk,wind down" data-interval="2400" data-duration="520">drink</span>.
-  </p>
-
-  <p class="cover__hint reveal" data-delay="700">Drag across the page — the ink will bleed.</p>
-
-  <!-- 営業中ステータス：モバイルのみ表示・JSがタイ時間で判定 -->
-  <p class="now-status reveal" id="now-status" data-delay="850" aria-live="polite"></p>
-
-  <a class="cover__scroll" href="#story">
-    <span class="cover__scroll-text">Step through the noren</span>
-    <span class="cover__scroll-bar" aria-hidden="true"></span>
-  </a>
-</header>
-
-<main>
-  <!-- ============ おすすめ：各章から1品（2026-09-07・案B） ============ -->
-  <section class="chapter chapter--picks" id="picks">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">PICKS</p>
-        <h2 class="chapter__title">Start here</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
-      <p class="chapter__lead">One from each: noodles, small plates, lunch, drinks.</p>
-      <div class="picks"><a class="pick" href="/en/recommended#men" data-ga-event="top_pick_click" data-pick="men"><img src="../assets/images/recommended-shoyu.jpg" alt="Clear Chicken Shoyu Soba" loading="lazy" width="1600" height="1067"><span class="pick__cat">Noodles</span><span class="pick__name">Clear Chicken Shoyu Soba</span><span class="pick__price">฿179</span></a><a class="pick" href="/en/recommended#sakana" data-ga-event="top_pick_click" data-pick="sakana"><img src="../assets/images/recommended-gyoza.jpg" alt="Pan-fried Gyoza (5)" loading="lazy" width="1600" height="1067"><span class="pick__cat">Small plates</span><span class="pick__name">Pan-fried Gyoza (5)</span><span class="pick__price">฿99</span></a><a class="pick" href="/en/recommended#hiru" data-ga-event="top_pick_click" data-pick="hiru"><img src="../assets/images/lunch.jpg" alt="Aji Fry Set" loading="lazy" width="1600" height="1067"><span class="pick__cat">Lunch</span><span class="pick__name">Aji Fry Set</span><span class="pick__price">฿179</span></a><a class="pick" href="/en/recommended#sake" data-ga-event="top_pick_click" data-pick="sake"><img src="../assets/images/sake.jpg" alt="Kaku Highball" loading="lazy" width="1600" height="1067"><span class="pick__cat">Drinks</span><span class="pick__name">Kaku Highball</span><span class="pick__price">฿130</span></a></div>
-      <a class="more-link" href="/en/recommended" data-ga-event="top_pick_more_click">See all picks</a>
-    </div>
-  </section>
 
 
-  <!-- ============ のれん：来歴 ============ -->
-  <section class="chapter" id="story">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">Noren</p>
-        <h2 class="chapter__title">Our Story</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__shade" aria-hidden="true"></div>
+      <div class="hero__message" data-key="hero-message"><span>A</span><span>taste</span><span>of</span><span>Osaka</span><span>in</span><span>Pattaya</span></div>
+      <div class="hero__identity">
+        <h1 id="hero-title" data-key="hero-store-name"><span>Osaka</span><span>Izakaya</span><span>MENLABO</span><span>Sakaba</span></h1>
+      </div>
+      <a class="hero__map" href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="hero-map">Visit us in Tree Town</a>
+    </section>
 
-      <div class="chapter__body prose">
-        <p>In Awaza, Osaka,<br class="br-sp">there was a small ramen shop.</p>
-        <p>Chicken broth, no MSG.<br class="br-sp">A bowl built fresh every day,<br>with nothing cut short.<br>That obsession crossed the sea<br class="br-sp">and landed here in Pattaya.</p>
-        <p>Long-time residents.<br class="br-sp">Travelers passing through.<br class="br-sp">People who fell for Thailand and stayed.<br>We're here to make a place where,<br>at the end of the day, you can say:<br>"Now that was a good night."</p>
-        <p class="prose__em">The "LABO" in MENLABO means laboratory.<br>No two days taste the same.</p>
+    <section class="intro paper-section reveal" aria-labelledby="intro-title">
+      <div class="intro__heading">
+        <h2 id="intro-title" data-key="intro-heading"><span>Osaka</span><span>flavors</span><span>in</span><span>one</span><span>place</span></h2>
+      </div>
+      <div class="intro__body">
+        <p data-key="intro-body">Gyoza, karaage and Osaka-style dishes, with ramen to finish. Find us in the black, lantern-lit building inside Tree Town on Soi Buakhao.</p>
+      </div>
+    </section>
+
+    <section class="food paper-section" aria-labelledby="food-title">
+      <div class="section-title reveal">
+        <h2 id="food-title" data-key="food-heading"><span>Start</span><span>with</span><span>Osaka</span><span>favorites</span></h2>
       </div>
 
-      <p class="chapter__note">A diner by day. A tavern from three.</p>
-    </div>
-  </section>
-
-  <!-- ============ おひる：昼 ============ -->
-  <section class="chapter" id="lunch">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">Midday</p>
-        <h2 class="chapter__title">Lunch</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
-
-      <p class="chapter__lead">Eat properly, like a real teishoku joint.<br class="br-sp">Extra rice, on the house.</p>
-
-      <figure class="plate">
-        <span class="plate__media"><img class="plate__img" data-plate-src="lunch" alt="The midday bowl (sample image)"></span>
-        <figcaption class="plate__caption">The midday bowl, from eleven</figcaption>
-      </figure>
-
-      <!-- 価格は確定後に差し替え -->
-      <ul class="menu">
-        <li class="menu__row"><span class="menu__name">Karaage Set</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
-        <li class="menu__row"><span class="menu__name">Gyoza Set</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
-        <li class="menu__row"><span class="menu__name">Fried Rice Set</span><span class="menu__dots"></span><span class="menu__price">฿229</span></li>
-        <li class="menu__row"><span class="menu__name">Tenshin-don Set</span><span class="menu__dots"></span><span class="menu__price">฿239</span></li>
-        <li class="menu__row"><span class="menu__name">Ramen (various)</span><span class="menu__dots"></span><span class="menu__price">฿159+</span></li>
-      </ul>
-
-      <a class="more-link" href="/en/menu#lunch">See the menu</a>
-
-      <p class="chapter__note">From eleven, until three.</p>
-    </div>
-  </section>
-
-  <aside class="ramen-bridge" aria-labelledby="ramen-bridge-en-title">
-    <div class="ramen-bridge__inner">
-      <p class="ramen-bridge__eyebrow">After ramen</p>
-      <h2 class="ramen-bridge__title" id="ramen-bridge-en-title">Came for ramen?<br class="br-sp"> Stay for Osaka izakaya.</h2>
-      <p class="ramen-bridge__copy">Ramen is served at lunch and in the evening. From 3 p.m., the full izakaya menu is available—gyoza, karaage, dashi rolled omelet, and more.</p>
-      <div class="ramen-bridge__actions">
-        <a class="more-link" href="/en/menu#osusume" data-ga-event="izakaya_menu_click">See izakaya dishes</a>
-        <a class="more-link" href="/en/access" data-ga-event="map_click">Find us</a>
+      <div class="food-grid reveal">
+        <figure class="dish" data-menu-id="AG001">
+          <div class="dish__image"><img src="../assets/images/karaage.jpg" alt="Fried Chicken (Karaage)" width="1000" height="1000" loading="lazy"></div>
+          <figcaption><span data-key="dish-karaage">Fried Chicken (Karaage)</span><span class="dish__price" data-key="price-karaage">฿139</span></figcaption>
+        </figure>
+        <figure class="dish" data-menu-id="YK003">
+          <div class="dish__image"><img src="../assets/images/yaki-gyoza.jpg" alt="Pan-fried Gyoza (5 pc)" width="1000" height="1000" loading="lazy"></div>
+          <figcaption><span><span data-key="dish-gyoza">Pan-fried Gyoza (5 pc)</span><span class="dish__portion" data-key="dish-gyoza-portion"></span></span><span class="dish__price" data-key="price-gyoza">฿99</span></figcaption>
+        </figure>
+        <figure class="dish" data-menu-id="AG009">
+          <div class="dish__image"><img src="../assets/images/recommended-aji-fry.jpg" alt="Fried Horse Mackerel" width="1620" height="1080" loading="lazy"></div>
+          <figcaption><span data-key="dish-aji-fry">Fried Horse Mackerel</span><span class="dish__price" data-key="price-aji-fry">฿159</span></figcaption>
+        </figure>
+        <figure class="dish" data-menu-id="YK002">
+          <div class="dish__image"><img src="../assets/images/dashimaki-tamago.jpg" alt="Dashi Rolled Omelet" width="1620" height="1080" loading="lazy"></div>
+          <figcaption><span data-key="dish-dashimaki">Dashi Rolled Omelet</span><span class="dish__price" data-key="price-dashimaki">฿159</span></figcaption>
+        </figure>
       </div>
-    </div>
-  </aside>
 
-  <!-- ============ 転換：十五時 ============ -->
-  <section class="chapter chapter--turn" id="turn">
-    <img class="turn__bg" data-plate-src="turn" alt="" aria-hidden="true">
-    <div class="chapter__inner">
-      <p class="turn__time">3 p.m.</p>
-      <p class="turn__line">The noren changes. From here, a tavern.</p>
-    </div>
-  </section>
+      <p class="vat-note" data-key="vat-note">Prices include VAT</p>
+      <a class="line-link" href="/en/menu" data-key="view-menu">View the menu</a>
+    </section>
 
-  <!-- ============ 一杯目：肴 ============ -->
-  <section class="chapter" id="sakana">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">First round</p>
-        <h2 class="chapter__title">Small Plates</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
-
-      <p class="chapter__lead">Start here.<br class="br-sp">Everything's made to go with a drink.</p>
-
-      <figure class="plate">
-        <span class="plate__media"><img class="plate__img" data-plate-src="sakana" alt="Freshly fried karaage (sample image)"></span>
-        <figcaption class="plate__caption">A plate of four — dangerously drinkable</figcaption>
-      </figure>
-
-      <ul class="menu">
-        <li class="menu__row"><span class="menu__name">Edamame</span><span class="menu__dots"></span><span class="menu__price">฿59</span></li>
-        <li class="menu__row"><span class="menu__name">Moreish Cucumber</span><span class="menu__dots"></span><span class="menu__price">฿59</span></li>
-        <li class="menu__row"><span class="menu__name">Octopus Wasabi</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
-        <li class="menu__row"><span class="menu__name">Pan-fried Gyoza (5 pc)</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
-        <li class="menu__row"><span class="menu__name">Tonpei-yaki</span><span class="menu__dots"></span><span class="menu__price">฿129</span></li>
-        <li class="menu__row"><span class="menu__name">Fried Chicken (Karaage)</span><span class="menu__dots"></span><span class="menu__price">฿139</span></li>
-        <li class="menu__row"><span class="menu__name">Dashi Rolled Omelet</span><span class="menu__dots"></span><span class="menu__price">฿149</span></li>
-        <li class="menu__row"><span class="menu__name">Rare Pork Belly Chashu Platter</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
-      </ul>
-
-      <a class="more-link" href="/en/menu">See the menu</a>
-
-      <p class="chapter__note">Add a plate of gyoza — changes everything.</p>
-    </div>
-  </section>
-
-  <!-- ============ 二杯目：酒 ============ -->
-  <section class="chapter" id="sake">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">Second round</p>
-        <h2 class="chapter__title">Drinks</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
-
-      <p class="chapter__lead chapter__lead--rotate">
-        <span class="rotator" data-words="Beer,Highball,Shochu,Sour" data-interval="2200" data-duration="520">Beer</span>, ice-cold
-      </p>
-
-      <figure class="plate">
-        <span class="plate__media"><img class="plate__img" data-plate-src="sake" alt="A freshly poured beer (sample image)"></span>
-        <figcaption class="plate__caption">Fresh from the tap</figcaption>
-      </figure>
-
-      <div class="chapter__body prose">
-        <p>Yes, we pour. And yes, ramen too.</p>
-        <p>Behind the bar: someone who's<br class="br-sp">run his own places, and a 25-year<br>veteran who trains the pros.<br>
-        Real izakaya people.</p>
-        <p>So no — we can't cut corners.</p>
+    <section class="story photo-section" aria-labelledby="story-title">
+      <div class="story__shade" aria-hidden="true"></div>
+      <div class="story__content reveal">
+        <h2 id="story-title" data-key="story-heading"><span>Real</span><span>Osaka</span><span>flavor</span><span>for</span><span>everyday</span><span>Pattaya</span></h2>
+        <p data-key="story-body">Enjoy the flavors loved in Osaka right here in Pattaya, in a relaxed setting made for sharing food and time together.</p>
+        <p data-key="story-supervisors">The menu is supervised by Toshiya Nakatani of New Tsurumatsu in Osaka and Yasutaka Taniguchi of Sakiaji.</p>
+        <a class="line-link line-link--light" href="/en/about#story" data-key="view-about">About MENLABO</a>
       </div>
+    </section>
+
+    <section class="day-night paper-section" aria-labelledby="day-night-title">
+      <div class="section-title reveal">
+        <h2 id="day-night-title" data-key="day-night-heading"><span>Lunch</span><span>by</span><span>day</span><span>and</span><span>Osaka</span><span>dishes</span><span>by</span><span>night</span></h2>
+      </div>
+
+      <div class="day-night__visual reveal">
+        <figure class="time-panel time-panel--lunch">
+          <img src="../assets/images/lunch.jpg" alt="Lunch set meal served at MENLABO" width="1500" height="1000" loading="lazy">
+          <figcaption>
+            <h3 data-key="lunch-heading">Set meals and ramen for lunch</h3>
+            <p data-key="lunch-time">11:00–15:00</p>
+          </figcaption>
+        </figure>
+        <figure class="time-panel time-panel--night">
+          <img src="../assets/images/sake.jpg" alt="Highballs lined up on the evening counter" width="1500" height="1000" loading="lazy">
+          <figcaption>
+            <h3 data-key="night-heading">The full menu from 3pm</h3>
+            <p data-key="night-time">15:00–24:00</p>
+          </figcaption>
+        </figure>
+      </div>
+      <p class="day-night__note reveal" data-key="day-night-note">MENLABO is an Osaka izakaya where you can settle in with food and finish with ramen.</p>
+    </section>
+
+    <section class="seats photo-section" aria-labelledby="seats-title">
+      <div class="seats__shade" aria-hidden="true"></div>
+      <div class="seats__content reveal">
+        <h2 id="seats-title" data-key="seats-heading"><span>Come</span><span>alone</span><span>or</span><span>with</span><span>friends</span></h2>
+        <div class="seats__details">
+          <p><span data-key="counter-heading">Counter</span><strong data-key="counter-count">6 seats</strong><span data-key="counter-body">For solo visits</span></p>
+          <p><span data-key="table-heading">Tables</span><strong data-key="table-count">24 seats</strong><span data-key="table-body">For evenings together</span></p>
+        </div>
+        <a class="line-link line-link--light" href="/en/about#seats" data-key="view-seats">View the seating</a>
+      </div>
+    </section>
+
+    <section class="news paper-section" aria-labelledby="news-title">
+      <div class="section-title reveal">
+        <h2 id="news-title" data-key="news-heading">News</h2>
+      </div>
+      <div class="news-list reveal">
+        <article data-news-date="2026-11-11"><time datetime="2026-11-11" data-key="news-date-1">2026.11.11</time><h3 data-key="news-item-1"><span>Open until 5pm on Monday November 16 for staff training</span></h3></article>
+        <article data-news-date="2026-11-11"><time datetime="2026-11-11" data-key="news-date-2">2026.11.11</time><h3 data-key="news-item-2"><span>A new menu is coming in late November</span></h3></article>
+        <article data-news-date="2026-10"><time datetime="2026-10" data-key="news-date-3">2026.10</time><h3 data-key="news-item-3"><span>Our name has changed to Osaka Izakaya MENLABO Sakaba</span></h3></article>
+      </div>
+      <a class="line-link" href="/en/news" data-key="view-news">View all news</a>
+    </section>
+
+    <section class="gateways paper-section" aria-label="More information">
+      <a class="gateway gateway--access reveal" href="/en/access">
+        <span data-key="gateway-access">Find us</span>
+      </a>
+
+      <a class="gateway gateway--menu reveal" href="/en/menu">
+        <span data-key="gateway-menu">Menu</span>
+      </a>
+
+    </section>
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="footer-heading">
+      <img src="../assets/images/menlabo-logo-mark-kana-red.svg" alt="MENLABO Sakaba" width="108" height="108" loading="lazy">
+      <h2 data-key="store-info-heading">Restaurant information</h2>
     </div>
-  </section>
 
-  <!-- ============ 締め：麺 ============ -->
-  <section class="chapter" id="men">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">To finish</p>
-        <h2 class="chapter__title">Ramen</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
+    <dl class="store-table">
+      <div><dt data-key="label-store">Restaurant</dt><dd data-key="store-name">Osaka Izakaya MENLABO Sakaba</dd></div>
+      <div><dt data-key="label-address">Address</dt><dd data-key="store-address">502/22 Soi Buakhao, Pattaya City, Bang Lamung, Chon Buri 20150</dd></div>
+      <div><dt data-key="label-landmark">Directions</dt><dd data-key="store-landmark">Inside Tree Town, in the black building marked by lanterns</dd></div>
+      <div><dt data-key="label-hours">Hours</dt><dd><span data-key="hours-lunch">Lunch 11:00–15:00 (set meals and ramen)</span><span data-key="hours-night">Dinner 15:00–24:00 (full menu)</span></dd></div>
+      <div><dt data-key="label-last-entry">Last entry and last order</dt><dd data-key="last-entry-pending">23:40</dd></div>
+      <div><dt data-key="label-closed">Closed</dt><dd data-key="closed-day">Tuesday</dd></div>
+      <div><dt data-key="label-payment">Payment</dt><dd data-key="payment-methods">Cash, PromptPay (QR), and credit cards (VISA / Master / Alipay / UnionPay / JCB)</dd></div>
+      <div><dt data-key="label-parking">Parking</dt><dd data-key="parking-value">Available (฿30 per hour)</dd></div>
+    </dl>
 
-      <p class="chapter__lead">No MSG.<br class="br-sp">Just chicken, water, and patience.</p>
-
-      <figure class="plate">
-        <span class="plate__media"><img class="plate__img" data-plate-src="men" alt="The closing bowl of ramen (sample image)"></span>
-        <figcaption class="plate__caption">The closing bowl</figcaption>
-      </figure>
-
-      <ul class="menu">
-        <li class="menu__row"><span class="menu__name">Clear Chicken Shoyu Soba</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
-        <li class="menu__row"><span class="menu__name">Clear Chicken Shio Soba</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
-        <li class="menu__row"><span class="menu__name">Rich Chicken Paitan Shoyu</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
-        <li class="menu__row"><span class="menu__name">Rich Chicken Paitan Shio</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
-        <li class="menu__row"><span class="menu__name">Jan-men (spicy)</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
-      </ul>
-
-      <a class="more-link" href="/en/menu#ramen">Explore our Pattaya ramen: broths &amp; prices</a>
-
-      <p class="chapter__note">The bowl after the drinks is always the best.</p>
+    <div class="footer-contact">
+      <p data-key="phone-guidance">Please tell us you found us on our website</p>
+      <a href="tel:+66961479518" data-action="phone"><span data-key="phone-number" data-value="phone">+66 96-147-9518</span></a>
     </div>
-  </section>
 
-  <!-- ============ 帰り道：在処 ============ -->
-  <section class="chapter chapter--last" id="access">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">Find us</p>
-        <h2 class="chapter__title">Where We Are</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
+    <nav class="social-links" aria-label="Social media">
+      <a href="https://www.instagram.com/menlabo.pattaya/" data-action="instagram" target="_blank" rel="noopener noreferrer" data-key="social-instagram">Instagram</a>
+      <a href="https://www.facebook.com/menlabo.pattaya" data-action="facebook" target="_blank" rel="noopener noreferrer" data-key="social-facebook">Facebook</a>
+      <a href="https://x.com/menlabo_sakaba" data-action="x" target="_blank" rel="noopener noreferrer" data-key="social-x">X</a>
+    </nav>
 
-      <dl class="info">
-        <div class="info__row"><dt>Address</dt><dd>502/22 Soi Buakhao, Pattaya City, Bang Lamung, Chon Buri 20150<br><small>A black building in Tree Town — look for the lantern</small></dd></div>
-        <div class="info__row"><dt>Lunch</dt><dd>11:00 — 15:00<small>(set meals &amp; ramen)</small></dd></div>
-        <div class="info__row"><dt>Evening</dt><dd>15:00 — 24:00<small>(full menu)</small></dd></div>
-        <div class="info__row"><dt>Closed</dt><dd>Tuesdays</dd></div>
-        <div class="info__row"><dt>Parking</dt><dd>Yes<small>(฿30 / hour)</small></dd></div>
-      </dl>
+    <nav class="language-links" aria-label="Language">
+      <a href="/" lang="ja" data-lang="ja" aria-label="日本語" data-key="lang-ja">日本語</a>
+      <a href="/th" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">ไทย</a>
+      <a href="/en" lang="en" data-lang="en" aria-current="page" aria-label="English" data-key="lang-en">English</a>
+      <a href="/zh" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简体中文</a>
+    </nav>
 
-      <a class="info__map" href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">Open in Maps</a>
+    <nav class="legal-links" aria-label="Legal information">
+      <a href="/en/access" data-key="nav-access">Find us</a>
+      <a href="/en/company" data-key="link-company">Company</a>
+      <a href="/en/privacy" data-key="link-privacy">Privacy Policy</a>
+    </nav>
 
-      <a class="more-link" href="/en/access">Directions &amp; details</a>
-      <a class="more-link" href="https://www.google.com/maps/place/%E9%BA%BALABO/@12.9320097,100.8859925,16z/data=!4m8!3m7!1s0x3102977c26d48337:0x4b7684bb1e20feb0!8m2!3d12.9320097!4d100.8859925!9m1!1b1!16s%2Fg%2F11y3d19fdc" target="_blank" rel="noopener">Read reviews</a>
+    <p class="copyright" data-key="copyright">© MENLABO Sakaba</p>
+  </footer>
 
-      <p class="chapter__note">Got somewhere to drink tonight?</p>
-    </div>
-  </section>
 
-</main>
-
-<!-- ============ モバイル下部CTA（スクロールで出現・PCでは非表示） ============ -->
-<div class="m-cta" id="m-cta">
-  <a class="m-cta__btn m-cta__btn--primary" href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">Directions</a>
-  <a class="m-cta__btn" href="/en/menu">Menu</a>
-</div>
-
-<!-- ============ 奥付 ============ -->
-<footer class="colophon">
-  <img class="colophon__seal" src="../assets/images/menlabo-logo-mark-kana-red.svg" alt="MENLABO Sakaba logo" width="64" height="64">
-  <nav class="colophon__nav">
-    <a href="/en/menu">Menu</a>
-    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">Map</a>
+  <nav class="mobile-actions" aria-label="Contact">
+    <a href="tel:+66961479518" data-action="phone" data-key="action-phone">Call</a>
+    <a href="https://lin.ee/7GQmsKU" data-action="line" data-key="action-line">LINE</a>
+    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">Map</a>
   </nav>
-  <div class="lang-switch" aria-label="Language">
-    <a href="/">JP</a>
-    <span class="lang-switch__sep" aria-hidden="true">/</span>
-    <a href="/en" aria-current="page">EN</a>
-    <span class="lang-switch__sep" aria-hidden="true">/</span>
-    <a href="/th">TH</a>
-    <span class="lang-switch__sep" aria-hidden="true">/</span>
-    <a href="/zh" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-  </div>
-  <p class="colophon__text">Osaka Izakaya MENLABO Sakaba<span class="pc-only"> — </span><br class="br-sp">Pattaya, Thailand</p>
-  <p class="colophon__copy">© 2026 MENLABO<br class="br-sp">(OMOTENASHI CO., LTD.)</p>
-  <p class="colophon__legal"><a href="/en/company">Company Profile</a> · <a href="/en/privacy">Privacy Policy</a></p>
-</footer>
 
-<script src="../assets/js/ink.js" defer></script>
-<script src="../assets/js/main.js" defer></script>
 </body>
 </html>

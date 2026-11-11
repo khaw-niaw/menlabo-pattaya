@@ -1,360 +1,529 @@
-<!DOCTYPE html>
+<!-- build.pyで生成。直接編集しない。部品は src/ を直す。 -->
+<!doctype html>
 <html lang="th">
-<!-- ※ タイ語はAIによる下訳（ドラフト）。後日スタッフが校正・修正する前提。 -->
 <head>
-<meta charset="UTF-8">
+  <meta charset="utf-8">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L9W79GXPE1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-L9W79GXPE1');
-</script>
+  <!-- Google tag (gtag.js)：本番ドメインでだけ読み込む（手元の確認やVercelのプレビューで本番の解析を汚さないため。2026-11-11 Claude） -->
+  <script id="google-tag" data-ga4-id="G-L9W79GXPE1" data-production-host="www.menlabo-pattaya.com">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    (function () {
+      var tag = document.getElementById("google-tag");
+      var id = tag.dataset.ga4Id;
+      if (!id || location.hostname !== tag.dataset.productionHost) return;
+      var loader = document.createElement("script");
+      loader.async = true;
+      loader.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+      document.head.appendChild(loader);
+      gtag("js", new Date());
+      gtag("config", id);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="ดูเมนูมื้อเย็นของ MENLABO Sakaba ในพัทยา ทั้งไก่ทอด เกี๊ยวซ่า ไข่ม้วนดาชิ และราเมนซุปไก่ พร้อมภาพและราคา สั่งเมนูได้ครบในเวลา 15:00–24:00">
+  <meta name="theme-color" content="#171817">
+  <title>เมนูมื้อเย็นพร้อมภาพและราคา | MENLABO Sakaba พัทยา</title>
+  <link rel="canonical" href="https://www.menlabo-pattaya.com/th/menu">
+  <meta property="og:title" content="เมนูมื้อเย็นพร้อมภาพและราคา | MENLABO Sakaba พัทยา">
+  <meta property="og:description" content="ดูเมนูมื้อเย็นของ MENLABO Sakaba ในพัทยา ทั้งไก่ทอด เกี๊ยวซ่า ไข่ม้วนดาชิ และราเมนซุปไก่ พร้อมภาพและราคา สั่งเมนูได้ครบในเวลา 15:00–24:00">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.menlabo-pattaya.com/th/menu">
+  <meta property="og:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="เมนูมื้อเย็นพร้อมภาพและราคา | MENLABO Sakaba พัทยา">
+  <meta name="twitter:description" content="ดูเมนูมื้อเย็นของ MENLABO Sakaba ในพัทยา ทั้งไก่ทอด เกี๊ยวซ่า ไข่ม้วนดาชิ และราเมนซุปไก่ พร้อมภาพและราคา สั่งเมนูได้ครบในเวลา 15:00–24:00">
+  <meta name="twitter:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/main.js" defer></script>
+  <link rel="alternate" hreflang="ja" href="https://www.menlabo-pattaya.com/menu">
+  <link rel="alternate" hreflang="th" href="https://www.menlabo-pattaya.com/th/menu">
+  <link rel="alternate" hreflang="en" href="https://www.menlabo-pattaya.com/en/menu">
+  <link rel="alternate" hreflang="zh-Hans" href="https://www.menlabo-pattaya.com/zh/menu">
+  <link rel="alternate" hreflang="x-default" href="https://www.menlabo-pattaya.com/menu">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>เมนู MENLABO SAKABA | โอซาก้าอิซากายะและราเมง พัทยา</title>
-<meta name="description" content="MENLABO SAKABA โอซาก้าอิซากายะที่ Tree Town Pattaya อาหารเริ่ม 59 บาท กลางวัน 11:00 น. มีราเมงและอาหารชุด หลัง 15:00 น. สั่งเมนูอิซากายะได้ครบ">
-<meta property="og:title" content="เมนู MENLABO SAKABA | โอซาก้าอิซากายะและราเมง พัทยา">
-<meta property="og:description" content="MENLABO SAKABA โอซาก้าอิซากายะที่ Tree Town Pattaya อาหารเริ่ม 59 บาท กลางวัน 11:00 น. มีราเมงและอาหารชุด หลัง 15:00 น. สั่งเมนูอิซากายะได้ครบ">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://www.menlabo-pattaya.com/th/menu">
-<link rel="canonical" href="https://www.menlabo-pattaya.com/th/menu">
-<meta property="og:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-
-<!-- 多言語：言語別URLの相互参照 -->
-<link rel="alternate" hreflang="ja" href="https://www.menlabo-pattaya.com/menu">
-<link rel="alternate" hreflang="en" href="https://www.menlabo-pattaya.com/en/menu">
-<link rel="alternate" hreflang="th" href="https://www.menlabo-pattaya.com/th/menu">
-<link rel="alternate" hreflang="zh-Hans" href="https://www.menlabo-pattaya.com/zh/menu">
-<link rel="alternate" hreflang="x-default" href="https://www.menlabo-pattaya.com/menu">
-
-<!-- ファビコン -->
-<link rel="icon" href="../favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-<link rel="apple-touch-icon" href="../apple-touch-icon.png">
-<link rel="manifest" href="../site.webmanifest">
-<meta name="theme-color" content="#f3eee4">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;700;800&family=Trirong:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body>
+  <a class="skip-link" href="#main" data-key="skip-main">ไปยังเนื้อหา</a>
 
-<canvas id="ink-canvas" aria-hidden="true"></canvas>
+  <header class="site-header" aria-label="เมนูเว็บไซต์">
+    <a class="site-logo" href="/th" aria-label="หน้าแรก MENLABO Sakaba">
+      <img src="../assets/images/menlabo-logo-mark-kana-white.svg" alt="MENLABO Sakaba" width="82" height="82">
+    </a>
 
-<!-- ============ グローバルナビ ============ -->
-<nav class="site-head is-solid" id="site-head">
-  <a class="site-head__brand" href="/th" aria-label="MENLABO Sakaba — หน้าแรก">
-    <img class="site-head__seal" src="../assets/images/menlabo-logo-mark-red.svg" alt="" width="32" height="32">
-    <img class="site-head__wordmark" src="../assets/images/MENLABO_wordmark-sakaba_red.svg" alt="MENLABO Sakaba" width="116" height="17">
-  </a>
-  <div class="site-head__nav">
-    <a href="/th/menu" aria-current="page">เมนู</a>
-    <a href="/th/access">ที่ตั้ง</a>
-    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">แผนที่</a>
-    <div class="lang-switch" aria-label="Language">
-      <a href="/menu">JP</a>
-      <span class="lang-switch__sep" aria-hidden="true">/</span>
-      <a href="/en/menu">EN</a>
-      <span class="lang-switch__sep" aria-hidden="true">/</span>
-      <a href="/th/menu" aria-current="page">TH</a>
-      <span class="lang-switch__sep" aria-hidden="true">/</span>
-      <a href="/zh/menu" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <nav class="desktop-nav" aria-label="เมนูหลัก">
+      <a href="/th/about" data-key="nav-about">เกี่ยวกับ MENLABO</a>
+      <a href="/th/menu" data-key="nav-menu">เมนู</a>
+      <a href="/th/access" data-key="nav-access">การเดินทาง</a>
+      <a href="/th/news" data-key="nav-news">ข่าวสาร</a>
+    </nav>
+
+    <div class="desktop-actions">
+      <a href="tel:+66961479518" data-action="phone" data-key="action-phone">โทร</a>
+      <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">แผนที่</a>
     </div>
+
+    <nav class="header-language-links" aria-label="เลือกภาษา">
+      <a href="/menu" lang="ja" data-lang="ja" aria-label="日本語" data-key="lang-ja">JP</a>
+      <a href="/th/menu" lang="th" data-lang="th" aria-current="page" aria-label="ไทย" data-key="lang-th">TH</a>
+      <a href="/en/menu" lang="en" data-lang="en" aria-label="English" data-key="lang-en">EN</a>
+      <a href="/zh/menu" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简</a>
+    </nav>
+
+    <button class="menu-button" type="button" aria-controls="mobile-menu" aria-expanded="false" data-open-label="เมนู" data-close-label="ปิด">
+      <span class="menu-button__label" data-key="menu-open">เมนู</span>
+      <span class="menu-button__icon" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav aria-label="เมนูสำหรับมือถือ">
+      <a href="/th/about" data-key="nav-about">เกี่ยวกับ MENLABO</a>
+      <a href="/th/menu" data-key="nav-menu">เมนู</a>
+      <a href="/th/access" data-key="nav-access">การเดินทาง</a>
+      <a href="/th/news" data-key="nav-news">ข่าวสาร</a>
+    </nav>
+    <div class="mobile-menu__actions">
+      <a href="tel:+66961479518" data-action="phone" data-key="action-phone">โทร</a>
+      <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">แผนที่</a>
+    </div>
+    <nav class="header-language-links header-language-links--mobile" aria-label="เลือกภาษา">
+      <a href="/menu" lang="ja" data-lang="ja" aria-label="日本語" data-key="lang-ja">JP</a>
+      <a href="/th/menu" lang="th" data-lang="th" aria-current="page" aria-label="ไทย" data-key="lang-th">TH</a>
+      <a href="/en/menu" lang="en" data-lang="en" aria-label="English" data-key="lang-en">EN</a>
+      <a href="/zh/menu" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简</a>
+    </nav>
   </div>
-</nav>
 
-<!-- ============ 扉（小） ============ -->
-<header class="page-head">
-  <p class="page-head__kicker reveal">อิซากายะโอซาก้า MENLABO Sakaba</p>
-  <h1 class="page-head__title reveal" data-delay="200">เมนู</h1>
-  <p class="page-head__note reveal" data-delay="400">กลางวันเริ่มสิบเอ็ดโมง บ่ายสามสั่งได้ทุกอย่าง</p>
-</header>
 
-<main data-menu-language="th">
+  <main id="main" class="menu-page">
+    <section class="menu-hero menu-hero--night" aria-labelledby="page-title">
+      <div class="menu-hero__shade" aria-hidden="true"></div>
+      <div class="menu-hero__content">
+        <h1 id="page-title" data-key="page-heading">เมนูมื้อเย็น</h1>
+        <p data-key="page-lead">อาหารสไตล์โอซาก้าและราเมนปิดท้าย</p>
+      </div>
+    <nav class="menu-tabs" aria-label="ประเภทเมนู">
+      <a href="/th/menu" aria-current="page">มื้อเย็น</a>
+      <a href="/th/lunch">มื้อกลางวัน</a>
+      <a href="/th/recommended">เมนูแนะนำ</a>
+      <a href="/th/drinks">เครื่องดื่ม</a>
+    </nav>
 
-  <section class="menu-summary" aria-label="ที่ตั้งและเวลาให้บริการ">
-    <div class="menu-summary__inner">
-      <p class="menu-summary__lead">MENLABO SAKABA คือโอซาก้าอิซากายะที่ Tree Town Pattaya อาหารเริ่ม 59 บาท</p>
-      <p class="menu-summary__detail">ตั้งแต่ 11:00 น. มีราเมงและอาหารชุด หลัง 15:00 น. สั่งเมนูอิซากายะได้ครบ</p>
-      <a class="menu-summary__map" href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">ดูที่ตั้งใน Google Maps</a>
-    </div>
-  </section>
+    </section>
 
-  <nav class="menu-categories" aria-label="เลือกหมวดเมนู">
-    <p class="menu-categories__label">เลือกหมวดเมนู</p>
-    <div class="menu-categories__links">
-      <a href="#osusume">เมนูแนะนำ</a>
-      <a href="#lunch">อาหารกลางวัน</a>
-      <a href="#sugu">อาหารทานเล่น</a>
-      <a href="#yasai">สลัด</a>
-      <a href="#ippin">อาหารจานเดี่ยว</a>
-      <a href="#shime">ราเมนและข้าว</a>
-    </div>
-  </nav>
-
-  <!-- ============ 名物：おすすめ六品 ============ -->
-  <section class="chapter signature" id="osusume">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">เมนูเด็ด</p>
-        <h2 class="chapter__title">ที่เราแนะนำ</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
-
-      <p class="chapter__lead">ถ้ายังไม่แน่ใจ เริ่มจากตรงนี้ เมนูยอดนิยมและที่เจ้าของร้านแนะนำ</p>
-
-      <div class="sig-grid">
-        <figure class="sig">
-          <span class="sig__media"><img class="sig__img" data-plate-src="sig-karaage" alt="ไก่คาราอาเกะ"></span>
-          <p class="sig__tag">ยอดนิยม</p>
-          <p class="sig__name">ไก่คาราอาเกะ</p>
-          <p class="sig__price">฿139</p>
+    <section class="menu-content paper-section">
+      <div class="menu-introduction reveal">
+        <p data-key="page-introduction">สั่งเมนูได้ครบในเวลา 15:00–24:00</p>
+        <p class="menu-branch"><a href="/th/lunch" data-key="lunch-branch">ชุดอาหารกลางวันดูได้ที่เมนูมื้อกลางวัน</a></p>
+      </div>
+    <nav class="category-toc" aria-label="เลือกจากเมนูมื้อเย็น">
+      <a href="#category-quick">จานด่วน</a>
+      <a href="#category-salad">สลัด</a>
+      <a href="#category-grilled">อาหารย่าง</a>
+      <a href="#category-fried">อาหารทอด</a>
+      <a href="#category-noodles">เส้นปิดท้าย</a>
+      <a href="#category-toppings">ท็อปปิ้งราเมน</a>
+      <a href="#category-rice">ข้าวปิดท้าย</a>
+    </nav>
+    <section class="menu-category reveal" id="category-quick" aria-labelledby="category-quick-title">
+      <h2 id="category-quick-title">จานด่วน</h2>
+      <div class="menu-photo-grid">
+        <figure class="menu-photo" data-menu-id="SP001">
+          <div class="menu-photo__image"><img src="../assets/images/pos/SP001.jpg" alt="หัวไชเท้าขูดกับเห็ดนาเมโกะ" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">หัวไชเท้าขูดกับเห็ดนาเมโกะ</span><span class="menu-item__price">฿79</span></figcaption>
         </figure>
-        <figure class="sig">
-          <span class="sig__media"><img class="sig__img" data-plate-src="sig-gyoza" alt="เกี๊ยวซ่าทอด"></span>
-          <p class="sig__tag">ยอดนิยม</p>
-          <p class="sig__name">เกี๊ยวซ่าทอด 5 ชิ้น</p>
-          <p class="sig__price">฿99</p>
+        <figure class="menu-photo" data-menu-id="SP002">
+          <div class="menu-photo__image"><img src="../assets/images/pos/SP002.jpg" alt="ทาโกะวาซาบิ" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ทาโกะวาซาบิ</span><span class="menu-item__price">฿99</span></figcaption>
         </figure>
-        <figure class="sig">
-          <span class="sig__media"><img class="sig__img" data-plate-src="sig-ramen" alt="โซบะไก่ใสโชยุ"></span>
-          <p class="sig__tag">ยอดนิยม</p>
-          <p class="sig__name">โซบะไก่ใสโชยุ</p>
-          <p class="sig__price">฿179</p>
+        <figure class="menu-photo" data-menu-id="SP003">
+          <div class="menu-photo__image"><img src="../assets/images/pos/SP003.jpg" alt="ถั่วงอกนามุล" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ถั่วงอกนามุล</span><span class="menu-item__price">฿59</span></figcaption>
         </figure>
-        <figure class="sig">
-          <span class="sig__media"><img class="sig__img" data-plate-src="sig-chashu" alt="จานชาชูหมูสามชั้นแบบแรร์"></span>
-          <p class="sig__tag sig__tag--push">เจ้าของร้านแนะนำ</p>
-          <p class="sig__name">จานชาชูหมูสามชั้นแบบแรร์</p>
-          <p class="sig__price">฿159</p>
+        <figure class="menu-photo" data-menu-id="SP004">
+          <div class="menu-photo__image"><img src="../assets/images/pos/SP004.jpg" alt="ถั่วแระ" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ถั่วแระ</span><span class="menu-item__price">฿59</span></figcaption>
         </figure>
-        <figure class="sig">
-          <span class="sig__media"><img class="sig__img" data-plate-src="sig-buta" alt="จานหมูย่าง"></span>
-          <p class="sig__tag sig__tag--push">เจ้าของร้านแนะนำ</p>
-          <p class="sig__name">จานหมูย่าง</p>
-          <p class="sig__price">฿159</p>
+        <figure class="menu-photo" data-menu-id="SP005">
+          <div class="menu-photo__image"><img src="../assets/images/pos/SP005.jpg" alt="เส้นราเมนทอด" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">เส้นราเมนทอด</span><span class="menu-item__price">฿59</span></figcaption>
         </figure>
-        <figure class="sig">
-          <span class="sig__media"><img class="sig__img" data-plate-src="sig-kimchi" alt="หมูผัดกิมจิ"></span>
-          <p class="sig__tag sig__tag--push">เจ้าของร้านแนะนำ</p>
-          <p class="sig__name">หมูผัดกิมจิ</p>
-          <p class="sig__price">฿159</p>
+        <figure class="menu-photo" data-menu-id="SP006">
+          <div class="menu-photo__image"><img src="../assets/images/pos/SP006.jpg" alt="หัวหอมหั่นบางโรยปลาอบแห้งและไข่แดง" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">หัวหอมหั่นบางโรยปลาอบแห้งและไข่แดง</span><span class="menu-item__price">฿79</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="SP007">
+          <div class="menu-photo__image"><img src="../assets/images/pos/SP007.jpg" alt="กิมจิ" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">กิมจิ</span><span class="menu-item__price">฿79</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="SP008">
+          <div class="menu-photo__image"><img src="../assets/images/pos/SP008.jpg" alt="แตงกวาหมัก" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">แตงกวาหมัก</span><span class="menu-item__price">฿79</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="SP009">
+          <div class="menu-photo__image"><img src="../assets/images/pos/SP009.jpg" alt="กะหล่ำปลีน้ำมันงา" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">กะหล่ำปลีน้ำมันงา</span><span class="menu-item__price">฿79</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="SP010">
+          <div class="menu-photo__image"><img src="../assets/images/pos/SP010.jpg" alt="หมูสไลซ์ ซอสกระเทียมพริก" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">หมูสไลซ์ ซอสกระเทียมพริก</span><span class="menu-item__price">฿139</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="SP011">
+          <div class="menu-photo__image"><img src="../assets/images/pos/SP011.jpg" alt="ไก่น้ำลายไหล ซอสน้ำมันพริก" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ไก่น้ำลายไหล ซอสน้ำมันพริก</span><span class="menu-item__price">฿139</span></figcaption>
         </figure>
       </div>
-
-      <p class="chapter__note">ที่เหลือค่อยๆ เลือกได้เลย</p>
-    </div>
-  </section>
-
-  <!-- ============ 昼の部 ============ -->
-  <section class="chapter" id="lunch">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">กลางวัน</p>
-        <h2 class="chapter__title">มื้อกลางวัน</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
-
-      <p class="chapter__lead">ตั้งแต่สิบเอ็ดโมงถึงบ่ายสาม เติมข้าวฟรี</p>
-
-      <ul class="menu">
-        <li class="menu__row"><span class="menu__name">เซ็ตข้าวเทนชิน</span><span class="menu__dots"></span><span class="menu__price">฿239</span></li>
-        <li class="menu__row"><span class="menu__name">เซ็ตปลาอาจิทอด</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
-        <li class="menu__row"><span class="menu__name">เซ็ตหมูผัดกิมจิ</span><span class="menu__dots"></span><span class="menu__price">฿189</span></li>
-        <li class="menu__row"><span class="menu__name">เซ็ตหมูผัดถั่วงอกกุยช่าย</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
-        <li class="menu__row"><span class="menu__name">เซ็ตยากินิกุหมู</span><span class="menu__dots"></span><span class="menu__price">฿189</span></li>
-        <li class="menu__row"><span class="menu__name">เซ็ตไก่ทอดคาราอาเกะ</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
-        <li class="menu__row"><span class="menu__name">เซ็ตไก่ทอดนัมบัง</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
-        <li class="menu__row"><span class="menu__name">เซ็ตไก่ทอดราดพอนสึหัวไชเท้าขูด</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
-        <li class="menu__row"><span class="menu__name">เซ็ตหมูชาชูไข่ดาว</span><span class="menu__dots"></span><span class="menu__price">฿189</span></li>
-        <li class="menu__row"><span class="menu__name">เซ็ตโคร็อกเกะครีมกุ้ง</span><span class="menu__dots"></span><span class="menu__price">฿189</span></li>
-        <li class="menu__row"><span class="menu__name">เซ็ตเกี๊ยวซ่า (10 ชิ้น)</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
-        <li class="menu__row"><span class="menu__name">เซ็ตเกี๊ยวซ่า+ข้าวผัด</span><span class="menu__dots"></span><span class="menu__price">฿249</span></li>
-        <li class="menu__row"><span class="menu__name">เซ็ตเกี๊ยวซ่า+ข้าวเทนชิน</span><span class="menu__dots"></span><span class="menu__price">฿259</span></li>
-        <li class="menu__row"><span class="menu__name">เซ็ตทอดรวม (ปลาอาจิ+โคร็อกเกะ+ไก่ทอด2ชิ้น)</span><span class="menu__dots"></span><span class="menu__price">฿199</span></li>
-        <li class="menu__row"><span class="menu__name">เซ็ตข้าวผัด+เกี๊ยวซ่า5+ไก่ทอด2ชิ้น</span><span class="menu__dots"></span><span class="menu__price">฿229</span></li>
-      </ul>
-
-      <p class="chapter__note">ราเมนมีครบทุกชนิด ทั้งกลางวันและกลางคืน</p>
-    </div>
-  </section>
-
-  <!-- ============ すぐ出る肴 ============ -->
-  <section class="chapter" id="sugu">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">เริ่มต้น</p>
-        <h2 class="chapter__title">กับแกล้มเสิร์ฟไว</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
-
-      <p class="chapter__lead">ไม่ต้องรอ เข้ากับแก้วแรก</p>
-
-      <ul class="menu">
-        <li class="menu__row"><span class="menu__name">ถั่วแระญี่ปุ่น</span><span class="menu__dots"></span><span class="menu__price">฿59</span></li>
-        <li class="menu__row"><span class="menu__name">ถั่วงอกนามุล</span><span class="menu__dots"></span><span class="menu__price">฿59</span></li>
-        <li class="menu__row"><span class="menu__name">เส้นกรอบ</span><span class="menu__dots"></span><span class="menu__price">฿59</span></li>
-        <li class="menu__row"><span class="menu__name">หอมใหญ่สไลซ์</span><span class="menu__dots"></span><span class="menu__price">฿79</span></li>
-        <li class="menu__row"><span class="menu__name">เห็ดนาเมตาเกะกับหัวไชเท้าขูด</span><span class="menu__dots"></span><span class="menu__price">฿79</span></li>
-        <li class="menu__row"><span class="menu__name">กิมจิ</span><span class="menu__dots"></span><span class="menu__price">฿79</span></li>
-        <li class="menu__row"><span class="menu__name">แตงกวาติดใจ</span><span class="menu__dots"></span><span class="menu__price">฿59</span></li>
-        <li class="menu__row"><span class="menu__name">กะหล่ำปลีคลุกเกลือ</span><span class="menu__dots"></span><span class="menu__price">฿79</span></li>
-        <li class="menu__row"><span class="menu__name">ทาโกะวาซาบิ</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
-        <li class="menu__row"><span class="menu__name">สลัดมันฝรั่งคลุกเอง</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ============ 新鮮野菜 ============ -->
-  <section class="chapter" id="yasai">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">สดชื่น</p>
-        <h2 class="chapter__title">สลัด</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
-
-      <ul class="menu">
-        <li class="menu__row"><span class="menu__name">สลัดราเมนกรอบ</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
-        <li class="menu__row"><span class="menu__name">สลัดซีซาร์</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
-        <li class="menu__row"><span class="menu__name">สลัดหมูชาบู</span><span class="menu__dots"></span><span class="menu__price">฿139</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ============ こだわりの逸品 ============ -->
-  <section class="chapter" id="ippin">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">ค่อยๆ ลิ้มลอง</p>
-        <h2 class="chapter__title">เมนูพิเศษ</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
-
-      <ul class="menu">
-        <li class="menu__sub">เมนูทานเล่น</li>
-        <li class="menu__row"><span class="menu__name">ทงเปยากิ</span><span class="menu__dots"></span><span class="menu__price">฿129</span></li>
-        <li class="menu__row"><span class="menu__name">ทงเปยากิชีส</span><span class="menu__dots"></span><span class="menu__price">฿139</span></li>
-        <li class="menu__row"><span class="menu__name">ไข่ม้วนดาชิ</span><span class="menu__dots"></span><span class="menu__price">฿149</span></li>
-        <li class="menu__row"><span class="menu__name">ไข่เจียวกุยช่าย</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
-        <li class="menu__row"><span class="menu__name">ชาชูโรยต้นหอม</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
-        <li class="menu__row"><span class="menu__name">ชาชูหมูสามชั้น</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
-        <li class="menu__row"><span class="menu__name">จานชาชูหมูสามชั้นแบบแรร์</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
-        <li class="menu__row"><span class="menu__name">ชาชูกับไข่</span><span class="menu__dots"></span><span class="menu__price">฿199</span></li>
-        <li class="menu__row"><span class="menu__name">จานรวมสี่อย่าง</span><span class="menu__dots"></span><span class="menu__price">฿199</span></li>
-        <li class="menu__row"><span class="menu__name">ไก่คาราอาเกะ</span><span class="menu__dots"></span><span class="menu__price">฿139</span></li>
-        <li class="menu__row"><span class="menu__name">คาราอาเกะราดพอนสึและหัวไชเท้าขูด</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
-        <li class="menu__row"><span class="menu__name">ไก่นัมบัง</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
-        <li class="menu__row"><span class="menu__name">หมูผัดกิมจิ</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
-        <li class="menu__row"><span class="menu__name">หมูผัดกุยช่ายถั่วงอก</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
-        <li class="menu__row"><span class="menu__name">จานหมูย่าง</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
-
-        <li class="menu__sub">เกี๊ยวซ่าและติ่มซำ</li>
-        <li class="menu__row"><span class="menu__name">เกี๊ยวซ่าทอด 5 ชิ้น</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
-        <li class="menu__row"><span class="menu__name">เกี๊ยวซ่าราดพอนสึต้นหอม</span><span class="menu__dots"></span><span class="menu__price">฿109</span></li>
-        <li class="menu__row"><span class="menu__name">เกี๊ยวซ่าทอดกรอบ</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
-        <li class="menu__row"><span class="menu__name">ชูไมทอด</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
-        <li class="menu__row"><span class="menu__name">ชูไมนึ่ง</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
-
-        <li class="menu__sub">ของทอด</li>
-        <li class="menu__row"><span class="menu__name">เฟรนช์ฟรายส์</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
-        <li class="menu__row"><span class="menu__name">มันฝรั่งทอด</span><span class="menu__dots"></span><span class="menu__price">฿99</span></li>
-        <li class="menu__row"><span class="menu__name">กุ้งครีมโครเกะ</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
-        <li class="menu__row"><span class="menu__name">ปลาอาจิทอด</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ============ 麺と飯 ============ -->
-  <section class="chapter chapter--last" id="shime">
-    <div class="chapter__inner">
-      <header class="chapter__head">
-        <p class="chapter__num">ปิดท้าย</p>
-        <h2 class="chapter__title">ราเมนและข้าว</h2>
-        <span class="chapter__rule" aria-hidden="true"></span>
-      </header>
-
-      <p class="chapter__lead">ไม่ใส่ผงชูรส มีแค่ไก่ น้ำ และความใส่ใจ</p>
-
-      <div class="ramen-guide" id="ramen" aria-labelledby="ramen-guide-title">
-        <h3 class="ramen-guide__title" id="ramen-guide-title">ราเมงซุปไก่ที่พัทยา</h3>
-        <figure class="ramen-guide__photo">
-          <img src="../assets/images/tanrei-tori-shoyu-soba-regular.jpg" alt="โซบะไก่ใสโชยุ ขนาดปกติ" loading="lazy" width="1000" height="1000">
-          <figcaption>โซบะไก่ใสโชยุ ขนาดปกติ</figcaption>
+    </section>
+    <section class="menu-category reveal" id="category-salad" aria-labelledby="category-salad-title">
+      <h2 id="category-salad-title">สลัด</h2>
+      <div class="menu-photo-grid">
+        <figure class="menu-photo" data-menu-id="SL001">
+          <div class="menu-photo__image"><img src="../assets/images/pos/SL001.jpg" alt="สลัดมันฝรั่งรวม" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">สลัดมันฝรั่งรวม</span><span class="menu-item__price">฿119</span></figcaption>
         </figure>
-        <div class="ramen-guide__copy">
-          <p><strong>ชอบเบา ๆ เลือกซุปใส ชอบเข้มข้นเลือกไพตัน</strong></p>
-          <p>เลือกได้ทั้งซุปไก่ใสรสเบาและซุปไก่ไพตันที่เคี่ยวจนเข้มข้น ทั้งสองแบบมีรสโชยุและเกลือให้เลือก โชยุเพิ่มกลิ่นหอมของซีอิ๊ว ส่วนรสเกลือเน้นรสชาติของน้ำซุปไก่</p>
-          <p>MENLABO SAKABA โอซาก้าอิซากายะใน Tree Town ซอยบัวขาว พัทยา มีราเมงทั้งมื้อกลางวันและมื้อค่ำ ซุปไก่ใสขนาดปกติ 179 บาท และไพตัน 159 บาท ดูราคาครึ่งชามและตัวเลือกท็อปปิงในเมนูด้านล่าง</p>
-          <p>หลัง 15:00 น. สั่งเมนูอิซากายะได้ครบ จะเพิ่มเกี๊ยวซ่าหรือไก่คาราอาเกะอีกจาน พร้อมเครื่องดื่มก็ได้</p>
-          <a class="more-link" href="/th/access">ดูเส้นทางมาที่ Tree Town</a>
-        </div>
+        <figure class="menu-photo" data-menu-id="SL002">
+          <div class="menu-photo__image"><img src="../assets/images/pos/SL002.jpg" alt="สลัดราเมนกรอบ" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">สลัดราเมนกรอบ</span><span class="menu-item__price">฿119</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="SL003">
+          <div class="menu-photo__image"><img src="../assets/images/pos/SL003.jpg" alt="สลัดซีซาร์" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">สลัดซีซาร์</span><span class="menu-item__price">฿119</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="SL004">
+          <div class="menu-photo__image"><img src="../assets/images/pos/SL004.jpg" alt="สลัดหมูชาบูชาบู" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">สลัดหมูชาบูชาบู</span><span class="menu-item__price">฿139</span></figcaption>
+        </figure>
       </div>
-
-      <ul class="menu">
-        <li class="menu__sub">ราเมน</li>
-        <li class="menu__row"><span class="menu__name">โซบะไก่ใสโชยุ</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
-        <li class="menu__row"><span class="menu__name">โซบะไก่ใสเกลือ</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
-        <li class="menu__row"><span class="menu__name">ไก่ไพตันเข้มข้นโชยุ</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
-        <li class="menu__row"><span class="menu__name">ไก่ไพตันเข้มข้นเกลือ</span><span class="menu__dots"></span><span class="menu__price">฿159</span></li>
-        <li class="menu__row"><span class="menu__name">จันเมน (เผ็ด)</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
-        <li class="menu__row"><span class="menu__name">ไก่ใส ครึ่งชาม</span><span class="menu__dots"></span><span class="menu__price">฿149</span></li>
-        <li class="menu__row"><span class="menu__name">ไก่ใส จัดเต็ม</span><span class="menu__dots"></span><span class="menu__price">฿219</span></li>
-        <li class="menu__row"><span class="menu__name">ไก่ใส สเปเชียล</span><span class="menu__dots"></span><span class="menu__price">฿270</span></li>
-        <li class="menu__row"><span class="menu__name">ไพตัน ครึ่งชาม</span><span class="menu__dots"></span><span class="menu__price">฿129</span></li>
-        <li class="menu__row"><span class="menu__name">ไพตัน จัดเต็ม</span><span class="menu__dots"></span><span class="menu__price">฿199</span></li>
-        <li class="menu__row"><span class="menu__name">ไพตัน สเปเชียล</span><span class="menu__dots"></span><span class="menu__price">฿250</span></li>
-
-        <li class="menu__sub">ข้าว</li>
-        <li class="menu__row"><span class="menu__name">ข้าวผัด</span><span class="menu__dots"></span><span class="menu__price">฿129</span></li>
-        <li class="menu__row"><span class="menu__name">ข้าวผัดเทนชิน</span><span class="menu__dots"></span><span class="menu__price">฿169</span></li>
-        <li class="menu__row"><span class="menu__name">ข้าวหน้าไข่เทนชิน</span><span class="menu__dots"></span><span class="menu__price">฿129</span></li>
-        <li class="menu__row"><span class="menu__name">ข้าวหน้าหมูย่าง</span><span class="menu__dots"></span><span class="menu__price">฿139</span></li>
-        <li class="menu__row"><span class="menu__name">ข้าวหน้าชาชูหมูสามชั้น</span><span class="menu__dots"></span><span class="menu__price">฿129</span></li>
-        <li class="menu__row"><span class="menu__name">ข้าวหน้าชาชูแรร์</span><span class="menu__dots"></span><span class="menu__price">฿119</span></li>
-        <li class="menu__row"><span class="menu__name">ข้าวหน้าชาชูไข่</span><span class="menu__dots"></span><span class="menu__price">฿179</span></li>
-        <li class="menu__row"><span class="menu__name">ข้าวสวย</span><span class="menu__dots"></span><span class="menu__price">฿39~</span></li>
+    </section>
+    <section class="menu-category reveal" id="category-grilled" aria-labelledby="category-grilled-title">
+      <h2 id="category-grilled-title">อาหารย่าง</h2>
+      <div class="menu-photo-grid">
+        <figure class="menu-photo" data-menu-id="YK001">
+          <div class="menu-photo__image"><img src="../assets/images/pos/YK001.jpg" alt="ทงเปยากิ ไข่เจียวม้วน" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ทงเปยากิ ไข่เจียวม้วน</span><span class="menu-item__price">฿149</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="YK002">
+          <div class="menu-photo__image"><img src="../assets/images/pos/YK002.jpg" alt="ไข่ม้วน" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ไข่ม้วน</span><span class="menu-item__price">฿159</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="YK003">
+          <div class="menu-photo__image"><img src="../assets/images/pos/YK003.jpg" alt="เกี๊ยวซ่า 5 ชิ้น" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">เกี๊ยวซ่า 5 ชิ้น</span><span class="menu-item__price">฿99</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="YK004">
+          <div class="menu-photo__image"><img src="../assets/images/pos/YK004.jpg" alt="เกี๊ยวต้นหอมและซอสพอนสึ" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">เกี๊ยวต้นหอมและซอสพอนสึ</span><span class="menu-item__price">฿109</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="YK005">
+          <div class="menu-photo__image"><img src="../assets/images/pos/YK005.jpg" alt="หมูชาชูและต้นหอม" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">หมูชาชูและต้นหอม</span><span class="menu-item__price">฿119</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="YK006">
+          <div class="menu-photo__image"><img src="../assets/images/pos/YK006.jpg" alt="หมูสามชั้นเบิร์นไฟ" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">หมูสามชั้นเบิร์นไฟ</span><span class="menu-item__price">฿199</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="YK007">
+          <div class="menu-photo__image"><img src="../assets/images/pos/YK007.jpg" alt="ชุดรวมหมูชาชูและหมูสามชั้น" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ชุดรวมหมูชาชูและหมูสามชั้น</span><span class="menu-item__price">฿199</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="YK009">
+          <div class="menu-photo__image"><img src="../assets/images/pos/YK009.jpg" alt="เครื่องเคียงชุดรวม 4 ชนิด" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">เครื่องเคียงชุดรวม 4 ชนิด</span><span class="menu-item__price">฿199</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="YK010">
+          <div class="menu-photo__image"><img src="../assets/images/pos/YK010.jpg" alt="หมูชาชูกับไข่ดาว" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">หมูชาชูกับไข่ดาว</span><span class="menu-item__price">฿199</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="YK011">
+          <div class="menu-photo__image"><img src="../assets/images/pos/YK011.jpg" alt="ไข่ผัดกุยช่าย" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ไข่ผัดกุยช่าย</span><span class="menu-item__price">฿119</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="YK012">
+          <div class="menu-photo__image"><img src="../assets/images/pos/YK012.jpg" alt="หมูชาชูผัดถั่วงอกกับกุยช่าย" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">หมูชาชูผัดถั่วงอกกับกุยช่าย</span><span class="menu-item__price">฿159</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="YK013">
+          <div class="menu-photo__image"><img src="../assets/images/pos/YK013.jpg" alt="หมูผัดกิมจิ" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">หมูผัดกิมจิ</span><span class="menu-item__price">฿159</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="YK014">
+          <div class="menu-photo__image"><img src="../assets/images/pos/YK014.jpg" alt="ยากินิกุหมูชาชู" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ยากินิกุหมูชาชู</span><span class="menu-item__price">฿159</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="YK015">
+          <div class="menu-photo__image"><img src="../assets/images/pos/YK015.jpg" alt="กระดูกอ่อนไก่ย่างเกลือ" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">กระดูกอ่อนไก่ย่างเกลือ</span><span class="menu-item__price">฿99</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="YK016">
+          <div class="menu-photo__image"><img src="../assets/images/pos/YK016.jpg" alt="เต้าหู้หม่าโผว" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">เต้าหู้หม่าโผว</span><span class="menu-item__price">฿189</span></figcaption>
+        </figure>
+      </div>
+      <ul class="menu-list">
+        <li class="menu-list__row" data-menu-id="YK008"><span class="menu-item__name">ทงเปยากิ ไข่เจียวม้วน ชีส</span><span class="menu-list__dots" aria-hidden="true"></span><span class="menu-item__price">฿139</span></li>
       </ul>
+    </section>
+    <section class="menu-category reveal" id="category-fried" aria-labelledby="category-fried-title">
+      <h2 id="category-fried-title">อาหารทอด</h2>
+      <div class="menu-photo-grid">
+        <figure class="menu-photo" data-menu-id="AG001">
+          <div class="menu-photo__image"><img src="../assets/images/pos/AG001.jpg" alt="ไก่ทอดคาราเกะ" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ไก่ทอดคาราเกะ</span><span class="menu-item__price">฿139</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="AG002">
+          <div class="menu-photo__image"><img src="../assets/images/pos/AG002.jpg" alt="ไก่ทอดซอสนัมบัน" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ไก่ทอดซอสนัมบัน</span><span class="menu-item__price">฿159</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="AG003">
+          <div class="menu-photo__image"><img src="../assets/images/pos/AG003.jpg" alt="ไก่ทอดกรอบราดซอสพอนซูและหัวไชเท้าขูด" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ไก่ทอดกรอบราดซอสพอนซูและหัวไชเท้าขูด</span><span class="menu-item__price">฿159</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="AG004">
+          <div class="menu-photo__image"><img src="../assets/images/pos/AG004.jpg" alt="เกี๊ยวทอด 5 ชิ้น" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">เกี๊ยวทอด 5 ชิ้น</span><span class="menu-item__price">฿99</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="AG005">
+          <div class="menu-photo__image"><img src="../assets/images/pos/AG005.jpg" alt="ขนมจีบทอด" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ขนมจีบทอด</span><span class="menu-item__price">฿99</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="AG006">
+          <div class="menu-photo__image"><img src="../assets/images/pos/AG006.jpg" alt="ขนมจีบนึ่ง" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ขนมจีบนึ่ง</span><span class="menu-item__price">฿99</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="AG007">
+          <div class="menu-photo__image"><img src="../assets/images/pos/AG007.jpg" alt="เฟรนช์ฟรายส์" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">เฟรนช์ฟรายส์</span><span class="menu-item__price">฿99</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="AG008">
+          <div class="menu-photo__image"><img src="../assets/images/pos/AG008.jpg" alt="มันฝรั่งทอด" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">มันฝรั่งทอด</span><span class="menu-item__price">฿99</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="AG009">
+          <div class="menu-photo__image"><img src="../assets/images/pos/AG009.jpg" alt="ปลาอาจิทอด" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ปลาอาจิทอด</span><span class="menu-item__price">฿159</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="AG010">
+          <div class="menu-photo__image"><img src="../assets/images/pos/AG010.jpg" alt="โคร็อกเกะครีมกุ้ง" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">โคร็อกเกะครีมกุ้ง</span><span class="menu-item__price">฿119</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="AG011">
+          <div class="menu-photo__image"><img src="../assets/images/pos/AG011.jpg" alt="กระดูกอ่อนไก่ทอด" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">กระดูกอ่อนไก่ทอด</span><span class="menu-item__price">฿99</span></figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="menu-category reveal" id="category-noodles" aria-labelledby="category-noodles-title">
+      <h2 id="category-noodles-title">เส้นปิดท้าย</h2><span id="ramen"></span>
+      <div class="menu-photo-grid">
+        <figure class="menu-photo" data-menu-id="ME001">
+          <div class="menu-photo__image"><img src="../assets/images/pos/ME001.jpg" alt="ชิโอะราเมน (M)" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ชิโอะราเมน (M)</span><span class="menu-item__price">฿179</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="ME002">
+          <div class="menu-photo__image"><img src="../assets/images/pos/ME002.jpg" alt="ชิโอะราเมน (S)" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ชิโอะราเมน (S)</span><span class="menu-item__price">฿149</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="ME003">
+          <div class="menu-photo__image"><img src="../assets/images/pos/ME003.jpg" alt="ชิโอะราเมน (L)" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ชิโอะราเมน (L)</span><span class="menu-item__price">฿219</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="ME004">
+          <div class="menu-photo__image"><img src="../assets/images/pos/ME004.jpg" alt="ชิโอะราเมน (XL)" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ชิโอะราเมน (XL)</span><span class="menu-item__price">฿270</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="ME005">
+          <div class="menu-photo__image"><img src="../assets/images/pos/ME005.jpg" alt="โชยุราเมน (M)" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">โชยุราเมน (M)</span><span class="menu-item__price">฿179</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="ME006">
+          <div class="menu-photo__image"><img src="../assets/images/pos/ME006.jpg" alt="โชยุราเมน (S)" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">โชยุราเมน (S)</span><span class="menu-item__price">฿149</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="ME007">
+          <div class="menu-photo__image"><img src="../assets/images/pos/ME007.jpg" alt="โชยุราเมน (L)" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">โชยุราเมน (L)</span><span class="menu-item__price">฿219</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="ME008">
+          <div class="menu-photo__image"><img src="../assets/images/pos/ME008.jpg" alt="โชยุราเมน (XL)" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">โชยุราเมน (XL)</span><span class="menu-item__price">฿270</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="ME009">
+          <div class="menu-photo__image"><img src="../assets/images/pos/ME009.jpg" alt="ไพตันราเมน (M)" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ไพตันราเมน (M)</span><span class="menu-item__price">฿159</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="ME010">
+          <div class="menu-photo__image"><img src="../assets/images/pos/ME010.jpg" alt="ไพตันราเมน (S)" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ไพตันราเมน (S)</span><span class="menu-item__price">฿129</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="ME011">
+          <div class="menu-photo__image"><img src="../assets/images/pos/ME011.jpg" alt="ไพตันราเมน (L)" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ไพตันราเมน (L)</span><span class="menu-item__price">฿199</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="ME012">
+          <div class="menu-photo__image"><img src="../assets/images/pos/ME012.jpg" alt="ไพตันราเมน (XL)" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ไพตันราเมน (XL)</span><span class="menu-item__price">฿250</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="ME013">
+          <div class="menu-photo__image"><img src="../assets/images/pos/ME013.jpg" alt="โชยุไพตัน (M)" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">โชยุไพตัน (M)</span><span class="menu-item__price">฿159</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="ME014">
+          <div class="menu-photo__image"><img src="../assets/images/pos/ME014.jpg" alt="โชยุไพตัน (S)" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">โชยุไพตัน (S)</span><span class="menu-item__price">฿129</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="ME015">
+          <div class="menu-photo__image"><img src="../assets/images/pos/ME015.jpg" alt="โชยุไพตัน (L)" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">โชยุไพตัน (L)</span><span class="menu-item__price">฿199</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="ME016">
+          <div class="menu-photo__image"><img src="../assets/images/pos/ME016.jpg" alt="โชยุไพตัน (XL)" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">โชยุไพตัน (XL)</span><span class="menu-item__price">฿250</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="ME017">
+          <div class="menu-photo__image"><img src="../assets/images/pos/ME017.jpg" alt="จันเมน" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">จันเมน</span><span class="menu-item__price">฿179</span></figcaption>
+        </figure>
+      </div>
+    </section>
+    <section class="menu-category reveal" id="category-toppings" aria-labelledby="category-toppings-title">
+      <h2 id="category-toppings-title">ท็อปปิ้งราเมน</h2>
+      <ul class="menu-list">
+        <li class="menu-list__row" data-menu-id="TP001"><span class="menu-item__name">เพิ่มไข่แดง</span><span class="menu-list__dots" aria-hidden="true"></span><span class="menu-item__price">฿30</span></li>
+        <li class="menu-list__row" data-menu-id="TP002"><span class="menu-item__name">ไข่ต้ม (อาจิทามะ)</span><span class="menu-list__dots" aria-hidden="true"></span><span class="menu-item__price">฿30</span></li>
+        <li class="menu-list__row" data-menu-id="TP003"><span class="menu-item__name">เพิ่มเส้น (พิเศษ)</span><span class="menu-list__dots" aria-hidden="true"></span><span class="menu-item__price">฿30</span></li>
+        <li class="menu-list__row" data-menu-id="TP006"><span class="menu-item__name">เพิ่มหมูชาชู 5 ชิ้น</span><span class="menu-list__dots" aria-hidden="true"></span><span class="menu-item__price">฿75</span></li>
+      </ul>
+    </section>
+    <section class="menu-category reveal" id="category-rice" aria-labelledby="category-rice-title">
+      <h2 id="category-rice-title">ข้าวปิดท้าย</h2>
+      <div class="menu-photo-grid">
+        <figure class="menu-photo" data-menu-id="GH001">
+          <div class="menu-photo__image"><img src="../assets/images/pos/GH001.jpg" alt="ข้าว 180g" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ข้าว 180g</span><span class="menu-item__price">฿49</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="GH002">
+          <div class="menu-photo__image"><img src="../assets/images/pos/GH002.jpg" alt="ข้าว 260g" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ข้าว 260g</span><span class="menu-item__price">฿59</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="GH003">
+          <div class="menu-photo__image"><img src="../assets/images/pos/GH003.jpg" alt="ข้าว 100g" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ข้าว 100g</span><span class="menu-item__price">฿39</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="GH004">
+          <div class="menu-photo__image"><img src="../assets/images/pos/GH004.jpg" alt="ข้าวหน้าหมูสามชั้น" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ข้าวหน้าหมูสามชั้น</span><span class="menu-item__price">฿129</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="GH005">
+          <div class="menu-photo__image"><img src="../assets/images/pos/GH005.jpg" alt="ข้าวหน้าหมูสามชั้น (S)" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ข้าวหน้าหมูสามชั้น (S)</span><span class="menu-item__price">฿109</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="GH006">
+          <div class="menu-photo__image"><img src="../assets/images/pos/GH006.jpg" alt="ข้าวหน้าหมูสามชั้น + ไข่แดง" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ข้าวหน้าหมูสามชั้น + ไข่แดง</span><span class="menu-item__price">฿159</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="GH007">
+          <div class="menu-photo__image"><img src="../assets/images/pos/GH007.jpg" alt="ข้าวหน้าหมูชาชู" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ข้าวหน้าหมูชาชู</span><span class="menu-item__price">฿99</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="GH008">
+          <div class="menu-photo__image"><img src="../assets/images/pos/GH008.jpg" alt="ข้าวหน้าหมูชาชู (S)" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ข้าวหน้าหมูชาชู (S)</span><span class="menu-item__price">฿79</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="GH009">
+          <div class="menu-photo__image"><img src="../assets/images/pos/GH009.jpg" alt="ข้าวหน้าหมูชาชู + ไข่แดง" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ข้าวหน้าหมูชาชู + ไข่แดง</span><span class="menu-item__price">฿129</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="GH010">
+          <div class="menu-photo__image"><img src="../assets/images/pos/GH010.jpg" alt="ข้าวผัด" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ข้าวผัด</span><span class="menu-item__price">฿139</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="GH012">
+          <div class="menu-photo__image"><img src="../assets/images/pos/GH012.jpg" alt="ข้าวผัดเทียนจิน" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ข้าวผัดเทียนจิน</span><span class="menu-item__price">฿169</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="GH013">
+          <div class="menu-photo__image"><img src="../assets/images/pos/GH013.jpg" alt="ข้าวเทนชินฮัง" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ข้าวเทนชินฮัง</span><span class="menu-item__price">฿149</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="GH014">
+          <div class="menu-photo__image"><img src="../assets/images/pos/GH014.jpg" alt="ข้าวหน้าหมูย่างซอสยากินิกุ ปกติ" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ข้าวหน้าหมูย่างซอสยากินิกุ ปกติ</span><span class="menu-item__price">฿179</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="GH015">
+          <div class="menu-photo__image"><img src="../assets/images/pos/GH015.jpg" alt="ข้าวหน้าหมูย่างซอสยากินิกุ พิเศษเพิ่มไข่" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ข้าวหน้าหมูย่างซอสยากินิกุ พิเศษเพิ่มไข่</span><span class="menu-item__price">฿209</span></figcaption>
+        </figure>
+        <figure class="menu-photo" data-menu-id="GH016">
+          <div class="menu-photo__image"><img src="../assets/images/pos/GH016.jpg" alt="ข้าวหน้าหมูแดงไข่" width="400" height="300" loading="lazy"></div>
+          <figcaption><span class="menu-item__name">ข้าวหน้าหมูแดงไข่</span><span class="menu-item__price">฿179</span></figcaption>
+        </figure>
+      </div>
+    </section>
+      <p class="vat-note" data-key="vat-note">ราคารวม VAT</p>
+    </section>
+  </main>
 
-      <a class="more-link" href="/th/access">ดูที่ตั้งร้าน</a>
 
-      <p class="chapter__note">ไม่มีชามไหนอร่อยเท่าชามหลังดื่ม</p>
+  <footer class="site-footer">
+    <div class="footer-heading">
+      <img src="../assets/images/menlabo-logo-mark-kana-red.svg" alt="MENLABO Sakaba" width="108" height="108" loading="lazy">
+      <h2 data-key="store-info-heading">ข้อมูลร้าน</h2>
     </div>
-  </section>
 
-</main>
+    <dl class="store-table">
+      <div><dt data-key="label-store">ชื่อร้าน</dt><dd data-key="store-name">อิซากายะโอซาก้า MENLABO Sakaba</dd></div>
+      <div><dt data-key="label-address">ที่อยู่</dt><dd data-key="store-address">502/22 ซอยบัวขาว เมืองพัทยา อำเภอบางละมุง จังหวัดชลบุรี 20150</dd></div>
+      <div><dt data-key="label-landmark">วิธีเดินทาง</dt><dd data-key="store-landmark">อยู่ใน Tree Town ตึกสีดำที่มีโคมไฟเป็นจุดสังเกต</dd></div>
+      <div><dt data-key="label-hours">เวลาเปิด</dt><dd><span data-key="hours-lunch">กลางวัน 11:00–15:00 (ชุดอาหารกลางวันและราเมน)</span><span data-key="hours-night">เย็น 15:00–24:00 (เมนูครบทุกรายการ)</span></dd></div>
+      <div><dt data-key="label-last-entry">เข้าร้านและสั่งอาหารได้ถึง</dt><dd data-key="last-entry-pending">23:40</dd></div>
+      <div><dt data-key="label-closed">วันหยุด</dt><dd data-key="closed-day">วันอังคาร</dd></div>
+      <div><dt data-key="label-payment">การชำระเงิน</dt><dd data-key="payment-methods">เงินสด PromptPay (QR) และบัตรเครดิต (VISA / Master / Alipay / UnionPay / JCB)</dd></div>
+      <div><dt data-key="label-parking">ที่จอดรถ</dt><dd data-key="parking-value">มีที่จอดรถ 30 บาทต่อชั่วโมง</dd></div>
+    </dl>
 
-<!-- ============ 奥付 ============ -->
-<footer class="colophon">
-  <img class="colophon__seal" src="../assets/images/menlabo-logo-mark-kana-red.svg" alt="โลโก้ MENLABO Sakaba" width="64" height="64">
-  <nav class="colophon__nav">
-    <a href="/th">หน้าแรก</a>
-    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">แผนที่</a>
+    <div class="footer-contact">
+      <p data-key="phone-guidance">กรุณาแจ้งว่าเห็นจากเว็บไซต์</p>
+      <a href="tel:+66961479518" data-action="phone"><span data-key="phone-number" data-value="phone">+66 96-147-9518</span></a>
+    </div>
+
+    <nav class="social-links" aria-label="โซเชียลมีเดีย">
+      <a href="https://www.instagram.com/menlabo.pattaya/" data-action="instagram" target="_blank" rel="noopener noreferrer" data-key="social-instagram">Instagram</a>
+      <a href="https://www.facebook.com/menlabo.pattaya" data-action="facebook" target="_blank" rel="noopener noreferrer" data-key="social-facebook">Facebook</a>
+      <a href="https://x.com/menlabo_sakaba" data-action="x" target="_blank" rel="noopener noreferrer" data-key="social-x">X</a>
+    </nav>
+
+    <nav class="language-links" aria-label="เลือกภาษา">
+      <a href="/menu" lang="ja" data-lang="ja" aria-label="日本語" data-key="lang-ja">日本語</a>
+      <a href="/th/menu" lang="th" data-lang="th" aria-current="page" aria-label="ไทย" data-key="lang-th">ไทย</a>
+      <a href="/en/menu" lang="en" data-lang="en" aria-label="English" data-key="lang-en">English</a>
+      <a href="/zh/menu" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简体中文</a>
+    </nav>
+
+    <nav class="legal-links" aria-label="ข้อมูลผู้ดำเนินการ">
+      <a href="/th/access" data-key="nav-access">การเดินทาง</a>
+      <a href="/th/company" data-key="link-company">ข้อมูลบริษัท</a>
+      <a href="/th/privacy" data-key="link-privacy">นโยบายความเป็นส่วนตัว</a>
+    </nav>
+
+    <p class="copyright" data-key="copyright">© MENLABO Sakaba</p>
+  </footer>
+
+
+  <nav class="mobile-actions" aria-label="ติดต่อ">
+    <a href="tel:+66961479518" data-action="phone" data-key="action-phone">โทร</a>
+    <a href="https://lin.ee/7GQmsKU" data-action="line" data-key="action-line">LINE</a>
+    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">แผนที่</a>
   </nav>
-  <div class="lang-switch" aria-label="Language">
-    <a href="/menu">JP</a>
-    <span class="lang-switch__sep" aria-hidden="true">/</span>
-    <a href="/en/menu">EN</a>
-    <span class="lang-switch__sep" aria-hidden="true">/</span>
-    <a href="/th/menu" aria-current="page">TH</a>
-    <span class="lang-switch__sep" aria-hidden="true">/</span>
-    <a href="/zh/menu" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-  </div>
-  <p class="colophon__text">อิซากายะโอซาก้า MENLABO Sakaba<span class="pc-only"> — </span><br class="br-sp">พัทยา ประเทศไทย</p>
-  <p class="colophon__copy">© 2026 MENLABO<br class="br-sp">(OMOTENASHI CO., LTD.)</p>
-  <p class="colophon__legal"><a href="/th/company">ข้อมูลบริษัท</a> · <a href="/th/privacy">นโยบายความเป็นส่วนตัว</a></p>
-</footer>
 
-<script src="../assets/js/ink.js" defer></script>
-<script src="../assets/js/main.js" defer></script>
 </body>
 </html>

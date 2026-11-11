@@ -1,143 +1,200 @@
-<!DOCTYPE html>
+<!-- build.pyで生成。直接編集しない。部品は src/ を直す。 -->
+<!doctype html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
+  <meta charset="utf-8">
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-L9W79GXPE1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-L9W79GXPE1');
-</script>
+  <!-- Google tag (gtag.js)：本番ドメインでだけ読み込む（手元の確認やVercelのプレビューで本番の解析を汚さないため。2026-11-11 Claude） -->
+  <script id="google-tag" data-ga4-id="G-L9W79GXPE1" data-production-host="www.menlabo-pattaya.com">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    (function () {
+      var tag = document.getElementById("google-tag");
+      var id = tag.dataset.ga4Id;
+      if (!id || location.hostname !== tag.dataset.productionHost) return;
+      var loader = document.createElement("script");
+      loader.async = true;
+      loader.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+      document.head.appendChild(loader);
+      gtag("js", new Date());
+      gtag("config", id);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="大阪居酒屋 MENLABO酒場を運営する OMOTENASHI CO., LTD. の会社概要。">
+  <meta name="theme-color" content="#171817">
+  <title>会社概要 — 大阪居酒屋 MENLABO酒場</title>
+  <link rel="canonical" href="https://www.menlabo-pattaya.com/company">
+  <meta property="og:title" content="会社概要 — 大阪居酒屋 MENLABO酒場">
+  <meta property="og:description" content="大阪居酒屋 MENLABO酒場を運営する OMOTENASHI CO., LTD. の会社概要。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.menlabo-pattaya.com/company">
+  <meta property="og:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="会社概要 — 大阪居酒屋 MENLABO酒場">
+  <meta name="twitter:description" content="大阪居酒屋 MENLABO酒場を運営する OMOTENASHI CO., LTD. の会社概要。">
+  <meta name="twitter:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
+  <link rel="alternate" hreflang="ja" href="https://www.menlabo-pattaya.com/company">
+  <link rel="alternate" hreflang="th" href="https://www.menlabo-pattaya.com/th/company">
+  <link rel="alternate" hreflang="en" href="https://www.menlabo-pattaya.com/en/company">
+  <link rel="alternate" hreflang="x-default" href="https://www.menlabo-pattaya.com/company">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>会社概要 — 大阪居酒屋 MENLABO酒場</title>
-<meta name="description" content="大阪居酒屋 MENLABO酒場を運営する OMOTENASHI CO., LTD. の会社概要。">
-<meta name="robots" content="all">
-<meta property="og:url" content="https://www.menlabo-pattaya.com/company">
-<link rel="canonical" href="https://www.menlabo-pattaya.com/company">
-<meta property="og:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta name="twitter:card" content="summary_large_image">
-
-<!-- 多言語：言語別URLの相互参照 -->
-<link rel="alternate" hreflang="ja" href="https://www.menlabo-pattaya.com/company">
-<link rel="alternate" hreflang="en" href="https://www.menlabo-pattaya.com/en/company">
-<link rel="alternate" hreflang="th" href="https://www.menlabo-pattaya.com/th/company">
-<link rel="alternate" hreflang="x-default" href="https://www.menlabo-pattaya.com/company">
-
-<!-- ファビコン（ファイルはサイト直下に置く） -->
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#f3eee4">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
+  <a class="skip-link" href="#main" data-key="skip-main">本文へ移動</a>
 
-<!-- 墨：濡れた紙のWebGLキャンバス（全画面・最前面・操作は透過） -->
-<canvas id="ink-canvas" aria-hidden="true"></canvas>
+  <header class="site-header site-header--paper" aria-label="サイト案内">
+    <a class="site-logo" href="/" aria-label="大阪居酒屋 MENLABO酒場 トップ">
+      <img src="assets/images/menlabo-logo-mark-kana-red.svg" alt="MENLABO酒場" width="82" height="82">
+    </a>
 
-<!-- ============ グローバルナビ（下層ページは常時表示） ============ -->
-<nav class="site-head is-solid" id="site-head">
-  <a class="site-head__brand" href="/" aria-label="MENLABO酒場 トップへ">
-    <img class="site-head__seal" src="assets/images/menlabo-logo-mark-red.svg" alt="" width="32" height="32">
-    <img class="site-head__wordmark" src="assets/images/MENLABO_wordmark-sakaba_red.svg" alt="MENLABO酒場" width="116" height="17">
-  </a>
-  <div class="site-head__nav">
-    <a href="/menu">品書き</a>
-    <a href="/access">在処</a>
-    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" target="_blank" rel="noopener">地図</a>
-    <div class="lang-switch" aria-label="Language">
-      <a href="/company" aria-current="page">JP</a>
-      <span class="lang-switch__sep" aria-hidden="true">/</span>
-      <a href="/en/company">EN</a>
-      <span class="lang-switch__sep" aria-hidden="true">/</span>
-      <a href="/th/company">TH</a>
-      <span class="lang-switch__sep" aria-hidden="true">/</span>
-      <a href="/zh" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
+    <nav class="desktop-nav" aria-label="主要メニュー">
+      <a href="/about" data-key="nav-about">MENLABOについて</a>
+      <a href="/menu" data-key="nav-menu">メニュー</a>
+      <a href="/access" data-key="nav-access">アクセス</a>
+      <a href="/news" data-key="nav-news">お知らせ</a>
+    </nav>
+
+    <div class="desktop-actions">
+      <a href="tel:+66961479518" data-action="phone" data-key="action-phone">電話</a>
+      <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">地図</a>
     </div>
+
+    <nav class="header-language-links" aria-label="言語切替">
+      <a href="/company" lang="ja" data-lang="ja" aria-current="page" aria-label="日本語" data-key="lang-ja">JP</a>
+      <a href="/th/company" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">TH</a>
+      <a href="/en/company" lang="en" data-lang="en" aria-label="English" data-key="lang-en">EN</a>
+      <a href="/zh" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简</a>
+    </nav>
+
+    <button class="menu-button" type="button" aria-controls="mobile-menu" aria-expanded="false" data-open-label="メニュー" data-close-label="閉じる">
+      <span class="menu-button__label" data-key="menu-open">メニュー</span>
+      <span class="menu-button__icon" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav aria-label="スマートフォン用メニュー">
+      <a href="/about" data-key="nav-about">MENLABOについて</a>
+      <a href="/menu" data-key="nav-menu">メニュー</a>
+      <a href="/access" data-key="nav-access">アクセス</a>
+      <a href="/news" data-key="nav-news">お知らせ</a>
+    </nav>
+    <div class="mobile-menu__actions">
+      <a href="tel:+66961479518" data-action="phone" data-key="action-phone">電話</a>
+      <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">地図</a>
+    </div>
+    <nav class="header-language-links header-language-links--mobile" aria-label="言語切替">
+      <a href="/company" lang="ja" data-lang="ja" aria-current="page" aria-label="日本語" data-key="lang-ja">JP</a>
+      <a href="/th/company" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">TH</a>
+      <a href="/en/company" lang="en" data-lang="en" aria-label="English" data-key="lang-en">EN</a>
+      <a href="/zh" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简</a>
+    </nav>
   </div>
-</nav>
 
-<!-- ============ 扉（小） ============ -->
-<header class="page-head">
-  <p class="page-head__kicker reveal">大阪居酒屋 MENLABO酒場</p>
-  <h1 class="page-head__title reveal" data-delay="200">会社概要</h1>
-  <p class="page-head__note reveal" data-delay="400">運営会社について</p>
-</header>
 
-<main>
-  <section class="chapter chapter--last">
-    <div class="legal">
+  <main id="main" class="content-page company-page">
+    <section class="content-page__section paper-section" aria-labelledby="page-title">
+      <div class="content-page__inner">
+        <header class="content-page__heading reveal">
+          <h1 id="page-title" data-key="page-heading">会社概要</h1>
+          <p data-key="page-note">運営会社について</p>
+        </header>
 
-      <p class="legal__intro">
-        大阪居酒屋 MENLABO酒場は、タイ・パタヤの OMOTENASHI CO., LTD. が運営しています。
-      </p>
+        <p class="content-page__lead reveal" data-key="company-intro">大阪居酒屋 MENLABO酒場は、タイ・パタヤの OMOTENASHI CO., LTD. が運営しています。</p>
 
-      <section class="legal__sec">
-        <h2>会社概要</h2>
-        <dl class="legal__info legal__info--wide">
-          <div><dt>商号</dt><dd>OMOTENASHI CO., LTD.（บริษัท โอโมเตนาชิ จำกัด）</dd></div>
-          <div><dt>法人登記番号</dt><dd>0205567015184</dd></div>
-          <div><dt>設立</dt><dd>2024年3月5日</dd></div>
-          <div><dt>代表者</dt><dd>Kodchaporn Amano</dd></div>
-          <div><dt>資本金</dt><dd>1,000,000バーツ</dd></div>
-          <div><dt>所在地</dt><dd>152/27 Moo 5, Naklua, Bang Lamung, Chon Buri 20150, Thailand</dd></div>
-          <div><dt>事業内容</dt><dd>飲食店の運営（大阪居酒屋 MENLABO酒場）</dd></div>
-          <div><dt>連絡先</dt><dd>Tel: 096-147-9518　/　Email: menlabo.pattaya@gmail.com</dd></div>
-        </dl>
-      </section>
+        <section class="company-section reveal" aria-labelledby="company-overview-title">
+          <h2 id="company-overview-title" data-key="company-overview-heading">会社概要</h2>
+          <dl class="store-table content-table">
+            <div><dt data-key="label-trade-name">商号</dt><dd>OMOTENASHI CO., LTD.（บริษัท โอโมเตนาชิ จำกัด）</dd></div>
+            <div><dt data-key="label-registration-number">法人登記番号</dt><dd>0205567015184</dd></div>
+            <div><dt data-key="label-established">設立</dt><dd>2024年3月5日</dd></div>
+            <div><dt data-key="label-representative">代表者</dt><dd>Kodchaporn Amano</dd></div>
+            <div><dt data-key="label-capital">資本金</dt><dd>1,000,000バーツ</dd></div>
+            <div><dt data-key="label-head-office">所在地</dt><dd>152/27 Moo 5, Naklua, Bang Lamung, Chon Buri 20150, Thailand</dd></div>
+            <div><dt data-key="label-business">事業内容</dt><dd>飲食店の運営（大阪居酒屋 MENLABO酒場）</dd></div>
+            <div><dt data-key="label-contact">連絡先</dt><dd>Tel: 096-147-9518　/　Email: menlabo.pattaya@gmail.com</dd></div>
+          </dl>
+        </section>
 
-      <section class="legal__sec">
-        <h2>運営店舗</h2>
-        <dl class="legal__info legal__info--wide">
-          <div><dt>店舗名</dt><dd>大阪居酒屋 MENLABO酒場</dd></div>
-          <div><dt>店舗住所</dt><dd>502/22 Soi Buakhao, Pattaya City, Bang Lamung, Chon Buri 20150</dd></div>
-          <div><dt>営業時間</dt><dd>11:00–24:00（火曜定休）</dd></div>
-        </dl>
-        <p><a href="/access">店舗情報・アクセスはこちら</a></p>
-      </section>
+        <section class="company-section reveal" aria-labelledby="store-overview-title">
+          <h2 id="store-overview-title" data-key="store-overview-heading">運営店舗</h2>
+          <dl class="store-table content-table">
+            <div><dt data-key="label-store-name-company">店舗名</dt><dd>大阪居酒屋 MENLABO酒場</dd></div>
+            <div><dt data-key="label-store-address-company">店舗住所</dt><dd>502/22 Soi Buakhao, Pattaya City, Bang Lamung, Chon Buri 20150</dd></div>
+            <div><dt data-key="label-store-hours-company">営業時間</dt><dd>11:00–24:00（火曜定休）</dd></div>
+          </dl>
+          <p class="company-section__link"><a href="/access" data-key="access-link">店舗情報・アクセスはこちら</a></p>
+        </section>
 
-      <p class="legal__date">2026年8月現在</p>
+        <p class="content-page__date reveal">2026年8月現在</p>
+        <a class="line-link content-page__home reveal" href="/" data-key="back-home">入口へもどる</a>
+      </div>
+    </section>
+  </main>
 
-      <a class="more-link" href="/">入口へもどる</a>
 
+  <footer class="site-footer">
+    <div class="footer-heading">
+      <img src="assets/images/menlabo-logo-mark-kana-red.svg" alt="MENLABO酒場" width="108" height="108" loading="lazy">
+      <h2 data-key="store-info-heading">店舗情報</h2>
     </div>
-  </section>
-</main>
 
-<!-- ============ 奥付 ============ -->
-<footer class="colophon">
-  <img class="colophon__seal" src="assets/images/menlabo-logo-mark-kana-red.svg" alt="MENLABO酒場のロゴ" width="64" height="64">
-  <nav class="colophon__nav">
-    <a href="/">入口</a>
-    <a href="/menu">品書き</a>
+    <dl class="store-table">
+      <div><dt data-key="label-store">店名</dt><dd data-key="store-name">大阪居酒屋 MENLABO酒場</dd></div>
+      <div><dt data-key="label-address">住所</dt><dd data-key="store-address">502/22 Soi Buakhao, Pattaya City, Bang Lamung, Chon Buri 20150</dd></div>
+      <div><dt data-key="label-landmark">行き方</dt><dd data-key="store-landmark">ツリータウン内・提灯が目印の、黒い建物</dd></div>
+      <div><dt data-key="label-hours">営業時間</dt><dd><span data-key="hours-lunch">昼 11:00–15:00（定食・ラーメン）</span><span data-key="hours-night">夜 15:00–24:00（全メニュー）</span></dd></div>
+      <div><dt data-key="label-last-entry">最終入店・ラストオーダー</dt><dd data-key="last-entry-pending">23:40</dd></div>
+      <div><dt data-key="label-closed">定休日</dt><dd data-key="closed-day">火曜日</dd></div>
+      <div><dt data-key="label-payment">支払い方法</dt><dd data-key="payment-methods">現金・PromptPay（QR）・クレジットカード（VISA／Master／Alipay／銀聯（UnionPay）／JCB）</dd></div>
+      <div><dt data-key="label-parking">駐車場</dt><dd data-key="parking-value">あり（1時間 ฿30）</dd></div>
+    </dl>
+
+    <div class="footer-contact">
+      <p data-key="phone-guidance">ホームページを見たとお伝えください</p>
+      <a href="tel:+66961479518" data-action="phone"><span data-key="phone-number" data-value="phone">+66 96-147-9518</span></a>
+    </div>
+
+    <nav class="social-links" aria-label="SNS">
+      <a href="https://www.instagram.com/menlabo.pattaya/" data-action="instagram" target="_blank" rel="noopener noreferrer" data-key="social-instagram">Instagram</a>
+      <a href="https://www.facebook.com/menlabo.pattaya" data-action="facebook" target="_blank" rel="noopener noreferrer" data-key="social-facebook">Facebook</a>
+      <a href="https://x.com/menlabo_sakaba" data-action="x" target="_blank" rel="noopener noreferrer" data-key="social-x">X</a>
+    </nav>
+
+    <nav class="language-links" aria-label="言語切替">
+      <a href="/company" lang="ja" data-lang="ja" aria-current="page" aria-label="日本語" data-key="lang-ja">日本語</a>
+      <a href="/th/company" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">ไทย</a>
+      <a href="/en/company" lang="en" data-lang="en" aria-label="English" data-key="lang-en">English</a>
+      <a href="/zh" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简体中文</a>
+    </nav>
+
+    <nav class="legal-links" aria-label="運営情報">
+      <a href="/access" data-key="nav-access">アクセス</a>
+      <a href="/company" data-key="link-company">運営会社</a>
+      <a href="/privacy" data-key="link-privacy">プライバシーポリシー</a>
+    </nav>
+
+    <p class="copyright" data-key="copyright">© MENLABO酒場</p>
+  </footer>
+
+
+  <nav class="mobile-actions" aria-label="連絡先">
+    <a href="tel:+66961479518" data-action="phone" data-key="action-phone">電話</a>
+    <a href="https://lin.ee/7GQmsKU" data-action="line" data-key="action-line">LINE</a>
+    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">地図</a>
   </nav>
-  <div class="lang-switch" aria-label="Language">
-    <a href="/company" aria-current="page">JP</a>
-    <span class="lang-switch__sep" aria-hidden="true">/</span>
-    <a href="/en/company">EN</a>
-    <span class="lang-switch__sep" aria-hidden="true">/</span>
-    <a href="/th/company">TH</a>
-    <span class="lang-switch__sep" aria-hidden="true">/</span>
-    <a href="/zh" hreflang="zh-Hans" lang="zh-Hans">简体中文</a>
-  </div>
-  <p class="colophon__text">大阪居酒屋 MENLABO酒場<span class="pc-only"> — </span><br class="br-sp">タイ・パタヤ</p>
-  <p class="colophon__copy">© 2026 MENLABO<br class="br-sp">（OMOTENASHI CO., LTD.）</p>
-  <p class="colophon__legal"><a href="/company" aria-current="page">会社概要</a> ・ <a href="/privacy">プライバシーポリシー</a></p>
-</footer>
 
-<script src="assets/js/ink.js" defer></script>
-<script src="assets/js/main.js" defer></script>
 </body>
 </html>
