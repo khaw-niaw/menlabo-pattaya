@@ -2421,38 +2421,44 @@ html:not([lang="ja"]) h2 span {
   font-size: clamp(23px, 6vw, 34px);
 }
 
-/* 2026-11-12 ちえと相談：白い段が単調なので、無地の和紙の質感をうっすら入れる（柄・金・グラデーションは使わない）。
-   画像はサイト用に自作した継ぎ目のない紙の繊維（washi-a＝ほぼ見えない／washi-b＝うっすら分かる）。どちらにするか決まるまで、
-   プレビューでは URL の末尾に ?washi=b を付けると濃い方に切り替わる（main.js）。決まったら使わない方と切り替えを消す */
+/* 2026-11-12 ちえと決定：白い段に無地の和紙の質感を入れる（全ページ共通。柄・金・グラデーションは使わない）。
+   画像はサイト用に自作した継ぎ目のない紙の繊維。2段階を見比べ、ちえとが「濃い方」に決定（薄い方は意識しないと分からないため） */
 body,
 .paper-section,
 .site-header--paper {
   background-color: var(--paper);
-  background-image: url("../images/washi-a.png");
+  background-image: url("../images/washi-b.png");
   background-size: 512px 512px;
 }
 
-html[data-washi="b"] body,
-html[data-washi="b"] .paper-section,
-html[data-washi="b"] .site-header--paper {
-  background-image: url("../images/washi-b.png");
+/* 2026-11-12 ちえと指示：串かつ屋の線画は段を設けず、「三つのこだわり」の写真と説明の後ろに薄く溶け込ませる。
+   トップの線画と同じ作者の Adobe Stock 588224984（通常ライセンス）。英字タイトルを切り落とし、ロゴの赤一色・背景透明に塗り直したもの */
+.about-craft {
+  overflow: hidden;
 }
 
-/* 2026-11-12 ちえと指示：MENLABOについての「三つのこだわり」の下に、トップの大阪の線画と同じ作者の串かつ屋の線画を置く。
-   Adobe Stock 588224984（通常ライセンス）。右上の英字タイトルを切り落とし、ロゴの赤 #b3180e 一色・背景透明に塗り直したので、和紙の地がそのまま透ける */
-.about-craft__illustration {
-  max-width: 720px;
-  margin: 72px auto 0;
+.about-craft > * {
+  position: relative;
+  z-index: 1;
 }
 
-.about-craft__illustration img {
-  display: block;
-  width: 100%;
-  height: auto;
+.about-craft::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  right: -4%;
+  bottom: 40px;
+  width: min(92vw, 760px);
+  aspect-ratio: 1584 / 1240;
+  background: url("../images/kushikatsu-red-800.webp") center / contain no-repeat;
+  opacity: 0.16;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(180deg, #000 80%, transparent);
+  mask-image: linear-gradient(180deg, #000 80%, transparent);
 }
 
-/* 串かつ屋の地面の色が下端でぷつっと切れるので、下の1割をぼかして紙になじませる */
-.about-craft__illustration img {
-  -webkit-mask-image: linear-gradient(180deg, #000 88%, transparent);
-  mask-image: linear-gradient(180deg, #000 88%, transparent);
+@media (min-width: 992px) {
+  .about-craft::before {
+    background-image: url("../images/kushikatsu-red.webp");
+  }
 }
