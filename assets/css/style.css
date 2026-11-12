@@ -2362,3 +2362,61 @@ html:not([lang="ja"]) h2 span {
     display: none;
   }
 }
+
+/* 2026-11-12 ちえと指示：トップの料理写真が大きいので、PCでは4品を横一列に。メニューページの写真カード（4列・間隔24px）とそろえる。スマホ・タブレットは2×2のまま */
+@media (min-width: 992px) {
+  .food-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 56px 24px;
+  }
+
+  .dish figcaption {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+/* 2026-11-12 全体見直し（ちえと依頼「写真のバランス含めて全体を見直し」）
+   1) 段落の見出し（h2）は全ページ同じ大きさにする。これまでトップ・アクセスの一部は64px、MENLABOについて・アクセスの残りは56pxで混在していた。
+      中のページの大見出し（h1）が64pxなので、段落の見出しは一段小さい56pxにそろえて上下関係をはっきりさせる。トップの導入（48px）もここに合わせる */
+.intro h2,
+.section-title h2,
+.story h2,
+.seats h2,
+.access-reading h2,
+.driver-section h2,
+.about-craft__heading,
+.about-story h2,
+.about-seats h2,
+.about-amenities h2 {
+  font-size: clamp(34px, 9vw, 56px);
+}
+
+@media (min-width: 992px) {
+  .intro h2,
+  .section-title h2 {
+    font-size: 56px;
+  }
+
+  /* 2) 昼・夜の写真は料理写真（4列）に比べて大きすぎたので高さを抑える（560px → 440px） */
+  .time-panel img {
+    height: 440px;
+  }
+}
+
+/* 3) 昼・夜の下のひとことは、左右の写真の真下に中途半端な位置で浮いていたので中央にそろえる */
+.day-night__note {
+  text-align: center;
+}
+
+/* 4) 席の説明：2列のとき「6席」と隣の「テーブル」がくっついて「6席テーブル」と読めたので、列の間を空ける */
+@media (min-width: 768px) {
+  .seats__details {
+    column-gap: 56px;
+  }
+}
+
+/* 5) 小見出し（h3）も、トップ・MENLABOについてと同じ34pxにそろえる（アクセスの交通手段だけ30pxだった） */
+.access-route__list h3 {
+  font-size: clamp(23px, 6vw, 34px);
+}
