@@ -1498,8 +1498,7 @@ html[lang="ja"] .intro h2 {
 }
 
 @media (min-width: 992px) {
-  .menu-hero,
-  .access-hero {
+  .menu-hero {
     min-height: 720px;
   }
 
@@ -1544,6 +1543,12 @@ html[lang="ja"] .intro h2 {
   background-position: center;
   background-size: cover;
   isolation: isolate;
+}
+
+@media (min-width: 992px) {
+  .access-hero {
+    min-height: 720px;
+  }
 }
 
 .access-hero__shade,
