@@ -2355,3 +2355,10 @@ html:not([lang="ja"]) h2 span {
     padding-top: 377px;
   }
 }
+
+/* 2026-11-12 ちえと指摘：スマホ・タブレットでは画面下の固定ボタン（電話・LINE・地図）と重なり、地図への導線も二重になるので、写真右下の地図リンクはPCだけ出す */
+@media (max-width: 991px) {
+  .hero__map {
+    display: none;
+  }
+}
