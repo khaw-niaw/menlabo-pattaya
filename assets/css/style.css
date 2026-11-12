@@ -2327,6 +2327,7 @@ html:not([lang="ja"]) h2 span {
   .site-logo--named {
     flex: none;
     width: 250px;
+    margin-right: 0;
     justify-content: flex-start;
   }
 
