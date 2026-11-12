@@ -302,7 +302,7 @@ p {
   position: absolute;
   top: clamp(150px, 23svh, 210px);
   right: clamp(26px, 10vw, 54px);
-  font-size: clamp(21px, 6vw, 30px);
+  font-size: clamp(24px, 8vw, 34px);
   font-weight: 500;
   line-height: 2;
   letter-spacing: 0.14em;
@@ -327,6 +327,29 @@ html[lang="ja"] .hero__message {
   margin-bottom: 4px;
   font-size: 0.62em;
   letter-spacing: 0.14em;
+}
+
+/* 2026-11-12 ちえと決定：写真の左下の店名は文字ではなくクリーム色の横長ロゴを使う。店名は読み上げ・検索用に見えない文字で残す */
+.hero__logo {
+  display: block;
+  width: min(84vw, 360px);
+  height: auto;
+  filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.55));
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (min-width: 992px) {
+  .hero__logo {
+    width: clamp(420px, 36vw, 600px);
+  }
 }
 
 .hero__map {
@@ -869,7 +892,7 @@ html[lang="ja"] .intro h2 {
   .hero__message {
     top: 28svh;
     right: 12vw;
-    font-size: clamp(25px, 4vw, 36px);
+    font-size: clamp(32px, 3.4vw, 48px);
   }
 
   .hero__identity {
