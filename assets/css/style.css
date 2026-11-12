@@ -156,15 +156,22 @@ p {
   text-decoration: none;
 }
 
-.site-logo--named img {
-  width: 56px;
+.site-logo--named {
+  min-width: 0;
+  margin-right: 12px;
 }
 
+.site-logo--named img {
+  flex: none;
+  width: 48px;
+}
+
+/* スマホは右のメニューボタンと重ならないよう、英語・タイ語の「MENLABO Sakaba」は空白で2行に折る */
 .site-logo__name {
+  max-width: 8em;
   font-size: 16px;
   font-weight: 500;
-  letter-spacing: 0.08em;
-  white-space: nowrap;
+  line-height: 1.25;
 }
 
 @media (min-width: 992px) {
@@ -173,7 +180,10 @@ p {
   }
 
   .site-logo__name {
+    max-width: none;
     font-size: 17px;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
   }
 }
 
