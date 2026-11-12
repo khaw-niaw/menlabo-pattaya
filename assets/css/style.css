@@ -975,13 +975,14 @@ html[lang="ja"] .intro h2 {
     align-items: start;
   }
 
+  /* 2026-11-12 ちえと指摘「広すぎる」：1/8 と 7/13 で列が重なり、夜の写真が下の段に回って大きな空白ができていた。左右に並べ、夜を少し下げる */
   .time-panel--lunch {
-    grid-column: 1 / 8;
+    grid-column: 1 / 7;
   }
 
   .time-panel--night {
     grid-column: 7 / 13;
-    margin-top: 180px;
+    margin-top: 120px;
   }
 
   .time-panel img {
@@ -1006,8 +1007,10 @@ html[lang="ja"] .intro h2 {
     min-height: 480px;
   }
 
+  /* 2026-11-12 ちえと指示：見出しと中身が近すぎた。「最終入店・ラストオーダー」が1行に収まる幅と間隔にする */
   .store-table > div {
-    grid-template-columns: 11em minmax(0, 1fr);
+    grid-template-columns: 15em minmax(0, 1fr);
+    gap: 40px;
   }
 
   .mobile-actions {
