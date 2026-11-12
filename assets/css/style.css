@@ -2304,3 +2304,15 @@ html:not([lang="ja"]) h2 span {
     display: block;
   }
 }
+
+/* 2026-11-12 ちえと決定：「大阪の味が集う場所」の段に、大阪の街の線画（Adobe Stock 509411457・通常ライセンス）をロゴの赤と紙色に塗り直して置く。飾りなので読み上げない（alt空） */
+.intro__illustration {
+  grid-column: 1 / -1;
+  margin: 24px 0 0;
+}
+
+.intro__illustration img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
