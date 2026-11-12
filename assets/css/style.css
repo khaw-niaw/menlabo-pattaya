@@ -148,6 +148,35 @@ p {
   height: auto;
 }
 
+/* 2026-11-12 ちえと決定：中のページだけ、丸いマークの横に店名を添える */
+.site-logo--named {
+  width: auto;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-logo--named img {
+  width: 56px;
+}
+
+.site-logo__name {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+@media (min-width: 992px) {
+  .site-logo--named img {
+    width: 66px;
+  }
+
+  .site-logo__name {
+    font-size: 17px;
+  }
+}
+
 .desktop-nav,
 .desktop-actions,
 .header-language-links {
