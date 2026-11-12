@@ -2,6 +2,13 @@
 
 document.documentElement.classList.add("js");
 
+// 2026-11-12 和紙の濃さの見比べ用（一時的）。?washi=b で濃い方、?washi=a で薄い方。ページを移っても保つ。決まったら消す
+try {
+  const washi = new URLSearchParams(location.search).get("washi");
+  if (washi) sessionStorage.setItem("washi", washi);
+  if (sessionStorage.getItem("washi") === "b") document.documentElement.dataset.washi = "b";
+} catch (error) {}
+
 // data/shop.json から build.py が生成する。LINE_URL は公式URL確認後にデータ側で設定する。
 const PHONE_URL = "tel:+66961479518";
 const PHONE_DISPLAY = "+66 96-147-9518";
