@@ -2320,3 +2320,18 @@ html:not([lang="ja"]) h2 span {
   width: 100%;
   height: auto;
 }
+
+/* 2026-11-12 ちえと決定（案1）：PCではロゴの場所を全ページ同じ幅にし、トップ（マークだけ）と中のページ（マーク＋店名）でメニューの位置が動かないようにする */
+@media (min-width: 992px) {
+  .site-logo,
+  .site-logo--named {
+    flex: none;
+    width: 250px;
+    justify-content: flex-start;
+  }
+
+  .site-logo img,
+  .site-logo--named img {
+    width: 66px;
+  }
+}
