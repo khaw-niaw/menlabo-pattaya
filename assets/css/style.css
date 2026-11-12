@@ -2462,3 +2462,67 @@ body,
     background-image: url("../images/kushikatsu-red.webp");
   }
 }
+
+/* 2026-11-12 ちえと指摘「行間が近すぎる・見出しのバランスが美しくない」（英語）。
+   日本語向けの字間（0.08〜0.14em）は欧文では単語がばらけて見えるので詰め、見出しは自然に折り返して行の長さをそろえる */
+html[lang="en"] h1,
+html[lang="en"] h2,
+html[lang="en"] h3,
+html[lang="th"] h1,
+html[lang="th"] h2,
+html[lang="th"] h3 {
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+html[lang="en"] .hero__message,
+html[lang="th"] .hero__message {
+  left: var(--gutter);
+  max-width: 8.5em;
+  margin-left: auto;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  text-align: right;
+  text-wrap: balance;
+}
+
+/* 英語の導入見出しは横書きなので、縦書き用の細い左列に押し込まず、スマホ・タブレットでは見出しの下に本文を置く。
+   PCでは左右2列のまま、左列を広げて「Osaka flavors / in one place」の2行に収める */
+html:not([lang="ja"]) .intro__heading {
+  justify-content: flex-start;
+}
+
+@media (max-width: 991px) {
+  html:not([lang="ja"]) .intro {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+    gap: 28px;
+  }
+}
+
+@media (min-width: 992px) {
+  html:not([lang="ja"]) .intro {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1fr);
+  }
+}
+
+/* タイ語の見出し：文言表の空白の位置で改行し（日本語と同じ約束）、「โอซาก้า」は語の途中で折らない */
+html[lang="th"] .hero__message > span {
+  display: block;
+}
+
+h1 .nb,
+h2 .nb,
+.hero__message .nb {
+  display: inline;
+  white-space: nowrap;
+}
+
+/* タイ語は文字の上下に声調記号・母音記号が付くので、英語（1.3）より行間を広く取る */
+html[lang="th"] h1,
+html[lang="th"] h2,
+html[lang="th"] h3,
+html[lang="th"] .hero__message {
+  line-height: 1.55;
+}
