@@ -2336,3 +2336,21 @@ html:not([lang="ja"]) h2 span {
     width: 66px;
   }
 }
+
+/* 2026-11-12 ちえと指示：MENLABOについて・メニュー・アクセスのヒーローで、見出しと本文の位置をそろえる。
+   ボタン（CTA）のあるアクセスに合わせ、どのページも見出しを上から同じ位置に置く（下からではなく上から測るので、本文やボタンの量で動かない） */
+.menu-hero__content,
+.access-hero__content,
+.about-hero__content {
+  align-self: start;
+  padding-top: 240px;
+  padding-bottom: 48px;
+}
+
+@media (min-width: 992px) {
+  .menu-hero__content,
+  .access-hero__content,
+  .about-hero__content {
+    padding-top: 377px;
+  }
+}
