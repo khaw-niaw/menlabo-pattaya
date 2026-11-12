@@ -1498,7 +1498,8 @@ html[lang="ja"] .intro h2 {
 }
 
 @media (min-width: 992px) {
-  .menu-hero {
+  .menu-hero,
+  .access-hero {
     min-height: 720px;
   }
 
@@ -1531,10 +1532,11 @@ html[lang="ja"] .intro h2 {
 }
 
 /* アクセスページ */
+/* 2026-11-12 ちえと指示：トップ以外のヒーロー（アクセス・MENLABOについて）は縦に長すぎたので、メニューページと同じ高さにそろえる */
 .access-hero {
   position: relative;
   display: grid;
-  min-height: calc(100svh - var(--mobile-bar-height));
+  min-height: clamp(600px, 82svh, 760px);
   overflow: hidden;
   color: var(--paper);
   background-color: var(--panel);
@@ -1750,9 +1752,6 @@ html[lang="ja"] .intro h2 {
 }
 
 @media (min-width: 768px) {
-  .access-hero {
-    min-height: 100svh;
-  }
 
   .access-gallery {
     gap: 64px 28px;
