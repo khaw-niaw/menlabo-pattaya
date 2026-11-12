@@ -2294,3 +2294,10 @@ html:not([lang="ja"]) h1 span,
 html:not([lang="ja"]) h2 span {
   white-space: normal;
 }
+
+/* 2026-11-12 ちえと指示：PCでは「大阪で親しまれてきた味を、ここパタヤでも気軽に。」と「酒と料理を囲む、肩ひじ張らない時間を届けます。」を1文ずつ改行する（スマホは折り返しのまま） */
+@media (min-width: 992px) {
+  html[lang="ja"] .sentence {
+    display: block;
+  }
+}
