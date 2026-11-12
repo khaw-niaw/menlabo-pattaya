@@ -161,6 +161,11 @@ p {
   margin-right: 12px;
 }
 
+/* 店名を足してもメニューボタンは縮めない（「メニュー」が2行に折れたため） */
+.site-logo--named ~ .menu-button {
+  flex: none;
+}
+
 .site-logo--named img {
   flex: none;
   width: 48px;
