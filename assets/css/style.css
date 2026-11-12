@@ -2343,7 +2343,8 @@ html:not([lang="ja"]) h2 span {
 .access-hero__content,
 .about-hero__content {
   align-self: start;
-  padding-top: 240px;
+  /* 小さいスマホでもアクセスのボタンが画面下の固定ボタンに隠れないよう、画面の高さに合わせて少し上げる */
+  padding-top: clamp(150px, 29svh, 240px);
   padding-bottom: 48px;
 }
 
