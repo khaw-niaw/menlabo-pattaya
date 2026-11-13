@@ -2700,7 +2700,6 @@ html[lang="th"] .hero__message {
   position: relative;
 }
 
-.intro::before,
 .site-footer::before {
   position: absolute;
   top: 0;
@@ -2713,9 +2712,37 @@ html[lang="th"] .hero__message {
 }
 
 @media (max-width: 575px) {
-  .intro::before,
   .site-footer::before {
     height: 16px;
     background-size: 16px 16px;
+  }
+}
+
+/* 2026-11-13 ちえと指示：最初の写真の下は雷紋だとラーメン屋に見えるので、ロゴののれんの裾にする。
+   3枚1組（外側は斜めの裾、真ん中はV字、切れ目は下ほど広い）をくり返し、写真の下に垂れ下がるように見せる */
+:root {
+  --noren-ink: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='36' viewBox='0 0 240 36'%3E%3Cg fill='%23171817'%3E%3Cpath d='M0 0H78L74 30L0 36Z'/%3E%3Cpath d='M82 0H158L154 26L120 36L86 26Z'/%3E%3Cpath d='M162 0H240V36L166 30Z'/%3E%3C/g%3E%3C/svg%3E");
+  --noren-red: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='36' viewBox='0 0 240 36'%3E%3Cg fill='%23b3180e'%3E%3Cpath d='M0 0H78L74 30L0 36Z'/%3E%3Cpath d='M82 0H158L154 26L120 36L86 26Z'/%3E%3Cpath d='M162 0H240V36L166 30Z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.intro::before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 36px;
+  background: var(--noren-ink) repeat-x center top / 240px 36px;
+  content: "";
+  pointer-events: none;
+}
+
+html[data-noren="red"] .intro::before {
+  background-image: var(--noren-red);
+}
+
+@media (max-width: 575px) {
+  .intro::before {
+    height: 24px;
+    background-size: 160px 24px;
   }
 }
