@@ -2638,8 +2638,8 @@ html[lang="th"] .hero__message {
   }
 }
 
-/* 2026-11-13 992〜1199pxは5項目だと英語・タイ語が横にはみ出したので、メニューの間隔と字間を詰める（文字は16pxのまま） */
-@media (min-width: 992px) and (max-width: 1199px) {
+/* 2026-11-13 992〜1279pxは5項目だと英語・タイ語がはみ出し、1200px台は日本語が電話ボタンに接したので、メニューの間隔と字間を詰める（文字は16pxのまま） */
+@media (min-width: 992px) and (max-width: 1279px) {
   .desktop-nav {
     gap: 6px;
   }
@@ -2652,4 +2652,21 @@ html[lang="th"] .hero__message {
   .day-night .time-panel img {
     height: 260px;
   }
+}
+
+/* ===== 2026-11-13 ナポリ基準の採点・改善5〜7（ちえと指示） ===== */
+/* 改善6：PCヘッダーの操作ボタンを「電話・LINE・地図」の3つに。ヘッダーの幅を増やさないよう、ボタンは1つ56px、言語の切り替えは1つ34pxに詰める（高さ44pxは保つ） */
+@media (min-width: 992px) {
+  .desktop-actions { grid-template-columns: repeat(3, 56px); }
+  .header-language-links a { min-width: 34px; }
+}
+/* 改善5：入口カードの文字が写真の看板や皿に重なって読めないため、文字の後ろに暗い帯を敷く */
+.gateway span {
+  padding: 0.18em 0.7em;
+  background: rgba(23, 18, 16, 0.72);
+  line-height: 1.4;
+}
+/* 改善7：英語アクセスの交通手段（Songthaew）が768〜991pxで見出し欄からはみ出すため、見出し欄を広げる */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .access-route__list article { grid-template-columns: minmax(220px, 0.4fr) minmax(0, 1fr); }
 }
