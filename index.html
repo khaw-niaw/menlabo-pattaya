@@ -133,6 +133,7 @@
     <nav class="desktop-nav" aria-label="主要メニュー">
       <a href="/about" data-key="nav-about">MENLABOについて</a>
       <a href="/menu" data-key="nav-menu">メニュー</a>
+      <a href="/recommended" data-key="nav-recommended">おすすめ</a>
       <a href="/access" data-key="nav-access">アクセス</a>
       <a href="/news" data-key="nav-news">お知らせ</a>
     </nav>
@@ -159,6 +160,7 @@
     <nav aria-label="スマートフォン用メニュー">
       <a href="/about" data-key="nav-about">MENLABOについて</a>
       <a href="/menu" data-key="nav-menu">メニュー</a>
+      <a href="/recommended" data-key="nav-recommended">おすすめ</a>
       <a href="/access" data-key="nav-access">アクセス</a>
       <a href="/news" data-key="nav-news">お知らせ</a>
     </nav>
@@ -241,18 +243,19 @@
       </div>
 
       <div class="day-night__visual reveal">
-        <figure class="time-panel time-panel--lunch">
-          <img src="assets/images/lunch.jpg" alt="昼に提供する定食" width="1500" height="1000" loading="lazy">
-          <figcaption>
-            <h3 data-key="lunch-heading">昼は定食とラーメン</h3>
-            <p data-key="lunch-time">11:00–15:00</p>
-          </figcaption>
-        </figure>
+        <!-- 2026-11-13 ちえと指示（採点の改善2）：軸は大阪居酒屋なので夜の酒場を先（左・上）に -->
         <figure class="time-panel time-panel--night">
           <img src="assets/images/sake.jpg" alt="夜のカウンターに並ぶハイボール" width="1500" height="1000" loading="lazy">
           <figcaption>
             <h3 data-key="night-heading">夜は居酒屋の全メニュー</h3>
             <p data-key="night-time">15:00–24:00</p>
+          </figcaption>
+        </figure>
+        <figure class="time-panel time-panel--lunch">
+          <img src="assets/images/lunch.jpg" alt="昼に提供する定食" width="1500" height="1000" loading="lazy">
+          <figcaption>
+            <h3 data-key="lunch-heading">昼は定食とラーメン</h3>
+            <p data-key="lunch-time">11:00–15:00</p>
           </figcaption>
         </figure>
       </div>
@@ -290,6 +293,10 @@
 
       <a class="gateway gateway--menu reveal" href="/menu">
         <span data-key="gateway-menu">メニュー</span>
+      </a>
+
+      <a class="gateway gateway--recommended reveal" href="/recommended">
+        <span data-key="gateway-recommended">おすすめ</span>
       </a>
 
     </section>

@@ -749,6 +749,10 @@ html[lang="ja"] .intro h2 {
   background-image: url("../images/rare-bara-chashu-moriawase.jpg");
 }
 
+.gateway--recommended {
+  background-image: url("../images/rare-chashu.jpg");
+}
+
 .gateway span {
   white-space: nowrap;
 }
@@ -919,8 +923,18 @@ html[lang="ja"] .intro h2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  /* 2026-11-13 入口カードが3枚のときは横3列（採点の改善1） */
+  .gateways:has(.gateway--recommended) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
   .gateway {
     min-height: 42vw;
+  }
+
+  .gateways:has(.gateway--recommended) .gateway {
+    min-height: 30vw;
+    font-size: clamp(26px, 4.4vw, 52px);
   }
 }
 
@@ -1005,6 +1019,10 @@ html[lang="ja"] .intro h2 {
 
   .gateway {
     min-height: 480px;
+  }
+
+  .gateways:has(.gateway--recommended) .gateway {
+    min-height: 400px;
   }
 
   /* 2026-11-12 ちえと指示：見出しと中身が近すぎた。「最終入店・ラストオーダー」が1行に収まる幅と間隔にする */
@@ -2535,5 +2553,103 @@ html[lang="th"] .hero__message {
 
   .access-figure--wide img {
     aspect-ratio: 16 / 9;
+  }
+}
+
+/* 2026-11-13 ちえと指示（採点の改善2）：「昼の食堂 夜の酒場」を1画面に収める。夜を先（左・上）、PCは同じ高さで横並び、スマホは写真を低く */
+.day-night {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.day-night .section-title {
+  margin-bottom: 20px;
+}
+
+.day-night__visual {
+  gap: 16px;
+}
+
+.day-night .time-panel img {
+  height: auto;
+  aspect-ratio: 3 / 1;
+}
+
+.day-night .time-panel figcaption {
+  padding-top: 8px;
+}
+
+.day-night .time-panel h3 {
+  font-size: clamp(20px, 5.4vw, 28px);
+}
+
+.day-night .time-panel p {
+  margin-top: 0;
+}
+
+.day-night .day-night__note {
+  margin-top: 20px;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+@media (min-width: 768px) {
+  .day-night {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+
+  .day-night__visual {
+    gap: 32px;
+  }
+
+  .day-night .time-panel--night {
+    grid-column: 1 / 7;
+    grid-row: 1;
+    margin-top: 0;
+  }
+
+  .day-night .time-panel--lunch {
+    grid-column: 7 / 13;
+    grid-row: 1;
+  }
+
+  .day-night .time-panel img {
+    aspect-ratio: 3 / 2;
+  }
+}
+
+@media (min-width: 992px) {
+  .day-night .time-panel img {
+    height: 300px;
+    aspect-ratio: auto;
+  }
+}
+
+
+/* 2026-11-13 ヘッダーに「おすすめ」を足して5項目になったので、PCで項目が2行に折れないよう間隔を詰めて1行に固定（採点の改善1）。1200px未満は横にはみ出すので従来どおり折り返す */
+@media (min-width: 1200px) {
+  .desktop-nav {
+    gap: clamp(14px, 1.6vw, 44px);
+  }
+
+  .desktop-nav a {
+    white-space: nowrap;
+  }
+}
+
+/* 2026-11-13 992〜1199pxは5項目だと英語・タイ語が横にはみ出したので、メニューの間隔と字間を詰める（文字は16pxのまま） */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .desktop-nav {
+    gap: 6px;
+  }
+
+  .desktop-nav a {
+    letter-spacing: 0;
+  }
+
+  /* 横幅の狭いPCでは見出しが2行になるので、昼・夜の写真を少し低くして1画面に収める */
+  .day-night .time-panel img {
+    height: 260px;
   }
 }

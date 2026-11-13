@@ -117,6 +117,7 @@
     <nav class="desktop-nav" aria-label="Primary navigation">
       <a href="/en/about" data-key="nav-about">About MENLABO</a>
       <a href="/en/menu" data-key="nav-menu">Menu</a>
+      <a href="/en/recommended" data-key="nav-recommended">Highlights</a>
       <a href="/en/access" data-key="nav-access">Find us</a>
       <a href="/en/news" data-key="nav-news">News</a>
     </nav>
@@ -143,6 +144,7 @@
     <nav aria-label="Mobile menu">
       <a href="/en/about" data-key="nav-about">About MENLABO</a>
       <a href="/en/menu" data-key="nav-menu">Menu</a>
+      <a href="/en/recommended" data-key="nav-recommended">Highlights</a>
       <a href="/en/access" data-key="nav-access">Find us</a>
       <a href="/en/news" data-key="nav-news">News</a>
     </nav>
@@ -225,18 +227,19 @@
       </div>
 
       <div class="day-night__visual reveal">
-        <figure class="time-panel time-panel--lunch">
-          <img src="../assets/images/lunch.jpg" alt="Lunch set meal served at MENLABO" width="1500" height="1000" loading="lazy">
-          <figcaption>
-            <h3 data-key="lunch-heading">Set meals and ramen for lunch</h3>
-            <p data-key="lunch-time">11:00–15:00</p>
-          </figcaption>
-        </figure>
+        <!-- 2026-11-13 ちえと指示（採点の改善2）：軸は大阪居酒屋なので夜の酒場を先（左・上）に -->
         <figure class="time-panel time-panel--night">
           <img src="../assets/images/sake.jpg" alt="Highballs lined up on the evening counter" width="1500" height="1000" loading="lazy">
           <figcaption>
             <h3 data-key="night-heading">The full menu from 3pm</h3>
             <p data-key="night-time">15:00–24:00</p>
+          </figcaption>
+        </figure>
+        <figure class="time-panel time-panel--lunch">
+          <img src="../assets/images/lunch.jpg" alt="Lunch set meal served at MENLABO" width="1500" height="1000" loading="lazy">
+          <figcaption>
+            <h3 data-key="lunch-heading">Set meals and ramen for lunch</h3>
+            <p data-key="lunch-time">11:00–15:00</p>
           </figcaption>
         </figure>
       </div>
@@ -274,6 +277,10 @@
 
       <a class="gateway gateway--menu reveal" href="/en/menu">
         <span data-key="gateway-menu">Menu</span>
+      </a>
+
+      <a class="gateway gateway--recommended reveal" href="/en/recommended">
+        <span data-key="gateway-recommended">Highlights</span>
       </a>
 
     </section>
