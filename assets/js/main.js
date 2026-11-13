@@ -221,6 +221,3 @@ if (analyticsMenuPage) {
 if (analyticsMenuPage === "recommended") {
   sendAnalyticsEvent("recommended_view", { language: analyticsLanguage });
 }
-
-// 2026-11-13 一時的な見比べ用：URLの末尾に ?noren=red で、写真の下ののれんを赤にする（決まったらこの行と CSS の html[data-noren="red"] を消す）
-if (new URLSearchParams(location.search).get("noren") === "red") document.documentElement.dataset.noren = "red";

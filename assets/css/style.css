@@ -2689,13 +2689,12 @@ html[lang="th"] .hero__message {
   white-space: nowrap;
 }
 
-/* 2026-11-13 ちえと指示（装飾の引き出し 1）：店の器（鳳凰の八角皿）の縁にある雷紋を、赤1色の細い帯にして
-   「最初の写真のすぐ下」と「フッターの上」の2か所だけに入れる。画像ファイルは使わずSVGをCSSに埋め込む（波模様の試作は細い線が柵のように見えたのでやめた） */
+/* 2026-11-13 ちえと指示（装飾の引き出し 1）：店の器（鳳凰の八角皿）の縁にある雷紋を、フッターの上だけに細い帯で入れる。
+   赤は強すぎたので、濃い背景に紙の色をうっすら重ねる程度（不透明度16%）。写真の下の帯（波模様・雷紋・のれん）は試したがやめた。画像ファイルは使わずSVGをCSSに埋め込む（波模様の試作は細い線が柵のように見えたのでやめた） */
 :root {
-  --raimon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath d='M2 19V2H18V15H6V6H14V11H10' fill='none' stroke='%23b3180e' stroke-width='2.2' stroke-linecap='square'/%3E%3C/svg%3E");
+  --raimon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath d='M2 19V2H18V15H6V6H14V11H10' fill='none' stroke='%23f7f8f6' stroke-opacity='0.16' stroke-width='2.2' stroke-linecap='square'/%3E%3C/svg%3E");
 }
 
-.intro,
 .site-footer {
   position: relative;
 }
@@ -2715,34 +2714,5 @@ html[lang="th"] .hero__message {
   .site-footer::before {
     height: 16px;
     background-size: 16px 16px;
-  }
-}
-
-/* 2026-11-13 ちえと指示：最初の写真の下は雷紋だとラーメン屋に見えるので、ロゴののれんの裾にする。
-   3枚1組（外側は斜めの裾、真ん中はV字、切れ目は下ほど広い）をくり返し、写真の下に垂れ下がるように見せる */
-:root {
-  --noren-ink: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='36' viewBox='0 0 240 36'%3E%3Cg fill='%23171817'%3E%3Cpath d='M0 0H78L74 30L0 36Z'/%3E%3Cpath d='M82 0H158L154 26L120 36L86 26Z'/%3E%3Cpath d='M162 0H240V36L166 30Z'/%3E%3C/g%3E%3C/svg%3E");
-  --noren-red: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='36' viewBox='0 0 240 36'%3E%3Cg fill='%23b3180e'%3E%3Cpath d='M0 0H78L74 30L0 36Z'/%3E%3Cpath d='M82 0H158L154 26L120 36L86 26Z'/%3E%3Cpath d='M162 0H240V36L166 30Z'/%3E%3C/g%3E%3C/svg%3E");
-}
-
-.intro::before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 36px;
-  background: var(--noren-ink) repeat-x center top / 240px 36px;
-  content: "";
-  pointer-events: none;
-}
-
-html[data-noren="red"] .intro::before {
-  background-image: var(--noren-red);
-}
-
-@media (max-width: 575px) {
-  .intro::before {
-    height: 24px;
-    background-size: 160px 24px;
   }
 }
