@@ -2670,3 +2670,21 @@ html[lang="th"] .hero__message {
 @media (min-width: 768px) and (max-width: 991.98px) {
   .access-route__list article { grid-template-columns: minmax(220px, 0.4fr) minmax(0, 1fr); }
 }
+
+/* 2026-11-13 ちえと指示：スマホのメニューボタンは三本線のマークだけにする（メニューページを開いたときにも「メニュー」と出て紛らわしいため）。
+   文字は画面には出さず、読み上げ用に残す */
+.menu-button {
+  justify-content: center;
+  gap: 0;
+  min-width: 56px;
+  padding: 0 13px;
+}
+
+.menu-button__label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
