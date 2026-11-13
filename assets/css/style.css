@@ -331,7 +331,7 @@ p {
   overflow: hidden;
   color: var(--paper);
   background-color: var(--panel);
-  background-image: url("../images/access-vibe.jpg");
+  background-image: url("../images/noren.jpg");
   background-position: 55% center;
   background-size: cover;
   isolation: isolate;
@@ -1791,7 +1791,7 @@ html[lang="ja"] .intro h2 {
 
 /* MENLABOについて */
 .about-hero {
-  background-image: url("../images/access-vibe.jpg");
+  background-image: url("../images/noren.jpg");
   background-position: 52% center;
 }
 
@@ -2525,4 +2525,15 @@ html[lang="th"] h2,
 html[lang="th"] h3,
 html[lang="th"] .hero__message {
   line-height: 1.55;
+}
+
+/* アクセス：店内写真は横幅いっぱい（2026-11-12 退職スタッフ写真の差し替えで3枚構成に） */
+@media (min-width: 768px) {
+  .access-figure--wide {
+    grid-column: 1 / -1;
+  }
+
+  .access-figure--wide img {
+    aspect-ratio: 16 / 9;
+  }
 }
