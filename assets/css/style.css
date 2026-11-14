@@ -2788,3 +2788,10 @@ html[lang="th"] .hero__message {
   overflow-wrap: normal;
   word-break: normal;
 }
+
+/* 2026-11-14 ちえと指示：「ご来店について」の3項目は、本文（子ども連れ・たばこ・Wi-Fi）の書き出しを上でそろえる。
+   各項目の箱が一番高い項目に合わせて伸び、見出しと本文の間が箱ごとに広がって本文の高さがずれていた */
+.about-amenities__list > div {
+  align-content: start;
+}
+
