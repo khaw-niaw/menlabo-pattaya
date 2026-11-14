@@ -2782,3 +2782,9 @@ html[lang="th"] .hero__message {
   }
 }
 
+
+/* 2026-11-14 ちえと指示：メールアドレスは押すとメールの作成画面が開くリンクにする。折り返しは「@」の後だけ（build.py の |email が <wbr> を入れる） */
+.mail-link {
+  overflow-wrap: normal;
+  word-break: normal;
+}
