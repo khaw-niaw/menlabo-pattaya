@@ -398,6 +398,20 @@ html[lang="ja"] .hero__message {
   }
 }
 
+/* 2026-11-14 ちえと指示：スマホでは導入の本文を右端まで使って折り返す（見出しはそのまま）。
+   左列は見出しの幅に合わせ、本文は行をそろえる指定（pretty）を外して右端まで詰める。左揃えで始める */
+@media (max-width: 575.98px) {
+  html[lang="ja"] .intro {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  html[lang="ja"] .intro__body p {
+    text-align: start;
+    text-wrap: wrap;
+  }
+}
+
 /* 2026-11-14 ちえと指示：スマホではトップ写真下部のロゴを中央に置く（パソコンは左下のまま） */
 @media (max-width: 767.98px) {
   .hero h1 {
