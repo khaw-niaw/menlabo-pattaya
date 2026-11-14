@@ -2768,10 +2768,6 @@ html[lang="th"] .hero__message {
     text-align: start;
     text-wrap: wrap;
   }
-
-  .line-link {
-    padding-left: 72px;
-  }
 }
 
 /* 2026-11-14 ちえと指示：お酒のページの見出しは、スマホでは「お酒と／ソフトドリンク」の2行にする（1行には収まらず「ソフ／トドリンク」と語の途中で折れていた）。
@@ -2813,3 +2809,10 @@ html[lang="th"] .hero__message {
   padding-top: 20px;
   border-top: 1px solid var(--line);
 }
+
+/* 2026-11-14 ちえと指示：枠付きボタン（メニューを見る・Googleマップで開く・電話する等）は、パソコン・スマホとも文字を枠の中央に置く。
+   右の線の分だけ右の余白（72px）が広く、文字が左に寄っていたので、左の余白も72pxにそろえる */
+.line-link {
+  padding-left: 72px;
+}
+
