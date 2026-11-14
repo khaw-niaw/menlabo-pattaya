@@ -398,6 +398,17 @@ html[lang="ja"] .hero__message {
   }
 }
 
+/* 2026-11-14 ちえと指示：スマホではトップ写真下部のロゴを中央に置く（パソコンは左下のまま） */
+@media (max-width: 767.98px) {
+  .hero h1 {
+    margin-inline: auto;
+  }
+
+  .hero__logo {
+    margin-inline: auto;
+  }
+}
+
 .hero__map {
   position: absolute;
   right: var(--gutter);
