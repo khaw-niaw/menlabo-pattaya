@@ -2795,3 +2795,21 @@ html[lang="th"] .hero__message {
   align-content: start;
 }
 
+
+/* 2026-11-14 ちえと指示：運転手さんに見せるカードは、タイ語で「Tree Town」が分かるようにシンプルに。
+   目印（タイ語・Tree Town入り）を店名のすぐ下に大きく置き、線で区切って住所を続ける */
+.driver-card__landmark {
+  margin-top: 20px;
+  padding-top: 0;
+  border-top: 0;
+  font-size: clamp(20px, 5.5vw, 30px);
+  font-weight: 600;
+  line-height: 1.7;
+  letter-spacing: 0;
+}
+
+.driver-card__landmark + .driver-card__address {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
