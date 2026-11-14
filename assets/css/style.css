@@ -2713,3 +2713,51 @@ html[lang="th"] .hero__message {
   clip-path: inset(50%);
   white-space: nowrap;
 }
+
+/* 2026-11-14 ちえと指示（スマホの見直し）。768px未満だけ。パソコンは変えない
+   1) 写真付き料理カード：商品名は左揃えで折り返し、価格は必ず名前の下の行で右端にそろえる。
+      左右に並んだカードは価格を説明欄の一番下に置き、名前の行数が違っても価格の高さをそろえる
+   2) 「大阪のほんまもんを」の本文は、行の長さをそろえる指定を外して幅いっぱいまで使って折り返す
+   3) 「MENLABOについて」などの枠付きボタンは、文字を枠の中央に置く（右の線の分だけ左右の余白を同じにする）
+   4) 昼と夜の下の一文は左揃え・幅いっぱい */
+@media (max-width: 767.98px) {
+  .dish,
+  .menu-photo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dish figcaption,
+  .menu-photo figcaption {
+    flex: 1;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 1fr;
+    gap: 2px;
+  }
+
+  .dish figcaption {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  .dish__price,
+  .menu-item__price {
+    align-self: end;
+    justify-self: end;
+  }
+
+  .story p {
+    text-wrap: wrap;
+  }
+
+  /* 4) 「ラーメンだけでなく…」の一文は中央寄せをやめ、左揃えで幅いっぱいに折り返す */
+  .day-night__note {
+    margin-left: 0;
+    text-align: start;
+    text-wrap: wrap;
+  }
+
+  .line-link {
+    padding-left: 72px;
+  }
+}
