@@ -2861,3 +2861,57 @@ html[lang="th"] .hero__message {
   line-height: 1.7;
 }
 
+
+/* 2026-11-16 ちえと指示：デリバリー（Grab・LINE MAN）。ロゴは使わず文字だけ。メニュー4ページの上部と店舗情報の表に1行ずつ。
+   画面下の固定バーとヘッダーには入れない（電話・LINE・地図で埋まっているため）。URLが空のサービスは出ない */
+.delivery-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 12px;
+  max-width: 48em;
+  margin: 0 auto 40px;
+  font-size: 16px;
+}
+
+.delivery-bar__label {
+  margin-right: 4px;
+  color: var(--muted);
+}
+
+.delivery-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0 18px;
+  border: 1px solid var(--line);
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: border-color 200ms ease, background-color 200ms ease;
+}
+
+.delivery-link:hover,
+.delivery-link:focus-visible {
+  border-color: var(--ink);
+}
+
+.delivery-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+}
+
+/* 店舗情報の表の中では枠を付けず、下線の文字リンクで1行に並べる（表の他の行と見た目をそろえる） */
+.delivery-links {
+  gap: 0 20px;
+}
+
+.delivery-links .delivery-link {
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+}

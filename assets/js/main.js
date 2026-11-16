@@ -207,6 +207,9 @@ document.addEventListener("click", (event) => {
     sendAnalyticsEvent("access_click", { area });
   } else if (href.startsWith("tel:")) {
     sendAnalyticsEvent("tel_click", { area });
+  } else if (anchor.dataset.delivery) {
+    // 2026-11-16 デリバリー（Grab・LINE MAN）へのリンク。どちらが押されたかを service で分ける
+    sendAnalyticsEvent("delivery_click", { area, service: anchor.dataset.delivery });
   }
 }, { passive: true });
 
