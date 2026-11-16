@@ -2816,3 +2816,48 @@ html[lang="th"] .hero__message {
   padding-left: 72px;
 }
 
+/* 2026-11-14 ちえと提案：「お店の場所」の段にツリータウンの空撮（夜）を置き、店の位置に赤い輪と店名の札を重ねる */
+.access-aerial {
+  max-width: var(--content-width);
+  margin: 56px auto 0;
+}
+
+.access-aerial__frame {
+  position: relative;
+}
+
+.access-aerial__frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.access-aerial__marker {
+  position: absolute;
+  width: 34px;
+  height: 34px;
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.85), 0 0 18px rgba(0, 0, 0, 0.6);
+  transform: translate(-50%, -50%);
+}
+
+.access-aerial__label {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  padding: 4px 10px;
+  color: var(--paper);
+  background: var(--accent);
+  font-size: 16px;
+  line-height: 1.4;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+.access-aerial figcaption {
+  margin-top: 14px;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
