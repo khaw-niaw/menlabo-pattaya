@@ -53,7 +53,7 @@ const mobileActions = document.querySelector(".mobile-actions");
 const desktopMedia = window.matchMedia("(min-width: 992px)");
 let closeTimer;
 
-function setMenu(open, returnFocus = false) {
+function setMenu(open, returnFocus = false, focusFirstLink = false) {
   if (!menuButton || !menuLabel || !mobileMenu) return;
 
   window.clearTimeout(closeTimer);
@@ -70,7 +70,9 @@ function setMenu(open, returnFocus = false) {
     mobileMenu.inert = false;
     window.requestAnimationFrame(() => {
       mobileMenu.classList.add("is-open");
-      mobileMenu.querySelector("a")?.focus();
+      // 2026-11-16 ちえと指摘：スマホで指で開くと、最初のリンク「MENLABOについて」に赤い枠（キーボード操作用の印）が出ていた。
+      // キーボードで開いたときだけ最初のリンクへ移る。指やマウスで開いたときは移らない
+      if (focusFirstLink) mobileMenu.querySelector("a")?.focus();
     });
     return;
   }
@@ -84,8 +86,9 @@ function setMenu(open, returnFocus = false) {
   if (returnFocus) menuButton.focus();
 }
 
-menuButton?.addEventListener("click", () => {
-  setMenu(!document.body.classList.contains("menu-open"));
+menuButton?.addEventListener("click", (event) => {
+  // event.detail が 0 ＝ Enter・スペースキーで押された（指やマウスなら 1 以上）
+  setMenu(!document.body.classList.contains("menu-open"), false, event.detail === 0);
 });
 
 mobileMenu?.querySelectorAll("a").forEach((link) => {
