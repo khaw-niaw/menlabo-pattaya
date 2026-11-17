@@ -3028,3 +3028,161 @@ html[lang="th"] .hero__message {
 .ramen-link {
   margin-top: 40px;
 }
+
+/* 2026-11-17 トップの料理写真：押すとその場で説明パネルを開く（ちえと承認） */
+.food-grid .dish {
+  position: relative;
+}
+
+.dish__open {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.dish__open:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.dish__image img {
+  transition: transform 400ms var(--ease);
+}
+
+@media (hover: hover) {
+  .food-grid .dish:hover .dish__image img {
+    transform: scale(1.04);
+  }
+}
+
+html.is-dish-open {
+  overflow: hidden;
+}
+
+.dish-dialog {
+  width: min(calc(100% - 48px), 560px);
+  max-width: none;
+  max-height: calc(100dvh - 48px);
+  padding: 0;
+  border: 0;
+  color: var(--ink);
+  background: var(--paper);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.dish-dialog::backdrop {
+  background: var(--scrim);
+}
+
+.dish-dialog[open] {
+  animation: dish-dialog-in 260ms var(--ease);
+}
+
+@keyframes dish-dialog-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: none; }
+}
+
+.dish-dialog__panel {
+  position: relative;
+}
+
+.dish-dialog__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1;
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: var(--paper);
+  background: var(--scrim);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.dish-dialog__image {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: var(--line);
+}
+
+.dish-dialog__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dish-dialog__body {
+  padding: 24px 28px 32px;
+}
+
+.dish-dialog__body h3 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+.dish-dialog__price {
+  margin: 4px 0 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.dish-dialog__body p {
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.dish-dialog__body p:not(.dish-dialog__price) {
+  margin: 16px 0 0;
+}
+
+.dish-dialog__pair {
+  padding-left: 12px;
+  border-left: 3px solid var(--accent);
+}
+
+.dish-dialog .line-link {
+  margin-top: 28px;
+}
+
+@media (max-width: 767.98px) {
+  .dish-dialog {
+    width: 100%;
+    max-height: 88dvh;
+    margin: auto 0 0;
+  }
+
+  .dish-dialog[open] {
+    animation-name: dish-sheet-in;
+  }
+
+  @keyframes dish-sheet-in {
+    from { transform: translateY(100%); }
+    to { transform: none; }
+  }
+
+  .dish-dialog__body {
+    padding: 20px 20px calc(28px + env(safe-area-inset-bottom));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dish-dialog[open] {
+    animation: none;
+  }
+
+  .dish__image img {
+    transition: none;
+  }
+}

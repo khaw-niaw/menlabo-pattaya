@@ -223,23 +223,79 @@
 
       <div class="food-grid reveal">
         <figure class="dish" data-menu-id="AG001">
+          <button type="button" class="dish__open" data-dish-open="dish-karaage" aria-haspopup="dialog" aria-label="鶏の唐揚げ"></button>
           <div class="dish__image"><img src="assets/images/karaage.jpg" alt="鶏の唐揚げ" width="1000" height="1000" loading="lazy"></div>
           <figcaption><span data-key="dish-karaage">鶏の唐揚げ</span><span class="dish__price" data-key="price-karaage">139</span></figcaption>
         </figure>
         <figure class="dish" data-menu-id="YK003">
+          <button type="button" class="dish__open" data-dish-open="dish-gyoza" aria-haspopup="dialog" aria-label="焼き餃子5ヶ"></button>
           <div class="dish__image"><img src="assets/images/yaki-gyoza.jpg" alt="焼き餃子5ヶ" width="1000" height="1000" loading="lazy"></div>
           <figcaption><span><span data-key="dish-gyoza">焼き餃子</span><span class="dish__portion" data-key="dish-gyoza-portion">5ヶ</span></span><span class="dish__price" data-key="price-gyoza">99</span></figcaption>
         </figure>
         <figure class="dish" data-menu-id="AG009">
+          <button type="button" class="dish__open" data-dish-open="dish-aji-fry" aria-haspopup="dialog" aria-label="アジフライ"></button>
           <div class="dish__image"><img src="assets/images/recommended-aji-fry.jpg" alt="アジフライ" width="1620" height="1080" loading="lazy"></div>
           <figcaption><span data-key="dish-aji-fry">アジフライ</span><span class="dish__price" data-key="price-aji-fry">159</span></figcaption>
         </figure>
         <figure class="dish" data-menu-id="YK002">
+          <button type="button" class="dish__open" data-dish-open="dish-dashimaki" aria-haspopup="dialog" aria-label="だし巻き玉子"></button>
           <div class="dish__image"><img src="assets/images/dashimaki-tamago.jpg" alt="だし巻き玉子" width="1620" height="1080" loading="lazy"></div>
           <figcaption><span data-key="dish-dashimaki">だし巻き玉子</span><span class="dish__price" data-key="price-dashimaki">159</span></figcaption>
         </figure>
       </div>
 
+      <dialog class="dish-dialog" id="dish-karaage" data-menu-id="AG001" aria-labelledby="dish-karaage-title">
+        <div class="dish-dialog__panel">
+          <button type="button" class="dish-dialog__close" data-dish-close aria-label="閉じる"><span aria-hidden="true">×</span></button>
+          <div class="dish-dialog__image"><img src="assets/images/karaage.jpg" alt="" width="1000" height="1000" loading="lazy"></div>
+          <div class="dish-dialog__body">
+            <h3 id="dish-karaage-title">鶏の唐揚げ</h3>
+            <p class="dish-dialog__price">139</p>
+            <p data-key="dish-detail-karaage">外はカリッと、中はジューシー。大ぶりの鶏の唐揚げは、大阪の居酒屋でまず頼みたい定番です。</p>
+            <p class="dish-dialog__pair" data-key="dish-pair-karaage">冷えたビールか、ハイボールと一緒にどうぞ。</p>
+            <a class="line-link" href="/menu" data-dish-more data-key="dish-detail-more">夜のメニューを見る</a>
+          </div>
+        </div>
+      </dialog>
+      <dialog class="dish-dialog" id="dish-gyoza" data-menu-id="YK003" aria-labelledby="dish-gyoza-title">
+        <div class="dish-dialog__panel">
+          <button type="button" class="dish-dialog__close" data-dish-close aria-label="閉じる"><span aria-hidden="true">×</span></button>
+          <div class="dish-dialog__image"><img src="assets/images/yaki-gyoza.jpg" alt="" width="1000" height="1000" loading="lazy"></div>
+          <div class="dish-dialog__body">
+            <h3 id="dish-gyoza-title">焼き餃子5ヶ</h3>
+            <p class="dish-dialog__price">99</p>
+            <p data-key="dish-detail-gyoza">焼きたてを5個、熱いうちに。大阪では、ビールのお供といえば餃子です。</p>
+            <p class="dish-dialog__pair" data-key="dish-pair-gyoza">まずはビールと一緒に。</p>
+            <a class="line-link" href="/menu" data-dish-more data-key="dish-detail-more">夜のメニューを見る</a>
+          </div>
+        </div>
+      </dialog>
+      <dialog class="dish-dialog" id="dish-aji-fry" data-menu-id="AG009" aria-labelledby="dish-aji-fry-title">
+        <div class="dish-dialog__panel">
+          <button type="button" class="dish-dialog__close" data-dish-close aria-label="閉じる"><span aria-hidden="true">×</span></button>
+          <div class="dish-dialog__image"><img src="assets/images/recommended-aji-fry.jpg" alt="" width="1620" height="1080" loading="lazy"></div>
+          <div class="dish-dialog__body">
+            <h3 id="dish-aji-fry-title">アジフライ</h3>
+            <p class="dish-dialog__price">159</p>
+            <p data-key="dish-detail-aji-fry">サクサクの衣で揚げたアジフライを2枚。タルタルソースをたっぷりのせています。</p>
+            <p class="dish-dialog__pair" data-key="dish-pair-aji-fry">ハイボールで、さっぱりと。</p>
+            <a class="line-link" href="/menu" data-dish-more data-key="dish-detail-more">夜のメニューを見る</a>
+          </div>
+        </div>
+      </dialog>
+      <dialog class="dish-dialog" id="dish-dashimaki" data-menu-id="YK002" aria-labelledby="dish-dashimaki-title">
+        <div class="dish-dialog__panel">
+          <button type="button" class="dish-dialog__close" data-dish-close aria-label="閉じる"><span aria-hidden="true">×</span></button>
+          <div class="dish-dialog__image"><img src="assets/images/dashimaki-tamago.jpg" alt="" width="1620" height="1080" loading="lazy"></div>
+          <div class="dish-dialog__body">
+            <h3 id="dish-dashimaki-title">だし巻き玉子</h3>
+            <p class="dish-dialog__price">159</p>
+            <p data-key="dish-detail-dashimaki">だしをたっぷり含ませて、ふんわり焼き上げた卵焼き。大阪らしい、やさしいだしの味です。</p>
+            <p class="dish-dialog__pair" data-key="dish-pair-dashimaki">焼酎や梅酒と一緒に、ゆっくりどうぞ。</p>
+            <a class="line-link" href="/menu" data-dish-more data-key="dish-detail-more">夜のメニューを見る</a>
+          </div>
+        </div>
+      </dialog>
       <p class="vat-note" data-key="vat-note">価格はすべてタイバーツ（VAT込み）</p>
       <a class="line-link" href="/menu" data-key="view-menu">メニューを見る</a>
     </section>

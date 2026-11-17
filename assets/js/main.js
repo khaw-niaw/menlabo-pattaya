@@ -160,6 +160,46 @@ function menuPageFromPath(pathname) {
   return match ? match[1] : "";
 }
 
+// トップの料理説明パネル。スマホの「戻る」でも閉じられるよう、開くときに履歴を1つ積む
+let openDish = null;
+
+function openDishDialog(dialog, opener) {
+  if (openDish) return;
+  openDish = { dialog, opener };
+  document.documentElement.classList.add("is-dish-open");
+  dialog.showModal();
+  history.pushState({ dishDialog: dialog.id }, "");
+}
+
+function finishDishDialog() {
+  if (!openDish) return;
+  const { dialog, opener } = openDish;
+  openDish = null;
+  if (dialog.open) dialog.close();
+  document.documentElement.classList.remove("is-dish-open");
+  opener.focus({ preventScroll: true });
+}
+
+function closeDishDialog() {
+  if (!openDish) return;
+  if (history.state && history.state.dishDialog) {
+    history.back();
+  } else {
+    finishDishDialog();
+  }
+}
+
+window.addEventListener("popstate", () => {
+  if (openDish) finishDishDialog();
+});
+
+document.querySelectorAll(".dish-dialog").forEach((dialog) => {
+  dialog.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    closeDishDialog();
+  });
+});
+
 document.querySelectorAll("a[data-lang]").forEach((link) => {
   link.addEventListener("click", () => {
     try {
@@ -174,10 +214,28 @@ document.addEventListener("click", (event) => {
   const target = event.target;
   if (!target || typeof target.closest !== "function") return;
 
+  // 2026-11-17 ちえと承認：トップの料理写真を押すと、その場で料理の説明パネルを開く（ページは移らない）
   const topPick = target.closest(".food-grid .dish[data-menu-id]");
   if (topPick) {
     sendAnalyticsEvent("top_pick_click", { item: topPick.dataset.menuId });
+    const opener = topPick.querySelector("[data-dish-open]");
+    const dialog = opener && document.getElementById(opener.dataset.dishOpen);
+    if (dialog && typeof dialog.showModal === "function") openDishDialog(dialog, opener);
     return;
+  }
+
+  const dishDialog = target.closest(".dish-dialog");
+  if (dishDialog) {
+    if (target === dishDialog || target.closest("[data-dish-close]")) {
+      closeDishDialog();
+      return;
+    }
+    const more = target.closest("a[data-dish-more]");
+    if (more) {
+      // 説明パネルから夜のメニューへ進んだ数。izakaya_menu_click とは二重にしない
+      sendAnalyticsEvent("top_pick_menu_click", { item: dishDialog.dataset.menuId });
+      return;
+    }
   }
 
   const recommendedItem = target.closest(".recommended-card[data-menu-id], .recommended-list [data-menu-id]");
