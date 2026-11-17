@@ -28,6 +28,12 @@
       var tag = document.getElementById("google-tag");
       var id = tag.dataset.ga4Id;
       if (!id || location.hostname !== tag.dataset.productionHost) return;
+      // 2026-11-17 ちえと承認（GA4点検）：手元の確認画面や確認用URLから本番へ移ったタブは、そのタブの間ずっと計測しない
+      try {
+        var from = document.referrer ? new URL(document.referrer).hostname : "";
+        if (/^(localhost|127\.0\.0\.1)$|\.local$|\.vercel\.app$/.test(from)) sessionStorage.setItem("menlabo_internal", "1");
+        if (sessionStorage.getItem("menlabo_internal") === "1") return;
+      } catch (error) {}
       var loader = document.createElement("script");
       loader.async = true;
       loader.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
