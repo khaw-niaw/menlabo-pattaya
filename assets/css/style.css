@@ -2915,3 +2915,116 @@ html[lang="th"] .hero__message {
   text-decoration-thickness: 1px;
   text-underline-offset: 0.25em;
 }
+
+/* 2026-11-17 ラーメンページ（/ramen）。MENLABOについてのページの部品（ヒーロー・物語・こだわり）を使い、足りない所だけここで決める */
+.ramen-hero {
+  background-image: url("../images/tanrei-tori-shoyu-soba-regular.jpg");
+  background-position: center 55%;
+}
+
+.ramen-hero__lead {
+  max-width: 34em;
+  margin-top: 20px;
+  font-size: clamp(17px, 4vw, 20px);
+  line-height: 1.9;
+  text-shadow: 0 0 18px var(--ink), 0 1px 3px var(--ink);
+}
+
+.ramen-story {
+  background-image: url("../images/recommended-shio.jpg");
+}
+
+.ramen-story__supervisor-heading {
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid var(--paper);
+  font-size: clamp(22px, 6vw, 30px);
+  line-height: 1.5;
+}
+
+.ramen-story__supervisor-heading + p {
+  margin-top: 16px;
+}
+
+.ramen-bowls__wrap,
+.ramen-daynight__inner,
+.ramen-delivery__inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+}
+
+.ramen-bowls h2,
+.ramen-daynight h2,
+.ramen-delivery h2 {
+  margin-bottom: 24px;
+  font-size: clamp(34px, 9vw, 56px);
+}
+
+.ramen-bowls__lead,
+.ramen-daynight p,
+.ramen-delivery p {
+  max-width: 40em;
+  font-size: clamp(17px, 4vw, 20px);
+  line-height: 2;
+}
+
+.ramen-grid {
+  margin-top: 56px;
+}
+
+.ramen-bowls__note {
+  margin-top: 56px;
+  font-size: clamp(17px, 4vw, 20px);
+}
+
+.ramen-daynight__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 24px;
+}
+
+.ramen-daynight__links .line-link {
+  margin-left: 0;
+}
+
+.ramen-delivery .delivery-bar {
+  justify-content: flex-start;
+  margin: 24px 0 0;
+}
+
+.ramen-faq__list {
+  display: grid;
+  border-top: 1px solid var(--line);
+}
+
+.ramen-faq__list > div {
+  display: grid;
+  gap: 8px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.ramen-faq__list dt {
+  font-size: clamp(18px, 4.5vw, 22px);
+  font-weight: 600;
+}
+
+.ramen-faq__list dd {
+  font-size: clamp(17px, 4vw, 20px);
+  line-height: 1.9;
+}
+
+.ramen-faq .line-link {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  .ramen-faq__list > div {
+    grid-template-columns: minmax(200px, 0.4fr) minmax(0, 1fr);
+    gap: 32px;
+  }
+}
+
+.ramen-link {
+  margin-top: 40px;
+}

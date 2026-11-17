@@ -103,6 +103,24 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.menlabo-pattaya.com/ramen</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.menlabo-pattaya.com/th/ramen</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.menlabo-pattaya.com/en/ramen</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.menlabo-pattaya.com/drinks</loc>
     <lastmod>2026-11-11</lastmod>
     <changefreq>weekly</changefreq>

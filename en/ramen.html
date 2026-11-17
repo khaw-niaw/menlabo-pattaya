@@ -1,0 +1,292 @@
+<!-- build.pyで生成。直接編集しない。部品は src/ を直す。 -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- Google tag (gtag.js)：本番ドメインでだけ読み込む（手元の確認やVercelのプレビューで本番の解析を汚さないため。2026-11-11 Claude） -->
+  <script id="google-tag" data-ga4-id="G-L9W79GXPE1" data-production-host="www.menlabo-pattaya.com">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    (function () {
+      var tag = document.getElementById("google-tag");
+      var id = tag.dataset.ga4Id;
+      if (!id || location.hostname !== tag.dataset.productionHost) return;
+      // 2026-11-17 ちえと承認（GA4点検）：手元の確認画面や確認用URLから本番へ移ったタブは、そのタブの間ずっと計測しない
+      try {
+        var from = document.referrer ? new URL(document.referrer).hostname : "";
+        if (/^(localhost|127\.0\.0\.1)$|\.local$|\.vercel\.app$/.test(from)) sessionStorage.setItem("menlabo_internal", "1");
+        if (sessionStorage.getItem("menlabo_internal") === "1") return;
+      } catch (error) {}
+      var loader = document.createElement("script");
+      loader.async = true;
+      loader.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+      document.head.appendChild(loader);
+      gtag("js", new Date());
+      gtag("config", id);
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Chicken ramen supervised by Yuya Tsujita of Men LABO Yuisou in Awaza, Osaka: clear chicken shio and shoyu, and rich chicken paitan. Inside Tree Town, Soi Buakhao, Pattaya. Open 11:00–24:00.">
+  <meta name="theme-color" content="#171817">
+  <title>Ramen in Pattaya | Chicken Ramen by an Osaka Ramen Master | Osaka Izakaya Menlabo Sakaba</title>
+  <link rel="canonical" href="https://www.menlabo-pattaya.com/en/ramen">
+  <meta property="og:title" content="Ramen in Pattaya | Chicken Ramen by an Osaka Ramen Master | Osaka Izakaya Menlabo Sakaba">
+  <meta property="og:description" content="Chicken ramen supervised by Yuya Tsujita of Men LABO Yuisou in Awaza, Osaka: clear chicken shio and shoyu, and rich chicken paitan. Inside Tree Town, Soi Buakhao, Pattaya. Open 11:00–24:00.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.menlabo-pattaya.com/en/ramen">
+  <meta property="og:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ramen in Pattaya | Chicken Ramen by an Osaka Ramen Master | Osaka Izakaya Menlabo Sakaba">
+  <meta name="twitter:description" content="Chicken ramen supervised by Yuya Tsujita of Men LABO Yuisou in Awaza, Osaka: clear chicken shio and shoyu, and rich chicken paitan. Inside Tree Town, Soi Buakhao, Pattaya. Open 11:00–24:00.">
+  <meta name="twitter:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/main.js" defer></script>
+  <link rel="alternate" hreflang="ja" href="https://www.menlabo-pattaya.com/ramen">
+  <link rel="alternate" hreflang="th" href="https://www.menlabo-pattaya.com/th/ramen">
+  <link rel="alternate" hreflang="en" href="https://www.menlabo-pattaya.com/en/ramen">
+  <link rel="alternate" hreflang="x-default" href="https://www.menlabo-pattaya.com/ramen">
+
+</head>
+
+<body>
+  <a class="skip-link" href="#main" data-key="skip-main">Skip to content</a>
+
+  <header class="site-header" aria-label="Site navigation">
+    <a class="site-logo site-logo--named" href="/en" aria-label="Menlabo Sakaba home">
+      <img src="../assets/images/menlabo-logo-mark-kana-white.svg" alt="Menlabo Sakaba" width="82" height="82"><span class="site-logo__name">Menlabo Sakaba</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="/en/about" data-key="nav-about">About Menlabo</a>
+      <a href="/en/menu" data-key="nav-menu">Menu</a>
+      <a href="/en/recommended" data-key="nav-recommended">Highlights</a>
+      <a href="/en/access" data-key="nav-access">Find us</a>
+      <a href="/en/news" data-key="nav-news">News</a>
+    </nav>
+
+    <div class="desktop-actions">
+      <a href="tel:+66961479518" data-action="phone" data-key="action-phone">Call</a>
+      <a href="https://lin.ee/7GQmsKU" data-action="line" data-key="action-line">LINE</a>
+      <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">Map</a>
+    </div>
+
+    <nav class="header-language-links" aria-label="Language">
+      <a href="/ramen" lang="ja" data-lang="ja" aria-label="日本語" data-key="lang-ja">JP</a>
+      <a href="/th/ramen" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">TH</a>
+      <a href="/en/ramen" lang="en" data-lang="en" aria-current="page" aria-label="English" data-key="lang-en">EN</a>
+      <a href="/zh" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简</a>
+    </nav>
+
+    <button class="menu-button" type="button" aria-controls="mobile-menu" aria-expanded="false" data-open-label="Menu" data-close-label="Close">
+      <span class="menu-button__label" data-key="menu-open">Menu</span>
+      <span class="menu-button__icon" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav aria-label="Mobile menu">
+      <a href="/en/about" data-key="nav-about">About Menlabo</a>
+      <a href="/en/menu" data-key="nav-menu">Menu</a>
+      <a href="/en/recommended" data-key="nav-recommended">Highlights</a>
+      <a href="/en/access" data-key="nav-access">Find us</a>
+      <a href="/en/news" data-key="nav-news">News</a>
+    </nav>
+    <div class="mobile-menu__actions">
+      <a href="tel:+66961479518" data-action="phone" data-key="action-phone">Call</a>
+      <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">Map</a>
+    </div>
+    <nav class="header-language-links header-language-links--mobile" aria-label="Language">
+      <a href="/ramen" lang="ja" data-lang="ja" aria-label="日本語" data-key="lang-ja">JP</a>
+      <a href="/th/ramen" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">TH</a>
+      <a href="/en/ramen" lang="en" data-lang="en" aria-current="page" aria-label="English" data-key="lang-en">EN</a>
+      <a href="/zh" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简</a>
+    </nav>
+  </div>
+
+
+  <main id="main" class="about-page ramen-page">
+    <!-- 2026-11-17 ちえと承認：ラーメンで探した人の受け皿のページ。物語は 05_Projects/MENLABO/2026-11-17_ラーメンページ_事前調査とストーリー案.md -->
+    <section class="access-hero about-hero ramen-hero" aria-labelledby="page-title">
+      <div class="access-hero__shade" aria-hidden="true"></div>
+      <div class="access-hero__content about-hero__content">
+        <h1 id="page-title" data-key="page-heading"><span>A bowl from Awaza, Osaka — in Pattaya</span></h1>
+        <p class="ramen-hero__lead" data-key="page-lead">Chicken ramen supervised by Yuya Tsujita, owner of Men LABO Yuisou in Awaza, Osaka. Served day and night inside Tree Town, Soi Buakhao.</p>
+      </div>
+    </section>
+
+    <section id="story" class="about-story photo-section ramen-story" aria-labelledby="ramen-story-title">
+      <div class="about-story__shade" aria-hidden="true"></div>
+      <div class="about-story__content reveal">
+        <h2 id="ramen-story-title" data-key="story-heading"><span>It started with one bowl</span></h2>
+        <p data-key="story-body">Menlabo opened in Pattaya in March 2024 as a ramen shop serving a single bowl: Clear Chicken Shio Soba. Diners who tried it began calling it “the hidden ramen shop on Soi Buakhao,” and word slowly spread.</p>
+        <h3 class="ramen-story__supervisor-heading" data-key="supervisor-heading"><span>Supervised by Yuya Tsujita of Awaza</span></h3>
+        <p data-key="supervisor-body">Tsujita is the owner of Men LABO Yuisou, a ramen shop in Awaza, Osaka, known for ramen that brings out the full flavor of chicken. Our ramen is supervised by him, and we carry the Menlabo name with the Awaza shop’s blessing.</p>
+      </div>
+    </section>
+
+    <section id="bowls" class="ramen-bowls paper-section" aria-labelledby="ramen-bowls-title">
+      <div class="ramen-bowls__wrap">
+      <div class="ramen-bowls__inner reveal">
+        <h2 id="ramen-bowls-title" data-key="bowls-heading">Four bowls</h2>
+        <p class="ramen-bowls__lead" data-key="bowls-lead">Clear chicken broth (“tanrei”) and rich, creamy chicken broth (“paitan”), each with shio (salt) or shoyu (soy sauce).</p>
+      </div>
+      <div class="recommended-grid ramen-grid reveal">
+        <article class="recommended-card" data-menu-id="ME005">
+          <img src="../assets/images/recommended-shoyu.jpg" alt="Clear Chicken Shoyu Soba" width="1600" height="1067" loading="lazy">
+          <div class="recommended-card__body"><h3>Clear Chicken Shoyu Soba</h3><p class="menu-item__price">179</p></div>
+          <p class="recommended-card__description" data-key="description-me005">Clear chicken broth with soy sauce. A clean finish — a good way to end the night.</p>
+        </article>
+        <article class="recommended-card" data-menu-id="ME001">
+          <img src="../assets/images/recommended-shio.jpg" alt="Clear Chicken Shio Soba" width="1600" height="1067" loading="lazy">
+          <div class="recommended-card__body"><h3>Clear Chicken Shio Soba</h3><p class="menu-item__price">179</p></div>
+          <p class="recommended-card__description" data-key="description-me001">The same chicken broth, seasoned with salt. It lets the chicken shine — and it is the bowl Menlabo started with.</p>
+        </article>
+        <article class="recommended-card" data-menu-id="ME009">
+          <img src="../assets/images/recommended-paitan-shio.jpg" alt="Rich Chicken Paitan Shio" width="1600" height="1067" loading="lazy">
+          <div class="recommended-card__body"><h3>Rich Chicken Paitan Shio</h3><p class="menu-item__price">159</p></div>
+          <p class="recommended-card__description" data-key="description-me009">Rich chicken broth, simmered long and seasoned with salt. Thick and creamy, for days when you want something hearty.</p>
+        </article>
+        <article class="recommended-card" data-menu-id="ME013">
+          <img src="../assets/images/recommended-paitan-shoyu.jpg" alt="Rich Chicken Paitan Shoyu" width="1600" height="1067" loading="lazy">
+          <div class="recommended-card__body"><h3>Rich Chicken Paitan Shoyu</h3><p class="menu-item__price">159</p></div>
+          <p class="recommended-card__description" data-key="description-me013">Rich chicken broth with soy sauce, deep and savory.</p>
+        </article>
+      </div>
+      <p class="ramen-bowls__note" data-key="jan-men-note">If you like it spicy, try our Jan Men.</p>
+      <p class="vat-note" data-key="vat-note">All prices in Thai baht, VAT included</p>
+      </div>
+    </section>
+
+    <section id="craft" class="about-craft paper-section" aria-labelledby="craft-title">
+      <h2 id="craft-title" class="about-craft__heading reveal" data-key="craft-heading"><span>How we do it</span></h2>
+      <div class="about-craft__list">
+        <article class="craft-feature reveal">
+          <figure class="craft-feature__media">
+            <img src="../assets/images/rare-chashu.jpg" alt="A plate of rare chashu" width="1600" height="1067" loading="lazy">
+          </figure>
+          <div class="craft-feature__body">
+            <h3 data-key="craft-chashu-heading">Rare chashu</h3>
+            <p data-key="craft-chashu-body">Pork shoulder, cooked in 65–70℃ water for 3 hours and 20 minutes. The low, slow heat keeps it moist and tender, so it never overpowers the chicken broth.</p>
+          </div>
+        </article>
+
+        <article class="craft-feature reveal">
+          <figure class="craft-feature__media">
+            <img src="../assets/images/tanrei-tori-shoyu-soba-regular.jpg" alt="Clear chicken shoyu soba finished with aroma oil" width="1600" height="1069" loading="lazy">
+          </figure>
+          <div class="craft-feature__body">
+            <h3 data-key="craft-oil-heading">Aroma oil</h3>
+            <p data-key="craft-oil-body">The aroma oil we finish with has a little chili, so there is a slight kick. If you prefer no heat, just tell us when you order.</p>
+          </div>
+        </article>
+
+        <article class="craft-feature reveal">
+          <figure class="craft-feature__media">
+            <img src="../assets/images/access-interior.jpg" alt="The restaurant interior with counter seats" width="1200" height="800" loading="lazy">
+          </figure>
+          <div class="craft-feature__body">
+            <h3 data-key="craft-counter-heading">Come solo</h3>
+            <p data-key="craft-counter-body">Six counter seats make it easy to drop in alone. Menus are in Japanese, English, Thai and Chinese.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="day-night" class="paper-section ramen-daynight" aria-labelledby="ramen-daynight-title">
+      <div class="ramen-daynight__inner reveal">
+        <h2 id="ramen-daynight-title" data-key="daynight-heading"><span>Ramen, day and night</span></h2>
+        <p data-key="daynight-body">At lunch, pair it with a set meal. At night, share a few Osaka izakaya dishes and finish with ramen — that is how we like to eat.</p>
+        <div class="ramen-daynight__links">
+          <a class="line-link" href="/en/menu" data-key="view-night">See the dinner menu</a>
+          <a class="line-link" href="/en/lunch" data-key="view-lunch">See lunch</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="delivery" class="paper-section ramen-delivery" aria-labelledby="ramen-delivery-title">
+      <div class="ramen-delivery__inner reveal">
+        <h2 id="ramen-delivery-title" data-key="delivery-heading">Delivery</h2>
+        <p data-key="delivery-body">Order through Grab or LINE MAN. Our paitan broth sets as it cools, so we serve it only in the restaurant.</p>
+        <p class="delivery-bar"><a class="delivery-link" href="https://r.grab.com/o/40x4inVZ" target="_blank" rel="noopener noreferrer" data-delivery="grab">Grab</a><a class="delivery-link" href="https://www.wongnai.com/delivery/businesses/2863391mU/order" target="_blank" rel="noopener noreferrer" data-delivery="lineman">LINE MAN</a></p>
+      </div>
+    </section>
+
+    <section id="faq" class="about-amenities paper-section ramen-faq" aria-labelledby="ramen-faq-title">
+      <div class="about-amenities__inner reveal">
+        <h2 id="ramen-faq-title" data-key="faq-heading">FAQ</h2>
+        <dl class="ramen-faq__list">
+          <div><dt data-key="faq-q1">Do you offer extra noodles (kaedama)?</dt><dd data-key="faq-a1">No, we do not offer kaedama.</dd></div>
+          <div><dt data-key="faq-q2">Is it spicy?</dt><dd data-key="faq-a2">There is a little chili in the aroma oil, so it has a slight kick. If you prefer no heat, tell us when you order.</dd></div>
+          <div><dt data-key="faq-q3">Is it halal?</dt><dd data-key="faq-a3">No. Our chashu is made with pork.</dd></div>
+          <div><dt data-key="faq-q4">When is ramen available?</dt><dd data-key="faq-a4">Any time we are open, 11:00–24:00, day or night. Last entry and last order at 23:40; closed on Tuesday.</dd></div>
+        </dl>
+        <a class="line-link" href="/en/access" data-key="view-access">How to find us</a>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="footer-heading">
+      <img src="../assets/images/menlabo-logo-mark-kana-red.svg" alt="Menlabo Sakaba" width="108" height="108" loading="lazy">
+      <h2 data-key="store-info-heading">Restaurant information</h2>
+    </div>
+
+    <dl class="store-table">
+      <div><dt data-key="label-store">Restaurant</dt><dd data-key="store-name">Osaka Izakaya Menlabo Sakaba</dd></div>
+      <div><dt data-key="label-former-name">Former name</dt><dd data-key="store-former-name">MEN LABO (麺LABO)</dd></div>
+      <div><dt data-key="label-address">Address</dt><dd data-key="store-address">502/22 Soi Buakhao, Pattaya City, Bang Lamung, Chon Buri 20150</dd></div>
+      <div><dt data-key="label-landmark">Directions</dt><dd data-key="store-landmark">Inside Tree Town, in the black building marked by lanterns</dd></div>
+      <div><dt data-key="label-hours">Hours</dt><dd><span data-key="hours-lunch">Lunch 11:00–15:00 (set meals and ramen)</span><span data-key="hours-night">Dinner 15:00–24:00 (full menu)</span></dd></div>
+      <div><dt data-key="label-last-entry">Last entry and last order</dt><dd data-key="last-entry-pending">23:40</dd></div>
+      <div><dt data-key="label-closed">Closed</dt><dd data-key="closed-day">Tuesday</dd></div>
+      <div><dt data-key="label-payment">Payment</dt><dd data-key="payment-methods">Cash, PromptPay (QR), and credit cards (VISA / Master / Alipay / UnionPay / JCB)</dd></div>
+      <div><dt data-key="label-delivery">Delivery</dt><dd class="delivery-links"><a class="delivery-link" href="https://r.grab.com/o/40x4inVZ" target="_blank" rel="noopener noreferrer" data-delivery="grab">Grab</a><a class="delivery-link" href="https://www.wongnai.com/delivery/businesses/2863391mU/order" target="_blank" rel="noopener noreferrer" data-delivery="lineman">LINE MAN</a></dd></div>
+      <div><dt data-key="label-parking">Parking</dt><dd data-key="parking-value">Available (30 baht per hour)</dd></div>
+    </dl>
+
+    <div class="footer-contact">
+      <p data-key="phone-guidance">Reservations and inquiries</p>
+      <a href="tel:+66961479518" data-action="phone"><span data-key="phone-number" data-value="phone">+66 96-147-9518</span></a>
+    </div>
+
+    <nav class="social-links" aria-label="Social media">
+      <a href="https://www.instagram.com/menlabo.pattaya/" data-action="instagram" target="_blank" rel="noopener noreferrer" data-key="social-instagram">Instagram</a>
+      <a href="https://www.facebook.com/menlabo.pattaya" data-action="facebook" target="_blank" rel="noopener noreferrer" data-key="social-facebook">Facebook</a>
+      <a href="https://x.com/menlabo_sakaba" data-action="x" target="_blank" rel="noopener noreferrer" data-key="social-x">X</a>
+    </nav>
+
+    <nav class="language-links" aria-label="Language">
+      <a href="/ramen" lang="ja" data-lang="ja" aria-label="日本語" data-key="lang-ja">日本語</a>
+      <a href="/th/ramen" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">ไทย</a>
+      <a href="/en/ramen" lang="en" data-lang="en" aria-current="page" aria-label="English" data-key="lang-en">English</a>
+      <a href="/zh" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简体中文</a>
+    </nav>
+
+    <nav class="legal-links" aria-label="Legal information">
+      <a href="/en/access" data-key="nav-access">Find us</a>
+      <a href="/en/company" data-key="link-company">Company</a>
+      <a href="/en/privacy" data-key="link-privacy">Privacy Policy</a>
+    </nav>
+
+    <p class="copyright" data-key="copyright">© Menlabo Sakaba</p>
+  </footer>
+
+
+  <nav class="mobile-actions" aria-label="Contact">
+    <a href="tel:+66961479518" data-action="phone" data-key="action-phone">Call</a>
+    <a href="https://lin.ee/7GQmsKU" data-action="line" data-key="action-line">LINE</a>
+    <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">Map</a>
+  </nav>
+
+</body>
+</html>
