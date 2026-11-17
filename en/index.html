@@ -12,6 +12,12 @@
       var tag = document.getElementById("google-tag");
       var id = tag.dataset.ga4Id;
       if (!id || location.hostname !== tag.dataset.productionHost) return;
+      // 2026-11-17 ちえと承認（GA4点検）：手元の確認画面や確認用URLから本番へ移ったタブは、そのタブの間ずっと計測しない
+      try {
+        var from = document.referrer ? new URL(document.referrer).hostname : "";
+        if (/^(localhost|127\.0\.0\.1)$|\.local$|\.vercel\.app$/.test(from)) sessionStorage.setItem("menlabo_internal", "1");
+        if (sessionStorage.getItem("menlabo_internal") === "1") return;
+      } catch (error) {}
       var loader = document.createElement("script");
       loader.async = true;
       loader.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
@@ -38,6 +44,7 @@
   <meta name="twitter:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- 2026-11-17 表示速度の改善：文字（Googleフォント）の読み込みで表示を止めない -->
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -205,23 +212,75 @@
 
       <div class="food-grid reveal">
         <figure class="dish" data-menu-id="AG001">
+          <button type="button" class="dish__open" data-dish-open="dish-karaage" aria-haspopup="dialog" aria-label="Fried Chicken (Karaage)"></button>
           <div class="dish__image"><img src="../assets/images/karaage-600.webp" srcset="../assets/images/karaage-600.webp 600w, ../assets/images/karaage-1000.webp 1000w" sizes="(min-width: 768px) 25vw, 50vw" alt="Fried Chicken (Karaage)" width="1000" height="1000" loading="lazy"></div>
           <figcaption><span data-key="dish-karaage">Fried Chicken (Karaage)</span><span class="dish__price" data-key="price-karaage">139</span></figcaption>
         </figure>
         <figure class="dish" data-menu-id="YK003">
-          <div class="dish__image"><img src="../assets/images/yaki-gyoza-600.webp" srcset="../assets/images/yaki-gyoza-600.webp 600w, ../assets/images/yaki-gyoza-1000.webp 1000w" sizes="(min-width: 768px) 25vw, 50vw" alt="Pan-fried Gyoza (5 pc)" width="1000" height="1000" loading="lazy"></div>
+          <button type="button" class="dish__open" data-dish-open="dish-gyoza" aria-haspopup="dialog" aria-label="Pan-fried Gyoza (5 pc)"></button>
+          <div class="dish__image"><img src="../assets/images/yaki-gyoza-2026-11-600.webp" srcset="../assets/images/yaki-gyoza-2026-11-600.webp 600w, ../assets/images/yaki-gyoza-2026-11-1400.webp 1400w" sizes="(min-width: 768px) 25vw, 50vw" alt="Pan-fried Gyoza (5 pc)" width="1400" height="1050" loading="lazy"></div>
           <figcaption><span><span data-key="dish-gyoza">Pan-fried Gyoza (5 pc)</span><span class="dish__portion" data-key="dish-gyoza-portion"></span></span><span class="dish__price" data-key="price-gyoza">99</span></figcaption>
         </figure>
         <figure class="dish" data-menu-id="AG009">
+          <button type="button" class="dish__open" data-dish-open="dish-aji-fry" aria-haspopup="dialog" aria-label="Fried Horse Mackerel"></button>
           <div class="dish__image"><img src="../assets/images/recommended-aji-fry-600.webp" srcset="../assets/images/recommended-aji-fry-600.webp 600w, ../assets/images/recommended-aji-fry-1400.webp 1400w" sizes="(min-width: 768px) 25vw, 50vw" alt="Fried Horse Mackerel" width="1620" height="1080" loading="lazy"></div>
           <figcaption><span data-key="dish-aji-fry">Fried Horse Mackerel</span><span class="dish__price" data-key="price-aji-fry">159</span></figcaption>
         </figure>
         <figure class="dish" data-menu-id="YK002">
+          <button type="button" class="dish__open" data-dish-open="dish-dashimaki" aria-haspopup="dialog" aria-label="Dashi Rolled Omelet"></button>
           <div class="dish__image"><img src="../assets/images/dashimaki-tamago-600.webp" srcset="../assets/images/dashimaki-tamago-600.webp 600w, ../assets/images/dashimaki-tamago-1400.webp 1400w" sizes="(min-width: 768px) 25vw, 50vw" alt="Dashi Rolled Omelet" width="1620" height="1080" loading="lazy"></div>
           <figcaption><span data-key="dish-dashimaki">Dashi Rolled Omelet</span><span class="dish__price" data-key="price-dashimaki">159</span></figcaption>
         </figure>
       </div>
 
+      <dialog class="dish-dialog" id="dish-karaage" data-menu-id="AG001" aria-labelledby="dish-karaage-title">
+        <div class="dish-dialog__panel">
+          <button type="button" class="dish-dialog__close" data-dish-close aria-label="Close"><span aria-hidden="true">×</span></button>
+          <div class="dish-dialog__image"><img src="../assets/images/karaage-600.webp" srcset="../assets/images/karaage-600.webp 600w, ../assets/images/karaage-1000.webp 1000w" sizes="(min-width: 768px) 560px, 100vw" alt="" width="1000" height="1000" loading="lazy"></div>
+          <div class="dish-dialog__body">
+            <div class="dish-dialog__head"><h3 id="dish-karaage-title">Fried Chicken (Karaage)</h3><p class="dish-dialog__price">139</p></div>
+            <p data-key="dish-detail-karaage">Big pieces of Japanese fried chicken, crisp outside and juicy inside. The first thing to order at an Osaka izakaya.</p>
+            <p class="dish-dialog__pair" data-key="dish-pair-karaage">Best with a cold beer or a highball.</p>
+            <a class="line-link" href="/en/menu" data-dish-more data-key="dish-detail-more">Dinner menu</a>
+          </div>
+        </div>
+      </dialog>
+      <dialog class="dish-dialog" id="dish-gyoza" data-menu-id="YK003" aria-labelledby="dish-gyoza-title">
+        <div class="dish-dialog__panel">
+          <button type="button" class="dish-dialog__close" data-dish-close aria-label="Close"><span aria-hidden="true">×</span></button>
+          <div class="dish-dialog__image"><img src="../assets/images/yaki-gyoza-2026-11-600.webp" srcset="../assets/images/yaki-gyoza-2026-11-600.webp 600w, ../assets/images/yaki-gyoza-2026-11-1400.webp 1400w" sizes="(min-width: 768px) 560px, 100vw" alt="" width="1400" height="1050" loading="lazy"></div>
+          <div class="dish-dialog__body">
+            <div class="dish-dialog__head"><h3 id="dish-gyoza-title">Pan-fried Gyoza (5 pc)</h3><p class="dish-dialog__price">99</p></div>
+            <p data-key="dish-detail-gyoza">Five gyoza, pan-fried to order and served hot. In Osaka, gyoza and beer go together.</p>
+            <p class="dish-dialog__pair" data-key="dish-pair-gyoza">Start with a beer.</p>
+            <a class="line-link" href="/en/menu" data-dish-more data-key="dish-detail-more">Dinner menu</a>
+          </div>
+        </div>
+      </dialog>
+      <dialog class="dish-dialog" id="dish-aji-fry" data-menu-id="AG009" aria-labelledby="dish-aji-fry-title">
+        <div class="dish-dialog__panel">
+          <button type="button" class="dish-dialog__close" data-dish-close aria-label="Close"><span aria-hidden="true">×</span></button>
+          <div class="dish-dialog__image"><img src="../assets/images/recommended-aji-fry-600.webp" srcset="../assets/images/recommended-aji-fry-600.webp 600w, ../assets/images/recommended-aji-fry-1400.webp 1400w" sizes="(min-width: 768px) 560px, 100vw" alt="" width="1620" height="1080" loading="lazy"></div>
+          <div class="dish-dialog__body">
+            <div class="dish-dialog__head"><h3 id="dish-aji-fry-title">Fried Horse Mackerel</h3><p class="dish-dialog__price">159</p></div>
+            <p data-key="dish-detail-aji-fry">Two crispy panko-fried horse mackerel fillets, topped with plenty of tartar sauce and served with our own kushikatsu sauce.</p>
+            <p class="dish-dialog__pair" data-key="dish-pair-aji-fry">A highball keeps it light.</p>
+            <a class="line-link" href="/en/menu" data-dish-more data-key="dish-detail-more">Dinner menu</a>
+          </div>
+        </div>
+      </dialog>
+      <dialog class="dish-dialog" id="dish-dashimaki" data-menu-id="YK002" aria-labelledby="dish-dashimaki-title">
+        <div class="dish-dialog__panel">
+          <button type="button" class="dish-dialog__close" data-dish-close aria-label="Close"><span aria-hidden="true">×</span></button>
+          <div class="dish-dialog__image"><img src="../assets/images/dashimaki-tamago-600.webp" srcset="../assets/images/dashimaki-tamago-600.webp 600w, ../assets/images/dashimaki-tamago-1400.webp 1400w" sizes="(min-width: 768px) 560px, 100vw" alt="" width="1620" height="1080" loading="lazy"></div>
+          <div class="dish-dialog__body">
+            <div class="dish-dialog__head"><h3 id="dish-dashimaki-title">Dashi Rolled Omelet</h3><p class="dish-dialog__price">159</p></div>
+            <p data-key="dish-detail-dashimaki">Japanese rolled omelette made with chicken broth we simmer for three hours every day, cooked soft and fluffy. Rich with the flavor of chicken.</p>
+            <p class="dish-dialog__pair" data-key="dish-pair-dashimaki">Enjoy it slowly with shochu or umeshu.</p>
+            <a class="line-link" href="/en/menu" data-dish-more data-key="dish-detail-more">Dinner menu</a>
+          </div>
+        </div>
+      </dialog>
       <p class="vat-note" data-key="vat-note">All prices in Thai baht, VAT included</p>
       <a class="line-link" href="/en/menu" data-key="view-menu">View the menu</a>
     </section>

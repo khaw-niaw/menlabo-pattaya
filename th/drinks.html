@@ -12,6 +12,12 @@
       var tag = document.getElementById("google-tag");
       var id = tag.dataset.ga4Id;
       if (!id || location.hostname !== tag.dataset.productionHost) return;
+      // 2026-11-17 ちえと承認（GA4点検）：手元の確認画面や確認用URLから本番へ移ったタブは、そのタブの間ずっと計測しない
+      try {
+        var from = document.referrer ? new URL(document.referrer).hostname : "";
+        if (/^(localhost|127\.0\.0\.1)$|\.local$|\.vercel\.app$/.test(from)) sessionStorage.setItem("menlabo_internal", "1");
+        if (sessionStorage.getItem("menlabo_internal") === "1") return;
+      } catch (error) {}
       var loader = document.createElement("script");
       loader.async = true;
       loader.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
@@ -38,6 +44,7 @@
   <meta name="twitter:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- 2026-11-17 表示速度の改善：文字（Googleフォント）の読み込みで表示を止めない -->
   <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <link rel="icon" href="/favicon.ico" sizes="any">
