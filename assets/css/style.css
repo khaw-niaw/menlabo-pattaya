@@ -331,7 +331,7 @@ p {
   overflow: hidden;
   color: var(--paper);
   background-color: var(--panel);
-  background-image: url("../images/noren.jpg");
+  background-image: url("../images/noren-1600.webp");
   background-position: 55% center;
   background-size: cover;
   isolation: isolate;
@@ -574,7 +574,7 @@ html[lang="ja"] .intro h2 {
 }
 
 .story {
-  background-image: url("../images/story-exterior.jpg");
+  background-image: url("../images/story-exterior.webp");
 }
 
 .story__shade,
@@ -653,7 +653,7 @@ html[lang="ja"] .intro h2 {
 
 .seats {
   min-height: 76svh;
-  background-image: url("../images/access-interior.jpg");
+  background-image: url("../images/access-interior.webp");
   background-position: 58% center;
 }
 
@@ -767,7 +767,7 @@ html[lang="ja"] .intro h2 {
 }
 
 .gateway--access {
-  background-image: url("../images/access-entrance.jpg");
+  background-image: url("../images/access-entrance.webp");
 }
 
 .gateway--menu {
@@ -775,7 +775,7 @@ html[lang="ja"] .intro h2 {
 }
 
 .gateway--recommended {
-  background-image: url("../images/rare-chashu.jpg");
+  background-image: url("../images/rare-chashu.webp");
 }
 
 .gateway span {
@@ -1273,15 +1273,15 @@ html[lang="ja"] .intro h2 {
 }
 
 .menu-hero--lunch {
-  background-image: url("../images/lunch.jpg");
+  background-image: url("../images/lunch.webp");
 }
 
 .menu-hero--recommended {
-  background-image: url("../images/recommended-gyoza.jpg");
+  background-image: url("../images/recommended-gyoza.webp");
 }
 
 .menu-hero--drinks {
-  background-image: url("../images/sake.jpg");
+  background-image: url("../images/sake.webp");
 }
 
 .menu-hero__shade {
@@ -1582,7 +1582,7 @@ html[lang="ja"] .intro h2 {
   overflow: hidden;
   color: var(--paper);
   background-color: var(--panel);
-  background-image: url("../images/access-exterior.jpg");
+  background-image: url("../images/access-exterior.webp");
   background-position: center;
   background-size: cover;
   isolation: isolate;
@@ -1720,7 +1720,7 @@ html[lang="ja"] .intro h2 {
 
 .driver-section {
   min-height: 760px;
-  background-image: url("../images/access-entrance.jpg");
+  background-image: url("../images/access-entrance.webp");
 }
 
 .driver-section__content {
@@ -1834,7 +1834,7 @@ html[lang="ja"] .intro h2 {
 
 /* MENLABOについて */
 .about-hero {
-  background-image: url("../images/noren.jpg");
+  background-image: url("../images/noren-1600.webp");
   background-position: 52% center;
 }
 
@@ -1891,7 +1891,7 @@ html[lang="ja"] .intro h2 {
 
 .about-story {
   min-height: 820px;
-  background-image: url("../images/access-exterior.jpg");
+  background-image: url("../images/access-exterior.webp");
   background-position: center;
 }
 
@@ -1937,7 +1937,7 @@ html[lang="ja"] .intro h2 {
 
 .about-seats {
   min-height: 780px;
-  background-image: url("../images/access-interior.jpg");
+  background-image: url("../images/access-interior.webp");
   background-position: 54% center;
 }
 
@@ -2470,7 +2470,7 @@ body,
 .paper-section,
 .site-header--paper {
   background-color: var(--paper);
-  background-image: url("../images/washi-b.png");
+  background-image: url("../images/washi-b.webp");
   background-size: 512px 512px;
 }
 
@@ -2930,7 +2930,7 @@ html[lang="th"] .hero__message {
 
 /* 2026-11-17 ラーメンページ（/ramen）。MENLABOについてのページの部品（ヒーロー・物語・こだわり）を使い、足りない所だけここで決める */
 .ramen-hero {
-  background-image: url("../images/tanrei-tori-shoyu-soba-regular.jpg");
+  background-image: url("../images/tanrei-tori-shoyu-soba-regular.webp");
   background-position: center 55%;
 }
 
@@ -2943,7 +2943,7 @@ html[lang="th"] .hero__message {
 }
 
 .ramen-story {
-  background-image: url("../images/recommended-shio.jpg");
+  background-image: url("../images/recommended-shio.webp");
 }
 
 .ramen-story__supervisor-heading {
@@ -3201,5 +3201,21 @@ html.is-dish-open {
 
   .dish__image img {
     transition: none;
+  }
+}
+
+/* 2026-11-17 表示速度の改善：最初の画面ののれん写真は、縦長の画面には縦に切り出した軽い版、横長の大画面には大きい版を使う（元の noren.jpg は475KB） */
+@media (orientation: portrait) {
+  .hero,
+  .about-hero {
+    background-image: url("../images/noren-portrait.webp");
+    background-position: center;
+  }
+}
+
+@media (orientation: landscape) and (min-width: 1440px) {
+  .hero,
+  .about-hero {
+    background-image: url("../images/noren-2400.webp");
   }
 }

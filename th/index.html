@@ -44,10 +44,15 @@
   <meta name="twitter:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- 2026-11-17 表示速度の改善：文字（Googleフォント）の読み込みで表示を止めない -->
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" as="image" type="image/webp" href="../assets/images/noren-portrait.webp" media="(orientation: portrait)" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" href="../assets/images/noren-1600.webp" media="(orientation: landscape) and (max-width: 1439.98px)" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" href="../assets/images/noren-2400.webp" media="(orientation: landscape) and (min-width: 1440px)" fetchpriority="high">
   <link rel="stylesheet" href="../assets/css/style.css">
   <script src="../assets/js/main.js" defer></script>
   <link rel="alternate" hreflang="ja" href="https://www.menlabo-pattaya.com/">
@@ -208,22 +213,22 @@
       <div class="food-grid reveal">
         <figure class="dish" data-menu-id="AG001">
           <button type="button" class="dish__open" data-dish-open="dish-karaage" aria-haspopup="dialog" aria-label="ไก่ทอดคาราเกะ"></button>
-          <div class="dish__image"><img src="../assets/images/karaage.jpg" alt="ไก่ทอดคาราเกะ" width="1000" height="1000" loading="lazy"></div>
+          <div class="dish__image"><img src="../assets/images/karaage-600.webp" srcset="../assets/images/karaage-600.webp 600w, ../assets/images/karaage-1000.webp 1000w" sizes="(min-width: 768px) 25vw, 50vw" alt="ไก่ทอดคาราเกะ" width="1000" height="1000" loading="lazy"></div>
           <figcaption><span data-key="dish-karaage">ไก่ทอดคาราเกะ</span><span class="dish__price" data-key="price-karaage">139</span></figcaption>
         </figure>
         <figure class="dish" data-menu-id="YK003">
           <button type="button" class="dish__open" data-dish-open="dish-gyoza" aria-haspopup="dialog" aria-label="เกี๊ยวซ่า 5 ชิ้น"></button>
-          <div class="dish__image"><img src="../assets/images/yaki-gyoza-2026-11.jpg" alt="เกี๊ยวซ่า 5 ชิ้น" width="1400" height="1050" loading="lazy"></div>
+          <div class="dish__image"><img src="../assets/images/yaki-gyoza-2026-11-600.webp" srcset="../assets/images/yaki-gyoza-2026-11-600.webp 600w, ../assets/images/yaki-gyoza-2026-11-1400.webp 1400w" sizes="(min-width: 768px) 25vw, 50vw" alt="เกี๊ยวซ่า 5 ชิ้น" width="1400" height="1050" loading="lazy"></div>
           <figcaption><span><span data-key="dish-gyoza">เกี๊ยวซ่า 5 ชิ้น</span><span class="dish__portion" data-key="dish-gyoza-portion"></span></span><span class="dish__price" data-key="price-gyoza">99</span></figcaption>
         </figure>
         <figure class="dish" data-menu-id="AG009">
           <button type="button" class="dish__open" data-dish-open="dish-aji-fry" aria-haspopup="dialog" aria-label="ปลาอาจิทอด"></button>
-          <div class="dish__image"><img src="../assets/images/recommended-aji-fry.jpg" alt="ปลาอาจิทอด" width="1620" height="1080" loading="lazy"></div>
+          <div class="dish__image"><img src="../assets/images/recommended-aji-fry-600.webp" srcset="../assets/images/recommended-aji-fry-600.webp 600w, ../assets/images/recommended-aji-fry-1400.webp 1400w" sizes="(min-width: 768px) 25vw, 50vw" alt="ปลาอาจิทอด" width="1620" height="1080" loading="lazy"></div>
           <figcaption><span data-key="dish-aji-fry">ปลาอาจิทอด</span><span class="dish__price" data-key="price-aji-fry">159</span></figcaption>
         </figure>
         <figure class="dish" data-menu-id="YK002">
           <button type="button" class="dish__open" data-dish-open="dish-dashimaki" aria-haspopup="dialog" aria-label="ไข่ม้วน"></button>
-          <div class="dish__image"><img src="../assets/images/dashimaki-tamago.jpg" alt="ไข่ม้วน" width="1620" height="1080" loading="lazy"></div>
+          <div class="dish__image"><img src="../assets/images/dashimaki-tamago-600.webp" srcset="../assets/images/dashimaki-tamago-600.webp 600w, ../assets/images/dashimaki-tamago-1400.webp 1400w" sizes="(min-width: 768px) 25vw, 50vw" alt="ไข่ม้วน" width="1620" height="1080" loading="lazy"></div>
           <figcaption><span data-key="dish-dashimaki">ไข่ม้วน</span><span class="dish__price" data-key="price-dashimaki">159</span></figcaption>
         </figure>
       </div>
@@ -231,7 +236,7 @@
       <dialog class="dish-dialog" id="dish-karaage" data-menu-id="AG001" aria-labelledby="dish-karaage-title">
         <div class="dish-dialog__panel">
           <button type="button" class="dish-dialog__close" data-dish-close aria-label="ปิด"><span aria-hidden="true">×</span></button>
-          <div class="dish-dialog__image"><img src="../assets/images/karaage.jpg" alt="" width="1000" height="1000" loading="lazy"></div>
+          <div class="dish-dialog__image"><img src="../assets/images/karaage-600.webp" srcset="../assets/images/karaage-600.webp 600w, ../assets/images/karaage-1000.webp 1000w" sizes="(min-width: 768px) 560px, 100vw" alt="" width="1000" height="1000" loading="lazy"></div>
           <div class="dish-dialog__body">
             <div class="dish-dialog__head"><h3 id="dish-karaage-title">ไก่ทอดคาราเกะ</h3><p class="dish-dialog__price">139</p></div>
             <p data-key="dish-detail-karaage">ไก่ทอดคาราเกะชิ้นใหญ่ กรอบนอกฉ่ำใน เมนูยอดนิยมที่ควรสั่งเป็นอย่างแรกเมื่อมาร้านอิซากายะโอซาก้า</p>
@@ -243,7 +248,7 @@
       <dialog class="dish-dialog" id="dish-gyoza" data-menu-id="YK003" aria-labelledby="dish-gyoza-title">
         <div class="dish-dialog__panel">
           <button type="button" class="dish-dialog__close" data-dish-close aria-label="ปิด"><span aria-hidden="true">×</span></button>
-          <div class="dish-dialog__image"><img src="../assets/images/yaki-gyoza-2026-11.jpg" alt="" width="1400" height="1050" loading="lazy"></div>
+          <div class="dish-dialog__image"><img src="../assets/images/yaki-gyoza-2026-11-600.webp" srcset="../assets/images/yaki-gyoza-2026-11-600.webp 600w, ../assets/images/yaki-gyoza-2026-11-1400.webp 1400w" sizes="(min-width: 768px) 560px, 100vw" alt="" width="1400" height="1050" loading="lazy"></div>
           <div class="dish-dialog__body">
             <div class="dish-dialog__head"><h3 id="dish-gyoza-title">เกี๊ยวซ่า 5 ชิ้น</h3><p class="dish-dialog__price">99</p></div>
             <p data-key="dish-detail-gyoza">เกี๊ยวซ่าย่างใหม่ๆ 5 ชิ้น ทานตอนร้อนๆ ที่โอซาก้า เกี๊ยวซ่าคือเมนูยอดนิยมที่ทานคู่กับเบียร์</p>
@@ -255,7 +260,7 @@
       <dialog class="dish-dialog" id="dish-aji-fry" data-menu-id="AG009" aria-labelledby="dish-aji-fry-title">
         <div class="dish-dialog__panel">
           <button type="button" class="dish-dialog__close" data-dish-close aria-label="ปิด"><span aria-hidden="true">×</span></button>
-          <div class="dish-dialog__image"><img src="../assets/images/recommended-aji-fry.jpg" alt="" width="1620" height="1080" loading="lazy"></div>
+          <div class="dish-dialog__image"><img src="../assets/images/recommended-aji-fry-600.webp" srcset="../assets/images/recommended-aji-fry-600.webp 600w, ../assets/images/recommended-aji-fry-1400.webp 1400w" sizes="(min-width: 768px) 560px, 100vw" alt="" width="1620" height="1080" loading="lazy"></div>
           <div class="dish-dialog__body">
             <div class="dish-dialog__head"><h3 id="dish-aji-fry-title">ปลาอาจิทอด</h3><p class="dish-dialog__price">159</p></div>
             <p data-key="dish-detail-aji-fry">ปลาอาจิชุบเกล็ดขนมปังทอดกรอบ 2 ชิ้น ราดซอสทาร์ทาร์เต็มๆ พร้อมซอสคุชิคัตสึสูตรของร้าน</p>
@@ -267,7 +272,7 @@
       <dialog class="dish-dialog" id="dish-dashimaki" data-menu-id="YK002" aria-labelledby="dish-dashimaki-title">
         <div class="dish-dialog__panel">
           <button type="button" class="dish-dialog__close" data-dish-close aria-label="ปิด"><span aria-hidden="true">×</span></button>
-          <div class="dish-dialog__image"><img src="../assets/images/dashimaki-tamago.jpg" alt="" width="1620" height="1080" loading="lazy"></div>
+          <div class="dish-dialog__image"><img src="../assets/images/dashimaki-tamago-600.webp" srcset="../assets/images/dashimaki-tamago-600.webp 600w, ../assets/images/dashimaki-tamago-1400.webp 1400w" sizes="(min-width: 768px) 560px, 100vw" alt="" width="1620" height="1080" loading="lazy"></div>
           <div class="dish-dialog__body">
             <div class="dish-dialog__head"><h3 id="dish-dashimaki-title">ไข่ม้วน</h3><p class="dish-dialog__price">159</p></div>
             <p data-key="dish-detail-dashimaki">ไข่ม้วนญี่ปุ่นใส่น้ำซุปไก่ที่เคี่ยวเองทุกวันนาน 3 ชั่วโมงแบบเต็มๆ ม้วนจนนุ่มฟู ได้รสอูมามิและความเข้มข้นของไก่</p>
@@ -298,14 +303,14 @@
       <div class="day-night__visual reveal">
         <!-- 2026-11-13 ちえと指示（採点の改善2）：軸は大阪居酒屋なので夜の酒場を先（左・上）に -->
         <figure class="time-panel time-panel--night">
-          <img src="../assets/images/sake.jpg" alt="ไฮบอลบนเคาน์เตอร์ยามเย็น" width="1500" height="1000" loading="lazy">
+          <img src="../assets/images/sake-800.webp" srcset="../assets/images/sake-800.webp 800w, ../assets/images/sake-1600.webp 1600w" sizes="(min-width: 768px) 50vw, 100vw" alt="ไฮบอลบนเคาน์เตอร์ยามเย็น" width="1500" height="1000" loading="lazy">
           <figcaption>
             <h3 data-key="night-heading">เมนูครบตั้งแต่ 15:00 น.</h3>
             <p data-key="night-time">15:00–24:00</p>
           </figcaption>
         </figure>
         <figure class="time-panel time-panel--lunch">
-          <img src="../assets/images/lunch.jpg" alt="ชุดอาหารกลางวันที่ Menlabo" width="1500" height="1000" loading="lazy">
+          <img src="../assets/images/lunch-800.webp" srcset="../assets/images/lunch-800.webp 800w, ../assets/images/lunch-1600.webp 1600w" sizes="(min-width: 768px) 50vw, 100vw" alt="ชุดอาหารกลางวันที่ Menlabo" width="1500" height="1000" loading="lazy">
           <figcaption>
             <h3 data-key="lunch-heading">มื้อกลางวันมีชุดอาหารและราเมน</h3>
             <p data-key="lunch-time">11:00–15:00</p>
