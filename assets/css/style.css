@@ -3133,8 +3133,18 @@ html.is-dish-open {
   line-height: 1.5;
 }
 
-.dish-dialog__price {
-  margin: 4px 0 0;
+.dish-dialog__head {
+  display: flex;
+  gap: 16px;
+  align-items: baseline;
+  justify-content: space-between;
+}
+
+.dish-dialog__head .dish-dialog__price {
+  flex: none;
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.5;
   font-variant-numeric: tabular-nums;
 }
 
@@ -3143,7 +3153,7 @@ html.is-dish-open {
   line-height: 1.8;
 }
 
-.dish-dialog__body p:not(.dish-dialog__price) {
+.dish-dialog__body > p {
   margin: 16px 0 0;
 }
 
