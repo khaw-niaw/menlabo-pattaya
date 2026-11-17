@@ -2884,16 +2884,20 @@ html[lang="th"] .hero__message {
   align-items: center;
   min-height: 44px;
   padding: 0 18px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--ink);
+  color: var(--paper);
+  background: var(--ink);
   font-size: 16px;
   letter-spacing: 0.04em;
   text-decoration: none;
   transition: border-color 200ms ease, background-color 200ms ease;
 }
 
+/* 2026-11-17 ちえと指示：押せると分かるよう塗りのボタンにし、マウスを乗せると店の赤に変わる */
 .delivery-link:hover,
 .delivery-link:focus-visible {
-  border-color: var(--ink);
+  border-color: var(--accent);
+  background: var(--accent);
 }
 
 .delivery-links {
@@ -2911,9 +2915,17 @@ html[lang="th"] .hero__message {
   min-height: 0;
   padding: 0;
   border: 0;
+  color: inherit;
+  background: none;
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.25em;
+}
+
+.delivery-links .delivery-link:hover,
+.delivery-links .delivery-link:focus-visible {
+  color: var(--accent);
+  background: none;
 }
 
 /* 2026-11-17 ラーメンページ（/ramen）。MENLABOについてのページの部品（ヒーロー・物語・こだわり）を使い、足りない所だけここで決める */
