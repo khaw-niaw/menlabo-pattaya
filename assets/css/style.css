@@ -3147,11 +3147,6 @@ html.is-dish-open {
   margin: 16px 0 0;
 }
 
-.dish-dialog__pair {
-  padding-left: 12px;
-  border-left: 3px solid var(--accent);
-}
-
 .dish-dialog .line-link {
   margin-top: 28px;
 }
