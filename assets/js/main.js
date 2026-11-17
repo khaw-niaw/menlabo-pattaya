@@ -149,6 +149,12 @@ function analyticsArea(element) {
   return "inline";
 }
 
+// 2026-11-17 メニュー系ページ（夜・ランチ・おすすめ・お酒・ラーメン）へのリンク先を判定する
+function menuLinkPage(pathname) {
+  const match = pathname.match(/^\/(?:en\/|th\/|zh\/)?(menu|lunch|recommended|drinks|ramen)(?:\.html)?\/?$/);
+  return match ? match[1] : "";
+}
+
 function menuPageFromPath(pathname) {
   const match = pathname.match(/\/(menu|lunch|recommended|drinks)(?:\.html)?\/?$/);
   return match ? match[1] : "";
@@ -204,12 +210,30 @@ document.addEventListener("click", (event) => {
     sendAnalyticsEvent("review_click", { area });
   } else if (link.hostname === "lin.ee") {
     sendAnalyticsEvent("line_click", { area });
-  } else if (isInternal && /^\/(?:en\/|th\/|zh\/)?menu(?:\.html)?\/?$/.test(link.pathname) && !href.startsWith("#")) {
-    sendAnalyticsEvent("menu_click", { area });
+  } else if (isInternal && menuLinkPage(link.pathname) && !href.startsWith("#")) {
+    // 2026-11-17 GA4計測漏れ一覧（ちえと指示）：トップ本文のおすすめ・メニューは旧サイトと同じ固定名。
+    // それ以外のメニュー系ページへのリンクは menu_click に menu_page を付けて数える（固定名と二重には送らない）
+    const menuPage = menuLinkPage(link.pathname);
+    const onTop = /^\/(?:en\/|th\/|zh\/)?(?:index\.html)?$/.test(window.location.pathname);
+    const onRecommended = menuPageFromPath(window.location.pathname) === "recommended";
+    if (onTop && area === "inline" && menuPage === "recommended") {
+      sendAnalyticsEvent("top_pick_more_click", { area });
+    } else if (onTop && area === "inline" && menuPage === "menu") {
+      sendAnalyticsEvent("izakaya_menu_click", { area });
+    } else if (onRecommended && area === "inline" && menuPage === "menu") {
+      sendAnalyticsEvent("recommended_menu_click", { area });
+    } else {
+      sendAnalyticsEvent("menu_click", { area, menu_page: menuPage });
+    }
   } else if (isInternal && /^\/(?:en\/|th\/|zh\/)?access(?:\.html)?\/?$/.test(link.pathname) && !href.startsWith("#")) {
     sendAnalyticsEvent("access_click", { area });
   } else if (href.startsWith("tel:")) {
     sendAnalyticsEvent("tel_click", { area });
+  } else if (href.startsWith("mailto:")) {
+    sendAnalyticsEvent("email_click", { area });
+  } else if (/(^|\.)(facebook\.com|instagram\.com|x\.com)$/.test(link.hostname)) {
+    const service = link.hostname.includes("facebook") ? "facebook" : link.hostname.includes("instagram") ? "instagram" : "x";
+    sendAnalyticsEvent("social_click", { area, service });
   } else if (anchor.dataset.delivery) {
     // 2026-11-16 デリバリー（Grab・LINE MAN）へのリンク。どちらが押されたかを service で分ける
     sendAnalyticsEvent("delivery_click", { area, service: anchor.dataset.delivery });
