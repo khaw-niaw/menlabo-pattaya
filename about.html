@@ -38,10 +38,14 @@
   <meta name="twitter:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" as="image" type="image/webp" href="assets/images/noren-portrait.webp" media="(orientation: portrait)" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" href="assets/images/noren-1600.webp" media="(orientation: landscape) and (max-width: 1439.98px)" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" href="assets/images/noren-2400.webp" media="(orientation: landscape) and (min-width: 1440px)" fetchpriority="high">
   <link rel="stylesheet" href="assets/css/style.css">
   <script src="assets/js/main.js" defer></script>
   <link rel="alternate" hreflang="ja" href="https://www.menlabo-pattaya.com/about">

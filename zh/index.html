@@ -38,10 +38,14 @@
   <meta name="twitter:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <link rel="manifest" href="/site.webmanifest">
+  <link rel="preload" as="image" type="image/webp" href="../assets/images/noren-portrait.webp" media="(orientation: portrait)" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" href="../assets/images/noren-1600.webp" media="(orientation: landscape) and (max-width: 1439.98px)" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" href="../assets/images/noren-2400.webp" media="(orientation: landscape) and (min-width: 1440px)" fetchpriority="high">
   <link rel="stylesheet" href="../assets/css/style.css">
   <script src="../assets/js/main.js" defer></script>
   <link rel="alternate" hreflang="ja" href="https://www.menlabo-pattaya.com/">
@@ -201,19 +205,19 @@
 
       <div class="food-grid reveal">
         <figure class="dish" data-menu-id="AG001">
-          <div class="dish__image"><img src="../assets/images/karaage.jpg" alt="日式炸鸡" width="1000" height="1000" loading="lazy"></div>
+          <div class="dish__image"><img src="../assets/images/karaage-600.webp" srcset="../assets/images/karaage-600.webp 600w, ../assets/images/karaage-1000.webp 1000w" sizes="(min-width: 768px) 25vw, 50vw" alt="日式炸鸡" width="1000" height="1000" loading="lazy"></div>
           <figcaption><span data-key="dish-karaage">日式炸鸡</span><span class="dish__price" data-key="price-karaage">139</span></figcaption>
         </figure>
         <figure class="dish" data-menu-id="YK003">
-          <div class="dish__image"><img src="../assets/images/yaki-gyoza.jpg" alt="日式煎饺5个" width="1000" height="1000" loading="lazy"></div>
+          <div class="dish__image"><img src="../assets/images/yaki-gyoza-600.webp" srcset="../assets/images/yaki-gyoza-600.webp 600w, ../assets/images/yaki-gyoza-1000.webp 1000w" sizes="(min-width: 768px) 25vw, 50vw" alt="日式煎饺5个" width="1000" height="1000" loading="lazy"></div>
           <figcaption><span><span data-key="dish-gyoza">日式煎饺5个</span><span class="dish__portion" data-key="dish-gyoza-portion"></span></span><span class="dish__price" data-key="price-gyoza">99</span></figcaption>
         </figure>
         <figure class="dish" data-menu-id="AG009">
-          <div class="dish__image"><img src="../assets/images/recommended-aji-fry.jpg" alt="炸竹筴鱼" width="1620" height="1080" loading="lazy"></div>
+          <div class="dish__image"><img src="../assets/images/recommended-aji-fry-600.webp" srcset="../assets/images/recommended-aji-fry-600.webp 600w, ../assets/images/recommended-aji-fry-1400.webp 1400w" sizes="(min-width: 768px) 25vw, 50vw" alt="炸竹筴鱼" width="1620" height="1080" loading="lazy"></div>
           <figcaption><span data-key="dish-aji-fry">炸竹筴鱼</span><span class="dish__price" data-key="price-aji-fry">159</span></figcaption>
         </figure>
         <figure class="dish" data-menu-id="YK002">
-          <div class="dish__image"><img src="../assets/images/dashimaki-tamago.jpg" alt="高汤玉子烧" width="1620" height="1080" loading="lazy"></div>
+          <div class="dish__image"><img src="../assets/images/dashimaki-tamago-600.webp" srcset="../assets/images/dashimaki-tamago-600.webp 600w, ../assets/images/dashimaki-tamago-1400.webp 1400w" sizes="(min-width: 768px) 25vw, 50vw" alt="高汤玉子烧" width="1620" height="1080" loading="lazy"></div>
           <figcaption><span data-key="dish-dashimaki">高汤玉子烧</span><span class="dish__price" data-key="price-dashimaki">159</span></figcaption>
         </figure>
       </div>
@@ -240,14 +244,14 @@
       <div class="day-night__visual reveal">
         <!-- 2026-11-13 ちえと指示（採点の改善2）：軸は大阪居酒屋なので夜の酒場を先（左・上）に -->
         <figure class="time-panel time-panel--night">
-          <img src="../assets/images/sake.jpg" alt="晚间吧台上的高球杯" width="1500" height="1000" loading="lazy">
+          <img src="../assets/images/sake-800.webp" srcset="../assets/images/sake-800.webp 800w, ../assets/images/sake-1600.webp 1600w" sizes="(min-width: 768px) 50vw, 100vw" alt="晚间吧台上的高球杯" width="1500" height="1000" loading="lazy">
           <figcaption>
             <h3 data-key="night-heading">15:00起供应全部菜单</h3>
             <p data-key="night-time">15:00–24:00</p>
           </figcaption>
         </figure>
         <figure class="time-panel time-panel--lunch">
-          <img src="../assets/images/lunch.jpg" alt="MENLABO的午餐定食" width="1500" height="1000" loading="lazy">
+          <img src="../assets/images/lunch-800.webp" srcset="../assets/images/lunch-800.webp 800w, ../assets/images/lunch-1600.webp 1600w" sizes="(min-width: 768px) 50vw, 100vw" alt="MENLABO的午餐定食" width="1500" height="1000" loading="lazy">
           <figcaption>
             <h3 data-key="lunch-heading">午餐定食与拉面</h3>
             <p data-key="lunch-time">11:00–15:00</p>
