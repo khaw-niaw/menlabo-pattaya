@@ -3253,3 +3253,8 @@ html.is-dish-open {
     display: inline;
   }
 }
+
+/* 2026-11-18 おすすめページ：レアチャーシューとバラチャーシューの2つを並べるので、間をあける */
+.recommended-chashu .craft-feature + .craft-feature {
+  margin-top: clamp(40px, 6vw, 72px);
+}
