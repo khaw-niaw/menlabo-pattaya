@@ -2958,6 +2958,27 @@ html[lang="th"] .hero__message {
   margin-top: 16px;
 }
 
+.ramen-story__link {
+  margin-top: 16px;
+}
+
+.ramen-story__link a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+}
+
+/* 2026-11-18 ちえと指摘：パソコンでは最初の見出しを「阿波座の鶏の一杯を／パタヤで」の2行にする（スマホは幅が足りないので3行のまま） */
+@media (min-width: 768px) {
+  html[lang="ja"] .ramen-hero h1 span:nth-child(-n+2) {
+    display: inline;
+  }
+
+  html[lang="ja"] .ramen-hero h1 span:nth-child(3) {
+    display: block;
+  }
+}
+
 .ramen-bowls__wrap,
 .ramen-daynight__inner,
 .ramen-delivery__inner {
