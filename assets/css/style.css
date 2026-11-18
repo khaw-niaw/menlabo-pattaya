@@ -3240,3 +3240,16 @@ html.is-dish-open {
     background-image: url("../images/noren-2400.webp");
   }
 }
+
+/* 2026-11-18 ちえと指摘：見出しを無理に2行にしない。パソコンでは、短くて1行に収まる見出しは1行にする。
+   2行のまま残すもの＝長くて1行に入らないもの（大阪のほんまもんを／パタヤの日常へ、受け継ぐ味と／MENLABOの由来、阿波座の鶏の一杯を／パタヤで）と、
+   対になっているもの（昼の食堂／夜の酒場、ひとりでも／仲間とでも）。スマホは幅が足りないので今までどおり */
+@media (min-width: 992px) {
+  html[lang="ja"] .food h2[data-key="food-heading"] span,
+  html[lang="ja"] .about-craft__heading span,
+  html[lang="ja"] .ramen-story h2[data-key="story-heading"] span,
+  html[lang="ja"] .ramen-daynight h2 span,
+  html[lang="ja"] .recommended-chashu h2 span {
+    display: inline;
+  }
+}
