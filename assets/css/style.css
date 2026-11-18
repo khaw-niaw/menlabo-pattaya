@@ -2958,6 +2958,27 @@ html[lang="th"] .hero__message {
   margin-top: 16px;
 }
 
+.ramen-story__link {
+  margin-top: 16px;
+}
+
+.ramen-story__link a {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25em;
+}
+
+/* 2026-11-18 ちえと指摘：パソコンでは最初の見出しを「阿波座の鶏の一杯を／パタヤで」の2行にする（スマホは幅が足りないので3行のまま） */
+@media (min-width: 768px) {
+  html[lang="ja"] .ramen-hero h1 span:nth-child(-n+2) {
+    display: inline;
+  }
+
+  html[lang="ja"] .ramen-hero h1 span:nth-child(3) {
+    display: block;
+  }
+}
+
 .ramen-bowls__wrap,
 .ramen-daynight__inner,
 .ramen-delivery__inner {
@@ -3217,5 +3238,18 @@ html.is-dish-open {
   .hero,
   .about-hero {
     background-image: url("../images/noren-2400.webp");
+  }
+}
+
+/* 2026-11-18 ちえと指摘：見出しを無理に2行にしない。パソコンでは、短くて1行に収まる見出しは1行にする。
+   2行のまま残すもの＝長くて1行に入らないもの（大阪のほんまもんを／パタヤの日常へ、受け継ぐ味と／MENLABOの由来、阿波座の鶏の一杯を／パタヤで）と、
+   対になっているもの（昼の食堂／夜の酒場、ひとりでも／仲間とでも）。スマホは幅が足りないので今までどおり */
+@media (min-width: 992px) {
+  html[lang="ja"] .food h2[data-key="food-heading"] span,
+  html[lang="ja"] .about-craft__heading span,
+  html[lang="ja"] .ramen-story h2[data-key="story-heading"] span,
+  html[lang="ja"] .ramen-daynight h2 span,
+  html[lang="ja"] .recommended-chashu h2 span {
+    display: inline;
   }
 }
