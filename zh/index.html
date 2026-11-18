@@ -18,12 +18,24 @@
         if (/^(localhost|127\.0\.0\.1)$|\.local$|\.vercel\.app$/.test(from)) sessionStorage.setItem("menlabo_internal", "1");
         if (sessionStorage.getItem("menlabo_internal") === "1") return;
       } catch (error) {}
-      var loader = document.createElement("script");
-      loader.async = true;
-      loader.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
-      document.head.appendChild(loader);
       gtag("js", new Date());
       gtag("config", id);
+      // 2026-11-18 ちえと承認（表示速度）：タグ本体は、最初の画面を出し終えてから読み込む。
+      // 読み込み完了の3秒後か、最初の操作（タップ・スクロール・キー）か、ページを離れるときの早いほう。それまでのイベントは dataLayer にたまり、読み込み後に送られる
+      var started = false;
+      var start = function () {
+        if (started) return;
+        started = true;
+        var loader = document.createElement("script");
+        loader.async = true;
+        loader.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+        document.head.appendChild(loader);
+      };
+      ["pointerdown", "touchstart", "keydown", "scroll"].forEach(function (name) {
+        window.addEventListener(name, start, { once: true, passive: true });
+      });
+      window.addEventListener("load", function () { setTimeout(start, 3000); });
+      document.addEventListener("visibilitychange", function () { if (document.visibilityState === "hidden") start(); });
     })();
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -201,7 +213,7 @@
         <p data-key="intro-body">日式煎饺、日式炸鸡与大阪风味菜肴，最后来一碗拉面。店铺位于Soi Buakhao的Tree Town内，认准挂着灯笼的黑色建筑。</p>
       </div>
       <figure class="intro__illustration">
-        <img src="../assets/images/osaka-street-red-1200.webp" srcset="../assets/images/osaka-street-red-1200.webp 1200w, ../assets/images/osaka-street-red.webp 2343w" sizes="(min-width: 1340px) 1180px, 92vw" alt="" width="2343" height="1042" loading="lazy">
+        <img src="../assets/images/osaka-street-red-1200.webp" srcset="../assets/images/osaka-street-red-800.webp 800w, ../assets/images/osaka-street-red-1200.webp 1200w, ../assets/images/osaka-street-red.webp 2343w" sizes="(min-width: 1340px) 1180px, 92vw" alt="" width="2343" height="1042" loading="lazy">
       </figure>
     </section>
 
