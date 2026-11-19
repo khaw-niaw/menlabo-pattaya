@@ -3258,3 +3258,51 @@ html.is-dish-open {
 .recommended-chashu .craft-feature + .craft-feature {
   margin-top: clamp(40px, 6vw, 72px);
 }
+
+/* 2026-11-19 ちえと指示：タイ語の見出しも日本語ページと同じ考え方で改行する。
+   パソコンでは短い見出しを1行に、最初の見出しは「ราเมนไก่จากอาวาซะ โอซาก้า／ที่พัทยา」の2行に。
+   タイ語は語の間に空白が要るので、1行に並べるときは空白を足す */
+@media (min-width: 768px) {
+  html[lang="th"] .ramen-hero h1 > span:nth-child(-n+2) {
+    display: inline;
+  }
+
+  html[lang="th"] .ramen-hero h1 > span:nth-child(2)::before {
+    content: " ";
+  }
+
+  html[lang="th"] .ramen-hero h1 > span:nth-child(3) {
+    display: block;
+  }
+}
+
+@media (min-width: 992px) {
+  html[lang="th"] .food h2[data-key="food-heading"] > span,
+  html[lang="th"] .about-craft__heading > span,
+  html[lang="th"] .ramen-story h2[data-key="story-heading"] > span,
+  html[lang="th"] .ramen-daynight h2 > span,
+  html[lang="th"] .recommended-chashu h2 > span {
+    display: inline;
+  }
+
+  html[lang="th"] .food h2[data-key="food-heading"] > span + span::before,
+  html[lang="th"] .about-craft__heading > span + span::before,
+  html[lang="th"] .ramen-story h2[data-key="story-heading"] > span + span::before,
+  html[lang="th"] .ramen-daynight h2 > span + span::before,
+  html[lang="th"] .recommended-chashu h2 > span + span::before {
+    content: " ";
+  }
+}
+
+/* 2026-11-19 タイ語の「ดูแลสูตรโดย Yuya Tsujita」は1行に並ぶので、語の間の空白を足す（空白が消えてつながって見えていた） */
+html[lang="th"] .ramen-story__supervisor-heading > span + span::before {
+  content: " ";
+}
+
+/* 2026-11-19 タイ語の最初の見出し：スマホで「ราเมนไก่จากอาวาซะ」が途中で折れて4行になっていたので、
+   1行に収まる大きさまで少しだけ下げて「ราเมนไก่จากอาวาซะ／โอซาก้า／ที่พัทยา」の3行にする（日本語ページと同じ行数） */
+@media (max-width: 479.98px) {
+  html[lang="th"] .ramen-hero h1 {
+    font-size: 9.6vw;
+  }
+}
