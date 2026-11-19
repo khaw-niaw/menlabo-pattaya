@@ -3253,3 +3253,30 @@ html.is-dish-open {
     display: inline;
   }
 }
+
+/* 2026-11-19 ちえと指示：幅の狭いスマホ（320〜370px）で、改行させない見出しが画面より広くなり、見出しと下の本文の右端が切れていたのを直す。
+   見出しが1行に収まる大きさまで、画面の幅に合わせて少しだけ小さくする（375px以上は今までどおり） */
+@media (max-width: 399.98px) {
+  html[lang="ja"] .story__content h2[data-key="story-heading"],
+  html[lang="ja"] h2[data-key="story-heading-about"] {
+    font-size: min(34px, calc((100vw - 40px) * 0.1));
+  }
+
+  html[lang="ja"] .menu-hero--drinks h1 {
+    font-size: min(38px, calc((100vw - 40px) * 0.128));
+  }
+}
+
+/* 英語のフッター見出し「Restaurant information」が320pxで右にはみ出すことがあるので、少し小さくする */
+@media (max-width: 339.98px) {
+  html[lang="en"] .footer-heading h2 {
+    font-size: 30px;
+  }
+}
+
+/* 2026-11-19 お知らせの見出し：320px台では区切りの中でも折り返せるようにする（「「大阪居酒屋 MENLABO酒場」に」が1行に入らず右にはみ出していた） */
+@media (max-width: 343.98px) {
+  html[lang="ja"] .news-list h3 span {
+    white-space: normal;
+  }
+}
