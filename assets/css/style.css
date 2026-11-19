@@ -3287,3 +3287,19 @@ html[lang="en"] .site-logo__name {
   max-width: none;
   white-space: nowrap;
 }
+
+/* 2026-11-19 ちえと指示：タイ語の見出しも日本語ページと同じ考え方で改行する。パソコンでは短い見出しを1行に。
+   タイ語は語の間に空白が要るので、1行に並べるときは空白を足す */
+@media (min-width: 992px) {
+  html[lang="th"] .food h2[data-key="food-heading"] > span,
+  html[lang="th"] .about-craft__heading > span,
+  html[lang="th"] .recommended-chashu h2 > span {
+    display: inline;
+  }
+
+  html[lang="th"] .food h2[data-key="food-heading"] > span + span::before,
+  html[lang="th"] .about-craft__heading > span + span::before,
+  html[lang="th"] .recommended-chashu h2 > span + span::before {
+    content: " ";
+  }
+}
