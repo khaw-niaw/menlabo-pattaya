@@ -3280,3 +3280,10 @@ html.is-dish-open {
     white-space: normal;
   }
 }
+
+/* 2026-11-19 ちえと指示：タイ語・英語のヘッダーの店名「Menlabo Sakaba」が2行に折れていたので1行にする（スマホでも横に収まる） */
+html[lang="th"] .site-logo__name,
+html[lang="en"] .site-logo__name {
+  max-width: none;
+  white-space: nowrap;
+}
