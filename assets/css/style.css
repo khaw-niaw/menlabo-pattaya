@@ -3419,6 +3419,17 @@ html[lang="en"] .site-logo__name {
   line-height: 1.6;
 }
 
+.ramen-hero__glance dd .line {
+  display: block;
+}
+
+.ramen-hero__glance dd .note {
+  display: block;
+  margin-top: 2px;
+  color: rgb(247 248 246 / 78%);
+  font-size: 16px;
+}
+
 /* スマホ・タブレット：画面下の固定ボタンに最初の画面で隠れないよう、上の余白を少し詰める */
 @media (max-width: 991.98px) {
   .ramen-hero .about-hero__content {
@@ -3429,6 +3440,7 @@ html[lang="en"] .site-logo__name {
 @media (min-width: 992px) {
   .ramen-hero__glance {
     grid-template-columns: repeat(3, max-content);
+    align-items: start;
     margin-top: 36px;
     gap: 0 64px;
   }
