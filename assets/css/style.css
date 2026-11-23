@@ -3404,9 +3404,8 @@ html[lang="en"] .site-logo__name {
 /* 2026-11-23 ちえと承認（A案）：ラーメンページの最初の画面に、場所・営業時間・1杯の値段を説明文の下へ。写真の暗い幕の上に白で重ね、帯や線は使わない */
 .ramen-hero__glance {
   display: grid;
-  max-width: 920px;
-  margin: 36px 0 0;
-  gap: 18px 56px;
+  margin: 28px 0 0;
+  gap: 12px;
 }
 
 .ramen-hero__glance dt {
@@ -3415,14 +3414,26 @@ html[lang="en"] .site-logo__name {
 }
 
 .ramen-hero__glance dd {
-  margin: 4px 0 0;
+  margin: 2px 0 0;
   font-size: clamp(18px, 4.6vw, 21px);
   line-height: 1.6;
 }
 
-@media (min-width: 768px) {
+/* スマホ・タブレット：画面下の固定ボタンに最初の画面で隠れないよう、上の余白を少し詰める */
+@media (max-width: 991.98px) {
+  .ramen-hero .about-hero__content {
+    padding-top: clamp(112px, 17svh, 200px);
+  }
+}
+
+@media (min-width: 992px) {
   .ramen-hero__glance {
-    grid-template-columns: repeat(3, auto);
-    justify-content: start;
+    grid-template-columns: repeat(3, max-content);
+    margin-top: 36px;
+    gap: 0 64px;
+  }
+
+  .ramen-hero__glance dd {
+    white-space: nowrap;
   }
 }
