@@ -3381,9 +3381,16 @@ html[lang="en"] .site-logo__name {
     transform: scaleX(1);
   }
 
+  /* 線は箱の外に24px出ている。塗りつぶしの中は白、外は元の色にして、どちらも見えるようにする */
   .line-link:hover::after,
   .line-link:focus-visible::after {
+    background: linear-gradient(to left, var(--ink) 24px, var(--paper) 24px);
     transform: scaleX(1.35);
+  }
+
+  .line-link--light:hover::after,
+  .line-link--light:focus-visible::after {
+    background: linear-gradient(to left, var(--paper) 24px, var(--ink) 24px);
   }
 }
 
