@@ -3340,3 +3340,56 @@ html[lang="en"] .site-logo__name {
   max-width: none;
   white-space: nowrap;
 }
+
+/* 2026-11-23 ちえと指示：枠付きボタン（.line-link）はパソコンでマウスを載せたとき、黒く塗りつぶしが左から広がって文字が白に変わり、右の線がのびる。
+   これまでは線が少しのびるだけで、押せるボタンだと分かりにくかった。明るい色のボタン（.line-link--light）は反対に白で塗りつぶす */
+.line-link {
+  isolation: isolate;
+  overflow: visible;
+}
+
+.line-link::before {
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  background: var(--ink);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 320ms var(--ease);
+}
+
+.line-link--light::before {
+  background: var(--paper);
+}
+
+@media (hover: hover) {
+  .line-link:hover,
+  .line-link:focus-visible {
+    border-color: var(--ink);
+    color: var(--paper);
+  }
+
+  .line-link--light:hover,
+  .line-link--light:focus-visible {
+    border-color: var(--paper);
+    color: var(--ink);
+  }
+
+  .line-link:hover::before,
+  .line-link:focus-visible::before {
+    transform: scaleX(1);
+  }
+
+  .line-link:hover::after,
+  .line-link:focus-visible::after {
+    transform: scaleX(1.35);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .line-link::before,
+  .line-link::after {
+    transition: none;
+  }
+}
