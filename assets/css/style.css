@@ -3400,3 +3400,38 @@ html[lang="en"] .site-logo__name {
     transition: none;
   }
 }
+
+/* 2026-11-23 ちえと承認：ラーメンページの上に置く「場所・営業時間・1杯の値段」。「近くのラーメン」の探し方に、ページの上で答える */
+.ramen-glance {
+  padding-top: 56px;
+  padding-bottom: 0;
+}
+
+.ramen-glance__list {
+  display: grid;
+  max-width: var(--content-width);
+  margin: 0 auto;
+  gap: 24px 48px;
+}
+
+.ramen-glance__list > div {
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.ramen-glance__list dt {
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.ramen-glance__list dd {
+  margin: 6px 0 0;
+  font-size: clamp(18px, 2vw, 20px);
+  line-height: 1.7;
+}
+
+@media (min-width: 768px) {
+  .ramen-glance__list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
