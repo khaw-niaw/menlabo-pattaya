@@ -1,0 +1,260 @@
+<!-- build.pyで生成。直接編集しない。部品は src/ を直す。 -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <!-- Google tag (gtag.js)：本番ドメインでだけ読み込む（手元の確認やVercelのプレビューで本番の解析を汚さないため。2026-11-11 Claude） -->
+  <script id="google-tag" data-ga4-id="G-L9W79GXPE1" data-production-host="www.menlabo-pattaya.com">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    (function () {
+      var tag = document.getElementById("google-tag");
+      var id = tag.dataset.ga4Id;
+      if (!id || location.hostname !== tag.dataset.productionHost) return;
+      // 2026-11-17 ちえと承認（GA4点検）：手元の確認画面や確認用URLから本番へ移ったタブは、そのタブの間ずっと計測しない
+      try {
+        var from = document.referrer ? new URL(document.referrer).hostname : "";
+        if (/^(localhost|127\.0\.0\.1)$|\.local$|\.vercel\.app$/.test(from)) sessionStorage.setItem("menlabo_internal", "1");
+        if (sessionStorage.getItem("menlabo_internal") === "1") return;
+      } catch (error) {}
+      gtag("js", new Date());
+      gtag("config", id);
+      // 2026-11-18 ちえと承認（表示速度）：タグ本体は、最初の画面を出し終えてから読み込む。
+      // 読み込み完了の3秒後か、最初の操作（タップ・スクロール・キー）か、ページを離れるときの早いほう。それまでのイベントは dataLayer にたまり、読み込み後に送られる
+      var started = false;
+      var start = function () {
+        if (started) return;
+        started = true;
+        var loader = document.createElement("script");
+        loader.async = true;
+        loader.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+        document.head.appendChild(loader);
+      };
+      ["pointerdown", "touchstart", "keydown", "scroll"].forEach(function (name) {
+        window.addEventListener(name, start, { once: true, passive: true });
+      });
+      window.addEventListener("load", function () { setTimeout(start, 3000); });
+      document.addEventListener("visibilitychange", function () { if (document.visibilityState === "hidden") start(); });
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, follow">
+  <meta name="description" content="Just tap your answers. About 30 seconds. No name or contact needed.">
+  <meta name="theme-color" content="#171817">
+  <title>Tell us about your visit — Osaka Izakaya Menlabo Sakaba</title>
+  <link rel="canonical" href="https://www.menlabo-pattaya.com/en/review">
+  <meta property="og:title" content="Tell us about your visit — Osaka Izakaya Menlabo Sakaba">
+  <meta property="og:description" content="Just tap your answers. About 30 seconds. No name or contact needed.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.menlabo-pattaya.com/en/review">
+  <meta property="og:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tell us about your visit — Osaka Izakaya Menlabo Sakaba">
+  <meta name="twitter:description" content="Just tap your answers. About 30 seconds. No name or contact needed.">
+  <meta name="twitter:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- 2026-11-17 表示速度の改善：文字（Googleフォント）の読み込みで表示を止めない -->
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/main.js" defer></script>
+  <link rel="alternate" hreflang="ja" href="https://www.menlabo-pattaya.com/review">
+  <link rel="alternate" hreflang="th" href="https://www.menlabo-pattaya.com/th/review">
+  <link rel="alternate" hreflang="en" href="https://www.menlabo-pattaya.com/en/review">
+  <link rel="alternate" hreflang="x-default" href="https://www.menlabo-pattaya.com/review">
+
+</head>
+
+<body>
+  <a class="skip-link" href="#main" data-key="skip-main">Skip to content</a>
+
+  <header class="site-header site-header--paper" aria-label="Site navigation">
+    <a class="site-logo site-logo--named" href="/en" aria-label="Menlabo Sakaba home">
+      <img src="../assets/images/menlabo-logo-mark-kana-red.svg" alt="Menlabo Sakaba" width="82" height="82"><span class="site-logo__name">Menlabo Sakaba</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="/en/about" data-key="nav-about">About Menlabo</a>
+      <a href="/en/menu" data-key="nav-menu">Menu</a>
+      <a href="/en/recommended" data-key="nav-recommended">Highlights</a>
+      <a href="/en/access" data-key="nav-access">Find us</a>
+      <a href="/en/news" data-key="nav-news">News</a>
+    </nav>
+
+    <div class="desktop-actions">
+      <a href="tel:+66961479518" data-action="phone" data-key="action-phone">Call</a>
+      <a href="https://lin.ee/7GQmsKU" data-action="line" data-key="action-line">LINE</a>
+      <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">Map</a>
+    </div>
+
+    <nav class="header-language-links" aria-label="Language">
+      <a href="/review" lang="ja" data-lang="ja" aria-label="日本語" data-key="lang-ja">JP</a>
+      <a href="/th/review" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">TH</a>
+      <a href="/en/review" lang="en" data-lang="en" aria-current="page" aria-label="English" data-key="lang-en">EN</a>
+      <a href="/zh" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简</a>
+    </nav>
+
+    <button class="menu-button" type="button" aria-controls="mobile-menu" aria-expanded="false" data-open-label="Menu" data-close-label="Close">
+      <span class="menu-button__label" data-key="menu-open">Menu</span>
+      <span class="menu-button__icon" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav aria-label="Mobile menu">
+      <a href="/en/about" data-key="nav-about">About Menlabo</a>
+      <a href="/en/menu" data-key="nav-menu">Menu</a>
+      <a href="/en/recommended" data-key="nav-recommended">Highlights</a>
+      <a href="/en/access" data-key="nav-access">Find us</a>
+      <a href="/en/news" data-key="nav-news">News</a>
+    </nav>
+    <div class="mobile-menu__actions">
+      <a href="tel:+66961479518" data-action="phone" data-key="action-phone">Call</a>
+      <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">Map</a>
+    </div>
+    <nav class="header-language-links header-language-links--mobile" aria-label="Language">
+      <a href="/review" lang="ja" data-lang="ja" aria-label="日本語" data-key="lang-ja">JP</a>
+      <a href="/th/review" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">TH</a>
+      <a href="/en/review" lang="en" data-lang="en" aria-current="page" aria-label="English" data-key="lang-en">EN</a>
+      <a href="/zh" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简</a>
+    </nav>
+  </div>
+
+
+  <main id="main" class="content-page review-page">
+    <div class="paper-section content-page__section">
+      <div class="content-page__inner">
+        <form id="review-form" autocomplete="off">
+          <header class="content-page__heading">
+            <h1 id="review-title" tabindex="-1">Tell us about your visit</h1>
+            <p>Just tap your answers. About 30 seconds. No name or contact needed.</p>
+            <p id="review-privacy" data-ai-text="Your choices are counted in totals, and sent to an AI only if you create a draft.">Your choices are only counted in totals.</p>
+          </header>
+          <fieldset>
+            <legend>What did you have? (choose any)</legend>
+            <div class="review-choices"><label class="review-chip"><input type="checkbox" name="q1" value="YK003"><span>Pan-fried Gyoza</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="ME001"><span>Clear Chicken Shio Soba</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="ME005"><span>Clear Chicken Shoyu Soba</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="ME009"><span>Rich Chicken Paitan Shio</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="ME017"><span>Jan-men (spicy)</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="AG001"><span>Fried Chicken (Karaage)</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="AG002"><span>Chicken Nanban</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="YK001"><span>Tonpei-yaki</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="YK002"><span>Dashi Rolled Omelet</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="YK010"><span>Chashu &amp; Egg</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="GH007"><span>Rare Chashu Bowl</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="GH010"><span>Fried Rice</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="GH013"><span>Tenshin-don</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="SP011"><span>Mouthwatering Chicken</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="YK016"><span>Mapo Tofu</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="lunch"><span>Lunch set</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="drink"><span>Drinks</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="other"><span>Other</span></label></div>
+          </fieldset>
+          <fieldset>
+            <legend>Who did you come with? (choose any)</legend>
+            <div class="review-choices"><label class="review-chip"><input type="checkbox" name="q2" value="alone"><span>Alone</span></label>
+<label class="review-chip"><input type="checkbox" name="q2" value="friends"><span>With friends</span></label>
+<label class="review-chip"><input type="checkbox" name="q2" value="family"><span>With family</span></label>
+<label class="review-chip"><input type="checkbox" name="q2" value="work"><span>With colleagues</span></label>
+<label class="review-chip"><input type="checkbox" name="q2" value="tourist"><span>Sightseeing nearby</span></label>
+<label class="review-chip"><input type="checkbox" name="q2" value="local"><span>Live or work nearby</span></label></div>
+          </fieldset>
+          <div class="review-pair">
+            <fieldset>
+              <legend>What was good? (choose any)</legend>
+              <div class="review-choices"><label class="review-chip"><input type="checkbox" name="q3" value="taste"><span>Taste</span></label>
+<label class="review-chip"><input type="checkbox" name="q3" value="portion"><span>Portion size</span></label>
+<label class="review-chip"><input type="checkbox" name="q3" value="price"><span>Price</span></label>
+<label class="review-chip"><input type="checkbox" name="q3" value="service"><span>Service</span></label>
+<label class="review-chip"><input type="checkbox" name="q3" value="atmosphere"><span>Atmosphere</span></label>
+<label class="review-chip"><input type="checkbox" name="q3" value="speed"><span>Speed of serving</span></label>
+<label class="review-chip"><input type="checkbox" name="q3" value="none"><span>Nothing in particular</span></label></div>
+            </fieldset>
+            <fieldset>
+              <legend>What could be better? (choose any)</legend>
+              <div class="review-choices"><label class="review-chip"><input type="checkbox" name="q4" value="taste"><span>Taste</span></label>
+<label class="review-chip"><input type="checkbox" name="q4" value="portion"><span>Portion size</span></label>
+<label class="review-chip"><input type="checkbox" name="q4" value="price"><span>Price</span></label>
+<label class="review-chip"><input type="checkbox" name="q4" value="service"><span>Service</span></label>
+<label class="review-chip"><input type="checkbox" name="q4" value="atmosphere"><span>Atmosphere</span></label>
+<label class="review-chip"><input type="checkbox" name="q4" value="speed"><span>Speed of serving</span></label>
+<label class="review-chip"><input type="checkbox" name="q4" value="none"><span>Nothing in particular</span></label></div>
+            </fieldset>
+          </div>
+          <div class="review-comment">
+            <label for="review-note">Anything else? (optional)</label>
+            <p id="review-note-help" data-ai-text="Only if you press the draft button, this text is sent to an AI. It is not saved.">What you write here is not saved. It is only shown back to you.</p>
+            <textarea id="review-note" rows="3" aria-describedby="review-note-help" spellcheck="false"></textarea>
+          </div>
+          <button type="submit" class="line-link" disabled>Show my answers</button>
+        </form>
+        <section id="review-result" aria-labelledby="review-result-title" data-draft-endpoint="" hidden>
+          <header class="content-page__heading">
+            <h1 id="review-result-title" tabindex="-1">Your answers</h1>
+          </header>
+          <dl class="review-summary" data-empty="(none selected)">
+            <div><dt>What did you have? (choose any)</dt><dd data-answer="q1"></dd></div>
+            <div><dt>Who did you come with? (choose any)</dt><dd data-answer="q2"></dd></div>
+            <div><dt>What was good? (choose any)</dt><dd data-answer="q3"></dd></div>
+            <div><dt>What could be better? (choose any)</dt><dd data-answer="q4"></dd></div>
+            <div><dt>Anything else? (optional)</dt><dd data-answer="q5"></dd></div>
+          </dl>
+          <div class="review-draft" id="review-draft-block" hidden data-making="Creating…" data-copied="Copied">
+            <p>We can write a draft review from what you chose. Using it is entirely up to you.</p>
+            <button type="button" class="line-link" id="review-draft-make">Create a draft</button>
+            <p id="review-draft-error" role="status" hidden>We could not create a draft. You can write in your own words.</p>
+            <div class="review-comment" id="review-draft-area" hidden>
+              <label for="review-draft">Draft</label>
+              <p id="review-draft-help">Made only from what you chose. Edit it into your own words, or use it as it is.</p>
+              <textarea id="review-draft" rows="7" aria-describedby="review-draft-help" spellcheck="false"></textarea>
+              <button type="button" class="review-back" id="review-draft-copy">Copy</button>
+              <p id="review-draft-status" role="status"></p>
+            </div>
+          </div>
+          <p>Thank you. If you like, you can write a review on Google. Whether to write one, and what to say, is entirely up to you.</p>
+          <p>There is no reward or discount for reviewing.</p>
+          <a class="line-link" id="review-google" href="https://g.page/r/CbD-IB67hHZLEBM/review" target="_blank" rel="noopener">Write a review on Google</a>
+          <button class="review-back" id="review-back" type="button">Edit my answers</button>
+        </section>
+      </div>
+    </div>
+  </main>
+  <script src="../assets/js/review.js" defer></script>
+
+
+  <footer class="site-footer">
+
+    <nav class="social-links" aria-label="Social media">
+      <a href="https://www.instagram.com/menlabo.pattaya/" data-action="instagram" target="_blank" rel="noopener noreferrer" data-key="social-instagram">Instagram</a>
+      <a href="https://www.facebook.com/menlabo.pattaya" data-action="facebook" target="_blank" rel="noopener noreferrer" data-key="social-facebook">Facebook</a>
+      <a href="https://x.com/menlabo_sakaba" data-action="x" target="_blank" rel="noopener noreferrer" data-key="social-x">X</a>
+    </nav>
+
+    <nav class="language-links" aria-label="Language">
+      <a href="/review" lang="ja" data-lang="ja" aria-label="日本語" data-key="lang-ja">日本語</a>
+      <a href="/th/review" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">ไทย</a>
+      <a href="/en/review" lang="en" data-lang="en" aria-current="page" aria-label="English" data-key="lang-en">English</a>
+      <a href="/zh" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简体中文</a>
+    </nav>
+
+    <nav class="legal-links" aria-label="Legal information">
+      <a href="/en/access" data-key="nav-access">Find us</a>
+      <a href="/en/company" data-key="link-company">Company</a>
+      <a href="/en/privacy" data-key="link-privacy">Privacy Policy</a>
+    </nav>
+
+    <p class="copyright" data-key="copyright">© Menlabo Sakaba</p>
+  </footer>
+
+
+
+</body>
+</html>

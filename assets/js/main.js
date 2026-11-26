@@ -63,7 +63,7 @@ function setMenu(open, returnFocus = false, focusFirstLink = false) {
   menuLabel.dataset.key = open ? "menu-close" : "menu-open";
   pageMain.inert = open;
   pageFooter.inert = open;
-  mobileActions.inert = open;
+  if (mobileActions) mobileActions.inert = open;
 
   if (open) {
     mobileMenu.hidden = false;

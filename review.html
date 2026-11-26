@@ -1,0 +1,260 @@
+<!-- build.pyで生成。直接編集しない。部品は src/ を直す。 -->
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+
+  <!-- Google tag (gtag.js)：本番ドメインでだけ読み込む（手元の確認やVercelのプレビューで本番の解析を汚さないため。2026-11-11 Claude） -->
+  <script id="google-tag" data-ga4-id="G-L9W79GXPE1" data-production-host="www.menlabo-pattaya.com">
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    (function () {
+      var tag = document.getElementById("google-tag");
+      var id = tag.dataset.ga4Id;
+      if (!id || location.hostname !== tag.dataset.productionHost) return;
+      // 2026-11-17 ちえと承認（GA4点検）：手元の確認画面や確認用URLから本番へ移ったタブは、そのタブの間ずっと計測しない
+      try {
+        var from = document.referrer ? new URL(document.referrer).hostname : "";
+        if (/^(localhost|127\.0\.0\.1)$|\.local$|\.vercel\.app$/.test(from)) sessionStorage.setItem("menlabo_internal", "1");
+        if (sessionStorage.getItem("menlabo_internal") === "1") return;
+      } catch (error) {}
+      gtag("js", new Date());
+      gtag("config", id);
+      // 2026-11-18 ちえと承認（表示速度）：タグ本体は、最初の画面を出し終えてから読み込む。
+      // 読み込み完了の3秒後か、最初の操作（タップ・スクロール・キー）か、ページを離れるときの早いほう。それまでのイベントは dataLayer にたまり、読み込み後に送られる
+      var started = false;
+      var start = function () {
+        if (started) return;
+        started = true;
+        var loader = document.createElement("script");
+        loader.async = true;
+        loader.src = "https://www.googletagmanager.com/gtag/js?id=" + id;
+        document.head.appendChild(loader);
+      };
+      ["pointerdown", "touchstart", "keydown", "scroll"].forEach(function (name) {
+        window.addEventListener(name, start, { once: true, passive: true });
+      });
+      window.addEventListener("load", function () { setTimeout(start, 3000); });
+      document.addEventListener("visibilitychange", function () { if (document.visibilityState === "hidden") start(); });
+    })();
+  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, follow">
+  <meta name="description" content="選ぶだけ・約30秒です。お名前や連絡先は不要です。">
+  <meta name="theme-color" content="#171817">
+  <title>ご感想を教えてください — 大阪居酒屋 MENLABO酒場</title>
+  <link rel="canonical" href="https://www.menlabo-pattaya.com/review">
+  <meta property="og:title" content="ご感想を教えてください — 大阪居酒屋 MENLABO酒場">
+  <meta property="og:description" content="選ぶだけ・約30秒です。お名前や連絡先は不要です。">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.menlabo-pattaya.com/review">
+  <meta property="og:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ご感想を教えてください — 大阪居酒屋 MENLABO酒場">
+  <meta name="twitter:description" content="選ぶだけ・約30秒です。お名前や連絡先は不要です。">
+  <meta name="twitter:image" content="https://www.menlabo-pattaya.com/assets/images/ogp.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- 2026-11-17 表示速度の改善：文字（Googleフォント）の読み込みで表示を止めない -->
+  <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/main.js" defer></script>
+  <link rel="alternate" hreflang="ja" href="https://www.menlabo-pattaya.com/review">
+  <link rel="alternate" hreflang="th" href="https://www.menlabo-pattaya.com/th/review">
+  <link rel="alternate" hreflang="en" href="https://www.menlabo-pattaya.com/en/review">
+  <link rel="alternate" hreflang="x-default" href="https://www.menlabo-pattaya.com/review">
+
+</head>
+
+<body>
+  <a class="skip-link" href="#main" data-key="skip-main">本文へ移動</a>
+
+  <header class="site-header site-header--paper" aria-label="サイト案内">
+    <a class="site-logo site-logo--named" href="/" aria-label="大阪居酒屋 MENLABO酒場 トップ">
+      <img src="assets/images/menlabo-logo-mark-kana-red.svg" alt="MENLABO酒場" width="82" height="82"><span class="site-logo__name">MENLABO酒場</span>
+    </a>
+
+    <nav class="desktop-nav" aria-label="主要メニュー">
+      <a href="/about" data-key="nav-about">MENLABOについて</a>
+      <a href="/menu" data-key="nav-menu">メニュー</a>
+      <a href="/recommended" data-key="nav-recommended">おすすめ</a>
+      <a href="/access" data-key="nav-access">アクセス</a>
+      <a href="/news" data-key="nav-news">お知らせ</a>
+    </nav>
+
+    <div class="desktop-actions">
+      <a href="tel:+66961479518" data-action="phone" data-key="action-phone">電話</a>
+      <a href="https://lin.ee/7GQmsKU" data-action="line" data-key="action-line">LINE</a>
+      <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">地図</a>
+    </div>
+
+    <nav class="header-language-links" aria-label="言語切替">
+      <a href="/review" lang="ja" data-lang="ja" aria-current="page" aria-label="日本語" data-key="lang-ja">JP</a>
+      <a href="/th/review" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">TH</a>
+      <a href="/en/review" lang="en" data-lang="en" aria-label="English" data-key="lang-en">EN</a>
+      <a href="/zh" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简</a>
+    </nav>
+
+    <button class="menu-button" type="button" aria-controls="mobile-menu" aria-expanded="false" data-open-label="メニュー" data-close-label="閉じる">
+      <span class="menu-button__label" data-key="menu-open">メニュー</span>
+      <span class="menu-button__icon" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav aria-label="スマートフォン用メニュー">
+      <a href="/about" data-key="nav-about">MENLABOについて</a>
+      <a href="/menu" data-key="nav-menu">メニュー</a>
+      <a href="/recommended" data-key="nav-recommended">おすすめ</a>
+      <a href="/access" data-key="nav-access">アクセス</a>
+      <a href="/news" data-key="nav-news">お知らせ</a>
+    </nav>
+    <div class="mobile-menu__actions">
+      <a href="tel:+66961479518" data-action="phone" data-key="action-phone">電話</a>
+      <a href="https://maps.app.goo.gl/t9EeHTfAjPL7jj5u8" data-action="map" target="_blank" rel="noopener noreferrer" data-key="action-map">地図</a>
+    </div>
+    <nav class="header-language-links header-language-links--mobile" aria-label="言語切替">
+      <a href="/review" lang="ja" data-lang="ja" aria-current="page" aria-label="日本語" data-key="lang-ja">JP</a>
+      <a href="/th/review" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">TH</a>
+      <a href="/en/review" lang="en" data-lang="en" aria-label="English" data-key="lang-en">EN</a>
+      <a href="/zh" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简</a>
+    </nav>
+  </div>
+
+
+  <main id="main" class="content-page review-page">
+    <div class="paper-section content-page__section">
+      <div class="content-page__inner">
+        <form id="review-form" autocomplete="off">
+          <header class="content-page__heading">
+            <h1 id="review-title" tabindex="-1">ご感想を教えてください</h1>
+            <p>選ぶだけ・約30秒です。お名前や連絡先は不要です。</p>
+            <p id="review-privacy" data-ai-text="選んだ項目は、件数の集計に使います。下書きを作るときだけ、AIにも送ります。">選んだ項目は、件数の集計にだけ使います。</p>
+          </header>
+          <fieldset>
+            <legend>召し上がったもの（いくつでも）</legend>
+            <div class="review-choices"><label class="review-chip"><input type="checkbox" name="q1" value="YK003"><span>焼き餃子</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="ME001"><span>淡麗鶏塩そば</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="ME005"><span>淡麗鶏醤油そば</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="ME009"><span>鶏白湯塩そば</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="ME017"><span>ジャン麺</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="AG001"><span>鶏の唐揚げ</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="AG002"><span>チキン南蛮</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="YK001"><span>とんぺい焼き</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="YK002"><span>だし巻き玉子</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="YK010"><span>チャーシューエッグ</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="GH007"><span>レアチャーシュー丼</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="GH010"><span>炒飯</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="GH013"><span>天津飯</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="SP011"><span>よだれ鶏</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="YK016"><span>麻婆豆腐</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="lunch"><span>ランチ定食</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="drink"><span>お酒・ドリンク</span></label>
+<label class="review-chip"><input type="checkbox" name="q1" value="other"><span>その他</span></label></div>
+          </fieldset>
+          <fieldset>
+            <legend>今日はどなたと？（いくつでも）</legend>
+            <div class="review-choices"><label class="review-chip"><input type="checkbox" name="q2" value="alone"><span>一人で</span></label>
+<label class="review-chip"><input type="checkbox" name="q2" value="friends"><span>友人と</span></label>
+<label class="review-chip"><input type="checkbox" name="q2" value="family"><span>家族と</span></label>
+<label class="review-chip"><input type="checkbox" name="q2" value="work"><span>仕事の仲間と</span></label>
+<label class="review-chip"><input type="checkbox" name="q2" value="tourist"><span>観光の途中</span></label>
+<label class="review-chip"><input type="checkbox" name="q2" value="local"><span>近所だから</span></label></div>
+          </fieldset>
+          <div class="review-pair">
+            <fieldset>
+              <legend>よかった点（いくつでも）</legend>
+              <div class="review-choices"><label class="review-chip"><input type="checkbox" name="q3" value="taste"><span>味</span></label>
+<label class="review-chip"><input type="checkbox" name="q3" value="portion"><span>量</span></label>
+<label class="review-chip"><input type="checkbox" name="q3" value="price"><span>価格</span></label>
+<label class="review-chip"><input type="checkbox" name="q3" value="service"><span>接客</span></label>
+<label class="review-chip"><input type="checkbox" name="q3" value="atmosphere"><span>雰囲気</span></label>
+<label class="review-chip"><input type="checkbox" name="q3" value="speed"><span>提供の早さ</span></label>
+<label class="review-chip"><input type="checkbox" name="q3" value="none"><span>特になし</span></label></div>
+            </fieldset>
+            <fieldset>
+              <legend>改善してほしい点（いくつでも）</legend>
+              <div class="review-choices"><label class="review-chip"><input type="checkbox" name="q4" value="taste"><span>味</span></label>
+<label class="review-chip"><input type="checkbox" name="q4" value="portion"><span>量</span></label>
+<label class="review-chip"><input type="checkbox" name="q4" value="price"><span>価格</span></label>
+<label class="review-chip"><input type="checkbox" name="q4" value="service"><span>接客</span></label>
+<label class="review-chip"><input type="checkbox" name="q4" value="atmosphere"><span>雰囲気</span></label>
+<label class="review-chip"><input type="checkbox" name="q4" value="speed"><span>提供の早さ</span></label>
+<label class="review-chip"><input type="checkbox" name="q4" value="none"><span>特になし</span></label></div>
+            </fieldset>
+          </div>
+          <div class="review-comment">
+            <label for="review-note">ひとこと（任意）</label>
+            <p id="review-note-help" data-ai-text="下書きを作るボタンを押したときだけ、この内容をAIに送ります。保存はされません。">ここに書いた内容は保存されません。結果画面で、ご自身に表示するだけです。</p>
+            <textarea id="review-note" rows="3" aria-describedby="review-note-help" spellcheck="false"></textarea>
+          </div>
+          <button type="submit" class="line-link" disabled>回答をまとめる</button>
+        </form>
+        <section id="review-result" aria-labelledby="review-result-title" data-draft-endpoint="" hidden>
+          <header class="content-page__heading">
+            <h1 id="review-result-title" tabindex="-1">選んだ内容</h1>
+          </header>
+          <dl class="review-summary" data-empty="（選択なし）">
+            <div><dt>召し上がったもの（いくつでも）</dt><dd data-answer="q1"></dd></div>
+            <div><dt>今日はどなたと？（いくつでも）</dt><dd data-answer="q2"></dd></div>
+            <div><dt>よかった点（いくつでも）</dt><dd data-answer="q3"></dd></div>
+            <div><dt>改善してほしい点（いくつでも）</dt><dd data-answer="q4"></dd></div>
+            <div><dt>ひとこと（任意）</dt><dd data-answer="q5"></dd></div>
+          </dl>
+          <div class="review-draft" id="review-draft-block" hidden data-making="作成中…" data-copied="コピーしました">
+            <p>選んだ内容をもとに、口コミの下書きを作れます。使う・使わないはご自由です。</p>
+            <button type="button" class="line-link" id="review-draft-make">下書きを作る</button>
+            <p id="review-draft-error" role="status" hidden>下書きを作れませんでした。ご自身の言葉で、そのまま書けます。</p>
+            <div class="review-comment" id="review-draft-area" hidden>
+              <label for="review-draft">下書き</label>
+              <p id="review-draft-help">選んだ内容だけで作っています。ご自身の言葉に直しても、そのまま使っても構いません。</p>
+              <textarea id="review-draft" rows="7" aria-describedby="review-draft-help" spellcheck="false"></textarea>
+              <button type="button" class="review-back" id="review-draft-copy">コピーする</button>
+              <p id="review-draft-status" role="status"></p>
+            </div>
+          </div>
+          <p>ありがとうございました。よろしければ、Googleに口コミを書けます。書く・書かないはご自由で、内容もご自身の言葉でお書きください。</p>
+          <p>口コミの特典・割引はありません。</p>
+          <a class="line-link" id="review-google" href="https://g.page/r/CbD-IB67hHZLEBM/review" target="_blank" rel="noopener">Googleで口コミを書く</a>
+          <button class="review-back" id="review-back" type="button">回答を直す</button>
+        </section>
+      </div>
+    </div>
+  </main>
+  <script src="assets/js/review.js" defer></script>
+
+
+  <footer class="site-footer">
+
+    <nav class="social-links" aria-label="SNS">
+      <a href="https://www.instagram.com/menlabo.pattaya/" data-action="instagram" target="_blank" rel="noopener noreferrer" data-key="social-instagram">Instagram</a>
+      <a href="https://www.facebook.com/menlabo.pattaya" data-action="facebook" target="_blank" rel="noopener noreferrer" data-key="social-facebook">Facebook</a>
+      <a href="https://x.com/menlabo_sakaba" data-action="x" target="_blank" rel="noopener noreferrer" data-key="social-x">X</a>
+    </nav>
+
+    <nav class="language-links" aria-label="言語切替">
+      <a href="/review" lang="ja" data-lang="ja" aria-current="page" aria-label="日本語" data-key="lang-ja">日本語</a>
+      <a href="/th/review" lang="th" data-lang="th" aria-label="ไทย" data-key="lang-th">ไทย</a>
+      <a href="/en/review" lang="en" data-lang="en" aria-label="English" data-key="lang-en">English</a>
+      <a href="/zh" lang="zh-Hans" data-lang="zh" aria-label="简体中文" data-key="lang-zh">简体中文</a>
+    </nav>
+
+    <nav class="legal-links" aria-label="運営情報">
+      <a href="/access" data-key="nav-access">アクセス</a>
+      <a href="/company" data-key="link-company">運営会社</a>
+      <a href="/privacy" data-key="link-privacy">プライバシーポリシー</a>
+    </nav>
+
+    <p class="copyright" data-key="copyright">© MENLABO酒場</p>
+  </footer>
+
+
+
+</body>
+</html>
